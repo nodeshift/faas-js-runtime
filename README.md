@@ -20,6 +20,8 @@ still to be determined.
 
 ### Usage
 
+In my current working directory, I have an `index.js` file like this.
+
 ```js
 const framework = require('faas-js-runtime');
 
@@ -34,6 +36,21 @@ framework(`${__dirname}/function-dir/`, server => {
   server.close();
 });
 ```
+
+In `./function-dir`, there is an `index.js` file that looks
+like this.
+
+```js
+module.exports = async function myFunction(context) {
+  const ret = 'This is a test function for Node.js FaaS. Success.';
+  return new Promise((resolve, reject) => {
+    setTimeout(_ => {
+      resolve(ret);
+    }, 500);
+  });
+};
+```
+
 ### Tests
 
 Just run `npm test`.
