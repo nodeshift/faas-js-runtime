@@ -1,33 +1,21 @@
 'use strict';
 
-const { execSync } = require('child_process');
-const { createServer } = require('http');
+// paackage.json handling
 const { existsSync } = require('fs');
+const { execSync } = require('child_process');
 const path = require('path');
-const Context = require('./lib/context');
-const eventHandler = require('./lib/event-handler');
-const protection = require('overload-protection');
 
-// Default LIVENESS/READINESS urls
-const READINESS_URL = '/health';
-const LIVENESS_URL = '/health';
+// base server
+const { createServer } = require('http');
 
-module.exports = exports = start;
-
-function installDependenciesIfExist(functionPath) {
-  if (path.extname(functionPath) !== '') {
-    functionPath = path.dirname(functionPath);
-  }
-  if (existsSync(path.join(functionPath, 'package.json'))) {
-    execSync('npm install --production', { cwd: functionPath });
-  }
-}
+// incoming request handlers
+const healthCheck = require('./lib/health-check');
+const requestHandler = require('./lib/request-handler');
 
 function start(functionPath, port, cb) {
   installDependenciesIfExist(functionPath);
-  const func = require(functionPath);
 
-  switch(typeof port) {
+  switch (typeof port) {
     case 'function':
       cb = port;
       port = 8080;
@@ -37,46 +25,11 @@ function start(functionPath, port, cb) {
       break;
   }
 
-  // Configure protect for liveness/readiness probes
-  const protectCfg = {
-    production: process.env.NODE_ENV === 'production',
-    maxHeapUsedBytes: 0, // Max heap used threshold (0 to disable) [default 0]
-    maxRssBytes: 0, // Max rss size threshold (0 to disable) [default 0]
-    errorPropagationMode: false // Don't propagate error
-  };
-  const readinessURL = process.env.READINESS_URL || READINESS_URL;
-  const livenessURL = process.env.LIVENESS_URL || LIVENESS_URL;
-  const protect = protection('http', protectCfg);
+  const handler = requestHandler(functionPath);
 
   // listen for incoming requests
   const app = createServer((req, res) => {
-    const context = new Context(req, res);
-    // Check if health path
-    if (req.url === readinessURL || req.url === livenessURL) {
-      protect(req, res, () => res.end('OK'));
-    } else if (('ce-type' in req.headers) &&
-      req.headers['ce-type'].startsWith('dev.knative')) {
-      eventHandler(req, res)
-        .then(event => {
-          context.cloudevent = event;
-          res.end(func(context));
-        })
-        .catch(err => {
-          // TODO: This should do some better error handling.
-          console.error(err);
-          res.end(err);
-        });
-    } else {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      const body = func(context);
-      if (typeof body.then === 'function') {
-        body.then(body => {
-          res.end(JSON.stringify({ body }));
-        });
-      } else {
-        res.end(JSON.stringify({ body }));
-      }
-    }
+    healthCheck(req, res, handler);
   });
 
   app.on('clientError', (err, socket) => {
@@ -94,4 +47,13 @@ function start(functionPath, port, cb) {
   });
 }
 
+function installDependenciesIfExist(functionPath) {
+  if (path.extname(functionPath) !== '') {
+    functionPath = path.dirname(functionPath);
+  }
+  if (existsSync(path.join(functionPath, 'package.json'))) {
+    execSync('npm install --production', { cwd: functionPath });
+  }
+}
 
+module.exports = exports = start;
