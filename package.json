@@ -1,0 +1,26 @@
+{
+  "name": "faas-js-runtime",
+  "version": "1.0.0",
+  "author": "Red Hat, Inc.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "standardx index.js lib/*.js",
+    "test": "nyc tape test/*.js | tap-spec"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "dependencies": {
+    "cloudevents-sdk": "v0.3.1",
+    "overload-protection": "^1.1.0"
+  },
+  "devDependencies": {
+    "nyc": "^14.1.1",
+    "standard-version": "^7.0.0",
+    "standardx": "^5.0.0",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
