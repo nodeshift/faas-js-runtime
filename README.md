@@ -50,6 +50,10 @@ module.exports = async function myFunction(context) {
   });
 };
 ```
+### Sample
+
+You can see this in action, executing the function at `test/fixtures/async`
+by running `node hack/run.js`.
 
 ### Tests
 
