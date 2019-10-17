@@ -1,12 +1,17 @@
 {
   "name": "@redhat/faas-js-runtime",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openshift-cloud-functions/faas-js-runtime.git"
+  },
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
   "scripts": {
     "lint": "standardx index.js lib/*.js",
     "test": "nyc tape test/*.js | tap-spec"
   },
+  "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
   "files": [
     "index.js",
     "lib"
