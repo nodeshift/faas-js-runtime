@@ -1,10 +1,5 @@
 'use strict';
 
-// paackage.json handling
-const { existsSync } = require('fs');
-const { execSync } = require('child_process');
-const path = require('path');
-
 // base server
 const { createServer } = require('http');
 
@@ -12,8 +7,7 @@ const { createServer } = require('http');
 const healthCheck = require('./lib/health-check');
 const requestHandler = require('./lib/request-handler');
 
-function start(functionPath, port, cb) {
-  installDependenciesIfExist(functionPath);
+function start(func, port, cb) {
 
   switch (typeof port) {
     case 'function':
@@ -25,7 +19,7 @@ function start(functionPath, port, cb) {
       break;
   }
 
-  const handler = requestHandler(functionPath);
+  const handler = requestHandler(func);
 
   // listen for incoming requests
   const app = createServer((req, res) => {
@@ -45,15 +39,6 @@ function start(functionPath, port, cb) {
       resolve(server);
     });
   });
-}
-
-function installDependenciesIfExist(functionPath) {
-  if (path.extname(functionPath) !== '') {
-    functionPath = path.dirname(functionPath);
-  }
-  if (existsSync(path.join(functionPath, 'package.json'))) {
-    execSync('npm install --production', { cwd: functionPath });
-  }
 }
 
 module.exports = exports = start;

@@ -4,9 +4,29 @@ const framework = require('..');
 const test = require('tape');
 const request = require('supertest');
 
+// paackage.json handling
+const { existsSync } = require('fs');
+const { execSync } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+
+// Ensure fixture dependencies are installed
+const fixtures = fs.readdirSync(`${__dirname}/fixtures`);
+fixtures.forEach(installDependenciesIfExist);
+
+function installDependenciesIfExist(functionPath) {
+  if (path.extname(functionPath) !== '') {
+    functionPath = path.dirname(functionPath);
+  }
+  if (existsSync(path.join(functionPath, 'package.json'))) {
+    execSync('npm install --production', { cwd: functionPath });
+  }
+}
+
 
 test('Loads a user function with dependencies', t => {
-  framework(`${__dirname}/fixtures/simple-http/`, server => {
+  const func = require(`${__dirname}/fixtures/simple-http/`);
+  framework(func, server => {
     t.plan(2);
     request(server)
       .get('/')
@@ -23,7 +43,8 @@ test('Loads a user function with dependencies', t => {
 });
 
 test('Executes an async function', t => {
-  framework(`${__dirname}/fixtures/async/`, server => {
+  const func = require(`${__dirname}/fixtures/async/`);
+  framework(func, server => {
     t.plan(2);
     request(server)
       .get('/')
@@ -40,7 +61,8 @@ test('Executes an async function', t => {
 });
 
 test('Responds to cloud events', t => {
-  framework(`${__dirname}/fixtures/cloud-event/`, server => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
     request(server)
       .post('/')
       .send({ message: 'hello' })
