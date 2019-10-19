@@ -19,13 +19,15 @@ function installDependenciesIfExist(functionPath) {
     functionPath = path.dirname(functionPath);
   }
   if (existsSync(path.join(functionPath, 'package.json'))) {
+    // eslint-disable-next-line
+    console.log(`Installing dependencies for ${functionPath}`);
     execSync('npm install --production', { cwd: functionPath });
   }
 }
 
 
 test('Loads a user function with dependencies', t => {
-  const func = require(`${__dirname}/fixtures/simple-http/`);
+  const func = require(`${__dirname}/fixtures/http-get/`);
   framework(func, server => {
     t.plan(2);
     request(server)
@@ -42,7 +44,7 @@ test('Loads a user function with dependencies', t => {
     });
 });
 
-test('Executes an async function', t => {
+test('Can respond via an async function', t => {
   const func = require(`${__dirname}/fixtures/async/`);
   framework(func, server => {
     t.plan(2);
@@ -60,6 +62,23 @@ test('Executes an async function', t => {
     });
 });
 
+test('Accepts HTTP POST requests', t => {
+  const func = require(`${__dirname}/fixtures/http-post/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send('Message body')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err);
+        t.equal(res.body.message, 'Message body');
+        t.end();
+        server.close();
+      });
+  });
+});
+
 test('Responds to cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
@@ -74,7 +93,6 @@ test('Responds to cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        // console.log(res);
         t.equal(res.body.message, 'hello');
         t.end();
         server.close();
