@@ -20,7 +20,6 @@
   "dependencies": {
     "cloudevents-sdk": "v0.3.1",
     "fastify": "^2.10.0",
-    "middie": "^4.0.1",
     "overload-protection": "^1.1.0"
   },
   "devDependencies": {
