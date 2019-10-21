@@ -19,6 +19,7 @@ build-common: &common-build
           - v1-dependencies-
 
     - run: npm install
+    - run: cd test/fixtures/http-get && npm install
 
     - save_cache:
         paths:
