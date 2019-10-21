@@ -28,9 +28,9 @@ function start(func, port, cb) {
   });
   server.register(healthCheck);
   server.register(requestHandler, { func });
-  server.addContentTypeParser('*', function (req, done) {
-    var data = ''
-    req.on('data', chunk => { data += chunk });
+  server.addContentTypeParser('*', function(req, done) {
+    var data = '';
+    req.on('data', chunk => { data += chunk; });
     req.on('end', () => {
       done(null, data);
     });

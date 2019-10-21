@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "standardx index.js lib/*.js",
     "test": "nyc tape test/*.js | tap-spec",
-    "release": "standard-version -s -a"
+    "release": "standard-version -s -a",
+    "pretest": "npm run lint"
   },
   "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
   "files": [
