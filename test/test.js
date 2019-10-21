@@ -11,13 +11,15 @@ const path = require('path');
 const fs = require('fs');
 
 // Ensure fixture dependencies are installed
-const fixtures = fs.readdirSync(`${__dirname}/fixtures`);
+const fixtureDir = path.join(__dirname, 'fixtures');
+const fixtures = fs.readdirSync(fixtureDir);
 fixtures.forEach(installDependenciesIfExist);
 
 function installDependenciesIfExist(functionPath) {
   if (path.extname(functionPath) !== '') {
     functionPath = path.dirname(functionPath);
   }
+  functionPath = path.join(fixtureDir, functionPath);
   if (existsSync(path.join(functionPath, 'package.json'))) {
     execSync('npm install --production', { cwd: functionPath });
   }
