@@ -9,14 +9,16 @@ const Context = require('./lib/context');
 // HTTP framework
 const fastify = require('fastify');
 
+const DEFAULT_PORT = 8080;
+
 function start(func, port, cb) {
   switch (typeof port) {
     case 'function':
       cb = port;
-      port = 8080;
+      port = DEFAULT_PORT;
       break;
     case 'undefined':
-      port = 8080;
+      port = DEFAULT_PORT;
       break;
   }
 
