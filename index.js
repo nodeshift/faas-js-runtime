@@ -37,6 +37,7 @@ function start(func, port, cb) {
       done(null, data);
     });
   });
+
   // app.on('clientError', (err, socket) => {
   //   socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
   //   console.error(err);

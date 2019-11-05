@@ -38,7 +38,7 @@ test('Loads a user function with dependencies', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.message,
+        t.equal(res.body.payload,
           'This is the test function for Node.js FaaS. Success.');
         t.end();
         server.close();
@@ -56,7 +56,7 @@ test('Can respond via an async function', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.message,
+        t.equal(res.body.payload,
           'This is the test function for Node.js FaaS. Success.');
         t.end();
         server.close();
@@ -74,7 +74,7 @@ test('Accepts HTTP POST requests', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err);
-        t.equal(res.body.message, 'Message body');
+        t.equal(res.body.payload, 'Message body');
         t.end();
         server.close();
       });
@@ -95,9 +95,28 @@ test('Responds to cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.message, 'hello');
+        t.equal(res.body.payload, 'hello');
         t.end();
         server.close();
       });
   });
+});
+
+test('Passes query parameters to the function', t => {
+  const func = require(`${__dirname}/fixtures/query-params/`);
+  framework(func, server => {
+    t.plan(3);
+    request(server)
+      .get('/?lunch=tacos&supper=burgers')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.lunch, 'tacos');
+        t.equal(res.body.supper, 'burgers');
+        t.end();
+        server.close();
+      });
+    });
+
 });
