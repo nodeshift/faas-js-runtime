@@ -123,15 +123,68 @@ test('Passes query parameters to the function', t => {
 test('Respects response code set by the function', t => {
   const func = require(`${__dirname}/fixtures/response-code/`);
   framework(func, server => {
-    t.plan(3);
+    t.plan(2);
     request(server)
       .get('/')
       .expect(451)
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.statusCode, 451);
         t.equal(res.body.code, 451);
+        t.end();
+        server.close();
+      });
+    });
+});
+
+test('Responds HTTP 204 if response body has no content', t => {
+  const func = require(`${__dirname}/fixtures/no-content/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .get('/')
+      .expect(204)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body, '');
+        t.end();
+        server.close();
+      });
+    });
+});
+
+test('Sends CORS headers in HTTP response', t => {
+  const func = require(`${__dirname}/fixtures/no-content/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .get('/')
+      .expect(204)
+      .expect('Content-Type', /json/)
+      .expect('Access-Control-Allow-Origin', '*')
+      .expect('Access-Control-Allow-Methods',
+        'OPTIONS, GET, DELETE, POST, PUT, HEAD, PATCH')
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body, '');
+        t.end();
+        server.close();
+      });
+    });
+});
+
+test('Respects headers set by the function', t => {
+  const func = require(`${__dirname}/fixtures/response-header/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .get('/')
+      .expect(200)
+      .expect('X-announce-action', 'Saying hello')
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.message, 'Well hello there');
         t.end();
         server.close();
       });
