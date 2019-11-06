@@ -118,5 +118,22 @@ test('Passes query parameters to the function', t => {
         server.close();
       });
     });
+});
 
+test('Respects response code set by the function', t => {
+  const func = require(`${__dirname}/fixtures/response-code/`);
+  framework(func, server => {
+    t.plan(3);
+    request(server)
+      .get('/')
+      .expect(451)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.statusCode, 451);
+        t.equal(res.body.code, 451);
+        t.end();
+        server.close();
+      });
+    });
 });

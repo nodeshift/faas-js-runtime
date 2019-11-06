@@ -23,13 +23,19 @@ function start(func, port, cb) {
   }
 
   const server = fastify({ logger: true });
+
+  // All incoming requests get a Context object
   server.decorateRequest('context');
   server.addHook('onRequest', (req, reply, done) => {
     req.context = new Context(req, reply);
     done();
   });
+
+  // Incoming requests to the readiness and liveness URLs
   server.register(healthCheck);
+
   server.register(requestHandler, { func });
+
   server.addContentTypeParser('*', function(req, done) {
     var data = '';
     req.on('data', chunk => { data += chunk; });
