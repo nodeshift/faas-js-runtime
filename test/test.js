@@ -228,3 +228,25 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
       });
   });
 });
+
+test('Exposes OpenWhisk compatible context properties', t => {
+  const func = require(`${__dirname}/fixtures/openwhisk-properties/`);
+  framework(func, server => {
+    t.plan(7);
+    request(server)
+      .get('/?lunch=tacos')
+      .expect(200)
+      .expect('Content-type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.__ow_user, 'unknown');
+        t.equal(res.body.__ow_method, 'GET');
+        t.equal(typeof res.body.__ow_headers, 'object');
+        t.equal(res.body.__ow_path, '');
+        t.equal(typeof res.body.__ow_query, 'object');
+        t.equal(res.body.__ow_body, 'null');
+        t.end();
+        server.close();
+      });
+    });
+});
