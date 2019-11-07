@@ -69,12 +69,12 @@ test('Accepts HTTP POST requests', t => {
   framework(func, server => {
     request(server)
       .post('/')
-      .send('Message body')
+      .send('message=Message body')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err);
-        t.equal(res.body.payload, 'Message body');
+        t.equal(res.body.message, 'Message body');
         t.end();
         server.close();
       });
@@ -189,4 +189,42 @@ test('Respects headers set by the function', t => {
         server.close();
       });
     });
+});
+
+test('Accepts application/json content via HTTP post', t => {
+  const func = require(`${__dirname}/fixtures/json-input/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .post('/')
+      .send({ lunch: 'tacos' })
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.payload, 'tacos');
+        t.end();
+        server.close();
+      });
+  });
+});
+
+test('Accepts x-www-form-urlencoded content via HTTP post', t => {
+  const func = require(`${__dirname}/fixtures/json-input/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .post('/')
+      .send('lunch=tacos')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.payload, 'tacos');
+        t.end();
+        server.close();
+      });
+  });
 });

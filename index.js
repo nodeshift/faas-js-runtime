@@ -1,5 +1,5 @@
 'use strict';
-
+const qs = require('qs');
 const healthCheck = require('./lib/health-check');
 const requestHandler = require('./lib/request-handler');
 
@@ -35,6 +35,23 @@ function start(func, port, cb) {
   server.register(healthCheck);
 
   server.register(requestHandler, { func });
+
+  // eslint-disable-next-line max-len
+  // curl -X POST -d 'hello=world' -H'Content-type: application/x-www-form-urlencoded' http://localhost:8080/
+  server.addContentTypeParser('application/x-www-form-urlencoded',
+    function(req, done) {
+      var body = '';
+      req.on('data', data => (body += data));
+      req.on('end', _ => {
+        try {
+          const parsed = qs.parse(body);
+          done(null, parsed);
+        } catch (e) {
+          done(e);
+        }
+      });
+      req.on('error', done);
+    });
 
   server.addContentTypeParser('*', function(req, done) {
     var data = '';
