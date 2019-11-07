@@ -37,9 +37,9 @@ test('Loads a user function with dependencies', t => {
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
+        console.log(res.body)
         t.error(err, 'No error');
-        t.equal(res.body.payload,
-          'This is the test function for Node.js FaaS. Success.');
+        t.equal(res.body, 'This is the test function for Node.js FaaS. Success.');
         t.end();
         server.close();
       });
@@ -56,7 +56,7 @@ test('Can respond via an async function', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.payload,
+        t.equal(res.body,
           'This is the test function for Node.js FaaS. Success.');
         t.end();
         server.close();
@@ -95,7 +95,7 @@ test('Responds to cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.payload, 'hello');
+        t.equal(res.body, 'hello');
         t.end();
         server.close();
       });
@@ -123,14 +123,13 @@ test('Passes query parameters to the function', t => {
 test('Respects response code set by the function', t => {
   const func = require(`${__dirname}/fixtures/response-code/`);
   framework(func, server => {
-    t.plan(2);
+    t.plan(1);
     request(server)
       .get('/')
       .expect(451)
       .expect('Content-Type', /json/)
-      .end((err, res) => {
+      .end(err => {
         t.error(err, 'No error');
-        t.equal(res.body.code, 451);
         t.end();
         server.close();
       });
@@ -191,6 +190,23 @@ test('Respects headers set by the function', t => {
     });
 });
 
+test('Respects content type set by the function', t => {
+  const func = require(`${__dirname}/fixtures/content-type/`);
+  framework(func, server => {
+    t.plan(2);
+    request(server)
+      .get('/')
+      .expect(200)
+      .expect('Content-Type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, '{"message":"Well hello there"}');
+        t.end();
+        server.close();
+      });
+    });
+});
+
 test('Accepts application/json content via HTTP post', t => {
   const func = require(`${__dirname}/fixtures/json-input/`);
   framework(func, server => {
@@ -203,7 +219,7 @@ test('Accepts application/json content via HTTP post', t => {
       .expect(200)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.payload, 'tacos');
+        t.equal(res.body, 'tacos');
         t.end();
         server.close();
       });
@@ -222,7 +238,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
       .expect(200)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.payload, 'tacos');
+        t.equal(res.body, 'tacos');
         t.end();
         server.close();
       });

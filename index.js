@@ -34,6 +34,7 @@ function start(func, port, cb) {
   // Incoming requests to the readiness and liveness URLs
   server.register(healthCheck);
 
+  // Incoming requests to the hosted function
   server.register(requestHandler, { func });
 
   // eslint-disable-next-line max-len
@@ -52,19 +53,6 @@ function start(func, port, cb) {
       });
       req.on('error', done);
     });
-
-  // server.addContentTypeParser('*', function(req, done) {
-  //   var data = '';
-  //   req.on('data', chunk => { data += chunk; });
-  //   req.on('end', () => {
-  //     done(null, data);
-  //   });
-  // });
-
-  // app.on('clientError', (err, socket) => {
-  //   socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
-  //   console.error(err);
-  // });
 
   return new Promise((resolve, reject) => {
     server.listen(port, err => {
