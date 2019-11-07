@@ -53,13 +53,13 @@ function start(func, port, cb) {
       req.on('error', done);
     });
 
-  server.addContentTypeParser('*', function(req, done) {
-    var data = '';
-    req.on('data', chunk => { data += chunk; });
-    req.on('end', () => {
-      done(null, data);
-    });
-  });
+  // server.addContentTypeParser('*', function(req, done) {
+  //   var data = '';
+  //   req.on('data', chunk => { data += chunk; });
+  //   req.on('end', () => {
+  //     done(null, data);
+  //   });
+  // });
 
   // app.on('clientError', (err, socket) => {
   //   socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');

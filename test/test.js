@@ -250,3 +250,35 @@ test('Exposes OpenWhisk compatible context properties', t => {
       });
     });
 });
+
+test('Exposes readiness URL', t => {
+  framework(_ => { }, server => {
+    t.plan(2);
+    request(server)
+      .get('/health/readiness')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'OK');
+        t.end();
+        server.close();
+      });
+    });
+});
+
+test('Exposes liveness URL', t => {
+  framework(_ => { }, server => {
+    t.plan(2);
+    request(server)
+      .get('/health/liveness')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'OK');
+        t.end();
+        server.close();
+      });
+    });
+});
