@@ -239,7 +239,7 @@ test('Exposes OpenWhisk compatible context properties', t => {
       .expect('Content-type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.__ow_user, 'unknown');
+        t.equal(res.body.__ow_user, '');
         t.equal(res.body.__ow_method, 'GET');
         t.equal(typeof res.body.__ow_headers, 'object');
         t.equal(res.body.__ow_path, '');
