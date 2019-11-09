@@ -298,3 +298,21 @@ test('Exposes liveness URL', t => {
       });
     });
 });
+
+test('Returns HTTP error code if a caught error has one', t => {
+  framework(_ => {
+    const error = new Error('Unavailable for Legal Reasons');
+    error.code = 451;
+    throw error;
+  }, server => {
+      request(server)
+        .get('/')
+        .expect(451)
+        .expect('Content-type', /json/)
+        .end((err, res) => {
+          t.error(err, 'No error');
+          t.end();
+          server.close();
+        });
+  });
+});
