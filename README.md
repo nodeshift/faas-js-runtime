@@ -28,7 +28,7 @@ In my current working directory, I have an `index.js` file like this.
 const framework = require('faas-js-runtime');
 
 // My function directory is in ./function-dir
-framework(`${__dirname}/function-dir/`, server => {
+framework(require(`${__dirname}/function-dir/`), server => {
   // The server is now listening on localhost:8080
   // and the function will be invoked for each HTTP
   // request to this endpoint.
