@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.0.3...v0.0.4) (2019-11-12)
+
+
+### Features
+
+* use error code and message for thrown exceptions ([d1cce37](https://github.com/openshift-cloud-functions/faas-js-runtime/commit/d1cce3728c7edc12465ba1d03cdfb5c84f03ba60))
+
 ### [0.0.3](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.0.2...v0.0.3) (2019-11-08)
 
 
