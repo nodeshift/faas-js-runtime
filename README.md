@@ -52,6 +52,13 @@ module.exports = async function myFunction(context) {
   });
 };
 ```
+
+You can use `curl` to invoke the endpoint:
+```console
+$ curl -X POST -d 'hello=world' \
+  -H'Content-type: application/x-www-form-urlencoded' http://localhost:8080
+```
+
 ### Sample
 
 You can see this in action, executing the function at `test/fixtures/async`

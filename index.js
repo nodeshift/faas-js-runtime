@@ -37,8 +37,6 @@ function start(func, port, cb) {
   // Incoming requests to the hosted function
   server.register(requestHandler, { func });
 
-  // eslint-disable-next-line max-len
-  // curl -X POST -d 'hello=world' -H'Content-type: application/x-www-form-urlencoded' http://localhost:8080/
   server.addContentTypeParser('application/x-www-form-urlencoded',
     function(req, done) {
       var body = '';
