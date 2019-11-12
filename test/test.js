@@ -5,14 +5,13 @@ const test = require('tape');
 const request = require('supertest');
 
 // paackage.json handling
-const { existsSync } = require('fs');
+const { existsSync, readdirSync } = require('fs');
 const { execSync } = require('child_process');
 const path = require('path');
-const fs = require('fs');
 
 // Ensure fixture dependencies are installed
 const fixtureDir = path.join(__dirname, 'fixtures');
-const fixtures = fs.readdirSync(fixtureDir);
+const fixtures = readdirSync(fixtureDir);
 fixtures.forEach(installDependenciesIfExist);
 
 function installDependenciesIfExist(functionPath) {
