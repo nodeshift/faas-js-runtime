@@ -57,7 +57,7 @@ function start(func, port, cb, options) {
     });
 
   return new Promise((resolve, reject) => {
-    server.listen(port, err => {
+    server.listen(port, '0.0.0.0', err => {
       if (err) return reject(err);
       if (cb) cb(server.server);
       resolve(server.server);
