@@ -37,13 +37,12 @@ test('Loads a user function with dependencies', t => {
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
-        console.log(res.body)
         t.error(err, 'No error');
         t.equal(res.body, 'This is the test function for Node.js FaaS. Success.');
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Can respond via an async function', t => {
@@ -61,7 +60,7 @@ test('Can respond via an async function', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Accepts HTTP POST requests', t => {
@@ -78,7 +77,7 @@ test('Accepts HTTP POST requests', t => {
         t.end();
         server.close();
       });
-  });
+  }, { log: false });
 });
 
 test('Responds to cloud events', t => {
@@ -99,7 +98,7 @@ test('Responds to cloud events', t => {
         t.end();
         server.close();
       });
-  });
+  }, { log: false });
 });
 
 test('Passes query parameters to the function', t => {
@@ -117,7 +116,7 @@ test('Passes query parameters to the function', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Respects response code set by the function', t => {
@@ -133,7 +132,7 @@ test('Respects response code set by the function', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Responds HTTP 204 if response body has no content', t => {
@@ -150,7 +149,7 @@ test('Responds HTTP 204 if response body has no content', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Sends CORS headers in HTTP response', t => {
@@ -170,7 +169,7 @@ test('Sends CORS headers in HTTP response', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Respects headers set by the function', t => {
@@ -187,7 +186,7 @@ test('Respects headers set by the function', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Respects content type set by the function', t => {
@@ -204,7 +203,7 @@ test('Respects content type set by the function', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Accepts application/json content via HTTP post', t => {
@@ -223,7 +222,7 @@ test('Accepts application/json content via HTTP post', t => {
         t.end();
         server.close();
       });
-  });
+  }, { log: false });
 });
 
 test('Accepts x-www-form-urlencoded content via HTTP post', t => {
@@ -242,7 +241,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
         t.end();
         server.close();
       });
-  });
+  }, { log: false });
 });
 
 test('Exposes OpenWhisk compatible context properties', t => {
@@ -264,7 +263,7 @@ test('Exposes OpenWhisk compatible context properties', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Exposes readiness URL', t => {
@@ -280,7 +279,7 @@ test('Exposes readiness URL', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Exposes liveness URL', t => {
@@ -296,7 +295,7 @@ test('Exposes liveness URL', t => {
         t.end();
         server.close();
       });
-    });
+    }, { log: false });
 });
 
 test('Returns HTTP error code if a caught error has one', t => {
@@ -314,5 +313,5 @@ test('Returns HTTP error code if a caught error has one', t => {
           t.end();
           server.close();
         });
-  });
+  }, { log: false });
 });

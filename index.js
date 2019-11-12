@@ -11,9 +11,10 @@ const fastify = require('fastify');
 
 const DEFAULT_PORT = 8080;
 
-function start(func, port, cb) {
+function start(func, port, cb, options) {
   switch (typeof port) {
     case 'function':
+      options = cb;
       cb = port;
       port = DEFAULT_PORT;
       break;
@@ -21,8 +22,9 @@ function start(func, port, cb) {
       port = DEFAULT_PORT;
       break;
   }
+  const { log = true } = { ...options };
 
-  const server = fastify({ logger: true });
+  const server = fastify({ logger: log });
 
   // All incoming requests get a Context object
   server.decorateRequest('context');
