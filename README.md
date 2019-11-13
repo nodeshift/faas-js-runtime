@@ -59,6 +59,13 @@ $ curl -X POST -d 'hello=world' \
   -H'Content-type: application/x-www-form-urlencoded' http://localhost:8080
 ```
 
+You can use `curl` to `POST` JSON data to the endpoint:
+```console
+$ curl -X POST -d '{"hello": "world"}' \
+  -H'Content-type: application/json' \
+  http://localhost:8080
+```
+
 You can use `curl` to `POST` an event to the endpoint:
 ```console
 $ curl -X POST -d '{"hello": "world"}' \
