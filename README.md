@@ -53,10 +53,21 @@ module.exports = async function myFunction(context) {
 };
 ```
 
-You can use `curl` to invoke the endpoint:
+You can use `curl` to `POST` to the endpoint:
 ```console
 $ curl -X POST -d 'hello=world' \
   -H'Content-type: application/x-www-form-urlencoded' http://localhost:8080
+```
+
+You can use `curl` to `POST` an event to the endpoint:
+```console
+$ curl -X POST -d '{"hello": "world"}' \
+  -H'Content-type: application/json' \
+  -H'Ce-id: 1' \
+  -H'Ce-source: cloud-event-example' \
+  -H'Ce-type: dev.knative.example' \
+  -H'Ce-specversion: 0.2' \
+  http://localhost:8080
 ```
 
 ### Sample
