@@ -303,6 +303,7 @@ test('Returns HTTP error code if a caught error has one', t => {
     error.code = 451;
     throw error;
   }, server => {
+      t.plan(1);
       request(server)
         .get('/')
         .expect(451)
@@ -313,4 +314,21 @@ test('Returns HTTP error code if a caught error has one', t => {
           server.close();
         });
   }, { log: false });
+});
+
+test('Function accepts destructured parameters', t => {
+  framework(function({ lunch }) { return { message: `Yay ${lunch}` }; },
+    server => {
+      t.plan(2);
+      request(server)
+        .get('/?lunch=tacos')
+        .expect(200)
+        .expect('Content-type', /json/)
+        .end((err, res) => {
+          t.error(err, 'No error');
+          t.equals(res.body.message, 'Yay tacos');
+          t.end();
+          server.close();
+        });
+  });
 });
