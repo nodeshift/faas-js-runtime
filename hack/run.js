@@ -1,3 +1,3 @@
 const path = require('path');
 
-require('..')(path.join(__dirname, '..', 'test', 'fixtures', 'async'));
+require('..')(require(path.join(__dirname, '..', 'test', 'fixtures', 'async')));
