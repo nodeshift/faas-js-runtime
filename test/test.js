@@ -330,5 +330,5 @@ test('Function accepts destructured parameters', t => {
           t.end();
           server.close();
         });
-  });
+  }, { log: false });
 });
