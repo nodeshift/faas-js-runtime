@@ -79,7 +79,7 @@ test('Accepts HTTP POST requests', t => {
   }, { log: false });
 });
 
-test('Responds to cloud events', t => {
+test('Responds to 0.2 cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
     request(server)
@@ -94,6 +94,70 @@ test('Responds to cloud events', t => {
       .end((err, res) => {
         t.error(err, 'No error');
         t.equal(res.body, 'hello');
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
+test('Responds to 0.3 cloud events', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({ message: 'hello' })
+      .set('Ce-id', '1')
+      .set('Ce-source', 'integration-test')
+      .set('Ce-type', 'dev.knative.example')
+      .set('Ce-specversion', '0.3')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body, 'hello');
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
+test('Responds to 1.0 cloud events', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({ message: 'hello' })
+      .set('Ce-id', '1')
+      .set('Ce-source', 'integration-test')
+      .set('Ce-type', 'dev.knative.example')
+      .set('Ce-specversion', '1.0')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body, 'hello');
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
+test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({ message: 'hello' })
+      .set('Ce-id', '1')
+      .set('Ce-source', 'integration-test')
+      .set('Ce-type', 'dev.knative.example')
+      .set('Ce-specversion', '11.0')
+      .expect(406)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.statusCode, 406);
+        t.equal(res.body.message, 'Unsupported cloud event version detected: 11.0');
         t.end();
         server.close();
       });

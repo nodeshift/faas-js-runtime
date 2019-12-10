@@ -19,7 +19,7 @@
     "lib"
   ],
   "dependencies": {
-    "cloudevents-sdk": "v0.3.1",
+    "cloudevents-sdk": "^1.0.0",
     "fastify": "^2.10.0",
     "overload-protection": "^1.1.0",
     "qs": "^6.9.0"
