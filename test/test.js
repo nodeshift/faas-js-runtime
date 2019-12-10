@@ -157,7 +157,7 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
       .end((err, res) => {
         t.error(err, 'No error');
         t.equal(res.body.statusCode, 406);
-        t.equal(res.body.message, 'Unsupported cloud event version');
+        t.equal(res.body.message, 'Unsupported cloud event version detected: 11.0');
         t.end();
         server.close();
       });
