@@ -79,7 +79,7 @@ test('Accepts HTTP POST requests', t => {
   }, { log: false });
 });
 
-test('Responds to 0.2 cloud events', t => {
+test('Responds to 0.2 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
     request(server)
@@ -100,7 +100,7 @@ test('Responds to 0.2 cloud events', t => {
   }, { log: false });
 });
 
-test('Responds to 0.3 cloud events', t => {
+test('Responds to 0.3 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
     request(server)
@@ -121,7 +121,7 @@ test('Responds to 0.3 cloud events', t => {
   }, { log: false });
 });
 
-test('Responds to 1.0 cloud events', t => {
+test('Responds to 1.0 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
     request(server)
@@ -131,6 +131,33 @@ test('Responds to 1.0 cloud events', t => {
       .set('Ce-source', 'integration-test')
       .set('Ce-type', 'dev.knative.example')
       .set('Ce-specversion', '1.0')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body, 'hello');
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
+test('Responds to 1.0 structured cloud events', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({
+        id: '1',
+        source: 'integration-test',
+        type: 'com.github.pull.create',
+        specversion: '1.0',
+        datacontenttype: 'application/json',
+        data: {
+          message: 'hello'
+        }
+      })
+      .set('Content-type', 'application/cloudevents+json; charset=utf-8')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
