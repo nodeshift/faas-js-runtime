@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.0.4...v0.1.0) (2019-12-13)
+
+
+### Features
+
+* add support for cloud events version 1.0 ([#21](https://github.com/openshift-cloud-functions/faas-js-runtime/issues/21)) ([f282e28](https://github.com/openshift-cloud-functions/faas-js-runtime/commit/f282e28b2927156380b3c408dd156575ad30a3ea))
+
 ### [0.0.4](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.0.3...v0.0.4) (2019-11-12)
 
 
