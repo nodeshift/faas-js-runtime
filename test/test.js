@@ -3,6 +3,7 @@
 const framework = require('..');
 const test = require('tape');
 const request = require('supertest');
+const Spec = require('../lib/ce-constants.js').Spec;
 
 // paackage.json handling
 const { existsSync, readdirSync } = require('fs');
@@ -85,10 +86,10 @@ test('Responds to 0.2 binary cloud events', t => {
     request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set('Ce-id', '1')
-      .set('Ce-source', 'integration-test')
-      .set('Ce-type', 'dev.knative.example')
-      .set('Ce-specversion', '0.2')
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '0.2')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -106,10 +107,10 @@ test('Responds to 0.3 binary cloud events', t => {
     request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set('Ce-id', '1')
-      .set('Ce-source', 'integration-test')
-      .set('Ce-type', 'dev.knative.example')
-      .set('Ce-specversion', '0.3')
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '0.3')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -127,10 +128,10 @@ test('Responds to 1.0 binary cloud events', t => {
     request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set('Ce-id', '1')
-      .set('Ce-source', 'integration-test')
-      .set('Ce-type', 'dev.knative.example')
-      .set('Ce-specversion', '1.0')
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '1.0')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -175,10 +176,10 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
     request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set('Ce-id', '1')
-      .set('Ce-source', 'integration-test')
-      .set('Ce-type', 'dev.knative.example')
-      .set('Ce-specversion', '11.0')
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '11.0')
       .expect(406)
       .expect('Content-Type', /json/)
       .end((err, res) => {
