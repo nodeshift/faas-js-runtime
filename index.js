@@ -30,7 +30,6 @@ function start(func, port, cb, options) {
   server.decorateRequest('context');
   server.addHook('onRequest', (req, reply, done) => {
     req.context = new Context(req, reply);
-    req.context.log = server.log; // provide the server's structured logger.
     done();
   });
 
