@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.1.0...v0.2.0) (2020-02-12)
+
+
+### Features
+
+* add support for 1.0 structured cloud events ([#24](https://github.com/openshift-cloud-functions/faas-js-runtime/issues/24)) ([b246948](https://github.com/openshift-cloud-functions/faas-js-runtime/commit/b24694827ff0de4ebbbf3977cd7ab9fbf6e14391))
+* provide structured logger to functions in context ([#28](https://github.com/openshift-cloud-functions/faas-js-runtime/issues/28)) ([0bec8df](https://github.com/openshift-cloud-functions/faas-js-runtime/commit/0bec8df02425719f0dc5ad974164bee8393d3a9e))
+
+
+### Bug Fixes
+
+* **README:** update sample to use correct namespaced module ([#26](https://github.com/openshift-cloud-functions/faas-js-runtime/issues/26)) ([293e557](https://github.com/openshift-cloud-functions/faas-js-runtime/commit/293e55747ed0ee92b0ea241a29946bab0fdb24ec))
+
 ## [0.1.0](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.0.4...v0.1.0) (2019-12-13)
 
 
