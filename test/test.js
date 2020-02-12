@@ -426,8 +426,9 @@ test('Function accepts destructured parameters', t => {
 
 test('Provides logger in context when logging is enabled', t => {
   var loggerProvided = false;
-  framework( context => {
-    loggerProvided = (context.log && typeof context.log.info === 'function')
+  framework(context => {
+    console.log(typeof context.log)
+    loggerProvided = (context.log && typeof context.log.info === 'function');
   }, server => {
     request(server)
       .get('/')
@@ -443,7 +444,7 @@ test('Provides logger in context when logging is enabled', t => {
 test('Provides logger in context when logging is disabled', t => {
   var loggerProvided = false;
   framework(context => {
-    loggerProvided = (context.log && typeof context.log.info === 'function')
+    loggerProvided = (context.log && typeof context.log.info === 'function');
   }, server => {
     request(server)
       .get('/')
