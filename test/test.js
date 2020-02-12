@@ -27,7 +27,6 @@ function installDependenciesIfExist(functionPath) {
   }
 }
 
-
 test('Loads a user function with dependencies', t => {
   const func = require(`${__dirname}/fixtures/http-get/`);
   framework(func, server => {
@@ -424,3 +423,36 @@ test('Function accepts destructured parameters', t => {
         });
   }, { log: false });
 });
+
+test('Provides logger in context when logging is enabled', t => {
+  var loggerProvided = false;
+  framework( context => {
+    loggerProvided = (context.log && typeof context.log.info === 'function')
+  }, server => {
+    request(server)
+      .get('/')
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.assert(loggerProvided, 'Logger provided')
+        t.end();
+        server.close();
+      });
+  }, { log: {level: 'error'}}); // enable but squelch
+});
+
+test('Provides logger in context when logging is disabled', t => {
+  var loggerProvided = false;
+  framework(context => {
+    loggerProvided = (context.log && typeof context.log.info === 'function')
+  }, server => {
+    request(server)
+      .get('/')
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.assert(loggerProvided, 'Logger provided')
+        t.end();
+        server.close();
+      });
+  }, { log: false});
+});
+
