@@ -169,6 +169,26 @@ test('Responds to 1.0 structured cloud events', t => {
   }, { log: false });
 });
 
+test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({ message: 'hello' })
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '0.3')
+      .set('ce-datacontenttype', 'application/json')
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.assert(res.statusCode >= 400 && res.statusCode <= 599, "Error code 4xx or 5xx expected.")
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
 test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
