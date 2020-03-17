@@ -121,6 +121,31 @@ test('Responds to 0.3 binary cloud events', t => {
   }, { log: false });
 });
 
+test('Responds with 0.3 binary cloud event', t => {
+  const func = require(`${__dirname}/fixtures/cloud-event/with-response.js`);
+  framework(func, server => {
+    request(server)
+      .post('/')
+      .send({ message: 'hello' })
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '0.3')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.body.message, 'hello');
+        t.equal(res.headers[Spec.type], 'dev.ocf.js.type');
+        t.equal(res.headers[Spec.source], 'dev/ocf/js/service');
+        t.equal(res.headers[Spec.id], 'dummyid');
+        t.equal(res.headers[Spec.version], '0.3');
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
 test('Responds to 1.0 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
