@@ -30,15 +30,15 @@ build-common: &common-build
     - run: npm run test
 
 jobs:
-  node8:
-    docker:
-      - image: circleci/node:8
-    <<: *common-build
+  # node8:
+  #   docker:
+  #     - image: circleci/node:8
+  #   <<: *common-build
 
-  node10:
-    docker:
-      - image: circleci/node:10
-    <<: *common-build
+  # node10:
+  #   docker:
+  #     - image: circleci/node:10
+  #   <<: *common-build
 
   node12:
     docker:
