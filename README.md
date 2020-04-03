@@ -1,6 +1,6 @@
 ## FaaS Node.js Runtime Framework
 
-[![CircleCI](https://circleci.com/gh/openshift-cloud-functions/faas-js-runtime.svg?style=svg)](https://circleci.com/gh/openshift-cloud-functions/faas-js-runtime)
+[![CircleCI](https://circleci.com/gh/boson-project/faas-js-runtime.svg?style=svg)](https://circleci.com/gh/boson-project/faas-js-runtime)
 
 This module provides a Node.js framework for executing a function that
 exists in a user provided directory path as an `index.js` file. The

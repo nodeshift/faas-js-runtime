@@ -49,6 +49,6 @@ workflows:
   version: 2
   test_node_versions:
     jobs:
-      - node10
+      #- node10
       - node12
 
