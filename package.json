@@ -36,5 +36,5 @@
     "ignore": [
       "lib/context.js"
     ]
- }
+  }
 }
