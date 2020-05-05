@@ -79,27 +79,6 @@ test('Accepts HTTP POST requests', t => {
   }, { log: false });
 });
 
-test('Responds to 0.2 binary cloud events', t => {
-  const func = require(`${__dirname}/fixtures/cloud-event/`);
-  framework(func, server => {
-    request(server)
-      .post('/')
-      .send({ message: 'hello' })
-      .set(Spec.id, '1')
-      .set(Spec.source, 'integration-test')
-      .set(Spec.type, 'dev.knative.example')
-      .set(Spec.version, '0.2')
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .end((err, res) => {
-        t.error(err, 'No error');
-        t.equal(res.body, 'hello');
-        t.end();
-        server.close();
-      });
-  }, { log: false });
-});
-
 test('Responds to 0.3 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
@@ -472,7 +451,6 @@ test('Function accepts destructured parameters', t => {
 test('Provides logger in context when logging is enabled', t => {
   var loggerProvided = false;
   framework(context => {
-    console.log(typeof context.log)
     loggerProvided = (context.log && typeof context.log.info === 'function');
   }, server => {
     request(server)
