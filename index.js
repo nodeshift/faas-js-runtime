@@ -1,4 +1,3 @@
-'use strict';
 const qs = require('qs');
 const healthCheck = require('./lib/health-check');
 const requestHandler = require('./lib/request-handler');
