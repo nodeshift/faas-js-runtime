@@ -153,10 +153,9 @@ test('Responds to 1.0 structured cloud events', t => {
       .post('/')
       .send({
         id: '1',
-        source: 'integration-test',
-        type: 'com.github.pull.create',
+        source: 'http://integration-test',
+        type: 'com.redhat.faas.test',
         specversion: '1.0',
-        datacontenttype: 'application/json',
         data: {
           message: 'hello'
         }
@@ -186,7 +185,7 @@ test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
       .set('ce-datacontenttype', 'application/json')
       .expect('Content-Type', /json/)
       .end((err, res) => {
-        t.assert(res.statusCode >= 400 && res.statusCode <= 599, "Error code 4xx or 5xx expected.")
+        t.assert(res.statusCode >= 400 && res.statusCode <= 599, 'Error code 4xx or 5xx expected.');
         t.end();
         server.close();
       });
@@ -208,7 +207,7 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
       .end((err, res) => {
         t.error(err, 'No error');
         t.equal(res.body.statusCode, 406);
-        t.equal(res.body.message, 'Unsupported cloud event version detected: 11.0');
+        t.equal(res.body.message, 'invalid spec version');
         t.end();
         server.close();
       });
