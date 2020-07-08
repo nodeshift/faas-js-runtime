@@ -27,7 +27,7 @@ function start(func, port, cb, options) {
 
   // All incoming requests get a Context object
   server.decorateRequest('context');
-  server.addHook('onRequest', (req, reply, done) => {
+  server.addHook('preHandler', (req, reply, done) => {
     req.context = new Context(req, reply);
     done();
   });

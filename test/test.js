@@ -37,7 +37,7 @@ test('Loads a user function with dependencies', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'This is the test function for Node.js FaaS. Success.');
+        t.equal(typeof res.body, 'object');
         t.end();
         server.close();
       });
@@ -212,24 +212,6 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
         server.close();
       });
   }, { log: false });
-});
-
-test('Passes query parameters to the function', t => {
-  const func = require(`${__dirname}/fixtures/query-params/`);
-  framework(func, server => {
-    t.plan(3);
-    request(server)
-      .get('/?lunch=tacos&supper=burgers')
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .end((err, res) => {
-        t.error(err, 'No error');
-        t.equal(res.body.lunch, 'tacos');
-        t.equal(res.body.supper, 'burgers');
-        t.end();
-        server.close();
-      });
-    }, { log: false });
 });
 
 test('Respects response code set by the function', t => {
@@ -422,7 +404,7 @@ test('Returns HTTP error code if a caught error has one', t => {
         .get('/')
         .expect(451)
         .expect('Content-type', /json/)
-        .end((err, res) => {
+        .end((err, _) => {
           t.error(err, 'No error');
           t.end();
           server.close();
@@ -454,9 +436,9 @@ test('Provides logger in context when logging is enabled', t => {
   }, server => {
     request(server)
       .get('/')
-      .end((err, res) => {
+      .end((err, _) => {
         t.error(err, 'No error');
-        t.assert(loggerProvided, 'Logger provided')
+        t.assert(loggerProvided, 'Logger provided');
         t.end();
         server.close();
       });
@@ -470,9 +452,9 @@ test('Provides logger in context when logging is disabled', t => {
   }, server => {
     request(server)
       .get('/')
-      .end((err, res) => {
+      .end((err, _) => {
         t.error(err, 'No error');
-        t.assert(loggerProvided, 'Logger provided')
+        t.assert(loggerProvided, 'Logger provided');
         t.end();
         server.close();
       });
