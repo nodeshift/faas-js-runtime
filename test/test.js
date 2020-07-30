@@ -180,7 +180,6 @@ test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
       .send({ message: 'hello' })
       .set(Spec.id, '1')
       .set(Spec.source, 'integration-test')
-      .set(Spec.type, 'dev.knative.example')
       .set(Spec.version, '0.3')
       .set('ce-datacontenttype', 'application/json')
       .expect('Content-Type', /json/)
@@ -207,7 +206,7 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
       .end((err, res) => {
         t.error(err, 'No error');
         t.equal(res.body.statusCode, 406);
-        t.equal(res.body.message, 'invalid spec version');
+        t.equal(res.body.message, 'invalid spec version 11.0');
         t.end();
         server.close();
       });
