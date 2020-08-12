@@ -54,8 +54,8 @@ test('Can respond via an async function', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body,
-          'This is the test function for Node.js FaaS. Success.');
+        t.deepEqual(res.body,
+          { message: 'This is the test function for Node.js FaaS. Success.' });
         t.end();
         server.close();
       });
@@ -93,7 +93,7 @@ test('Responds to 0.3 binary cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'hello');
+        t.deepEqual(res.body, { message: 'hello' });
         t.end();
         server.close();
       });
@@ -139,7 +139,7 @@ test('Responds to 1.0 binary cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'hello');
+        t.deepEqual(res.body, { message: 'hello' });
         t.end();
         server.close();
       });
@@ -165,7 +165,7 @@ test('Responds to 1.0 structured cloud events', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'hello');
+        t.deepEqual(res.body, {message: 'hello'});
         t.end();
         server.close();
       });
@@ -312,7 +312,7 @@ test('Accepts application/json content via HTTP post', t => {
       .expect(200)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'tacos');
+        t.deepEqual(res.body, { lunch: 'tacos' });
         t.end();
         server.close();
       });
@@ -331,7 +331,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
       .expect(200)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body, 'tacos');
+        t.deepEqual(res.body, { lunch: 'tacos' });
         t.end();
         server.close();
       });
