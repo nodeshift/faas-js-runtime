@@ -39,10 +39,10 @@ function start(func, port, cb, options) {
   server.register(requestHandler, { func });
 
   server.addContentTypeParser('application/x-www-form-urlencoded',
-    function(req, done) {
+    function(_, payload, done) {
       var body = '';
-      req.on('data', data => (body += data));
-      req.on('end', _ => {
+      payload.on('data', data => (body += data));
+      payload.on('end', _ => {
         try {
           const parsed = qs.parse(body);
           done(null, parsed);
@@ -50,7 +50,7 @@ function start(func, port, cb, options) {
           done(e);
         }
       });
-      req.on('error', done);
+      payload.on('error', done);
     });
 
   return new Promise((resolve, reject) => {
