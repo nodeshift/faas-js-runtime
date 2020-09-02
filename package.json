@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "cloudevents": "^3.1.0",
-    "fastify": "^3.2.0",
+    "fastify": "^3.3.0",
     "overload-protection": "^1.1.0",
     "qs": "^6.9.0"
   },

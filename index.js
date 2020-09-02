@@ -26,9 +26,9 @@ function start(func, port, cb, options) {
   const server = fastify({ logger: log });
 
   // All incoming requests get a Context object
-  server.decorateRequest('context');
+  server.decorateRequest('fcontext');
   server.addHook('preHandler', (req, reply, done) => {
-    req.context = new Context(req, reply);
+    req.fcontext = new Context(req, reply);
     done();
   });
 
