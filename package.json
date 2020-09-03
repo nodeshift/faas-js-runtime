@@ -8,7 +8,7 @@
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
   "scripts": {
-    "lint": "eslint index.js lib/*.js",
+    "lint": "eslint index.js lib/*.js bin/*.js",
     "test": "nyc tape test/*.js | tap-spec",
     "release": "standard-version -s -a",
     "pretest": "npm run lint"
@@ -16,10 +16,15 @@
   "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
   "files": [
     "index.js",
-    "lib"
+    "lib",
+    "bin"
   ],
+  "bin": "./bin/cli.js",
   "dependencies": {
+    "chalk": "^4.1.0",
     "cloudevents": "^3.1.0",
+    "commander": "^6.1.0",
+    "death": "^1.1.0",
     "fastify": "^3.3.0",
     "overload-protection": "^1.1.0",
     "qs": "^6.9.0"
