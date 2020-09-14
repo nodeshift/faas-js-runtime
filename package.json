@@ -10,7 +10,6 @@
   "scripts": {
     "lint": "eslint index.js lib/*.js bin/*.js",
     "test": "nyc tape test/*.js | tap-spec",
-    "release": "standard-version -s -a",
     "pretest": "npm run lint"
   },
   "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
@@ -33,7 +32,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.4.0",
     "nyc": "^14.1.1",
-    "standard-version": "^9.0.0",
     "supertest": "^4.0.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
