@@ -1,5 +1,5 @@
 {
-  "name": "@redhat/faas-js-runtime",
+  "name": "faas-js-runtime",
   "version": "0.2.3",
   "repository": {
     "type": "git",

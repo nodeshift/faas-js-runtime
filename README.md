@@ -25,7 +25,7 @@ still to be determined.
 In my current working directory, I have an `index.js` file like this.
 
 ```js
-const framework = require('@redhat/faas-js-runtime');
+const framework = require('faas-js-runtime');
 
 // My function directory is in ./function-dir
 framework(require(`${__dirname}/function-dir/`), server => {
