@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.2.3...v0.3.0) (2020-10-01)
+
+
+### Features
+
+* change module name to faas-js-runtime ([#56](https://www.github.com/boson-project/faas-js-runtime/issues/56)) ([304eba6](https://www.github.com/boson-project/faas-js-runtime/commit/304eba608ec3a7c45069ed3092dfb3af13c2456a))
+
+
+### Bug Fixes
+
+* remove openwhisk varaiables from context ([#57](https://www.github.com/boson-project/faas-js-runtime/issues/57)) ([bb07696](https://www.github.com/boson-project/faas-js-runtime/commit/bb076960a6a87afec828336ce5e7e19e92cfc7c6))
+
 ### [0.2.3](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.2.2...v0.2.3) (2020-09-04)
 
 ### [0.2.2](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.2.1...v0.2.2) (2020-09-02)
