@@ -177,9 +177,9 @@ test('Extracts event data as second parameter to function', t => {
     lunch: "tacos"
   };
 
-  framework((context, eventData) => {
-    t.deepEqual(eventData, data);
-    return data;
+  framework(menu => {
+    t.equal(menu.lunch, data.lunch);
+    return menu;
   }, server => {
     request(server)
       .post('/')
