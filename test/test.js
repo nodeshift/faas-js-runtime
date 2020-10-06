@@ -172,7 +172,7 @@ test('Responds to 1.0 structured cloud events', t => {
   }, { log: false });
 });
 
-test('Extracts event data as second parameter to function', t => {
+test('Extracts event data as the first parameter to a function', t => {
   const data = {
     lunch: "tacos"
   };
