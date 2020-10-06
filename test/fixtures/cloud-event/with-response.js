@@ -1,7 +1,7 @@
-module.exports = function testFunc(context) {
+module.exports = function testFunc(data, context) {
   if (context.cloudevent) {
     const response = {
-      message: context.cloudevent.data.message
+      message: data.message
     };
     return context.cloudEventResponse(response).version('0.3')
                                                .id('dummyid')

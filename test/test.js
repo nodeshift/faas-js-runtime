@@ -172,6 +172,36 @@ test('Responds to 1.0 structured cloud events', t => {
   }, { log: false });
 });
 
+test('Extracts event data as the first parameter to a function', t => {
+  const data = {
+    lunch: "tacos"
+  };
+
+  framework(menu => {
+    t.equal(menu.lunch, data.lunch);
+    return menu;
+  }, server => {
+    request(server)
+      .post('/')
+      .send({
+        id: '1',
+        source: 'http://integration-test',
+        type: 'com.redhat.faas.test',
+        specversion: '1.0',
+        data
+      })
+      .set('Content-type', 'application/cloudevents+json; charset=utf-8')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.deepEqual(res.body, data);
+        t.end();
+        server.close();
+      });
+  }, { log: false });
+});
+
 test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
   framework(func, server => {
