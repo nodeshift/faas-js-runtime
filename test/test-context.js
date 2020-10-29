@@ -43,8 +43,8 @@ test('Provides HTTP request query parameters with the context parameter', t => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         t.error(err, 'No error');
-        t.equal(res.body.query.lunch, 'tacos');
-        t.equal(res.body.query.supper, 'burgers');
+        t.equal(res.body.lunch, 'tacos');
+        t.equal(res.body.supper, 'burgers');
         t.end();
         server.close();
       });

@@ -9,7 +9,7 @@ const Spec = require('../lib/ce-constants.js').Spec;
 const { existsSync, readdirSync } = require('fs');
 const { execSync } = require('child_process');
 const path = require('path');
-const { CloudEvent } = require('cloudevents');
+const { CloudEvent, HTTP } = require('cloudevents');
 
 // Ensure fixture dependencies are installed
 const fixtureDir = path.join(__dirname, 'fixtures');
@@ -173,6 +173,62 @@ test('Responds to 1.0 structured cloud events', t => {
   }, { log: false });
 });
 
+test('Handles 1.0 CloudEvent responses', t => {
+  framework(_ => {
+    return new CloudEvent({
+      source: 'test',
+      type: 'test-type',
+      data: 'some data',
+      datacontenttype: 'text/plain'
+    });
+  }, server => {
+    request(server)
+    .post('/')
+    .send({ message: 'hello' })
+    .set(Spec.id, '1')
+    .set(Spec.source, 'integration-test')
+    .set(Spec.type, 'dev.knative.example')
+    .set(Spec.version, '1.0')
+    .expect(200)
+    .expect('Content-Type', /text/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.equal(res.text, 'some data');
+      t.end();
+      server.close();
+    });
+  },
+  { log: false });
+});
+
+test('Handles 1.0 CloudEvent Message responses', t => {
+  framework(_ => {
+    return HTTP.binary(new CloudEvent({
+      source: 'test',
+      type: 'test-type',
+      data: 'some data',
+      datacontenttype: 'text/plain'
+    }));
+  }, server => {
+    request(server)
+    .post('/')
+    .send({ message: 'hello' })
+    .set(Spec.id, '1')
+    .set(Spec.source, 'integration-test')
+    .set(Spec.type, 'dev.knative.example')
+    .set(Spec.version, '1.0')
+    .expect(200)
+    .expect('Content-Type', /text/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.equal(res.text, 'some data');
+      t.end();
+      server.close();
+    });
+  },
+  { log: false });
+});
+
 test('Extracts event data as the first parameter to a function', t => {
   const data = {
     lunch: "tacos"
@@ -224,25 +280,6 @@ test('Successfully handles events with no data', t => {
         server.close();
       });
   });
-});
-
-test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
-  const func = require(`${__dirname}/fixtures/cloud-event/`);
-  framework(func, server => {
-    request(server)
-      .post('/')
-      .send({ message: 'hello' })
-      .set(Spec.id, '1')
-      .set(Spec.source, 'integration-test')
-      .set(Spec.version, '0.3')
-      .set('ce-datacontenttype', 'application/json')
-      .expect('Content-Type', /json/)
-      .end((err, res) => {
-        t.assert(res.statusCode >= 400 && res.statusCode <= 599, 'Error code 4xx or 5xx expected.');
-        t.end();
-        server.close();
-      });
-  }, { log: false });
 });
 
 test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
