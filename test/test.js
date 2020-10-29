@@ -9,6 +9,7 @@ const Spec = require('../lib/ce-constants.js').Spec;
 const { existsSync, readdirSync } = require('fs');
 const { execSync } = require('child_process');
 const path = require('path');
+const { CloudEvent } = require('cloudevents');
 
 // Ensure fixture dependencies are installed
 const fixtureDir = path.join(__dirname, 'fixtures');
@@ -200,6 +201,29 @@ test('Extracts event data as the first parameter to a function', t => {
         server.close();
       });
   }, { log: false });
+});
+
+test('Successfully handles events with no data', t => {
+  framework((data, context) => {
+    t.equal(data, undefined);
+    t.true(context.cloudevent instanceof CloudEvent);
+    return { status: 'done' }
+  }, server => {
+    request(server)
+      .post('/')
+      .set(Spec.id, '1')
+      .set(Spec.type, 'test')
+      .set(Spec.source, 'test')
+      .set(Spec.version, '1.0')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.deepEqual(res.body, { status: 'done' });
+        t.end();
+        server.close();
+      });
+  });
 });
 
 test('Responds with error code (4xx or 5xx) to malformed cloud events', t => {
