@@ -229,12 +229,12 @@ test('Handles 1.0 CloudEvent Message responses', t => {
   { log: false });
 });
 
-test('Extracts event data as the first parameter to a function', t => {
+test('Extracts event data as the second parameter to a function', t => {
   const data = {
     lunch: "tacos"
   };
 
-  framework(menu => {
+  framework((context, menu) => {
     t.equal(menu.lunch, data.lunch);
     return menu;
   }, server => {
@@ -260,7 +260,7 @@ test('Extracts event data as the first parameter to a function', t => {
 });
 
 test('Successfully handles events with no data', t => {
-  framework((data, context) => {
+  framework((context, data) => {
     t.equal(data, undefined);
     t.true(context.cloudevent instanceof CloudEvent);
     return { status: 'done' }
@@ -279,7 +279,7 @@ test('Successfully handles events with no data', t => {
         t.end();
         server.close();
       });
-  });
+  }, { log: false });
 });
 
 test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
