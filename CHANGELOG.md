@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.5.0...v0.5.1) (2020-11-03)
+
+
+### Bug Fixes
+
+* reverse the parameter order when invoking ([#71](https://www.github.com/boson-project/faas-js-runtime/issues/71)) ([df55e8a](https://www.github.com/boson-project/faas-js-runtime/commit/df55e8a9fe4e3f97cb1e82f2d6da6f5d82ec936b))
+
 ## [0.5.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.4.0...v0.5.0) (2020-10-30)
 
 
