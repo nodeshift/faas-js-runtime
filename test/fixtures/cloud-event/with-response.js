@@ -1,4 +1,4 @@
-module.exports = function testFunc(data, context) {
+module.exports = function testFunc(context, data) {
   if (context.cloudevent) {
     const response = {
       message: data.message
