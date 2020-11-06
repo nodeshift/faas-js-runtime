@@ -19,33 +19,33 @@ program
 
 program.parse(process.argv);
 
-function runServer(file) {
-  const func = require(extractFullPath(file));
-  runtime(func, server => {
+async function runServer(file) {
+  try {
+    const func = require(extractFullPath(file));
+    const server = await runtime(func);
+
     ON_DEATH(_ => {
       server.close();
-      log(chalk.yellow(`
-Goodbye!
-      `));
+      log(chalk.yellow(`Goodbye!`));
     });
-  }).then(_ => {
+
     log(chalk.blue(`
-    The server has started.
-    
-    You can use curl to POST an event to the endpoint:
-    
-    curl -X POST -d '{"hello": "world"}' \\
-        -H'Content-type: application/json' \\
-        -H'Ce-id: 1' \\
-        -H'Ce-source: cloud-event-example' \\
-        -H'Ce-type: dev.knative.example' \\
-        -H'Ce-specversion: 1.0' \\
-        http://localhost:8080
-      `));    
-  }).catch(error => {
+The server has started.
+
+You can use curl to POST an event to the endpoint:
+
+curl -X POST -d '{"hello": "world"}' \\
+    -H'Content-type: application/json' \\
+    -H'Ce-id: 1' \\
+    -H'Ce-source: cloud-event-example' \\
+    -H'Ce-type: dev.knative.example' \\
+    -H'Ce-specversion: 1.0' \\
+    http://localhost:8080`));
+
+  } catch (error) {
     log(chalk.redBright('Something went wrong'));
     log(chalk.red(error));
-  });
+  }
 }
 
 function extractFullPath(file) {
