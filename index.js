@@ -53,6 +53,23 @@ function start(func, port, cb, options) {
       payload.on('error', done);
     });
 
+  server.addContentTypeParser('*',
+    function(_, payload, done) {
+      let data;
+      payload.on('data', chunk => { data += chunk; });
+      payload.on('end', () => {
+        done(null, data);
+      });
+    }
+  );
+
+  server.addHook('preValidation', (request, reply, done) => {
+    if (request.headers['content-type'] === '') {
+      request.headers['content-type'] = 'text/plain';
+    }
+    done();
+  });
+
   return new Promise((resolve, reject) => {
     server.listen(port, '0.0.0.0', err => {
       if (err) return reject(err);

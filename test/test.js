@@ -174,14 +174,12 @@ test('Responds to 1.0 structured cloud events', t => {
 });
 
 test('Handles 1.0 CloudEvent responses', t => {
-  framework(_ => {
-    return new CloudEvent({
+  framework(_ => new CloudEvent({
       source: 'test',
       type: 'test-type',
       data: 'some data',
       datacontenttype: 'text/plain'
-    });
-  }, server => {
+    }), server => {
     request(server)
     .post('/')
     .send({ message: 'hello' })
@@ -202,14 +200,12 @@ test('Handles 1.0 CloudEvent responses', t => {
 });
 
 test('Handles 1.0 CloudEvent Message responses', t => {
-  framework(_ => {
-    return HTTP.binary(new CloudEvent({
+  framework(_ => HTTP.binary(new CloudEvent({
       source: 'test',
       type: 'test-type',
       data: 'some data',
       datacontenttype: 'text/plain'
-    }));
-  }, server => {
+    })), server => {
     request(server)
     .post('/')
     .send({ message: 'hello' })
@@ -231,7 +227,7 @@ test('Handles 1.0 CloudEvent Message responses', t => {
 
 test('Extracts event data as the second parameter to a function', t => {
   const data = {
-    lunch: "tacos"
+    lunch: 'tacos'
   };
 
   framework((context, menu) => {
@@ -261,9 +257,9 @@ test('Extracts event data as the second parameter to a function', t => {
 
 test('Successfully handles events with no data', t => {
   framework((context, data) => {
-    t.equal(data, undefined);
+    t.equal(data, null);
     t.true(context.cloudevent instanceof CloudEvent);
-    return { status: 'done' }
+    return { status: 'done' };
   }, server => {
     request(server)
       .post('/')
@@ -408,6 +404,29 @@ test('Accepts application/json content via HTTP post', t => {
         server.close();
       });
   }, { log: false });
+});
+
+test('Works with content type as empty string', t => {
+  framework(() => ({}), server => {
+    request(server)
+      .post('/')
+      .send('hello')
+      .set(Spec.id, '1')
+      .set(Spec.source, 'integration-test')
+      .set(Spec.type, 'dev.knative.example')
+      .set(Spec.version, '1.0')
+      .set('content-type', '')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        console.error(res);
+        t.error(err, 'No error');
+        t.equal(res.text, '{}');
+        t.end();
+        server.close();
+    });
+  },
+  { log: false });
 });
 
 test('Accepts x-www-form-urlencoded content via HTTP post', t => {
