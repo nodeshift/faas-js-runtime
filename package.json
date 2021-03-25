@@ -21,7 +21,7 @@
   "bin": "./bin/cli.js",
   "dependencies": {
     "chalk": "^4.1.0",
-    "cloudevents": "^3.2.0",
+    "cloudevents": "^4.0.0",
     "commander": "^6.1.0",
     "death": "^1.1.0",
     "fastify": "^3.3.0",
