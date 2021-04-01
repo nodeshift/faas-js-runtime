@@ -1,13 +1,13 @@
 on:
   push:
     branches:
-      - master
+      - main
 name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2.4.1
+      - uses: GoogleCloudPlatform/release-please-action@v2.24.1
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
