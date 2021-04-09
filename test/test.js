@@ -42,7 +42,7 @@ test('Loads a user function with dependencies', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Can respond via an async function', t => {
@@ -60,7 +60,7 @@ test('Can respond via an async function', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Accepts HTTP POST requests', t => {
@@ -77,7 +77,7 @@ test('Accepts HTTP POST requests', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Responds to 0.3 binary cloud events', t => {
@@ -98,7 +98,7 @@ test('Responds to 0.3 binary cloud events', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Responds with 0.3 binary cloud event', t => {
@@ -123,7 +123,7 @@ test('Responds with 0.3 binary cloud event', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Responds to 1.0 binary cloud events', t => {
@@ -144,7 +144,7 @@ test('Responds to 1.0 binary cloud events', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Responds to 1.0 structured cloud events', t => {
@@ -170,7 +170,7 @@ test('Responds to 1.0 structured cloud events', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Handles 1.0 CloudEvent responses', t => {
@@ -196,7 +196,7 @@ test('Handles 1.0 CloudEvent responses', t => {
       server.close();
     });
   },
-  { log: 'silent' });
+  { logLevel: 'silent' });
 });
 
 test('Handles 1.0 CloudEvent Message responses', t => {
@@ -222,7 +222,7 @@ test('Handles 1.0 CloudEvent Message responses', t => {
       server.close();
     });
   },
-  { log: 'silent' });
+  { logLevel: 'silent' });
 });
 
 test('Extracts event data as the second parameter to a function', t => {
@@ -252,7 +252,7 @@ test('Extracts event data as the second parameter to a function', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Successfully handles events with no data', t => {
@@ -275,7 +275,7 @@ test('Successfully handles events with no data', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
@@ -297,7 +297,7 @@ test('Responds with 406 Not Acceptable to unknown cloud event versions', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Respects response code set by the function', t => {
@@ -313,7 +313,7 @@ test('Respects response code set by the function', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Responds HTTP 204 if response body has no content', t => {
@@ -330,7 +330,7 @@ test('Responds HTTP 204 if response body has no content', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Sends CORS headers in HTTP response', t => {
@@ -350,7 +350,7 @@ test('Sends CORS headers in HTTP response', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Respects headers set by the function', t => {
@@ -367,7 +367,7 @@ test('Respects headers set by the function', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Respects content type set by the function', t => {
@@ -384,7 +384,7 @@ test('Respects content type set by the function', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Accepts application/json content via HTTP post', t => {
@@ -403,7 +403,7 @@ test('Accepts application/json content via HTTP post', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Accepts x-www-form-urlencoded content via HTTP post', t => {
@@ -422,7 +422,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Exposes readiness URL', t => {
@@ -438,7 +438,7 @@ test('Exposes readiness URL', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Exposes liveness URL', t => {
@@ -454,7 +454,7 @@ test('Exposes liveness URL', t => {
         t.end();
         server.close();
       });
-    }, { log: 'silent' });
+    }, { logLevel: 'silent' });
 });
 
 test('Returns HTTP error code if a caught error has one', t => {
@@ -473,7 +473,7 @@ test('Returns HTTP error code if a caught error has one', t => {
           t.end();
           server.close();
         });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
 test('Function accepts destructured parameters', t => {
@@ -490,10 +490,10 @@ test('Function accepts destructured parameters', t => {
           t.end();
           server.close();
         });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
-test.only('Provides logger with appropriate log level configured', t => {
+test('Provides logger with appropriate log level configured', t => {
   var loggerProvided = false;
   const logLevel = 'error'
   framework(context => {
@@ -507,7 +507,7 @@ test.only('Provides logger with appropriate log level configured', t => {
         t.end();
         server.close();
       });
-  }, { log: logLevel }); // enable but squelch
+  }, { logLevel }); // enable but squelch
 });
 
 test('Provides logger in context when logging is disabled', t => {
@@ -523,6 +523,6 @@ test('Provides logger in context when logging is disabled', t => {
         t.end();
         server.close();
       });
-  }, { log: 'silent' });
+  }, { logLevel: 'silent' });
 });
 
