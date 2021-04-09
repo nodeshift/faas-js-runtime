@@ -26,6 +26,12 @@ In my current working directory, I have an `index.js` file like this.
 
 ```js
 const framework = require('faas-js-runtime');
+const options = {
+  // Pino is used as the logger implementation. Supported log levels are
+  // documented at this link:
+  // https://github.com/pinojs/pino/blob/master/docs/api.md#options
+  logLevel: 'info'
+}
 
 // My function directory is in ./function-dir
 framework(require(`${__dirname}/function-dir/`), server => {
@@ -36,7 +42,7 @@ framework(require(`${__dirname}/function-dir/`), server => {
 
   // Whenever you want to shutdown the framework
   server.close();
-});
+}, options);
 ```
 
 In `./function-dir`, there is an `index.js` file that looks
@@ -47,6 +53,7 @@ module.exports = async function myFunction(context) {
   const ret = 'This is a test function for Node.js FaaS. Success.';
   return new Promise((resolve, reject) => {
     setTimeout(_ => {
+      context.log.info('sending response to client')
       resolve(ret);
     }, 500);
   });
