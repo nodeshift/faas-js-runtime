@@ -14,7 +14,7 @@ test('Provides HTTP request headers with the context parameter', t => {
         t.end();
         server.close();
       });
-  }, { log: false });
+  }, { logLevel: 'silent' });
 });
 
 test('Provides HTTP request body with the context parameter', t => {
@@ -30,7 +30,7 @@ test('Provides HTTP request body with the context parameter', t => {
         t.end();
         server.close();
       });
-  }, { log: false });
+  }, { logLevel: 'silent' });
 });
 
 test('Provides HTTP request query parameters with the context parameter', t => {
@@ -48,7 +48,7 @@ test('Provides HTTP request query parameters with the context parameter', t => {
         t.end();
         server.close();
       });
-    }, { log: false });
+    }, { logLevel: 'silent' });
 });
 
 test('Provides HTTP method information with the context parameter', t => {
@@ -61,7 +61,7 @@ test('Provides HTTP method information with the context parameter', t => {
     t.equal(context.method, 'GET');
     t.end();
     server.close();
-  }), { log: false });
+  }), { logLevel: 'silent' });
 });
 
 test('Provides HTTP version information with the context parameter', t => {
@@ -76,6 +76,6 @@ test('Provides HTTP version information with the context parameter', t => {
     t.equal(context.httpVersionMinor, 1);
     t.end();
     server.close();
-  }), { log: false });
+  }), { logLevel: 'silent' });
 });
 

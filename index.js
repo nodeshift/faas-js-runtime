@@ -21,9 +21,9 @@ function start(func, port, cb, options) {
       port = DEFAULT_PORT;
       break;
   }
-  const { log = true } = { ...options };
+  const { logLevel = 'info' } = { ...options };
 
-  const server = fastify({ logger: log });
+  const server = fastify({ logger: { level: logLevel } });
 
   // All incoming requests get a Context object
   server.decorateRequest('fcontext');
