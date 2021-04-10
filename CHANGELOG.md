@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.5.1...v0.6.0) (2021-04-10)
+
+
+### Features
+
+* support configurable log levels ([#82](https://www.github.com/boson-project/faas-js-runtime/issues/82)) ([b6f8be4](https://www.github.com/boson-project/faas-js-runtime/commit/b6f8be4f9e671e2c8be7f85e104400d52219e5ff))
+
+
+### Bug Fixes
+
+* better error handling when network address is already in use ([#74](https://www.github.com/boson-project/faas-js-runtime/issues/74)) ([ae28dcf](https://www.github.com/boson-project/faas-js-runtime/commit/ae28dcfed94dc50fe89a67a1262e78b59c7cbd0a))
+
 ### [0.5.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.5.0...v0.5.1) (2020-11-03)
 
 
