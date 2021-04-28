@@ -5,7 +5,7 @@ const test = require('tape');
 const request = require('supertest');
 const Spec = require('../lib/ce-constants.js').Spec;
 
-// paackage.json handling
+// package.json handling
 const { existsSync, readdirSync } = require('fs');
 const { execSync } = require('child_process');
 const path = require('path');
@@ -495,7 +495,7 @@ test('Function accepts destructured parameters', t => {
 
 test('Provides logger with appropriate log level configured', t => {
   var loggerProvided = false;
-  const logLevel = 'error'
+  const logLevel = 'error';
   framework(context => {
     loggerProvided = (context.log && typeof context.log.info === 'function' && context.log.level === logLevel);
   }, server => {
