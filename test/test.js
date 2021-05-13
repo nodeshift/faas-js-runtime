@@ -526,3 +526,31 @@ test('Provides logger in context when logging is disabled', t => {
   }, { logLevel: 'silent' });
 });
 
+test('Accepts CloudEvents with content type of text/plain', t => {
+  framework(_ => new CloudEvent({
+    source: 'test',
+    type: 'test-type',
+    data: 'some data',
+    datacontenttype: 'text/plain'
+  }), server => {
+  request(server)
+    .post('/')
+    .send('hello')
+    .set(Spec.id, '1')
+    .set(Spec.source, 'integration-test')
+    .set(Spec.type, 'dev.knative.example')
+    .set(Spec.version, '1.0')
+    .set('ce-datacontenttype', 'text/plain')
+    .set('content-type', 'text/plain')
+    .expect(200)
+    .expect('Content-Type', /text/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.equal(res.text, 'some data');
+      t.end();
+      server.close();
+    });
+  },
+  { logLevel: 'silent' });
+});
+
