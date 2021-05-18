@@ -20,6 +20,7 @@ export interface Context {
     httpVersion: string;
     httpVersionMajor: number;
     httpVersionMinor: number;
+    cloudevent: CloudEvent;
     cloudEventResponse(data: string|object): CloudEventResponse;
 }
 
