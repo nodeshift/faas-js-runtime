@@ -2,6 +2,11 @@ const framework = require('..');
 const test = require('tape');
 const request = require('supertest');
 
+const errHandler = t => err => {
+    t.error(err);
+    t.end();
+};
+
 test('Provides HTTP request headers with the context parameter', t => {
   t.plan(2);
   framework(context => {
@@ -15,7 +20,7 @@ test('Provides HTTP request headers with the context parameter', t => {
         t.end();
         server.close();
       });
-  });
+  }, errHandler(t));
 });
 
 test('Provides HTTP request body with the context parameter', t => {
@@ -32,7 +37,7 @@ test('Provides HTTP request body with the context parameter', t => {
         t.end();
         server.close();
       });
-  });
+  }, errHandler(t));
 });
 
 test('Provides HTTP request query parameters with the context parameter', t => {
@@ -51,7 +56,7 @@ test('Provides HTTP request query parameters with the context parameter', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Provides HTTP method information with the context parameter', t => {
@@ -67,7 +72,7 @@ test('Provides HTTP method information with the context parameter', t => {
           t.end();
           server.close();
       });
-    });
+    }, errHandler(t));
 });
 
 test('Provides HTTP version information with the context parameter', t => {
@@ -85,6 +90,6 @@ test('Provides HTTP version information with the context parameter', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
