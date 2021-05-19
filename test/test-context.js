@@ -1,4 +1,4 @@
-const framework = require('..');
+const { start } = require('..');
 const test = require('tape');
 const request = require('supertest');
 
@@ -9,7 +9,7 @@ const errHandler = t => err => {
 
 test('Provides HTTP request headers with the context parameter', t => {
   t.plan(2);
-  framework(context => {
+  start(context => {
     t.equal(typeof context.headers, 'object');
   })
   .then(server => {
@@ -25,7 +25,7 @@ test('Provides HTTP request headers with the context parameter', t => {
 
 test('Provides HTTP request body with the context parameter', t => {
   t.plan(2);
-  framework(context => {
+  start(context => {
     t.deepEqual(context.body, { lunch: 'tacos' });
   })
   .then(server => {
@@ -42,7 +42,7 @@ test('Provides HTTP request body with the context parameter', t => {
 
 test('Provides HTTP request query parameters with the context parameter', t => {
   const func = require(`${__dirname}/fixtures/query-params/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(3);
       request(server)
@@ -62,7 +62,7 @@ test('Provides HTTP request query parameters with the context parameter', t => {
 test('Provides HTTP method information with the context parameter', t => {
   t.plan(2);
   let context;
-  framework(c => context = c)
+  start(c => context = c)
     .then(server => {
       request(server)
         .get('/')
@@ -78,7 +78,7 @@ test('Provides HTTP method information with the context parameter', t => {
 test('Provides HTTP version information with the context parameter', t => {
   t.plan(4);
   let context;
-  framework(c => context = c)
+  start(c => context = c)
     .then(server => {
       request(server)
         .get('/')

@@ -1,6 +1,6 @@
 'use strict';
 
-const framework = require('..');
+const { start } = require('..');
 const test = require('tape');
 const request = require('supertest');
 const Spec = require('../lib/ce-constants.js').Spec;
@@ -35,7 +35,7 @@ const errHandler = t => err => {
 
 test('Loads a user function with dependencies', t => {
   const func = require(`${__dirname}/fixtures/http-get/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -53,7 +53,7 @@ test('Loads a user function with dependencies', t => {
 
 test('Can respond via an async function', t => {
   const func = require(`${__dirname}/fixtures/async/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -72,7 +72,7 @@ test('Can respond via an async function', t => {
 
 test('Accepts HTTP POST requests', t => {
   const func = require(`${__dirname}/fixtures/http-post/`);
-  framework(func)
+  start(func)
     .then(server => {
       request(server)
         .post('/')
@@ -90,7 +90,7 @@ test('Accepts HTTP POST requests', t => {
 
 test('Responds to 0.3 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
-  framework(func)
+  start(func)
     .then(server => {
       request(server)
         .post('/')
@@ -112,7 +112,7 @@ test('Responds to 0.3 binary cloud events', t => {
 
 test('Responds with 0.3 binary cloud event', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/with-response.js`);
-  framework(func)
+  start(func)
     .then(server => {
       request(server)
         .post('/')
@@ -138,7 +138,7 @@ test('Responds with 0.3 binary cloud event', t => {
 
 test('Responds to 1.0 binary cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
-  framework(func)
+  start(func)
     .then(server => {
       request(server)
         .post('/')
@@ -160,7 +160,7 @@ test('Responds to 1.0 binary cloud events', t => {
 
 test('Responds to 1.0 structured cloud events', t => {
   const func = require(`${__dirname}/fixtures/cloud-event/`);
-  framework(func)
+  start(func)
     .then(server => {
       request(server)
         .post('/')
@@ -186,7 +186,7 @@ test('Responds to 1.0 structured cloud events', t => {
 });
 
 test('Handles 1.0 CloudEvent responses', t => {
-  framework(_ => new CloudEvent({
+  start(_ => new CloudEvent({
       source: 'test',
       type: 'test-type',
       data: 'some data',
@@ -212,7 +212,7 @@ test('Handles 1.0 CloudEvent responses', t => {
 });
 
 test('Handles 1.0 CloudEvent Message responses', t => {
-  framework(_ => HTTP.binary(new CloudEvent({
+  start(_ => HTTP.binary(new CloudEvent({
       source: 'test',
       type: 'test-type',
       data: 'some data',
@@ -242,7 +242,7 @@ test('Extracts event data as the second parameter to a function', t => {
     lunch: 'tacos',
   };
 
-  framework((context, menu) => {
+  start((context, menu) => {
     t.equal(menu.lunch, data.lunch);
     return menu;
     })
@@ -269,7 +269,7 @@ test('Extracts event data as the second parameter to a function', t => {
 });
 
 test('Successfully handles events with no data', t => {
-  framework((context, data) => {
+  start((context, data) => {
     t.ok(!data);
     t.true(context.cloudevent instanceof CloudEvent);
     return { status: 'done' };
@@ -318,7 +318,7 @@ test('Successfully handles events with no data', t => {
 
 test('Respects response code set by the function', t => {
   const func = require(`${__dirname}/fixtures/response-code/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(1);
       request(server)
@@ -335,7 +335,7 @@ test('Respects response code set by the function', t => {
 
 test('Responds HTTP 204 if response body has no content', t => {
   const func = require(`${__dirname}/fixtures/no-content/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -353,7 +353,7 @@ test('Responds HTTP 204 if response body has no content', t => {
 
 test('Sends CORS headers in HTTP response', t => {
   const func = require(`${__dirname}/fixtures/no-content/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -374,7 +374,7 @@ test('Sends CORS headers in HTTP response', t => {
 
 test('Respects headers set by the function', t => {
   const func = require(`${__dirname}/fixtures/response-header/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -392,7 +392,7 @@ test('Respects headers set by the function', t => {
 
 test('Respects content type set by the function', t => {
   const func = require(`${__dirname}/fixtures/content-type/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -410,7 +410,7 @@ test('Respects content type set by the function', t => {
 
 test('Accepts application/json content via HTTP post', t => {
   const func = require(`${__dirname}/fixtures/json-input/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -430,7 +430,7 @@ test('Accepts application/json content via HTTP post', t => {
 
 test('Accepts x-www-form-urlencoded content via HTTP post', t => {
   const func = require(`${__dirname}/fixtures/json-input/`);
-  framework(func)
+  start(func)
     .then(server => {
       t.plan(2);
       request(server)
@@ -449,7 +449,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
 });
 
 test('Exposes readiness URL', t => {
-  framework(_ => '')
+  start(_ => '')
     .then(server => {
       t.plan(2);
       request(server)
@@ -466,7 +466,7 @@ test('Exposes readiness URL', t => {
 });
 
 test('Exposes liveness URL', t => {
-  framework(_ => '')
+  start(_ => '')
     .then(server => {
       t.plan(2);
       request(server)
@@ -483,7 +483,7 @@ test('Exposes liveness URL', t => {
 });
 
 test('Returns HTTP error code if a caught error has one', t => {
-  framework(_ => {
+  start(_ => {
     const error = new Error('Unavailable for Legal Reasons');
     error.code = 451;
     throw error;
@@ -503,7 +503,7 @@ test('Returns HTTP error code if a caught error has one', t => {
 });
 
 test('Function accepts destructured parameters', t => {
-  framework(function({ lunch }) { return { message: `Yay ${lunch}` }; })
+  start(function({ lunch }) { return { message: `Yay ${lunch}` }; })
     .then(server => {
       t.plan(2);
       request(server)
@@ -522,7 +522,7 @@ test('Function accepts destructured parameters', t => {
 test('Provides logger with appropriate log level configured', t => {
   var loggerProvided = false;
   const logLevel = 'error';
-  framework(context => {
+  start(context => {
     loggerProvided = (context.log && 
       typeof context.log.info === 'function' && 
       typeof context.log.warn === 'function' &&
@@ -545,7 +545,7 @@ test('Provides logger with appropriate log level configured', t => {
 
 test('Provides logger in context when logging is disabled', t => {
   var loggerProvided = false;
-  framework(context => {
+  start(context => {
     loggerProvided = (context.log && typeof context.log.info === 'function');
   })
     .then(server => {
@@ -561,7 +561,7 @@ test('Provides logger in context when logging is disabled', t => {
 });
 
 test('Accepts CloudEvents with content type of text/plain', t => {
-  framework(_ => new CloudEvent({
+  start(_ => new CloudEvent({
     source: 'test',
     type: 'test-type',
     data: 'some data',
