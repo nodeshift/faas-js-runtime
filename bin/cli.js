@@ -22,12 +22,17 @@ program.parse(process.argv);
 async function runServer(file) {
   try {
     let server;
+    let options = {
+      logLevel: process.env.FUNCTION_LOG_LEVEL,
+      port: process.env.LISTEN_PORT
+    };
+
     const filePath = extractFullPath(file);
     const code = require(filePath);
     if (typeof code === 'function') {
-      server = await start(code);
+      server = await start(code, options);
     } else if (typeof code.handle === 'function') {
-      server = await start(code.handle);
+      server = await start(code.handle, options);
     } else {
       console.error(code);
       throw TypeError(`Cannot find Invokable function 'handle' in ${code}`);
