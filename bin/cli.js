@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
 
-const runtime = require('../');
+const { start } = require('../');
 const pkg = require('../package.json');
 
 const chalk = require('chalk');
@@ -25,9 +25,9 @@ async function runServer(file) {
     const filePath = extractFullPath(file);
     const code = require(filePath);
     if (typeof code === 'function') {
-      server = await runtime(code);
+      server = await start(code);
     } else if (typeof code.handle === 'function') {
-      server = await runtime(code.handle);
+      server = await start(code.handle);
     } else {
       console.error(code);
       throw TypeError(`Cannot find Invokable function 'handle' in ${code}`);

@@ -52,4 +52,4 @@ function start(func, options) {
   });
 }
 
-module.exports = exports = start;
+module.exports = exports = { start };

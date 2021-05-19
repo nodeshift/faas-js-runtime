@@ -16,16 +16,39 @@ request, the incoming request is converted to a Cloud Event.
 
 The invoked user function can be `async` but that is not required.
 
-TBD: What format should the function response be? Should it also be a Cloud
-Event? But where is the event emitted? To some Knative Channel? Much is
-still to be determined.
+### CLI
+
+The easiest way to get started is to use the CLI. You can call it
+with the path to any JavaScript file which has a default export that
+is a function. For example, 
+
+```js
+// index.js
+function handle(context) {
+  const event = context.cloudevent;
+  // business logic
+  return {
+    statusCode: 200,
+    statusMessage: 'OK'
+  }
+}
+
+module.exports = handle;
+```
+
+You can expose this function as an HTTP endpoint at `localhost:8080`
+with the CLI.
+
+```console
+npx faas-js-runtime ./index.js
+```
 
 ### Usage
 
 In my current working directory, I have an `index.js` file like this.
 
 ```js
-const framework = require('faas-js-runtime');
+const { start } = require('faas-js-runtime');
 const options = {
   // Pino is used as the logger implementation. Supported log levels are
   // documented at this link:
@@ -34,7 +57,7 @@ const options = {
 }
 
 // My function directory is in ./function-dir
-framework(require(`${__dirname}/function-dir/`), server => {
+start(require(`${__dirname}/function-dir/`), server => {
   // The server is now listening on localhost:8080
   // and the function will be invoked for each HTTP
   // request to this endpoint.
