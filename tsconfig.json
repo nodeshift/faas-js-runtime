@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "outDir": "./built",
+      "allowJs": true,
+      "target": "es2020",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "pretty": true,
+    },
+    "moduleResolution": "node",
+    "include": [
+      "./index.d.ts",
+      "./index.js",
+      "./lib/**/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  

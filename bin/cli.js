@@ -21,29 +21,23 @@ program.parse(process.argv);
 
 async function runServer(file) {
   try {
-    const func = require(extractFullPath(file));
-    const server = await runtime(func);
-
+    let server;
+    const filePath = extractFullPath(file);
+    const code = require(filePath);
+    if (typeof code === 'function') {
+      server = await runtime(code);
+    } else if (typeof code.handle === 'function') {
+      server = await runtime(code.handle);
+    } else {
+      console.error(code);
+      throw TypeError(`Cannot find Invokable function 'handle' in ${code}`);
+    }
     ON_DEATH(_ => {
       server.close();
       log(chalk.yellow(`Goodbye!`));
     });
-
-    log(chalk.blue(`
-The server has started.
-
-You can use curl to POST an event to the endpoint:
-
-curl -X POST -d '{"hello": "world"}' \\
-    -H'Content-type: application/json' \\
-    -H'Ce-id: 1' \\
-    -H'Ce-source: cloud-event-example' \\
-    -H'Ce-type: dev.knative.example' \\
-    -H'Ce-specversion: 1.0' \\
-    http://localhost:8080`));
-
+    log(chalk.blue(`The server has started. http://localhost:8080`));
   } catch (error) {
-    log(chalk.redBright('Something went wrong'));
     log(chalk.red(error));
   }
 }

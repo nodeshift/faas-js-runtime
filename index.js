@@ -10,18 +10,9 @@ const fastify = require('fastify');
 
 const DEFAULT_PORT = 8080;
 
-function start(func, port, cb, options) {
-  switch (typeof port) {
-    case 'function':
-      options = cb;
-      cb = port;
-      port = DEFAULT_PORT;
-      break;
-    case 'undefined':
-      port = DEFAULT_PORT;
-      break;
-  }
-  const { logLevel = 'info' } = { ...options };
+// Invoker
+function start(func, options) {
+  const { logLevel = 'warn', port = DEFAULT_PORT } = { ...options };
 
   const server = fastify({ logger: { level: logLevel } });
 
@@ -56,7 +47,6 @@ function start(func, port, cb, options) {
   return new Promise((resolve, reject) => {
     server.listen(port, '0.0.0.0', err => {
       if (err) return reject(err);
-      if (cb) cb(server.server);
       resolve(server.server);
     });
   });
