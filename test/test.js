@@ -28,6 +28,11 @@ function installDependenciesIfExist(functionPath) {
   }
 }
 
+const errHandler = t => err => {
+  t.error(err);
+  t.end();
+};
+
 test('Loads a user function with dependencies', t => {
   const func = require(`${__dirname}/fixtures/http-get/`);
   framework(func)
@@ -43,7 +48,7 @@ test('Loads a user function with dependencies', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Can respond via an async function', t => {
@@ -62,7 +67,7 @@ test('Can respond via an async function', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Accepts HTTP POST requests', t => {
@@ -80,7 +85,7 @@ test('Accepts HTTP POST requests', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Responds to 0.3 binary cloud events', t => {
@@ -102,7 +107,7 @@ test('Responds to 0.3 binary cloud events', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Responds with 0.3 binary cloud event', t => {
@@ -128,7 +133,7 @@ test('Responds with 0.3 binary cloud event', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Responds to 1.0 binary cloud events', t => {
@@ -150,7 +155,7 @@ test('Responds to 1.0 binary cloud events', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Responds to 1.0 structured cloud events', t => {
@@ -177,7 +182,7 @@ test('Responds to 1.0 structured cloud events', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Handles 1.0 CloudEvent responses', t => {
@@ -203,7 +208,7 @@ test('Handles 1.0 CloudEvent responses', t => {
         t.end();
         server.close();
       });
-    });
+    }, errHandler(t));
 });
 
 test('Handles 1.0 CloudEvent Message responses', t => {
@@ -229,7 +234,7 @@ test('Handles 1.0 CloudEvent Message responses', t => {
         t.end();
         server.close();
       });
-    });
+    }, errHandler(t));
 });
 
 test('Extracts event data as the second parameter to a function', t => {
@@ -260,7 +265,7 @@ test('Extracts event data as the second parameter to a function', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Successfully handles events with no data', t => {
@@ -284,7 +289,7 @@ test('Successfully handles events with no data', t => {
         t.end();
         server.close();
       });
-  });
+  }, errHandler(t));
 });
 
 // @see https://github.com/cloudevents/sdk-javascript/issues/332
@@ -325,7 +330,7 @@ test('Respects response code set by the function', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Responds HTTP 204 if response body has no content', t => {
@@ -343,7 +348,7 @@ test('Responds HTTP 204 if response body has no content', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Sends CORS headers in HTTP response', t => {
@@ -364,7 +369,7 @@ test('Sends CORS headers in HTTP response', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Respects headers set by the function', t => {
@@ -382,7 +387,7 @@ test('Respects headers set by the function', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Respects content type set by the function', t => {
@@ -400,7 +405,7 @@ test('Respects content type set by the function', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Accepts application/json content via HTTP post', t => {
@@ -420,7 +425,7 @@ test('Accepts application/json content via HTTP post', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Accepts x-www-form-urlencoded content via HTTP post', t => {
@@ -440,7 +445,7 @@ test('Accepts x-www-form-urlencoded content via HTTP post', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Exposes readiness URL', t => {
@@ -457,7 +462,7 @@ test('Exposes readiness URL', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Exposes liveness URL', t => {
@@ -474,7 +479,7 @@ test('Exposes liveness URL', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
 test('Returns HTTP error code if a caught error has one', t => {
@@ -494,7 +499,7 @@ test('Returns HTTP error code if a caught error has one', t => {
           t.end();
           server.close();
         });
-  });
+  }, errHandler(t));
 });
 
 test('Function accepts destructured parameters', t => {
@@ -511,7 +516,7 @@ test('Function accepts destructured parameters', t => {
           t.end();
           server.close();
         });
-  });
+  }, errHandler(t));
 });
 
 test('Provides logger with appropriate log level configured', t => {
@@ -535,7 +540,7 @@ test('Provides logger with appropriate log level configured', t => {
           t.end();
           server.close();
         });
-    }); // enable but squelch
+    }, errHandler(t)); // enable but squelch
 });
 
 test('Provides logger in context when logging is disabled', t => {
@@ -552,7 +557,7 @@ test('Provides logger in context when logging is disabled', t => {
           t.end();
           server.close();
         });
-    });
+    }, errHandler(t));
 });
 
 test('Accepts CloudEvents with content type of text/plain', t => {
@@ -580,6 +585,6 @@ test('Accepts CloudEvents with content type of text/plain', t => {
           t.end();
           server.close();
         });
-      });
+      }, errHandler(t));
 });
 
