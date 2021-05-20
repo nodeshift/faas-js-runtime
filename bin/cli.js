@@ -14,8 +14,8 @@ const program = new Command();
 
 program
   .version(pkg.version)
-  .option('--logLevel', 'change the log level of the function', 'warn')
-  .option('--port', 'change the port the runtime listens on', 8080)
+  .option('--logLevel <logLevel>', 'change the log level of the function', 'warn')
+  .option('--port <port>', 'change the port the runtime listens on', 8080)
   .arguments('<file>')
   .action(runServer);
 
