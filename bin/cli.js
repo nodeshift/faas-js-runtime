@@ -14,17 +14,20 @@ const program = new Command();
 
 program
   .version(pkg.version)
+  .option('--logLevel', 'change the log level of the function', 'warn')
+  .option('--port', 'change the port the runtime listens on', 8080)
   .arguments('<file>')
   .action(runServer);
 
 program.parse(process.argv);
 
 async function runServer(file) {
+  const programOpts = program.opts();
   try {
     let server;
     let options = {
-      logLevel: process.env.FUNCTION_LOG_LEVEL,
-      port: process.env.LISTEN_PORT
+      logLevel: programOpts.logLevel || process.env.FUNCTION_LOG_LEVEL,
+      port: programOpts.port || process.env.LISTEN_PORT
     };
 
     const filePath = extractFullPath(file);
