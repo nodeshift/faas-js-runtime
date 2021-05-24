@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.0...v0.7.1) (2021-05-24)
+
+
+### Bug Fixes
+
+* fix Invokable type signature ([#97](https://www.github.com/boson-project/faas-js-runtime/issues/97)) ([2c7f66c](https://www.github.com/boson-project/faas-js-runtime/commit/2c7f66c57767d459749c7a543cd06ee0cd76983a))
+
 ## [0.7.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.6.0...v0.7.0) (2021-05-24)
 
 
