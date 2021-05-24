@@ -1,4 +1,5 @@
 import { Server } from 'http';
+import { CloudEvent } from 'cloudevents';
 import { Context } from './lib/context';
 
 export declare const start: {
@@ -15,7 +16,7 @@ export enum LogLevel {
 }
 
 export interface Invokable {
-    (context: Context, data?:string|Record<string, any>): any
+    (context: Context, cloudevent?: CloudEvent): any
 }
 
 // re-export
