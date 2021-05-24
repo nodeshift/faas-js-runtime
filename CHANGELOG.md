@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.6.0...v0.7.0) (2021-05-24)
+
+
+### Features
+
+* add TypeScript type definitions ([#90](https://www.github.com/boson-project/faas-js-runtime/issues/90)) ([d43fa28](https://www.github.com/boson-project/faas-js-runtime/commit/d43fa28c0114ed7ef24a805f43c50b19cfe7a287))
+* **cli:** pass --logLevel and --port from the cli or as env variables ([d6b32a3](https://www.github.com/boson-project/faas-js-runtime/commit/d6b32a3e32292112c531abe63d5ffbad9c00639e))
+
+
+### Bug Fixes
+
+* change index.js to not have a default export ([#93](https://www.github.com/boson-project/faas-js-runtime/issues/93)) ([d5bfd68](https://www.github.com/boson-project/faas-js-runtime/commit/d5bfd68f4ee731f6a7170ff8978954ff8fd0c100))
+
 ## [0.6.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.5.1...v0.6.0) (2021-04-10)
 
 
