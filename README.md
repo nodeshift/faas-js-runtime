@@ -11,7 +11,7 @@ The function is loaded, and then invoked for incoming HTTP requests
 at `localhost:8080`. The incoming request may be a
 [Cloud Event](https://github.com/cloudevents/sdk-javascript#readme.) or
 just a simple HTTP GET request. In either case, the function will receive
-a `Context` object instance that has an `event` property. For a raw HTTP
+a `Context` object instance that has an `cloudevent` property. For a raw HTTP
 request, the incoming request is converted to a Cloud Event.
 
 The invoked user function can be `async` but that is not required.
