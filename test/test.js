@@ -243,7 +243,7 @@ test('Extracts event data as the second parameter to a function', t => {
   };
 
   start((context, menu) => {
-    t.equal(menu.lunch, data.lunch);
+    t.equal(menu.data.lunch, data.lunch);
     return menu;
     })
     .then(server => {
@@ -269,8 +269,8 @@ test('Extracts event data as the second parameter to a function', t => {
 });
 
 test('Successfully handles events with no data', t => {
-  start((context, data) => {
-    t.ok(!data);
+  start((context, event) => {
+    t.ok(!event.data);
     t.true(context.cloudevent instanceof CloudEvent);
     return { status: 'done' };
   })
