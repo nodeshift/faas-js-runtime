@@ -14,20 +14,28 @@ const program = new Command();
 
 program
   .version(pkg.version)
+  .option('--logLevel <logLevel>', 'change the log level of the function', 'warn')
+  .option('--port <port>', 'change the port the runtime listens on', 8080)
   .arguments('<file>')
   .action(runServer);
 
 program.parse(process.argv);
 
 async function runServer(file) {
+  const programOpts = program.opts();
   try {
     let server;
+    let options = {
+      logLevel: programOpts.logLevel || process.env.FUNC_LOG_LEVEL,
+      port: programOpts.port || process.env.FUNC_PORT
+    };
+
     const filePath = extractFullPath(file);
     const code = require(filePath);
     if (typeof code === 'function') {
-      server = await start(code);
+      server = await start(code, options);
     } else if (typeof code.handle === 'function') {
-      server = await start(code.handle);
+      server = await start(code.handle, options);
     } else {
       console.error(code);
       throw TypeError(`Cannot find Invokable function 'handle' in ${code}`);
