@@ -6,7 +6,7 @@ import { CloudEvent } from 'cloudevents';
 
 const fn: Invokable = function(
   context: Context,
-  cloudevent: CloudEvent
+  cloudevent?: CloudEvent
 ) {
   return undefined;
 };
