@@ -26,8 +26,8 @@ async function runServer(file) {
   try {
     let server;
     let options = {
-      logLevel: programOpts.logLevel || process.env.FUNCTION_LOG_LEVEL,
-      port: programOpts.port || process.env.LISTEN_PORT
+      logLevel: programOpts.logLevel || process.env.FUNC_LOG_LEVEL,
+      port: programOpts.port || process.env.FUNC_PORT
     };
 
     const filePath = extractFullPath(file);
