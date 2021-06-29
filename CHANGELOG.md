@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.1...v0.7.2) (2021-06-29)
+
+
+### Bug Fixes
+
+* use cloudevent as second param in test fn ([#99](https://www.github.com/boson-project/faas-js-runtime/issues/99)) ([d3dae1d](https://www.github.com/boson-project/faas-js-runtime/commit/d3dae1dee78d9466595c828a169ff964434d28a6))
+
 ### [0.7.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.0...v0.7.1) (2021-05-24)
 
 
