@@ -588,3 +588,18 @@ test('Accepts CloudEvents with content type of text/plain', t => {
       }, errHandler(t));
 });
 
+test('Reads a func.yaml file for logLevel', t => {
+  const funcPath = `${__dirname}/fixtures/funcyaml/`;
+  const func = require(funcPath);
+  start(func, { config: funcPath })
+    .then(server => {
+      request(server)
+        .get('/')
+        .expect(204)
+        .end((err, _) => {
+          t.error(err, 'No error');
+          t.end();
+          server.close();
+        });
+      }, errHandler(t));
+});

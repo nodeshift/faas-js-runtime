@@ -8,12 +8,15 @@ const fn: Invokable = function(
   context: Context,
   cloudevent?: CloudEvent
 ) {
+  expectType<Context>(context);
+  expectType<CloudEvent|undefined>(cloudevent);
   return undefined;
 };
 
 const options: InvokerOptions = {
   logLevel: LogLevel.info,
-  port: 8080
+  port: 8080,
+  path: './'
 };
 
 expectType<Promise<Server>>(start(fn, options));
