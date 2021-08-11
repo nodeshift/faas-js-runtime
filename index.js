@@ -67,7 +67,6 @@ function start(func, options) {
 // reads a func.yaml file at path and returns it as a JS object
 function loadFuncYaml(fileOrDirPath) {
   if (!fileOrDirPath) return;
-  console.error(fileOrDirPath);
   
   let baseDir;
   let maybeDir = fs.statSync(fileOrDirPath);
@@ -81,10 +80,11 @@ function loadFuncYaml(fileOrDirPath) {
   }
 
   if (baseDir) {
-    const fileStat = fs.statSync(path.join(baseDir, 'func.yaml'));
-    if (fileStat.isFile()) {
+    const yamlFile = path.join(baseDir, 'func.yaml');
+    const maybeYaml = fs.statSync(yamlFile);
+    if (maybeYaml.isFile()) {
       try {
-        return yaml.load(fs.readFileSync(path.join(baseDir, 'func.yaml'), 'utf8'));
+        return yaml.load(fs.readFileSync(yamlFile, 'utf8'));
       } catch(err) {
         console.warn(err);
       }
