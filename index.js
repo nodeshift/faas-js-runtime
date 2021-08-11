@@ -1,4 +1,7 @@
 const qs = require('qs');
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
 const healthCheck = require('./lib/health-check');
 const requestHandler = require('./lib/request-handler');
 
@@ -8,11 +11,20 @@ const Context = require('./lib/context');
 // HTTP framework
 const fastify = require('fastify');
 
-const DEFAULT_PORT = 8080;
+let LOG_LEVEL = 'warn';
+const PORT = 8080;
 
 // Invoker
 function start(func, options) {
-  const { logLevel = 'warn', port = DEFAULT_PORT } = { ...options };
+  // If there is a func.yaml file, check it for logLevel
+  const funcYaml = loadFuncYaml(options && options.config);
+  if (funcYaml &&
+    ['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']
+    .find(l => funcYaml.logLevel === l)) {
+    LOG_LEVEL = funcYaml.logLevel;
+  }
+
+  const { logLevel = LOG_LEVEL, port = PORT } = { ...options };
 
   const server = fastify({ logger: { level: logLevel } });
 
@@ -52,4 +64,32 @@ function start(func, options) {
   });
 }
 
-module.exports = exports = { start };
+// reads a func.yaml file at path and returns it as a JS object
+function loadFuncYaml(fileOrDirPath) {
+  if (!fileOrDirPath) return;
+  
+  let baseDir;
+  let maybeDir = fs.statSync(fileOrDirPath);
+  if (maybeDir.isDirectory()) {
+    baseDir = fileOrDirPath;
+  } else {
+    maybeDir = fs.statSync(path.dirname(fileOrDirPath));
+    if (maybeDir.isDirectory()) {
+      baseDir = fileOrDirPath;
+    }
+  }
+
+  if (baseDir) {
+    const yamlFile = path.join(baseDir, 'func.yaml');
+    const maybeYaml = fs.statSync(yamlFile);
+    if (maybeYaml.isFile()) {
+      try {
+        return yaml.load(fs.readFileSync(yamlFile, 'utf8'));
+      } catch(err) {
+        console.warn(err);
+      }
+    }
+  }
+}
+
+module.exports = exports = { start, defaults: { LOG_LEVEL, PORT } };

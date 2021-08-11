@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
 
-const { start } = require('../');
+const { start, defaults } = require('../');
 const pkg = require('../package.json');
 
 const chalk = require('chalk');
@@ -23,11 +23,12 @@ program.parse(process.argv);
 
 async function runServer(file) {
   const programOpts = program.opts();
+  
   try {
     let server;
     let options = {
-      logLevel: programOpts.logLevel || process.env.FUNC_LOG_LEVEL,
-      port: programOpts.port || process.env.FUNC_PORT
+      logLevel: programOpts.logLevel || process.env.FUNC_LOG_LEVEL || defaults.LOG_LEVEL,
+      port: programOpts.port || process.env.FUNC_PORT || defaults.PORT
     };
 
     const filePath = extractFullPath(file);
