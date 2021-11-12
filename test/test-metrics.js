@@ -2,15 +2,6 @@ const { start } = require('..');
 const test = require('tape');
 const request = require('supertest');
 
-test('Exposes a /metrics endpoint', async t => {
-  const server = await start(_ => _);
-  try {
-    await callEndpointNoError(server, '/metrics', t);
-  } finally {
-    server.close();
-  }
-});
-
 const tests = [
   {test: 'Invocation count', expected: 'faas_invocations counter'},
   {test: 'Error count', expected: 'faas_errors counter'},
@@ -25,6 +16,16 @@ const tests = [
 for (const tc of tests) {
   test(tc.test, async t => testMetricsInclude(`# TYPE ${tc.expected}`, t));
 }
+
+
+test('Exposes a /metrics endpoint', async t => {
+  const server = await start(_ => _);
+  try {
+    await callEndpointNoError(server, '/metrics', t);
+  } finally {
+    server.close();
+  }
+});
 
 test('Only cacluates metrics for calls to /', async t => {
   const metric = 'faas_invocations{faas_name="anonymous",faas_id="",faas_instance="",faas_runtime="Node.js"}';
@@ -44,20 +45,19 @@ test('Only cacluates metrics for calls to /', async t => {
 });
 
 async function requestMetricsAndValidate(server, t, expected) {
-  return request(server)
-    .get('/metrics')
-    .then(got => {
-      t.ok(got.text.includes(expected));
-    })
-    .catch(t.error);
+  const got = await callEndpointNoError(server, '/metrics', t);
+  t.ok(got.text.includes(expected), expected);
 }
 
+// A helper function that calls a server endpoint with a
+// GET request and reports any error
 async function callEndpointNoError(server, endpoint, t) {
   return request(server).get(endpoint).catch(t.error);
 }
 
+// A helper function that will test if the /metrics endpoint
+// includes the expected metric in its response
 async function testMetricsInclude(metric, t) {
-  t.plan(1);
   const server = await start(_ => _);
   try {
     const got = await callEndpointNoError(server, '/metrics', t);
