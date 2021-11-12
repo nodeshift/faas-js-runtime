@@ -7,18 +7,13 @@ const errHandler = t => err => {
     t.end();
 };
 
-test('Exposes a /metrics endpoint', t => {
-  t.plan(1);
-  start(_ => _)
-  .then(server => {
-    request(server)
-      .get('/metrics')
-      .end((err, _) => {
-        t.error(err, 'No error');
-        t.end();
-        server.close();
-      });
-  }, errHandler(t));
+test('Exposes a /metrics endpoint', async t => {
+  const server = await start(_ => _);
+  try {
+    await callEndpointNoError(server, '/metrics', t);
+  } finally {
+    server.close();
+  }
 });
 
 test('Provides an invocation count', t => {
@@ -140,23 +135,21 @@ test('Provides network I/O utilization', t => {
       });
   }, errHandler(t));
 });
+
 test('Only cacluates metrics for calls to /', async t => {
   const metric = 'faas_invocations{faas_name="anonymous",faas_id="",faas_instance="",faas_runtime="Node.js"}';
   const expected = `${metric} 1`;
   const server = await start(_ => _);
   try {
-      await callEndpointNoError(server, '/', t);
-      await requestMetricsAndValidate(server, t, expected);
-      await callEndpointNoError(server, '/health/readiness', t);
-      await requestMetricsAndValidate(server, t, expected);
-      await callEndpointNoError(server, '/', t);
-      // We've now called the function twice
-      await requestMetricsAndValidate(server, t, `${metric} 2`);
-  } catch (e) {
-      t.fail(e);
+    await callEndpointNoError(server, '/', t);
+    await requestMetricsAndValidate(server, t, expected);
+    await callEndpointNoError(server, '/health/readiness', t);
+    await requestMetricsAndValidate(server, t, expected);
+    await callEndpointNoError(server, '/', t);
+    // We've now called the function twice
+    await requestMetricsAndValidate(server, t, `${metric} 2`);
   } finally {
-      t.end();
-      server.close();
+    server.close();
   }
 });
 
