@@ -2,6 +2,8 @@ const { start } = require('..');
 const test = require('tape');
 const request = require('supertest');
 
+process.env.FAAS_ID = 'test';
+
 const tests = [
   {test: 'Invocation count', expected: 'faas_invocations counter'},
   {test: 'Error count', expected: 'faas_errors counter'},
@@ -28,7 +30,8 @@ test('Exposes a /metrics endpoint', async t => {
 });
 
 test('Only cacluates metrics for calls to /', async t => {
-  const metric = 'faas_invocations{faas_name="anonymous",faas_id="",faas_instance="",faas_runtime="Node.js"}';
+  // eslint-disable-next-line max-len
+  const metric = 'faas_invocations{faas_name="anonymous",faas_id="test",faas_instance="undefined",faas_runtime="Node.js"}';
   const expected = `${metric} 1`;
   const server = await start(_ => _);
   try {
@@ -43,6 +46,7 @@ test('Only cacluates metrics for calls to /', async t => {
     server.close();
   }
 });
+
 
 async function requestMetricsAndValidate(server, t, expected) {
   const got = await callEndpointNoError(server, '/metrics', t);
