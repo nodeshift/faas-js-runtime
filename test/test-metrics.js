@@ -31,7 +31,7 @@ test('Exposes a /metrics endpoint', async t => {
 
 test('Only cacluates metrics for calls to /', async t => {
   // eslint-disable-next-line max-len
-  const metric = 'faas_invocations{faas_name="anonymous",faas_id="test",faas_instance="undefined",faas_runtime="Node.js"}';
+  const metric = 'faas_invocations{faas_name="anonymous",faas_id="test",faas_instance="undefined",faas_version="undefined",faas_runtime="Node.js"}';
   const expected = `${metric} 1`;
   const server = await start(_ => _);
   try {
@@ -50,6 +50,9 @@ test('Only cacluates metrics for calls to /', async t => {
 
 async function requestMetricsAndValidate(server, t, expected) {
   const got = await callEndpointNoError(server, '/metrics', t);
+  if (!got.text.includes(expected)) {
+    console.error(`EXPECTED: ${expected}\nGOT: ${got.text}`);
+  }
   t.ok(got.text.includes(expected), expected);
 }
 
