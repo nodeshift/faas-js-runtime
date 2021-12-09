@@ -2,10 +2,8 @@ const qs = require('qs');
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const healthCheck = require('./lib/health-check');
 const requestHandler = require('./lib/request-handler');
-
-// function context
+const eventHandler = require('./lib/event-handler');
 const Context = require('./lib/context');
 
 // HTTP framework
@@ -16,30 +14,20 @@ const PORT = 8080;
 
 // Invoker
 function start(func, options) {
-  // If there is a func.yaml file, check it for logLevel
-  const funcYaml = loadFuncYaml(options && options.config);
-  if (funcYaml &&
-    ['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']
-    .find(l => funcYaml.logLevel === l)) {
-    LOG_LEVEL = funcYaml.logLevel;
+  options = options || {};
+
+  // Load a func.yaml file if it exists
+  const funcConfig = loadFuncYaml(options.config) || {};
+
+  // Set the log level
+  if (['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']
+    .find(l => funcConfig.logLevel === l)) {
+    LOG_LEVEL = funcConfig.logLevel;
   }
 
+  // Create the server
   const { logLevel = LOG_LEVEL, port = PORT } = { ...options };
-
   const server = fastify({ logger: { level: logLevel } });
-
-  // All incoming requests get a Context object
-  server.decorateRequest('fcontext');
-  server.addHook('preHandler', (req, reply, done) => {
-    req.fcontext = new Context(req, reply);
-    done();
-  });
-
-  // Incoming requests to the readiness and liveness URLs
-  server.register(healthCheck);
-
-  // Incoming requests to the hosted function
-  server.register(requestHandler, { func });
 
   server.addContentTypeParser('application/x-www-form-urlencoded',
     function(_, payload, done) {
@@ -55,6 +43,22 @@ function start(func, options) {
       });
       payload.on('error', done);
     });
+
+  // Initialize the invocation context
+  // This is passed as a parameter to the function when it's invoked
+  server.decorateRequest('fcontext');
+  server.addHook('preHandler', (req, reply, done) => {
+    req.fcontext = new Context(req, reply);
+    done();
+  });
+
+  // Evaluates the incoming request, parsing any CloudEvents and attaching
+  // to the request's `fcontext`
+  eventHandler(server);
+
+  // Configures the server to handle incoming requests to the function itself,
+  // and also to other endpoints such as telemetry and liveness/readiness
+  requestHandler(server, { func, funcConfig });
 
   return new Promise((resolve, reject) => {
     server.listen(port, '0.0.0.0', err => {

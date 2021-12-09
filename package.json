@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run test:source && npm run test:types",
-    "test:source": "nyc tape test/*.js | colortape",
+    "test:source": "nyc tape test/test*.js | colortape",
     "test:types": "tsd",
     "pretest": "npm run lint"
   },
@@ -25,12 +25,14 @@
   "bin": "./bin/cli.js",
   "dependencies": {
     "chalk": "^4.1.2",
-    "cloudevents": "^4.0.3",
+    "cloudevents": "^5.2.0",
     "commander": "^8.1.0",
     "death": "^1.1.0",
     "fastify": "^3.20.1",
     "js-yaml": "^4.1.0",
+    "node-os-utils": "^1.3.5",
     "overload-protection": "^1.2.0",
+    "prom-client": "^14.0.0",
     "qs": "^6.10.1"
   },
   "devDependencies": {
