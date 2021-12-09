@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.1...v0.8.0) (2021-12-09)
+
+
+### Features
+
+* add an endpoint for prometheus at /metrics ([#109](https://www.github.com/boson-project/faas-js-runtime/issues/109)) ([559c110](https://www.github.com/boson-project/faas-js-runtime/commit/559c11039bd7a9fbb505fb7689b58c079ce240c4))
+* add limited support for func.yaml via logLevel ([#104](https://www.github.com/boson-project/faas-js-runtime/issues/104)) ([6e376fa](https://www.github.com/boson-project/faas-js-runtime/commit/6e376fa508bd4201c085c5adb8acec880437a91a))
+
+
+### Bug Fixes
+
+* use cloudevent as second param in test fn ([#99](https://www.github.com/boson-project/faas-js-runtime/issues/99)) ([d3dae1d](https://www.github.com/boson-project/faas-js-runtime/commit/d3dae1dee78d9466595c828a169ff964434d28a6))
+
 ### [0.7.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.0...v0.7.1) (2021-05-24)
 
 
