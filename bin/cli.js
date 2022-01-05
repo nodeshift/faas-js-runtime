@@ -14,8 +14,8 @@ const program = new Command();
 
 program
   .version(pkg.version)
-  .option('--logLevel <logLevel>', 'change the log level of the function', 'warn')
-  .option('--port <port>', 'change the port the runtime listens on', 8080)
+  .option('--logLevel <logLevel>', 'change the log level of the function', defaults.LOG_LEVEL)
+  .option('--port <port>', 'change the port the runtime listens on', defaults.PORT)
   .arguments('<file>')
   .action(runServer);
 
@@ -27,8 +27,8 @@ async function runServer(file) {
   try {
     let server;
     let options = {
-      logLevel: programOpts.logLevel || process.env.FUNC_LOG_LEVEL || defaults.LOG_LEVEL,
-      port: programOpts.port || process.env.FUNC_PORT || defaults.PORT
+      logLevel: process.env.FUNC_LOG_LEVEL || programOpts.logLevel || defaults.LOG_LEVEL,
+      port: process.env.FUNC_PORT || programOpts.port || defaults.PORT
     };
 
     const filePath = extractFullPath(file);
@@ -45,7 +45,7 @@ async function runServer(file) {
       server.close();
       log(chalk.yellow(`Goodbye!`));
     });
-    log(chalk.blue(`The server has started. http://localhost:8080`));
+    log(chalk.blue(`The server has started. http://localhost:${options.port}`));
   } catch (error) {
     log(chalk.red(error));
   }
