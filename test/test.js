@@ -3,7 +3,7 @@
 const { start } = require('..');
 const test = require('tape');
 const request = require('supertest');
-const Spec = require('../lib/ce-constants.js').Spec;
+const { CONSTANTS } = require('cloudevents');
 
 // package.json handling
 const { existsSync, readdirSync } = require('fs');
@@ -95,10 +95,10 @@ test('Responds to 0.3 binary cloud events', t => {
       request(server)
         .post('/')
         .send({ message: 'hello' })
-        .set(Spec.id, '1')
-        .set(Spec.source, 'integration-test')
-        .set(Spec.type, 'dev.knative.example')
-        .set(Spec.version, '0.3')
+        .set(CONSTANTS.CE_HEADERS.ID, '1')
+        .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+        .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+        .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '0.3')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -117,19 +117,19 @@ test('Responds with 0.3 binary cloud event', t => {
       request(server)
         .post('/')
         .send({ message: 'hello' })
-        .set(Spec.id, '1')
-        .set(Spec.source, 'integration-test')
-        .set(Spec.type, 'dev.knative.example')
-        .set(Spec.version, '0.3')
+        .set(CONSTANTS.CE_HEADERS.ID, '1')
+        .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+        .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+        .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '0.3')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           t.error(err, 'No error');
           t.equal(res.body.message, 'hello');
-          t.equal(res.headers[Spec.type], 'dev.ocf.js.type');
-          t.equal(res.headers[Spec.source], 'dev/ocf/js/service');
-          t.equal(res.headers[Spec.id], 'dummyid');
-          t.equal(res.headers[Spec.version], '0.3');
+          t.equal(res.headers[CONSTANTS.CE_HEADERS.TYPE], 'dev.ocf.js.type');
+          t.equal(res.headers[CONSTANTS.CE_HEADERS.SOURCE], 'dev/ocf/js/service');
+          t.equal(res.headers[CONSTANTS.CE_HEADERS.ID], 'dummyid');
+          t.equal(res.headers[CONSTANTS.CE_HEADERS.SPEC_VERSION], '0.3');
           t.end();
           server.close();
         });
@@ -143,10 +143,10 @@ test('Responds to 1.0 binary cloud events', t => {
       request(server)
         .post('/')
         .send({ message: 'hello' })
-        .set(Spec.id, '1')
-        .set(Spec.source, 'integration-test')
-        .set(Spec.type, 'dev.knative.example')
-        .set(Spec.version, '1.0')
+        .set(CONSTANTS.CE_HEADERS.ID, '1')
+        .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+        .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+        .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '1.0')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -196,10 +196,10 @@ test('Handles 1.0 CloudEvent responses', t => {
       request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set(Spec.id, '1')
-      .set(Spec.source, 'integration-test')
-      .set(Spec.type, 'dev.knative.example')
-      .set(Spec.version, '1.0')
+      .set(CONSTANTS.CE_HEADERS.ID, '1')
+      .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+      .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+      .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '1.0')
       .expect(200)
       .expect('Content-Type', /text/)
       .end((err, res) => {
@@ -222,10 +222,10 @@ test('Handles 1.0 CloudEvent Message responses', t => {
       request(server)
       .post('/')
       .send({ message: 'hello' })
-      .set(Spec.id, '1')
-      .set(Spec.source, 'integration-test')
-      .set(Spec.type, 'dev.knative.example')
-      .set(Spec.version, '1.0')
+      .set(CONSTANTS.CE_HEADERS.ID, '1')
+      .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+      .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+      .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '1.0')
       .expect(200)
       .expect('Content-Type', /text/)
       .end((err, res) => {
@@ -277,10 +277,10 @@ test('Successfully handles events with no data', t => {
   .then(server => {
     request(server)
       .post('/')
-      .set(Spec.id, '1')
-      .set(Spec.type, 'test')
-      .set(Spec.source, 'test')
-      .set(Spec.version, '1.0')
+      .set(CONSTANTS.CE_HEADERS.ID, '1')
+      .set(CONSTANTS.CE_HEADERS.TYPE, 'test')
+      .set(CONSTANTS.CE_HEADERS.SOURCE, 'test')
+      .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '1.0')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -300,10 +300,10 @@ test('Successfully handles events with no data', t => {
 //       request(server)
 //         .post('/')
 //         .send({ message: 'hello' })
-//         .set(Spec.id, '1')
-//         .set(Spec.source, 'integration-test')
-//         .set(Spec.type, 'dev.knative.example')
-//         .set(Spec.version, '11.0')
+//         .set(CONSTANTS.CE_HEADERS.ID, '1')
+//         .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+//         .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+//         .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '11.0')
 //         .expect(406)
 //         .expect('Content-Type', /json/)
 //         .end((err, res) => {
@@ -571,10 +571,10 @@ test('Accepts CloudEvents with content type of text/plain', t => {
       request(server)
         .post('/')
         .send('hello')
-        .set(Spec.id, '1')
-        .set(Spec.source, 'integration-test')
-        .set(Spec.type, 'dev.knative.example')
-        .set(Spec.version, '1.0')
+        .set(CONSTANTS.CE_HEADERS.ID, '1')
+        .set(CONSTANTS.CE_HEADERS.SOURCE, 'integration-test')
+        .set(CONSTANTS.CE_HEADERS.TYPE, 'dev.knative.example')
+        .set(CONSTANTS.CE_HEADERS.SPEC_VERSION, '1.0')
         .set('ce-datacontenttype', 'text/plain')
         .set('content-type', 'text/plain')
         .expect(200)
