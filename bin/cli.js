@@ -4,17 +4,14 @@ const path = require('path');
 const { start, defaults } = require('../');
 const pkg = require('../package.json');
 
-const chalk = require('chalk');
 const ON_DEATH = require('death')({ uncaughtException: true });
 const { Command } = require('commander');
 
-// eslint-disable-next-line no-console
-const log = console.log;
 const program = new Command();
 
 program
   .version(pkg.version)
-  .option('--logLevel <logLevel>', 'change the log level of the function', defaults.LOG_LEVEL)
+  .option('--log-level <log-level>', 'change the log level of the function', defaults.LOG_LEVEL)
   .option('--port <port>', 'change the port the runtime listens on', defaults.PORT)
   .arguments('<file>')
   .action(runServer);
@@ -27,7 +24,7 @@ async function runServer(file) {
   try {
     let server;
     let options = {
-      logLevel: process.env.FUNC_LOG_LEVEL || programOpts.logLevel || defaults.LOG_LEVEL,
+      logLevel: process.env.FUNC_LOG_LEVEL || programOpts['logLevel'] || defaults.LOG_LEVEL,
       port: process.env.FUNC_PORT || programOpts.port || defaults.PORT
     };
 
@@ -43,11 +40,9 @@ async function runServer(file) {
     }
     ON_DEATH(_ => {
       server.close();
-      log(chalk.yellow(`Goodbye!`));
     });
-    log(chalk.blue(`The server has started. http://localhost:${options.port}`));
   } catch (error) {
-    log(chalk.red(error));
+    console.error(`⛔ ${error}`);
   }
 }
 
