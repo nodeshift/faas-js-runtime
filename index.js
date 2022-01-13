@@ -63,7 +63,7 @@ function start(func, options) {
   return new Promise((resolve, reject) => {
     server.listen(port, '0.0.0.0', err => {
       if (err) return reject(err);
-      resolve(server);
+      resolve(server.server);
     });
   });
 }
