@@ -17,7 +17,7 @@ export enum LogLevel {
 }
 
 export interface Invokable {
-    (context: Context, cloudevent?: CloudEvent): any
+    (context: Context, cloudevent?: CloudEvent<any>): any
 }
 
 // re-export
