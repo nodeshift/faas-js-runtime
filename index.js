@@ -43,6 +43,15 @@ function start(func, options) {
       });
       payload.on('error', done);
     });
+  
+  server.addContentTypeParser('*', { parseAs: 'buffer' }, function(req, body, done) {
+    try {
+      done(null, body);
+    } catch (err) {
+      err.statusCode = 400;
+      done(err, undefined);
+    }
+  });
 
   // Initialize the invocation context
   // This is passed as a parameter to the function when it's invoked
