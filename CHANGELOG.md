@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.8.0...v0.9.0) (2022-04-28)
+
+
+### Features
+
+* support binary data in cloudevents ([#112](https://www.github.com/boson-project/faas-js-runtime/issues/112)) ([2ce6c05](https://www.github.com/boson-project/faas-js-runtime/commit/2ce6c051f5c3c99269d2db9bf29be61ec3a24e80))
+
 ## [0.8.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.7.1...v0.8.0) (2021-12-09)
 
 
