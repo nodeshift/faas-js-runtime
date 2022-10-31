@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.9.0...v0.9.1) (2022-05-27)
+
+
+### Bug Fixes
+
+* add an explicit scope to function invocation ([#118](https://www.github.com/boson-project/faas-js-runtime/issues/118)) ([1eb75b3](https://www.github.com/boson-project/faas-js-runtime/commit/1eb75b3cec416cf96509a59a7af98d885f7de6c1))
+
 ## [0.9.0](https://www.github.com/boson-project/faas-js-runtime/compare/v0.8.0...v0.9.0) (2022-04-28)
 
 
