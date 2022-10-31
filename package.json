@@ -7,10 +7,13 @@
   },
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
+  "engines": {
+    "node": "^18 || ^16 || ^14"
+  },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run test:source && npm run test:types",
-    "test:source": "nyc tape test/test*.js | colortape",
+    "test:source": "nyc --reporter=lcovonly tape test/test*.js | colortape",
     "test:types": "tsd",
     "pretest": "npm run lint"
   },
@@ -21,6 +24,9 @@
     "lib",
     "bin"
   ],
+  "bugs": {
+    "url": "https://github.com/boson-project/faas-js-runtime/issues"
+  },
   "types": "index.d.ts",
   "bin": "./bin/cli.js",
   "dependencies": {
@@ -48,11 +54,6 @@
     "tape": "^5.3.1",
     "tsd": "^0.17.0",
     "typescript": "^4.3.5"
-  },
-  "standardx": {
-    "ignore": [
-      "lib/context.js"
-    ]
   },
   "tsd": {
     "directory": "test/types",
