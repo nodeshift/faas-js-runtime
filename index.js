@@ -43,7 +43,7 @@ function start(func, options) {
       });
       payload.on('error', done);
     });
-  
+
   server.addContentTypeParser('*', { parseAs: 'buffer' }, function(req, body, done) {
     try {
       done(null, body);
@@ -70,7 +70,11 @@ function start(func, options) {
   requestHandler(server, { func, funcConfig });
 
   return new Promise((resolve, reject) => {
-    server.listen(port, '0.0.0.0', err => {
+    server.listen({
+      port,
+      host: '::'
+    },
+    err => { // callback function
       if (err) return reject(err);
       resolve(server.server);
     });
@@ -80,7 +84,7 @@ function start(func, options) {
 // reads a func.yaml file at path and returns it as a JS object
 function loadFuncYaml(fileOrDirPath) {
   if (!fileOrDirPath) fileOrDirPath = './';
-  
+
   let baseDir;
   let maybeDir = fs.statSync(fileOrDirPath);
   if (maybeDir.isDirectory()) {
