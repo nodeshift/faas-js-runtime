@@ -3,6 +3,6 @@ module.exports = function() {
     headers: {
       'Content-Type': 'text/plain'
     },
-    message: 'Well hello there'
+    body: 'Well hello there'
   };
 };
