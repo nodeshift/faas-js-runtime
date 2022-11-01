@@ -1,13 +1,14 @@
 ## FaaS Node.js Runtime Framework
 
 [![Node.js CI](https://github.com/boson-project/faas-js-runtime/workflows/Node.js%20CI/badge.svg)](https://github.com/boson-project/faas-js-runtime/actions?query=workflow%3A%22Node.js+CI%22+branch%3Amaster)
+[![codecov](https://codecov.io/gh/boson-project/faas-js-runtime/branch/main/graph/badge.svg?token=Z72LKANFJI)](https://codecov.io/gh/boson-project/faas-js-runtime)
 
 This module provides a Node.js framework for executing a function that
-exists in a user provided directory path as an `index.js` file. The
+exists in a user-provided directory path as an `index.js` file. The
 directory may also contain an optional `package.json` file which can
 be used to declare runtime dependencies for the function.
 
-The function is loaded, and then invoked for incoming HTTP requests
+The function is loaded and then invoked for incoming HTTP requests
 at `localhost:8080`. The incoming request may be a
 [Cloud Event](https://github.com/cloudevents/sdk-javascript#readme.) or
 just a simple HTTP GET request. In either case, the function will receive
@@ -20,7 +21,7 @@ The invoked user function can be `async` but that is not required.
 
 The easiest way to get started is to use the CLI. You can call it
 with the path to any JavaScript file which has a default export that
-is a function. For example, 
+is a function. For example,
 
 ```js
 // index.js
