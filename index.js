@@ -48,7 +48,7 @@ function start(func, options) {
     try {
       done(null, body);
     } catch (err) {
-      err.statusCode = 400;
+      err.statusCode = 500;
       done(err, undefined);
     }
   });
@@ -57,7 +57,7 @@ function start(func, options) {
   // This is passed as a parameter to the function when it's invoked
   server.decorateRequest('fcontext');
   server.addHook('preHandler', (req, reply, done) => {
-    req.fcontext = new Context(req, reply);
+    req.fcontext = new Context(req);
     done();
   });
 

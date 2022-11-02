@@ -1,3 +1,5 @@
-const path = require('path');
+// const path = require('path');
+// const async = require(path.join(__dirname, '..', 'test', 'fixtures', 'async'));
+const f = (context, receivedBody) => receivedBody;
 
-require('..').start(require(path.join(__dirname, '..', 'test', 'fixtures', 'async')));
+require('..').start(f);

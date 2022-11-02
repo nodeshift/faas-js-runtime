@@ -24,7 +24,7 @@ function installDependenciesIfExist(functionPath) {
   if (existsSync(path.join(functionPath, 'package.json'))) {
     // eslint-disable-next-line
     console.log(`Installing dependencies for ${functionPath}`);
-    execSync('npm install --production', { cwd: functionPath });
+    execSync('npm install --omit=dev', { cwd: functionPath });
   }
 }
 
@@ -334,17 +334,17 @@ test('Respects response code set by the function', t => {
 });
 
 test('Responds HTTP 204 if response body has no content', t => {
-  const func = require(`${__dirname}/fixtures/no-content/`);
-  start(func)
+  start(_ => '')
     .then(server => {
       t.plan(2);
       request(server)
         .get('/')
         .expect(204)
-        .expect('Content-Type', /json/)
+        .set({'Content-Type': 'text/plain'})
+        .expect('Content-Type', /plain/)
         .end((err, res) => {
           t.error(err, 'No error');
-          t.equal(res.body, '');
+          t.equal(res.text, '');
           t.end();
           server.close();
         });
@@ -352,20 +352,19 @@ test('Responds HTTP 204 if response body has no content', t => {
 });
 
 test('Sends CORS headers in HTTP response', t => {
-  const func = require(`${__dirname}/fixtures/no-content/`);
-  start(func)
+  start(_ => '')
     .then(server => {
       t.plan(2);
       request(server)
         .get('/')
         .expect(204)
-        .expect('Content-Type', /json/)
+        .expect('Content-Type', /plain/)
         .expect('Access-Control-Allow-Origin', '*')
         .expect('Access-Control-Allow-Methods',
           'OPTIONS, GET, DELETE, POST, PUT, HEAD, PATCH')
         .end((err, res) => {
           t.error(err, 'No error');
-          t.equal(res.body, '');
+          t.equal(res.text, '');
           t.end();
           server.close();
         });
@@ -401,7 +400,7 @@ test('Respects content type set by the function', t => {
         .expect('Content-Type', /text/)
         .end((err, res) => {
           t.error(err, 'No error');
-          t.equal(res.text, '{"message":"Well hello there"}');
+          t.equal(res.text, 'Well hello there');
           t.end();
           server.close();
         });
@@ -523,8 +522,8 @@ test('Provides logger with appropriate log level configured', t => {
   var loggerProvided = false;
   const logLevel = 'error';
   start(context => {
-    loggerProvided = (context.log && 
-      typeof context.log.info === 'function' && 
+    loggerProvided = (context.log &&
+      typeof context.log.info === 'function' &&
       typeof context.log.warn === 'function' &&
       typeof context.log.debug === 'function' &&
       typeof context.log.trace === 'function' &&
