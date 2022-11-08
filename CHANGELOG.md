@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.4](https://github.com/boson-project/faas-js-runtime/compare/v0.9.3...v0.9.4) (2022-11-08)
+
+
+### Bug Fixes
+
+* **cloudevents:** bump to latest release ([#135](https://github.com/boson-project/faas-js-runtime/issues/135)) ([c7f9331](https://github.com/boson-project/faas-js-runtime/commit/c7f9331de905a17e7b5a7ef1c099a7df690cf91d))
+
 ## [0.9.3](https://github.com/boson-project/faas-js-runtime/compare/v0.9.2...v0.9.3) (2022-11-08)
 
 
