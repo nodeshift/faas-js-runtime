@@ -18,7 +18,7 @@ expectType<string>(context.method);
 expectType<string>(context.httpVersion);
 expectType<number>(context.httpVersionMajor);
 expectType<number>(context.httpVersionMinor);
-expectType<CloudEvent>(context.cloudevent);
+expectType<CloudEvent<any>>(context.cloudevent);
 expectAssignable<Record<string, any>|string|undefined>(context.body);
 
 // CloudEventResponse
