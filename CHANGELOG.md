@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.2](https://github.com/boson-project/faas-js-runtime/compare/v0.9.1...v0.9.2) (2022-11-03)
+
+
+### Features
+
+* **http-functions:** supply HTTP POST body ([#129](https://github.com/boson-project/faas-js-runtime/issues/129)) ([25cdcba](https://github.com/boson-project/faas-js-runtime/commit/25cdcba3d7f58b0d202efc1864455bff855583be))
+
+
+### Miscellaneous
+
+* **coverage:** upload coverage stats to codecov.io ([#127](https://github.com/boson-project/faas-js-runtime/issues/127)) ([4206e31](https://github.com/boson-project/faas-js-runtime/commit/4206e31cbe4a4dcc4a4e322fc7f2b2d66bc2c9e8))
+* **deps:** bump fastify to 4.9.x ([#128](https://github.com/boson-project/faas-js-runtime/issues/128)) ([35403b5](https://github.com/boson-project/faas-js-runtime/commit/35403b54053ea194171ae6fd5afd458926f93ba9))
+* **release-please:** specify changelog headings ([#130](https://github.com/boson-project/faas-js-runtime/issues/130)) ([5ed0cff](https://github.com/boson-project/faas-js-runtime/commit/5ed0cff1f7e8989aa713aa76571f1cbebd6c4830))
+
+
+### Documentation
+
+* **README.md:** update with interfaces and types ([#131](https://github.com/boson-project/faas-js-runtime/issues/131)) ([058fc77](https://github.com/boson-project/faas-js-runtime/commit/058fc77ef0ebf8c74eb48e1f53e7f5e04cfbebe0))
+
 ### [0.9.1](https://www.github.com/boson-project/faas-js-runtime/compare/v0.9.0...v0.9.1) (2022-05-27)
 
 
