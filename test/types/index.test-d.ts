@@ -6,10 +6,10 @@ import { CloudEvent } from 'cloudevents';
 
 const fn: Invokable = function(
   context: Context,
-  cloudevent?: CloudEvent
+  cloudevent?: CloudEvent<unknown>
 ) {
   expectType<Context>(context);
-  expectType<CloudEvent|undefined>(cloudevent);
+  expectType<CloudEvent<unknown>|undefined>(cloudevent);
   return undefined;
 };
 
