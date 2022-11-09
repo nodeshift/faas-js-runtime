@@ -5,12 +5,12 @@ import { CloudEvent } from 'cloudevents';
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.
  */
-export interface CloudEventFunction {
-  (context: Context, event?: CloudEvent<unknown>): CloudEventFunctionReturn;
+export interface CloudEventFunction<I=never, R=unknown> {
+  (context: Context, event?: CloudEvent<I>): CloudEventFunctionReturn<R>;
 }
 
 // CloudEventFunctionReturn is the return type for a CloudEventFunction.
-export type CloudEventFunctionReturn = Promise<CloudEvent<unknown>> | CloudEvent<unknown> | HTTPFunctionReturn;
+export type CloudEventFunctionReturn<T=unknown> = Promise<CloudEvent<T>> | CloudEvent<T> | HTTPFunctionReturn;
 
 /**
  * HTTPFunction describes the function signature for a function that handles
