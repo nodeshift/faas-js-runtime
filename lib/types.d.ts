@@ -5,12 +5,12 @@ import { CloudEvent } from 'cloudevents';
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.
  */
- export interface CloudEventFunction {
-  (context: Context, event: CloudEvent<any>): CloudEventFunctionReturn;
+export interface CloudEventFunction {
+  (context: Context, event?: CloudEvent<unknown>): CloudEventFunctionReturn;
 }
 
 // CloudEventFunctionReturn is the return type for a CloudEventFunction.
-export type CloudEventFunctionReturn = Promise<CloudEvent<any>> | CloudEvent<any> | HTTPFunctionReturn;
+export type CloudEventFunctionReturn = Promise<CloudEvent<unknown>> | CloudEvent<unknown> | HTTPFunctionReturn;
 
 /**
  * HTTPFunction describes the function signature for a function that handles
@@ -50,7 +50,7 @@ export interface Context {
     httpVersion: string;
     httpVersionMajor: number;
     httpVersionMinor: number;
-    cloudevent: CloudEvent<any>;
+    cloudevent: CloudEvent<unknown>;
     cloudEventResponse(data: string|object): CloudEventResponse;
 }
 
