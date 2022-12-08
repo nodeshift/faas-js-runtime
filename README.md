@@ -98,6 +98,28 @@ with the CLI.
 npx faas-js-runtime ./index.js
 ```
 
+### Functions as ES Modules
+
+Functions can be written and imported as ES modules with either the `.mjs` file extenstion or by adding the `type` property to the functions package.json and setting it to `module`.
+
+```js
+// index.mjs
+const handle = async function(context) => { ... };
+
+// Export the function
+export { handle };
+```
+
+If using the `type` property, the package.json might look something like this:
+```js
+{
+  "name": "moduleName",
+  "type": "module"
+}
+```
+
+
+
 ## Usage as a Module
 
 In the current working directory, there is an `index.js` file like this.
