@@ -2,13 +2,11 @@
 const path = require('path');
 
 const { start, defaults } = require('../');
+const { loadFunction } = require('../lib/function-loader.js');
 const pkg = require('../package.json');
 
 const ON_DEATH = require('death')({ uncaughtException: true });
 const { Command } = require('commander');
-
-// This is the way to import es modules inside a CJS module
-const dynamicImport = new Function('modulePath', 'return import(modulePath)');
 
 const program = new Command();
 
@@ -33,12 +31,7 @@ async function runServer(file) {
 
     const filePath = extractFullPath(file);
 
-    let code;
-    if (isESM(filePath)) {
-      code = await dynamicImport(filePath);
-    } else {
-      code = require(filePath);
-    }
+    const code = await loadFunction(filePath);
 
     if (typeof code === 'function') {
       server = await start(code, options);
@@ -59,25 +52,4 @@ async function runServer(file) {
 function extractFullPath(file) {
   if (path.isAbsolute(file)) return file;
   return path.join(process.cwd(), file);
-}
-
-
-// An ESM module can be determined 2 ways
-// 1. has the mjs file extention
-// 2. type=module in the package.json
-function isESM(filePath) {
-  const pathParsed = path.parse(filePath);
-
-  if (pathParsed.ext === '.mjs') {
-    return true;
-  }
-
-  // find the functions package.json and see if it has a type field
-  const functionPkg = require(path.join(pathParsed.dir, 'package.json'));
-  if (functionPkg.type === 'module') {
-    return true;
-  }
-
-  // Should default to CJS
-  return false;
 }
