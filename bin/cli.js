@@ -30,7 +30,6 @@ async function runServer(file) {
     };
 
     const filePath = extractFullPath(file);
-
     const code = await loadFunction(filePath);
 
     if (typeof code === 'function') {
