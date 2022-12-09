@@ -11,11 +11,13 @@ test('Loads a CJS function', async t => {
 });
 
 test('Loads an ESM function with an .mjs extension', async t => {
-  await loadFunction(path.join(fixtureDir, 'esm-module-mjs', 'index.mjs'));
+  const fn = await loadFunction(path.join(fixtureDir, 'esm-module-mjs', 'index.mjs'));
+  t.equal(typeof fn.handle, 'function');
   t.pass('ESM module with a mjs ext loaded');
 });
 
 test('Loads an ESM function with the type=module in the package.json', async t => {
-  await loadFunction(path.join(fixtureDir, 'esm-module-type-module', 'index.js'));
+  const fn = await loadFunction(path.join(fixtureDir, 'esm-module-type-module', 'index.js'));
+  t.equal(typeof fn.handle, 'function');
   t.pass('ESM module with a type=module in the package.json');
 });
