@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.6](https://github.com/boson-project/faas-js-runtime/compare/v0.9.5...v0.9.6) (2022-12-09)
+
+
+### Features
+
+* Import functions that are written as ES Modules ([#140](https://github.com/boson-project/faas-js-runtime/issues/140)) ([6ac6fff](https://github.com/boson-project/faas-js-runtime/commit/6ac6fffec091e9ed87d74a39f8c8390bc28d8ee6))
+
 ## [0.9.5](https://github.com/boson-project/faas-js-runtime/compare/v0.9.4...v0.9.5) (2022-11-09)
 
 
