@@ -2,6 +2,7 @@
 const path = require('path');
 
 const { start, defaults } = require('../');
+const { loadFunction } = require('../lib/function-loader.js');
 const pkg = require('../package.json');
 
 const ON_DEATH = require('death')({ uncaughtException: true });
@@ -20,7 +21,7 @@ program.parse(process.argv);
 
 async function runServer(file) {
   const programOpts = program.opts();
-  
+
   try {
     let server;
     let options = {
@@ -29,7 +30,8 @@ async function runServer(file) {
     };
 
     const filePath = extractFullPath(file);
-    const code = require(filePath);
+    const code = await loadFunction(filePath);
+
     if (typeof code === 'function') {
       server = await start(code, options);
     } else if (typeof code.handle === 'function') {
