@@ -5,7 +5,8 @@ const { loadFunction } = require('../lib/function-loader.js');
 const fixtureDir = path.join(__dirname, 'fixtures');
 
 test('Loads a CJS function', async t => {
-  await loadFunction(path.join(fixtureDir, 'cjs-module', 'index.js'));
+  const fn = await loadFunction(path.join(fixtureDir, 'cjs-module', 'index.js'));
+  t.equal(typeof fn, 'function');
   t.pass('CJS function loaded');
 });
 
