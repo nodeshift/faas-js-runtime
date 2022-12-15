@@ -8,10 +8,11 @@ on:
 
 jobs:
   lts:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x, 16.x]
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -23,7 +24,10 @@ jobs:
     - run: npm test
 
   current:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 18.x
@@ -36,6 +40,6 @@ jobs:
     - uses: codecov/codecov-action@v3
       with:
         files: coverage/lcov.info
-        name: ${{ matrix.node-version }}
+        name: lts ${{ matrix.os }}
         fail_ci_if_error: true
         verbose: true

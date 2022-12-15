@@ -21,3 +21,9 @@ test('Loads an ESM function with the type=module in the package.json', async t =
   t.equal(typeof fn.handle, 'function');
   t.pass('ESM module with a type=module in the package.json');
 });
+
+test('Loads an ESM function with the type=module in package.json in a parent dir and a .js extension', async t => {
+  const fn = await loadFunction(path.join(fixtureDir, 'esm-module-type-up-dir', 'build', 'index.js'));
+  t.equal(typeof fn.handle, 'function');
+  t.pass('ESM module with a type=module in a package.json in parent directory');
+});
