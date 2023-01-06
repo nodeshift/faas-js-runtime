@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.7](https://github.com/boson-project/faas-js-runtime/compare/v0.9.6...v0.9.7) (2023-01-06)
+
+
+### Bug Fixes
+
+* modify module loader to look in parent directories ([#144](https://github.com/boson-project/faas-js-runtime/issues/144)) ([2a1e618](https://github.com/boson-project/faas-js-runtime/commit/2a1e618afd0078ceeffa94232c6c55b0584d5842))
+
 ## [0.9.6](https://github.com/boson-project/faas-js-runtime/compare/v0.9.5...v0.9.6) (2022-12-09)
 
 
