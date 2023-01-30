@@ -43,7 +43,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.0",
     "@types/node": "^16.4.13",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^4.29.1",
     "colortape": "^0.1.2",
     "eslint": "^7.32.0",
