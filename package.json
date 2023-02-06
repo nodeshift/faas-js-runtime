@@ -32,7 +32,7 @@
   "bin": "./bin/cli.js",
   "dependencies": {
     "cloudevents": "^6.0.3",
-    "commander": "^9.5.0",
+    "commander": "^10.0.0",
     "death": "^1.1.0",
     "fastify": "^4.11.0",
     "js-yaml": "^4.1.0",
