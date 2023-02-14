@@ -42,6 +42,7 @@ async function runServer(file) {
     }
     ON_DEATH(_ => {
       server.close();
+      process.exit(0);
     });
   } catch (error) {
     console.error(`⛔ ${error}`);
