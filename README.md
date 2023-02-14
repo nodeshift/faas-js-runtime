@@ -1,7 +1,7 @@
 # Node.js Function Framework
 
-[![Node.js CI](https://github.com/boson-project/faas-js-runtime/workflows/Node.js%20CI/badge.svg)](https://github.com/boson-project/faas-js-runtime/actions?query=workflow%3A%22Node.js+CI%22+branch%3Amaster)
-[![codecov](https://codecov.io/gh/boson-project/faas-js-runtime/branch/main/graph/badge.svg?token=Z72LKANFJI)](https://codecov.io/gh/boson-project/faas-js-runtime)
+[![Node.js CI](https://github.com/nodeshift/faas-js-runtime/workflows/Node.js%20CI/badge.svg)](https://github.com/nodeshift/faas-js-runtime/actions?query=workflow%3A%22Node.js+CI%22+branch%3Amaster)
+[![codecov](https://codecov.io/gh/nodeshift/faas-js-runtime/branch/main/graph/badge.svg?token=Z72LKANFJI)](https://codecov.io/gh/nodeshift/faas-js-runtime)
 
 This module provides a Node.js framework for executing a function that
 exists in a user-provided directory path as an `index.js` file. The
