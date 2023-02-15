@@ -10,6 +10,12 @@ be used to declare runtime dependencies for the function. You can also
 provide a path to an arbitrary JavaScript file instead of a directory
 path, allowing you to execute a single file as a function.
 
+|                 | Project Info  |
+| --------------- | ------------- |
+| License:        | Apache-2.0  |
+| Issue tracker:  | https://github.com/nodeshift/faas-js-runtime/issues  |
+| Engines:        | Node.js >= 14 |
+
 The function is loaded and then invoked for incoming HTTP requests
 at `localhost:8080`. The incoming request may be a
 [Cloud Event](https://github.com/cloudevents/sdk-javascript#readme.) or
