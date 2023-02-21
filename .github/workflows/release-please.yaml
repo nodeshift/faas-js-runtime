@@ -29,5 +29,5 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.FAAS_JS_RUNTIME_PUBLISH}}
         if: ${{ steps.release.outputs.release_created }}
