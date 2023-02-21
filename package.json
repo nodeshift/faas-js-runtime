@@ -52,7 +52,7 @@
     "supertest": "^6.3.1",
     "tape": "^5.6.3",
     "tsd": "^0.25.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.9.5"
   },
   "tsd": {
     "directory": "test/types",
