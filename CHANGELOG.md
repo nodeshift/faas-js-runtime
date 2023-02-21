@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/nodeshift/faas-js-runtime/compare/v0.10.0...v1.0.0) (2023-02-21)
+
+
+### Bug Fixes
+
+* upgrade eslint from 8.32.0 to 8.33.0 ([#175](https://github.com/nodeshift/faas-js-runtime/issues/175)) ([0e1e964](https://github.com/nodeshift/faas-js-runtime/commit/0e1e96415a05fd89008921a2236cdfddc9aecad1))
+* upgrade typescript from 4.3.5 to 4.9.5 ([#178](https://github.com/nodeshift/faas-js-runtime/issues/178)) ([31b2665](https://github.com/nodeshift/faas-js-runtime/commit/31b266541734c8c00c3688dae7b15d22a4bd2e5d))
+
+
+### Miscellaneous
+
+* release 1.0.0 ([#176](https://github.com/nodeshift/faas-js-runtime/issues/176)) ([14f296f](https://github.com/nodeshift/faas-js-runtime/commit/14f296f2368606b8d70d39ef6567bf07dfdce002))
+
 ## [0.10.0](https://github.com/nodeshift/faas-js-runtime/compare/v0.9.7...v0.10.0) (2023-02-16)
 
 
