@@ -104,6 +104,20 @@ with the CLI.
 npx faas-js-runtime ./index.js
 ```
 
+## Debugging Locally
+
+During local development, it is often necessary to set breakpoints in your code for debugging.  Since functions are just javascript files, using any current debugging(VS Code, Chrome Dev Tools) method will work. The linked blog post shows how to setup and use VS Code for development debugging.
+
+https://developers.redhat.com/articles/2021/07/13/nodejs-serverless-functions-red-hat-openshift-part-2-debugging-locally
+
+## Debugging Remotely
+
+It is also possible to debug your function while it is running on a remote cluster.  The linked blog posts shows how to setup and use the Chrome Dev Tools inspector for debugging on a cluster.
+
+https://developers.redhat.com/articles/2021/12/08/nodejs-serverless-functions-red-hat-openshift-part-3-debugging-cluster
+
+
+
 ### Functions as ES Modules
 
 Functions can be written and imported as ES modules with either the `.mjs` file extenstion or by adding the `type` property to the functions package.json and setting it to `module`.
