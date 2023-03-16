@@ -42,7 +42,7 @@
     "qs": "^6.11.0"
   },
   "devDependencies": {
-    "@types/node": "^18.14.0",
+    "@types/node": "^18.14.1",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.52.0",
     "colortape": "^0.1.2",
