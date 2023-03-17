@@ -16,9 +16,9 @@ jobs:
           package-name: faas-js-runtime
           changelog-types: '[{"type":"enhancement","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false},{"type":"cleanup","section":"Miscellaneous","hidden":false},{"type":"api-change","section":"API Changes","hidden":false},{"type":"documentation","section":"Documentation","hidden":false},{"type":"techdebt","section":"Miscellaneous","hidden":false},{"type":"proposal","section":"Miscellaneous","hidden":false},{"type":"feat","section":"Features","hidden":false}]'
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
