@@ -9,9 +9,24 @@ const Context = require('./lib/context');
 // HTTP framework
 const fastify = require('fastify');
 
+// Default log level
 const LOG_LEVEL = 'warn';
+
+// Default port
 const PORT = 8080;
 
+/**
+ * Starts the provided Function. If the function is a module, it will be
+ * inspected for init, shutdown, liveness, and readiness functions and those
+ * will be used to configure the server. If it's a function, it will be used
+ * directly.
+ *
+ * @param {Object | function} func The function to start (see the Function type)
+ * @param {*} options Options to configure the server
+ * @param {string} options.logLevel The log level to use
+ * @param {number} options.port The port to listen on
+ * @returns {Promise<http.Server>} The server that was started
+ */
 async function start(func, options) {
   options = options || {};
   if (typeof func === 'function') {
@@ -35,7 +50,15 @@ async function start(func, options) {
   return __start(func.handle, options);
 }
 
-// Invoker
+/**
+ * Internal function to start the server. This is used by the start function.
+ *
+ * @param {function} func - The function to start
+ * @param {*} options - Options to configure the server
+ * @param {string} options.logLevel - The log level to use
+ * @param {number} options.port - The port to listen on
+ * @returns {Promise<http.Server>} The server that was started
+ */
 async function __start(func, options) {
   // Load a func.yaml file if it exists
   const config = loadConfig(options);
@@ -65,6 +88,12 @@ async function __start(func, options) {
   });
 }
 
+/**
+ * Creates and configures the HTTP server to handle incoming CloudEvents,
+ * and initializes the Context object.
+ * @param {object} config - The configuration object for port and logLevel
+ * @returns {FastifyInstance} The Fastify server that was created
+ */
 function initializeServer(config) {
   const server = fastify({
     logger: {
@@ -131,7 +160,11 @@ function loadConfig(options) {
   return { ...options, ...readFuncYaml(options.config) };
 }
 
-// reads a func.yaml file at path and returns it as a JS object
+/**
+ * Reads a func.yaml file at path and returns it as a JS object
+ * @param {string} fileOrDirPath - the path to the func.yaml file or the directory containing it
+ * @returns {object} the parsed func.yaml file
+ */
 function readFuncYaml(fileOrDirPath) {
   if (!fileOrDirPath) fileOrDirPath = './';
 
