@@ -25,7 +25,7 @@ just a simple HTTP GET/POST request. The invoked user function can be
 ## The Function Interface
 
 The function file that is loaded may export a single function or a `Function`
-object. The `Function object allows developers to add lifecycle hooks for
+object. The `Function` object allows developers to add lifecycle hooks for
 initialization and shutdown, as well as providing a way to implement custom
 health checks.
 
