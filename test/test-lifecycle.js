@@ -39,7 +39,7 @@ test('Bubbles up any exceptions thrown by init()', t => {
 });
 
 test('Calls shutdown after the server has stopped', async t => {
-  t.plan(2);
+  t.plan(1);
   let shutdownCalled = false;
   const server = await start({
     handle: () => {},
@@ -49,10 +49,10 @@ test('Calls shutdown after the server has stopped', async t => {
   }, defaults);
   t.ok(!shutdownCalled, 'shutdown was not called before server.close()');
   return new Promise(resolve => {
-    server.close(_ => {
-      t.ok(shutdownCalled, 'shutdown was called after server.close()');
-      resolve();
-    });
+    // TODO: It would be nice to check for the shutdown call here
+    // but it's not clear how to do that if we are only hooking on
+    // signal interrupts.
+    server.close(resolve);
   });
 });
 

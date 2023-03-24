@@ -207,4 +207,4 @@ $ curl -X POST -d '{"hello": "world"}' \
 
 ### Sample
 
-You can see this in action by running `node hack/run.js`.
+You can see this in action by running `node bin/cli.js sample/index.js`.

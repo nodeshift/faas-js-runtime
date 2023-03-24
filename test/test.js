@@ -11,6 +11,13 @@ const { execSync } = require('child_process');
 const path = require('path');
 const { CloudEvent, HTTP } = require('cloudevents');
 
+// Because we are loading so many functions in a single test
+// process, and because all of those functions add listeners
+// to the same event emitter, we need to make sure that we
+// have set the max listeners to a high enough number.
+// Otherwise, we will get a warning.
+require('events').EventEmitter.defaultMaxListeners = 100;
+
 // Ensure fixture dependencies are installed
 const fixtureDir = path.join(__dirname, 'fixtures');
 const fixtures = readdirSync(fixtureDir);

@@ -5,6 +5,7 @@ const yaml = require('js-yaml');
 const requestHandler = require('./lib/request-handler');
 const eventHandler = require('./lib/event-handler');
 const Context = require('./lib/context');
+const shutdown = require('death')({ uncaughtException: true });
 
 // HTTP framework
 const fastify = require('fastify');
@@ -73,16 +74,11 @@ async function __start(func, options) {
   // Start the server
   return new Promise((resolve, reject) => {
     server.listen({
-      port: options.port,
+      port: config.port,
       host: '::'
     },
     err => { // callback function
       if (err) return reject(err);
-      // If the function exports a shutdown function add it as a listener
-      if (typeof options.shutdown !== 'function') {
-        options.shutdown = _ => {};
-      }
-      server.server.on('close', options.shutdown);
       resolve(server.server);
     });
   });
@@ -108,6 +104,16 @@ function initializeServer(config) {
     }
   });
 
+  // Give the Function an opportunity to clean up before the process exits
+  shutdown(_ => {
+    if (typeof config.shutdown === 'function') {
+      config.shutdown();
+    }
+    server.close();
+    process.exit(0);
+  });
+
+  // Add a parser for application/x-www-form-urlencoded
   server.addContentTypeParser('application/x-www-form-urlencoded',
     function(_, payload, done) {
       var body = '';
@@ -123,6 +129,8 @@ function initializeServer(config) {
       payload.on('error', done);
     });
 
+  // Add a parser for everything else - parse it as a buffer and
+  // let this framework's router handle it
   server.addContentTypeParser('*', { parseAs: 'buffer' }, function(req, body, done) {
     try {
       done(null, body);
@@ -157,7 +165,10 @@ function initializeServer(config) {
  * @returns {Object} Configuration object
  */
 function loadConfig(options) {
-  return { ...options, ...readFuncYaml(options.config) };
+  const opts = { ...options, ...readFuncYaml(options.config) };
+  opts.logLevel = opts.logLevel || LOG_LEVEL;
+  opts.port = opts.port || PORT;
+  return opts;
 }
 
 /**
