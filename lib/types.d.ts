@@ -4,10 +4,23 @@ import { CloudEvent } from 'cloudevents';
 import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 
 export interface Function {
+  // The initialization function, called before the server is started
+  // This function is optional and should be synchronous.
   init: () => any;
+
+  // The shutdown function, called after the server is stopped
+  // This function is optional and should be synchronous.
   shutdown: () => any;
+
+  // The liveness function, called to check if the server is alive
+  // This function is optional and should return 200/OK if the server is alive.
   liveness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+
+  // The readiness function, called to check if the server is ready to accept requests
+  // This function is optional and should return 200/OK if the server is ready.
   readiness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+
+  // The function to handle HTTP requests
   handle: CloudEventFunction | HTTPFunction;
 }
 
