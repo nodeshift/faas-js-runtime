@@ -1,6 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { CloudEvent } from 'cloudevents';
+import { Http2ServerRequest, Http2ServerResponse } from 'http2';
+
+export interface Function {
+  init: () => any;
+  shutdown: () => any;
+  liveness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+  readiness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+  handle: CloudEventFunction | HTTPFunction;
+}
 
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.

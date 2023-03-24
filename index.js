@@ -9,27 +9,66 @@ const Context = require('./lib/context');
 // HTTP framework
 const fastify = require('fastify');
 
-let LOG_LEVEL = 'warn';
+const LOG_LEVEL = 'warn';
 const PORT = 8080;
 
-// Invoker
-function start(func, options) {
+async function start(func, options) {
   options = options || {};
-
-  // Load a func.yaml file if it exists
-  const funcConfig = loadFuncYaml(options.config) || {};
-
-  // Set the log level
-  if (['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']
-    .find(l => funcConfig.logLevel === l)) {
-    LOG_LEVEL = funcConfig.logLevel;
+  if (typeof func === 'function') {
+    return __start(func, options);
   }
+  if (typeof func.handle !== 'function') {
+    throw new TypeError('Function must export a handle function');
+  }
+  if (typeof func.init === 'function') {
+    func.init();
+  }
+  if (typeof func.shutdown === 'function') {
+    options.shutdown = func.shutdown;
+  }
+  if (typeof func.liveness === 'function') {
+    options.liveness = func.liveness;
+  }
+  if (typeof func.readiness === 'function') {
+    options.readiness = func.readiness;
+  }
+  return __start(func.handle, options);
+}
 
-  // Create the server
-  const { logLevel = LOG_LEVEL, port = PORT } = { ...options };
+// Invoker
+async function __start(func, options) {
+  // Load a func.yaml file if it exists
+  const config = loadConfig(options);
+
+  // Create and configure the server for the default behavior
+  const server = initializeServer(config);
+
+  // Configures the server to handle incoming requests to the function itself,
+  // and also to other endpoints such as telemetry and liveness/readiness
+  requestHandler(server, { func, funcConfig: config });
+
+  // Start the server
+  return new Promise((resolve, reject) => {
+    server.listen({
+      port: options.port,
+      host: '::'
+    },
+    err => { // callback function
+      if (err) return reject(err);
+      // If the function exports a shutdown function add it as a listener
+      if (typeof options.shutdown !== 'function') {
+        options.shutdown = _ => {};
+      }
+      server.server.on('close', options.shutdown);
+      resolve(server.server);
+    });
+  });
+}
+
+function initializeServer(config) {
   const server = fastify({
     logger: {
-      level: logLevel,
+      level: config.logLevel,
       formatters: {
         bindings: bindings => ({
             pid: bindings.pid,
@@ -76,24 +115,24 @@ function start(func, options) {
   // to the request's `fcontext`
   eventHandler(server);
 
-  // Configures the server to handle incoming requests to the function itself,
-  // and also to other endpoints such as telemetry and liveness/readiness
-  requestHandler(server, { func, funcConfig });
+  return server;
+}
 
-  return new Promise((resolve, reject) => {
-    server.listen({
-      port,
-      host: '::'
-    },
-    err => { // callback function
-      if (err) return reject(err);
-      resolve(server.server);
-    });
-  });
+/**
+ * loadConfig() loads a func.yaml file if it exists, allowing it to take precedence over the default options
+ *
+ * @param {Object} options Server options
+ * @param {String} options.config Path to a func.yaml file
+ * @param {String} options.logLevel Log level - one of 'fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'
+ * @param {number} options.port Port to listen on
+ * @returns {Object} Configuration object
+ */
+function loadConfig(options) {
+  return { ...options, ...readFuncYaml(options.config) };
 }
 
 // reads a func.yaml file at path and returns it as a JS object
-function loadFuncYaml(fileOrDirPath) {
+function readFuncYaml(fileOrDirPath) {
   if (!fileOrDirPath) fileOrDirPath = './';
 
   let baseDir;
