@@ -72,16 +72,16 @@ async function __start(func, options) {
   requestHandler(server, { func, funcConfig: config });
 
   // Start the server
-  return new Promise((resolve, reject) => {
-    server.listen({
+  try {
+    await server.listen({
       port: config.port,
       host: '::'
-    },
-    err => { // callback function
-      if (err) return reject(err);
-      resolve(server.server);
     });
-  });
+    return server.server;
+  } catch(err) {
+    console.error('Error starting server', err);
+    process.exit(1);
+  }
 }
 
 /**
