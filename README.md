@@ -123,8 +123,9 @@ export interface HealthCheck {
   (request: Http2ServerRequest, reply: Http2ServerResponse): any;
   path?: string;
 }
-
 ```
+
+By default, the health checks are bound to the `/health/liveness` and `/health/readiness` paths. You can override this by setting the `path` property on the `HealthCheck` object, or by setting the `LIVENESS_URL` and `READINESS_URL` environment variables.
 
 ## CLI
 
