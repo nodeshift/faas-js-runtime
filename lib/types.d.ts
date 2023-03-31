@@ -3,25 +3,54 @@ import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { CloudEvent } from 'cloudevents';
 import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 
+/**
+ * The Function interface describes a Function project, including the handler function
+ * as well as the initialization and shutdown functions, and health checks.
+ */
 export interface Function {
   // The initialization function, called before the server is started
   // This function is optional and should be synchronous.
-  init: () => any;
+  init?: () => any;
 
   // The shutdown function, called after the server is stopped
   // This function is optional and should be synchronous.
-  shutdown: () => any;
+  shutdown?: () => any;
 
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.
-  liveness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+  liveness?: HealthCheck;
 
   // The readiness function, called to check if the server is ready to accept requests
   // This function is optional and should return 200/OK if the server is ready.
-  readiness: (request: Http2ServerRequest, reply: Http2ServerResponse) => any;
+  readiness?: HealthCheck;
+
+  logLevel?: LogLevel;
 
   // The function to handle HTTP requests
   handle: CloudEventFunction | HTTPFunction;
+}
+
+/**
+ * The HealthCheck interface describes a health check function,
+ * including the optional path to which it should be bound.
+ */
+export interface HealthCheck {
+  (request: Http2ServerRequest, reply: Http2ServerResponse): any;
+  path?: string;
+}
+
+// InvokerOptions allow the user to configure the server.
+export type InvokerOptions = {
+  'logLevel'?: LogLevel,
+  'port'?: Number,
+  'path'?: String
+}
+
+/**
+ * Log level options for the server.
+ */
+export enum LogLevel {
+  'trace', 'debug', 'info', 'warn', 'error', 'fatal'
 }
 
 /**
