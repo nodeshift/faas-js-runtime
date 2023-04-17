@@ -4,8 +4,6 @@ const path = require('path');
 const { start, defaults } = require('../');
 const { loadFunction } = require('../lib/function-loader.js');
 const pkg = require('../package.json');
-
-const ON_DEATH = require('death')({ uncaughtException: true });
 const { Command } = require('commander');
 
 const program = new Command();
@@ -23,7 +21,6 @@ async function runServer(file) {
   const programOpts = program.opts();
 
   try {
-    let server;
     let options = {
       logLevel: process.env.FUNC_LOG_LEVEL || programOpts['logLevel'] || defaults.LOG_LEVEL,
       port: process.env.FUNC_PORT || programOpts.port || defaults.PORT
@@ -32,18 +29,15 @@ async function runServer(file) {
     const filePath = extractFullPath(file);
     const code = await loadFunction(filePath);
 
-    if (typeof code === 'function') {
-      server = await start(code, options);
-    } else if (typeof code.handle === 'function') {
-      server = await start(code.handle, options);
+    // The module will extract `handle` and other lifecycle functions
+    // from `code` if it is an object. If it's just a function, it will
+    // be used directly.
+    if (typeof code === 'function' || typeof code === 'object') {
+      return start(code, options);
     } else {
       console.error(code);
       throw TypeError(`Cannot find Invokable function 'handle' in ${code}`);
     }
-    ON_DEATH(_ => {
-      server.close();
-      process.exit(0);
-    });
   } catch (error) {
     console.error(`⛔ ${error}`);
   }

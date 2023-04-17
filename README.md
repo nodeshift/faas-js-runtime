@@ -22,7 +22,41 @@ at `localhost:8080`. The incoming request may be a
 just a simple HTTP GET/POST request. The invoked user function can be
 `async` but that is not required.
 
-## Function Signatures
+## The Function Interface
+
+The function file that is loaded may export a single function or a `Function`
+object. The `Function` object allows developers to add lifecycle hooks for
+initialization and shutdown, as well as providing a way to implement custom
+health checks.
+
+The `Function` interface is defined as:
+
+```typescript
+export interface Function {
+  // The initialization function, called before the server is started
+  // This function is optional and should be synchronous.
+  init?: () => any;
+
+  // The shutdown function, called after the server is stopped
+  // This function is optional and should be synchronous.
+  shutdown?: () => any;
+
+  // The liveness function, called to check if the server is alive
+  // This function is optional and should return 200/OK if the server is alive.
+  liveness?: HealthCheck;
+
+  // The readiness function, called to check if the server is ready to accept requests
+  // This function is optional and should return 200/OK if the server is ready.
+  readiness?: HealthCheck;
+
+  logLevel?: LogLevel;
+
+  // The function to handle HTTP requests
+  handle: CloudEventFunction | HTTPFunction;
+}
+```
+
+## Handle Signature
 
 This module supports two different function signatures: HTTP or CloudEvents. In the type definitions below, we use TypeScript to express interfaces and types, but this module is usable from JavaScript as well.
 
@@ -74,11 +108,30 @@ type CloudEventFunctionReturn = Promise<CloudEvent> | CloudEvent | HTTPFunctionR
 
 The function return type can be anything that a simple HTTP function can return or a CloudEvent. Whatever is returned, it will be sent back to the caller as a response.
 
+### Health Checks
+
+The `Function` interface also allows for the addition of a `liveness` and `readiness` function. These functions are used to implement health checks for the function. The `liveness` function is called to check if the function is alive. The `readiness` function is called to check if the function is ready to accept requests. If either of these functions return a non-200 status code, then the function is considered unhealthy.
+
+A health check function is defined as:
+
+```typescript
+/**
+ * The HealthCheck interface describes a health check function,
+ * including the optional path to which it should be bound.
+ */
+export interface HealthCheck {
+  (request: Http2ServerRequest, reply: Http2ServerResponse): any;
+  path?: string;
+}
+```
+
+By default, the health checks are bound to the `/health/liveness` and `/health/readiness` paths. You can override this by setting the `path` property on the `HealthCheck` object, or by setting the `LIVENESS_URL` and `READINESS_URL` environment variables.
+
 ## CLI
 
 The easiest way to get started is to use the CLI. You can call it
 with the path to any JavaScript file which has a default export that
-is a function. For example,
+is a function, or that exports a `Function` type. For example,
 
 ```js
 // index.js
@@ -93,9 +146,6 @@ function handle(context) {
 
 module.exports = handle;
 ```
-
-Additionally, if your JavaScript file exports more than a single function,
-an exported `handle` function will be invoked.
 
 You can expose this function as an HTTP endpoint at `localhost:8080`
 with the CLI.
@@ -120,7 +170,7 @@ https://developers.redhat.com/articles/2021/12/08/nodejs-serverless-functions-re
 
 ### Functions as ES Modules
 
-Functions can be written and imported as ES modules with either the `.mjs` file extenstion or by adding the `type` property to the functions package.json and setting it to `module`.
+Functions can be written and imported as ES modules with either the `.mjs` file extension or by adding the `type` property to the functions package.json and setting it to `module`.
 
 ```js
 // index.mjs
@@ -207,4 +257,4 @@ $ curl -X POST -d '{"hello": "world"}' \
 
 ### Sample
 
-You can see this in action by running `node hack/run.js`.
+You can see this in action by running `node bin/cli.js sample/index.js`.
