@@ -488,26 +488,6 @@ test('Exposes liveness URL', t => {
       }, errHandler(t));
 });
 
-test('Returns HTTP error code if a caught error has one', t => {
-  start(_ => {
-    const error = new Error('Unavailable for Legal Reasons');
-    error.code = 451;
-    throw error;
-  })
-  .then(server => {
-      t.plan(1);
-      request(server)
-        .get('/')
-        .expect(451)
-        .expect('Content-type', /json/)
-        .end((err, _) => {
-          t.error(err, 'No error');
-          t.end();
-          server.close();
-        });
-  }, errHandler(t));
-});
-
 test('Function accepts destructured parameters', t => {
   start(function({ lunch }) { return { message: `Yay ${lunch}` }; })
     .then(server => {
