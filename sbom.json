@@ -1,0 +1,2711 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "serialNumber": "urn:uuid:52abd36e-36d6-42c0-bb60-85e31ea59b11",
+  "metadata": {
+    "timestamp": "2023-05-24T14:20:30.572Z",
+    "tools": [
+      {
+        "vendor": "@cyclonedx",
+        "name": "cyclonedx-npm",
+        "version": "1.12.0",
+        "externalReferences": [
+          {
+            "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
+            "type": "vcs",
+            "comment": "as detected from PackageJson property \"repository.url\""
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
+            "type": "website",
+            "comment": "as detected from PackageJson property \"homepage\""
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
+            "type": "issue-tracker",
+            "comment": "as detected from PackageJson property \"bugs.url\""
+          }
+        ]
+      },
+      {
+        "vendor": "@cyclonedx",
+        "name": "cyclonedx-library",
+        "version": "2.0.0",
+        "externalReferences": [
+          {
+            "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+            "type": "vcs",
+            "comment": "as detected from PackageJson property \"repository.url\""
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+            "type": "website",
+            "comment": "as detected from PackageJson property \"homepage\""
+          },
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+            "type": "issue-tracker",
+            "comment": "as detected from PackageJson property \"bugs.url\""
+          }
+        ]
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "faas-js-runtime",
+      "version": "1.1.0",
+      "bom-ref": "faas-js-runtime@1.1.0",
+      "author": "Red Hat, Inc.",
+      "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/faas-js-runtime@1.1.0?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/nodeshift/faas-js-runtime#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/nodeshift/faas-js-runtime/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "cloudevents",
+      "version": "6.0.4",
+      "bom-ref": "cloudevents@6.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "55acbcd5b4ecbad1646711e73362b4adebfde5dd31eda4d9dc6f819a6f3f1a7233b15b467de0642dc5c50f8733674f11a0e9fa3ce2a5fab2176814be5e7fa320"
+        }
+      ],
+      "purl": "pkg:npm/cloudevents@6.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cloudevents/-/cloudevents-6.0.4.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cloudevents"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ajv",
+          "version": "8.11.0",
+          "bom-ref": "cloudevents@6.0.4|ajv@8.11.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ajv@8.11.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/cloudevents/node_modules/ajv"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "json-schema-traverse",
+          "version": "1.0.0",
+          "bom-ref": "cloudevents@6.0.4|json-schema-traverse@1.0.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/json-schema-traverse@1.0.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/cloudevents/node_modules/json-schema-traverse"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "uuid",
+          "version": "8.3.2",
+          "bom-ref": "cloudevents@6.0.4|uuid@8.3.2",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/uuid@8.3.2",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/cloudevents/node_modules/uuid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-formats",
+      "version": "2.1.1",
+      "bom-ref": "ajv-formats@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ajv-formats@2.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ajv-formats"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ajv",
+          "version": "8.11.0",
+          "bom-ref": "ajv-formats@2.1.1|ajv@8.11.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ajv@8.11.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/ajv-formats/node_modules/ajv"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "json-schema-traverse",
+          "version": "1.0.0",
+          "bom-ref": "ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/json-schema-traverse@1.0.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/ajv-formats/node_modules/json-schema-traverse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "bom-ref": "fast-deep-equal@3.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-deep-equal"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "bom-ref": "require-from-string@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/require-from-string@2.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/require-from-string"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uri-js",
+      "version": "4.4.1",
+      "bom-ref": "uri-js@4.4.1",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
+        }
+      ],
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/uri-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "punycode",
+      "version": "2.1.1",
+      "bom-ref": "punycode@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/punycode@2.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/punycode"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "process",
+      "version": "0.11.10",
+      "bom-ref": "process@0.11.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/process@0.11.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/process"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "util",
+      "version": "0.12.5",
+      "bom-ref": "util@0.12.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/util@0.12.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/util"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "bom-ref": "inherits@2.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/inherits"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-arguments",
+      "version": "1.1.1",
+      "bom-ref": "is-arguments@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-arguments@1.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-arguments"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "call-bind",
+      "version": "1.0.2",
+      "bom-ref": "call-bind@1.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/call-bind@1.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/call-bind"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-tostringtag",
+      "version": "1.0.0",
+      "bom-ref": "has-tostringtag@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/has-tostringtag@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has-tostringtag"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-symbols",
+      "version": "1.0.3",
+      "bom-ref": "has-symbols@1.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/has-symbols@1.0.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has-symbols"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-generator-function",
+      "version": "1.0.10",
+      "bom-ref": "is-generator-function@1.0.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-generator-function@1.0.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-generator-function"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-typed-array",
+      "version": "1.1.10",
+      "bom-ref": "is-typed-array@1.1.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-typed-array@1.1.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-typed-array"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "available-typed-arrays",
+      "version": "1.0.5",
+      "bom-ref": "available-typed-arrays@1.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/available-typed-arrays@1.0.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/available-typed-arrays"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "for-each",
+      "version": "0.3.3",
+      "bom-ref": "for-each@0.3.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/for-each@0.3.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/for-each"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-callable",
+      "version": "1.2.7",
+      "bom-ref": "is-callable@1.2.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-callable@1.2.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-callable"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "gopd",
+      "version": "1.0.1",
+      "bom-ref": "gopd@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/gopd@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/gopd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-intrinsic",
+      "version": "1.2.0",
+      "bom-ref": "get-intrinsic@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/get-intrinsic@1.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/get-intrinsic"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "which-typed-array",
+      "version": "1.1.9",
+      "bom-ref": "which-typed-array@1.1.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/which-typed-array@1.1.9",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/which-typed-array"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "commander",
+      "version": "10.0.0",
+      "bom-ref": "commander@10.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cd2e4f9d3236d8521133aca5356f06e00a742043b293ad9f84b483d3eb87453f4c71108b1a991536f6a8e1b8e29a92bf1928729f2424145c4787031c11399db8"
+        }
+      ],
+      "purl": "pkg:npm/commander@10.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/commander/-/commander-10.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/commander"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "death",
+      "version": "1.1.0",
+      "bom-ref": "death@1.1.0",
+      "purl": "pkg:npm/death@1.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/death"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastify",
+      "version": "4.15.0",
+      "bom-ref": "fastify@4.15.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9bf09a44df277f9bb261dac37b6aaaabed33de81b213e03efaa94a4282c94c8e162349d62bd0fa4771715d0dcc570b7f99df7bec6311e05e37a44f68aab4b6cf"
+        }
+      ],
+      "purl": "pkg:npm/fastify@4.15.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fastify/-/fastify-4.15.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastify"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "semver",
+          "version": "7.3.8",
+          "bom-ref": "fastify@4.15.0|semver@7.3.8",
+          "licenses": [
+            {
+              "license": {
+                "id": "ISC"
+              }
+            }
+          ],
+          "purl": "pkg:npm/semver@7.3.8",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fastify/node_modules/semver"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-compiler",
+      "group": "@fastify",
+      "version": "3.5.0",
+      "bom-ref": "@fastify/ajv-compiler@3.5.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "79b6c4b6523b7715c5e7388d76bd3998e63c3670e23c1d57bc094b1dcb51b7f45cf82dcb08e556e62994557fa686f5219cdce63c11dec1490e1601a50b181d00"
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/ajv-compiler@3.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/ajv-compiler/-/ajv-compiler-3.5.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/ajv-compiler"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ajv",
+          "version": "8.12.0",
+          "bom-ref": "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b11bb592970ef722ed63104abea7d37a1f4acd91303b7493c97d474fee02683cc2e87a5319884884f2338fd5ee294eca603c2769e87985c3b08f2d50b89cc13c"
+            }
+          ],
+          "purl": "pkg:npm/ajv@8.12.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ajv/-/ajv-8.12.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@fastify/ajv-compiler/node_modules/ajv"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "json-schema-traverse",
+          "version": "1.0.0",
+          "bom-ref": "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "34cf3f3fd9f75e35e12199f594b86415a0024ce5114178d6855e0103f4673aff31be0aadaa9017f483b89914314b1d51968e2dab37aa6f4b0e96bb9a3b2dddba"
+            }
+          ],
+          "purl": "pkg:npm/json-schema-traverse@1.0.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@fastify/ajv-compiler/node_modules/json-schema-traverse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-uri",
+      "version": "2.1.0",
+      "bom-ref": "fast-uri@2.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-uri@2.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-uri"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "error",
+      "group": "@fastify",
+      "version": "3.0.0",
+      "bom-ref": "@fastify/error@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/error@3.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/error"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-json-stringify-compiler",
+      "group": "@fastify",
+      "version": "4.2.0",
+      "bom-ref": "@fastify/fast-json-stringify-compiler@4.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ca96729d1bd70377626df3f2910377441e7005d1148121a09f2f1073a935eb7c183cb0f89841840e4002a7ed34626aa41af226f03ff16281da8f0c847560ff7a"
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/fast-json-stringify-compiler@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/fast-json-stringify-compiler/-/fast-json-stringify-compiler-4.2.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/fast-json-stringify-compiler"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-json-stringify",
+      "version": "5.7.0",
+      "bom-ref": "fast-json-stringify@5.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b0154f4e09c066c78bbb54208fa9546d0d077e31616565c09a967901a4869322e1e600170606bfb8f26340f1e90c58c2f5a75622974e7022d20d382b67bb27a1"
+        }
+      ],
+      "purl": "pkg:npm/fast-json-stringify@5.7.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-json-stringify/-/fast-json-stringify-5.7.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-json-stringify"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ajv",
+          "version": "8.12.0",
+          "bom-ref": "fast-json-stringify@5.7.0|ajv@8.12.0",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b11bb592970ef722ed63104abea7d37a1f4acd91303b7493c97d474fee02683cc2e87a5319884884f2338fd5ee294eca603c2769e87985c3b08f2d50b89cc13c"
+            }
+          ],
+          "purl": "pkg:npm/ajv@8.12.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ajv/-/ajv-8.12.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fast-json-stringify/node_modules/ajv"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "json-schema-traverse",
+          "version": "1.0.0",
+          "bom-ref": "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "34cf3f3fd9f75e35e12199f594b86415a0024ce5114178d6855e0103f4673aff31be0aadaa9017f483b89914314b1d51968e2dab37aa6f4b0e96bb9a3b2dddba"
+            }
+          ],
+          "purl": "pkg:npm/json-schema-traverse@1.0.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fast-json-stringify/node_modules/json-schema-traverse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "deepmerge",
+      "group": "@fastify",
+      "version": "1.3.0",
+      "bom-ref": "@fastify/deepmerge@1.3.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "27c4ce481ab74a865b0e133df91feeefb84ff77833feb6a3480f8ada41b28a33e93913d65171d4a536a57a88fef7602cd12f6e3d13fb3a2f08a8c7f4bbeae8e8"
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/deepmerge@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-1.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/deepmerge"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rfdc",
+      "version": "1.3.0",
+      "bom-ref": "rfdc@1.3.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "576868bddcc56ce8bbeff59a8da48c5e4d8e2e6fb134879074c32e07b89c8fb6e4eb38b617c1860318a07270c5a491db37235c83224388ffbc9cead8e5c646ac"
+        }
+      ],
+      "purl": "pkg:npm/rfdc@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/rfdc/-/rfdc-1.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/rfdc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "abstract-logging",
+      "version": "2.0.1",
+      "bom-ref": "abstract-logging@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/abstract-logging@2.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/abstract-logging"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "avvio",
+      "version": "8.2.0",
+      "bom-ref": "avvio@8.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/avvio@8.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/avvio"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "archy",
+      "version": "1.0.0",
+      "bom-ref": "archy@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/archy@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/archy"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.3.4",
+      "bom-ref": "debug@4.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/debug@4.3.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/debug"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.2",
+      "bom-ref": "ms@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.1.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastq",
+      "version": "1.8.0",
+      "bom-ref": "fastq@1.8.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fastq@1.8.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastq"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "reusify",
+      "version": "1.0.4",
+      "bom-ref": "reusify@1.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/reusify@1.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/reusify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-content-type-parse",
+      "version": "1.0.0",
+      "bom-ref": "fast-content-type-parse@1.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5db7385dccac51772c3f9687514ecdab73b0bc7abdec2f969db91e21e7e97982d7fabcb3149954e8e4ad14986ce8e9742e4506a5c2bec0bd09c1f33e14253920"
+        }
+      ],
+      "purl": "pkg:npm/fast-content-type-parse@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-content-type-parse/-/fast-content-type-parse-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-content-type-parse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "find-my-way",
+      "version": "7.6.0",
+      "bom-ref": "find-my-way@7.6.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1fb6dead674727ee42355af88a52d63da8b89a5ed8daa02cc63c37a5f781c4f8a06666834f3174c2324b8fdd3144298671661ccadd39d3237edf83990c99b579"
+        }
+      ],
+      "purl": "pkg:npm/find-my-way@7.6.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/find-my-way/-/find-my-way-7.6.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/find-my-way"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-querystring",
+      "version": "1.1.1",
+      "bom-ref": "fast-querystring@1.1.1",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a91dabf9edc7be11059a974732ffff53c1671659d88da0ba40a0ee69700b0e4c3692f1cef160e3c47f9ffeb1c647831ee299e4f29f4902444d4e360700a467d9"
+        }
+      ],
+      "purl": "pkg:npm/fast-querystring@1.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-querystring/-/fast-querystring-1.1.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-querystring"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-decode-uri-component",
+      "version": "1.0.1",
+      "bom-ref": "fast-decode-uri-component@1.0.1",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "58a80a5a0e5e531bd1646c16f05bdf6da1fb0174a1d9c2fede3e5f306cd4302c56049ddd5776bb5b3f32d9ffee4347b707a5a6a1d0f7a12e788d343d1d54c822"
+        }
+      ],
+      "purl": "pkg:npm/fast-decode-uri-component@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-decode-uri-component/-/fast-decode-uri-component-1.0.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-decode-uri-component"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-regex2",
+      "version": "2.0.0",
+      "bom-ref": "safe-regex2@2.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3da51216c51a34db8ac240628e800f1c02bafde33a562aefc8f5a567b040432e03fa10af87807a9481be9cf7616c57c86cffa04c605caddb0e694b3417e64139"
+        }
+      ],
+      "purl": "pkg:npm/safe-regex2@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-regex2/-/safe-regex2-2.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-regex2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ret",
+      "version": "0.2.2",
+      "bom-ref": "ret@0.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3346f761642ced1dd9f75ed6450cb51c703b05aec3f21bd983a504e662f2909c50544da3bb42176c695a1cf3e5918f9637bc053fec14317981140d1a57abd819"
+        }
+      ],
+      "purl": "pkg:npm/ret@0.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ret/-/ret-0.2.2.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ret"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "light-my-request",
+      "version": "5.6.1",
+      "bom-ref": "light-my-request@5.6.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/light-my-request@5.6.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/light-my-request"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cookie",
+      "version": "0.5.0",
+      "bom-ref": "cookie@0.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cookie@0.5.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cookie"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "process-warning",
+      "version": "2.0.0",
+      "bom-ref": "process-warning@2.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/process-warning@2.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/process-warning"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-cookie-parser",
+      "version": "2.5.1",
+      "bom-ref": "set-cookie-parser@2.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/set-cookie-parser@2.5.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/set-cookie-parser"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino",
+      "version": "8.7.0",
+      "bom-ref": "pino@8.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino@8.7.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "atomic-sleep",
+      "version": "1.0.0",
+      "bom-ref": "atomic-sleep@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/atomic-sleep@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/atomic-sleep"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-redact",
+      "version": "3.1.2",
+      "bom-ref": "fast-redact@3.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-redact@3.1.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-redact"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "on-exit-leak-free",
+      "version": "2.1.0",
+      "bom-ref": "on-exit-leak-free@2.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/on-exit-leak-free@2.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/on-exit-leak-free"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-abstract-transport",
+      "version": "1.0.0",
+      "bom-ref": "pino-abstract-transport@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino-abstract-transport@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-abstract-transport"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "readable-stream",
+          "version": "4.2.0",
+          "bom-ref": "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/readable-stream@4.2.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/pino-abstract-transport/node_modules/readable-stream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "abort-controller",
+      "version": "3.0.0",
+      "bom-ref": "abort-controller@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/abort-controller@3.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/abort-controller"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "event-target-shim",
+      "version": "5.0.1",
+      "bom-ref": "event-target-shim@5.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/event-target-shim@5.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/event-target-shim"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "buffer",
+      "version": "6.0.3",
+      "bom-ref": "buffer@6.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/buffer@6.0.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "base64-js",
+      "version": "1.5.1",
+      "bom-ref": "base64-js@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/base64-js@1.5.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/base64-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ieee754",
+      "version": "1.2.1",
+      "bom-ref": "ieee754@1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ieee754@1.2.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ieee754"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "events",
+      "version": "3.3.0",
+      "bom-ref": "events@3.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/events@3.3.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/events"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "split2",
+      "version": "4.1.0",
+      "bom-ref": "split2@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/split2@4.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/split2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-std-serializers",
+      "version": "6.0.0",
+      "bom-ref": "pino-std-serializers@6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino-std-serializers@6.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-std-serializers"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "quick-format-unescaped",
+      "version": "4.0.4",
+      "bom-ref": "quick-format-unescaped@4.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/quick-format-unescaped@4.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/quick-format-unescaped"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "real-require",
+      "version": "0.2.0",
+      "bom-ref": "real-require@0.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/real-require@0.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/real-require"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-stable-stringify",
+      "version": "2.4.1",
+      "bom-ref": "safe-stable-stringify@2.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safe-stable-stringify@2.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-stable-stringify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sonic-boom",
+      "version": "3.2.0",
+      "bom-ref": "sonic-boom@3.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/sonic-boom@3.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/sonic-boom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "thread-stream",
+      "version": "2.2.0",
+      "bom-ref": "thread-stream@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/thread-stream@2.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/thread-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "proxy-addr",
+      "version": "2.0.7",
+      "bom-ref": "proxy-addr@2.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/proxy-addr@2.0.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/proxy-addr"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "forwarded",
+      "version": "0.2.0",
+      "bom-ref": "forwarded@0.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/forwarded@0.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/forwarded"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ipaddr.js",
+      "version": "1.9.1",
+      "bom-ref": "ipaddr.js@1.9.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ipaddr.js@1.9.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ipaddr.js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "secure-json-parse",
+      "version": "2.5.0",
+      "bom-ref": "secure-json-parse@2.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/secure-json-parse@2.5.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/secure-json-parse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "6.0.0",
+      "bom-ref": "lru-cache@6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lru-cache@6.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lru-cache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yallist",
+      "version": "4.0.0",
+      "bom-ref": "yallist@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yallist@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yallist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tiny-lru",
+      "version": "10.0.1",
+      "bom-ref": "tiny-lru@10.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/tiny-lru@10.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/tiny-lru"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-yaml",
+      "version": "4.1.0",
+      "bom-ref": "js-yaml@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/js-yaml@4.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/js-yaml"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1",
+      "bom-ref": "argparse@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/argparse@2.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/argparse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-os-utils",
+      "version": "1.3.7",
+      "bom-ref": "node-os-utils@1.3.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/node-os-utils@1.3.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/node-os-utils"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "overload-protection",
+      "version": "1.2.3",
+      "bom-ref": "overload-protection@1.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/overload-protection@1.2.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/overload-protection"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "loopbench",
+      "version": "1.2.0",
+      "bom-ref": "loopbench@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/loopbench@1.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/loopbench"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "xtend",
+      "version": "4.0.2",
+      "bom-ref": "xtend@4.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/xtend@4.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/xtend"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prom-client",
+      "version": "14.1.1",
+      "bom-ref": "prom-client@14.1.1",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "845537daaed4650e7d6d5250194b66dc8d8fac9de05afa02922957f6c175eb992cd6a7e586e81509e2be4b52632581efcadde8e648faf3eab76dc868ae68e7cf"
+        }
+      ],
+      "purl": "pkg:npm/prom-client@14.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prom-client/-/prom-client-14.1.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prom-client"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tdigest",
+      "version": "0.1.1",
+      "bom-ref": "tdigest@0.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/tdigest@0.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/tdigest"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bintrees",
+      "version": "1.0.1",
+      "bom-ref": "bintrees@1.0.1",
+      "purl": "pkg:npm/bintrees@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/bintrees"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "qs",
+      "version": "6.11.1",
+      "bom-ref": "qs@6.11.1",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d30b2bce04f3fe401521ebb14a39e9182e7aaf362dafa253ff607012f31a3e1148a186b56863bc2dbcee535474b9461090ba560533a3d25fc22c0241eb827a9d"
+        }
+      ],
+      "purl": "pkg:npm/qs@6.11.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/qs/-/qs-6.11.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/qs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "side-channel",
+      "version": "1.0.4",
+      "bom-ref": "side-channel@1.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/side-channel@1.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/side-channel"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "function-bind",
+      "version": "1.1.1",
+      "bom-ref": "function-bind@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/function-bind@1.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/function-bind"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has",
+      "version": "1.0.3",
+      "bom-ref": "has@1.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/has@1.0.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-inspect",
+      "version": "1.12.3",
+      "bom-ref": "object-inspect@1.12.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/object-inspect@1.12.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/object-inspect"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "faas-js-runtime@1.1.0",
+      "dependsOn": [
+        "cloudevents@6.0.4",
+        "commander@10.0.0",
+        "death@1.1.0",
+        "fastify@4.15.0",
+        "js-yaml@4.1.0",
+        "node-os-utils@1.3.7",
+        "overload-protection@1.2.3",
+        "prom-client@14.1.1",
+        "qs@6.11.1"
+      ]
+    },
+    {
+      "ref": "cloudevents@6.0.4",
+      "dependsOn": [
+        "ajv-formats@2.1.1",
+        "cloudevents@6.0.4|ajv@8.11.0",
+        "process@0.11.10",
+        "util@0.12.5",
+        "cloudevents@6.0.4|uuid@8.3.2"
+      ]
+    },
+    {
+      "ref": "cloudevents@6.0.4|ajv@8.11.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "cloudevents@6.0.4|json-schema-traverse@1.0.0",
+        "require-from-string@2.0.2",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
+      "ref": "cloudevents@6.0.4|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "cloudevents@6.0.4|uuid@8.3.2"
+    },
+    {
+      "ref": "ajv-formats@2.1.1",
+      "dependsOn": [
+        "ajv-formats@2.1.1|ajv@8.11.0"
+      ]
+    },
+    {
+      "ref": "ajv-formats@2.1.1|ajv@8.11.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+        "require-from-string@2.0.2",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
+      "ref": "ajv-formats@2.1.1|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "fast-deep-equal@3.1.3"
+    },
+    {
+      "ref": "require-from-string@2.0.2"
+    },
+    {
+      "ref": "uri-js@4.4.1",
+      "dependsOn": [
+        "punycode@2.1.1"
+      ]
+    },
+    {
+      "ref": "punycode@2.1.1"
+    },
+    {
+      "ref": "process@0.11.10"
+    },
+    {
+      "ref": "util@0.12.5",
+      "dependsOn": [
+        "inherits@2.0.4",
+        "is-arguments@1.1.1",
+        "is-generator-function@1.0.10",
+        "is-typed-array@1.1.10",
+        "which-typed-array@1.1.9"
+      ]
+    },
+    {
+      "ref": "inherits@2.0.4"
+    },
+    {
+      "ref": "is-arguments@1.1.1",
+      "dependsOn": [
+        "call-bind@1.0.2",
+        "has-tostringtag@1.0.0"
+      ]
+    },
+    {
+      "ref": "call-bind@1.0.2",
+      "dependsOn": [
+        "function-bind@1.1.1",
+        "get-intrinsic@1.2.0"
+      ]
+    },
+    {
+      "ref": "has-tostringtag@1.0.0",
+      "dependsOn": [
+        "has-symbols@1.0.3"
+      ]
+    },
+    {
+      "ref": "has-symbols@1.0.3"
+    },
+    {
+      "ref": "is-generator-function@1.0.10",
+      "dependsOn": [
+        "has-tostringtag@1.0.0"
+      ]
+    },
+    {
+      "ref": "is-typed-array@1.1.10",
+      "dependsOn": [
+        "available-typed-arrays@1.0.5",
+        "call-bind@1.0.2",
+        "for-each@0.3.3",
+        "gopd@1.0.1",
+        "has-tostringtag@1.0.0"
+      ]
+    },
+    {
+      "ref": "available-typed-arrays@1.0.5"
+    },
+    {
+      "ref": "for-each@0.3.3",
+      "dependsOn": [
+        "is-callable@1.2.7"
+      ]
+    },
+    {
+      "ref": "is-callable@1.2.7"
+    },
+    {
+      "ref": "gopd@1.0.1",
+      "dependsOn": [
+        "get-intrinsic@1.2.0"
+      ]
+    },
+    {
+      "ref": "get-intrinsic@1.2.0",
+      "dependsOn": [
+        "function-bind@1.1.1",
+        "has-symbols@1.0.3",
+        "has@1.0.3"
+      ]
+    },
+    {
+      "ref": "which-typed-array@1.1.9",
+      "dependsOn": [
+        "available-typed-arrays@1.0.5",
+        "call-bind@1.0.2",
+        "for-each@0.3.3",
+        "gopd@1.0.1",
+        "has-tostringtag@1.0.0",
+        "is-typed-array@1.1.10"
+      ]
+    },
+    {
+      "ref": "commander@10.0.0"
+    },
+    {
+      "ref": "death@1.1.0"
+    },
+    {
+      "ref": "fastify@4.15.0",
+      "dependsOn": [
+        "@fastify/ajv-compiler@3.5.0",
+        "@fastify/error@3.0.0",
+        "@fastify/fast-json-stringify-compiler@4.2.0",
+        "abstract-logging@2.0.1",
+        "avvio@8.2.0",
+        "fast-content-type-parse@1.0.0",
+        "find-my-way@7.6.0",
+        "light-my-request@5.6.1",
+        "pino@8.7.0",
+        "process-warning@2.0.0",
+        "proxy-addr@2.0.7",
+        "rfdc@1.3.0",
+        "secure-json-parse@2.5.0",
+        "fastify@4.15.0|semver@7.3.8",
+        "tiny-lru@10.0.1"
+      ]
+    },
+    {
+      "ref": "fastify@4.15.0|semver@7.3.8",
+      "dependsOn": [
+        "lru-cache@6.0.0"
+      ]
+    },
+    {
+      "ref": "@fastify/ajv-compiler@3.5.0",
+      "dependsOn": [
+        "ajv-formats@2.1.1",
+        "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+        "fast-uri@2.1.0"
+      ]
+    },
+    {
+      "ref": "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+        "require-from-string@2.0.2",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
+      "ref": "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "fast-uri@2.1.0"
+    },
+    {
+      "ref": "@fastify/error@3.0.0"
+    },
+    {
+      "ref": "@fastify/fast-json-stringify-compiler@4.2.0",
+      "dependsOn": [
+        "fast-json-stringify@5.7.0"
+      ]
+    },
+    {
+      "ref": "fast-json-stringify@5.7.0",
+      "dependsOn": [
+        "@fastify/deepmerge@1.3.0",
+        "ajv-formats@2.1.1",
+        "fast-json-stringify@5.7.0|ajv@8.12.0",
+        "fast-deep-equal@3.1.3",
+        "fast-uri@2.1.0",
+        "rfdc@1.3.0"
+      ]
+    },
+    {
+      "ref": "fast-json-stringify@5.7.0|ajv@8.12.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+        "require-from-string@2.0.2",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
+      "ref": "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "@fastify/deepmerge@1.3.0"
+    },
+    {
+      "ref": "rfdc@1.3.0"
+    },
+    {
+      "ref": "abstract-logging@2.0.1"
+    },
+    {
+      "ref": "avvio@8.2.0",
+      "dependsOn": [
+        "archy@1.0.0",
+        "debug@4.3.4",
+        "fastq@1.8.0"
+      ]
+    },
+    {
+      "ref": "archy@1.0.0"
+    },
+    {
+      "ref": "debug@4.3.4",
+      "dependsOn": [
+        "ms@2.1.2"
+      ]
+    },
+    {
+      "ref": "ms@2.1.2"
+    },
+    {
+      "ref": "fastq@1.8.0",
+      "dependsOn": [
+        "reusify@1.0.4"
+      ]
+    },
+    {
+      "ref": "reusify@1.0.4"
+    },
+    {
+      "ref": "fast-content-type-parse@1.0.0"
+    },
+    {
+      "ref": "find-my-way@7.6.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "fast-querystring@1.1.1",
+        "safe-regex2@2.0.0"
+      ]
+    },
+    {
+      "ref": "fast-querystring@1.1.1",
+      "dependsOn": [
+        "fast-decode-uri-component@1.0.1"
+      ]
+    },
+    {
+      "ref": "fast-decode-uri-component@1.0.1"
+    },
+    {
+      "ref": "safe-regex2@2.0.0",
+      "dependsOn": [
+        "ret@0.2.2"
+      ]
+    },
+    {
+      "ref": "ret@0.2.2"
+    },
+    {
+      "ref": "light-my-request@5.6.1",
+      "dependsOn": [
+        "cookie@0.5.0",
+        "process-warning@2.0.0",
+        "set-cookie-parser@2.5.1"
+      ]
+    },
+    {
+      "ref": "cookie@0.5.0"
+    },
+    {
+      "ref": "process-warning@2.0.0"
+    },
+    {
+      "ref": "set-cookie-parser@2.5.1"
+    },
+    {
+      "ref": "pino@8.7.0",
+      "dependsOn": [
+        "atomic-sleep@1.0.0",
+        "fast-redact@3.1.2",
+        "on-exit-leak-free@2.1.0",
+        "pino-abstract-transport@1.0.0",
+        "pino-std-serializers@6.0.0",
+        "process-warning@2.0.0",
+        "quick-format-unescaped@4.0.4",
+        "real-require@0.2.0",
+        "safe-stable-stringify@2.4.1",
+        "sonic-boom@3.2.0",
+        "thread-stream@2.2.0"
+      ]
+    },
+    {
+      "ref": "atomic-sleep@1.0.0"
+    },
+    {
+      "ref": "fast-redact@3.1.2"
+    },
+    {
+      "ref": "on-exit-leak-free@2.1.0"
+    },
+    {
+      "ref": "pino-abstract-transport@1.0.0",
+      "dependsOn": [
+        "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
+        "split2@4.1.0"
+      ]
+    },
+    {
+      "ref": "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
+      "dependsOn": [
+        "abort-controller@3.0.0",
+        "buffer@6.0.3",
+        "events@3.3.0",
+        "process@0.11.10"
+      ]
+    },
+    {
+      "ref": "abort-controller@3.0.0",
+      "dependsOn": [
+        "event-target-shim@5.0.1"
+      ]
+    },
+    {
+      "ref": "event-target-shim@5.0.1"
+    },
+    {
+      "ref": "buffer@6.0.3",
+      "dependsOn": [
+        "base64-js@1.5.1",
+        "ieee754@1.2.1"
+      ]
+    },
+    {
+      "ref": "base64-js@1.5.1"
+    },
+    {
+      "ref": "ieee754@1.2.1"
+    },
+    {
+      "ref": "events@3.3.0"
+    },
+    {
+      "ref": "split2@4.1.0"
+    },
+    {
+      "ref": "pino-std-serializers@6.0.0"
+    },
+    {
+      "ref": "quick-format-unescaped@4.0.4"
+    },
+    {
+      "ref": "real-require@0.2.0"
+    },
+    {
+      "ref": "safe-stable-stringify@2.4.1"
+    },
+    {
+      "ref": "sonic-boom@3.2.0",
+      "dependsOn": [
+        "atomic-sleep@1.0.0"
+      ]
+    },
+    {
+      "ref": "thread-stream@2.2.0",
+      "dependsOn": [
+        "real-require@0.2.0"
+      ]
+    },
+    {
+      "ref": "proxy-addr@2.0.7",
+      "dependsOn": [
+        "forwarded@0.2.0",
+        "ipaddr.js@1.9.1"
+      ]
+    },
+    {
+      "ref": "forwarded@0.2.0"
+    },
+    {
+      "ref": "ipaddr.js@1.9.1"
+    },
+    {
+      "ref": "secure-json-parse@2.5.0"
+    },
+    {
+      "ref": "lru-cache@6.0.0",
+      "dependsOn": [
+        "yallist@4.0.0"
+      ]
+    },
+    {
+      "ref": "yallist@4.0.0"
+    },
+    {
+      "ref": "tiny-lru@10.0.1"
+    },
+    {
+      "ref": "js-yaml@4.1.0",
+      "dependsOn": [
+        "argparse@2.0.1"
+      ]
+    },
+    {
+      "ref": "argparse@2.0.1"
+    },
+    {
+      "ref": "node-os-utils@1.3.7"
+    },
+    {
+      "ref": "overload-protection@1.2.3",
+      "dependsOn": [
+        "loopbench@1.2.0"
+      ]
+    },
+    {
+      "ref": "loopbench@1.2.0",
+      "dependsOn": [
+        "xtend@4.0.2"
+      ]
+    },
+    {
+      "ref": "xtend@4.0.2"
+    },
+    {
+      "ref": "prom-client@14.1.1",
+      "dependsOn": [
+        "tdigest@0.1.1"
+      ]
+    },
+    {
+      "ref": "tdigest@0.1.1",
+      "dependsOn": [
+        "bintrees@1.0.1"
+      ]
+    },
+    {
+      "ref": "bintrees@1.0.1"
+    },
+    {
+      "ref": "qs@6.11.1",
+      "dependsOn": [
+        "side-channel@1.0.4"
+      ]
+    },
+    {
+      "ref": "side-channel@1.0.4",
+      "dependsOn": [
+        "call-bind@1.0.2",
+        "get-intrinsic@1.2.0",
+        "object-inspect@1.12.3"
+      ]
+    },
+    {
+      "ref": "function-bind@1.1.1"
+    },
+    {
+      "ref": "has@1.0.3",
+      "dependsOn": [
+        "function-bind@1.1.1"
+      ]
+    },
+    {
+      "ref": "object-inspect@1.12.3"
+    }
+  ]
+}
