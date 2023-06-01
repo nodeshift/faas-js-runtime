@@ -14,7 +14,7 @@ path, allowing you to execute a single file as a function.
 | --------------- | ------------- |
 | License:        | Apache-2.0  |
 | Issue tracker:  | https://github.com/nodeshift/faas-js-runtime/issues  |
-| Engines:        | Node.js >= 14 |
+| Engines:        | Node.js >= 16 |
 
 The function is loaded and then invoked for incoming HTTP requests
 at `localhost:8080`. The incoming request may be a
