@@ -33,7 +33,7 @@
   "types": "index.d.ts",
   "bin": "./bin/cli.js",
   "dependencies": {
-    "cloudevents": "^7.0.0",
+    "cloudevents": "^7.0.1",
     "commander": "^10.0.0",
     "death": "^1.1.0",
     "fastify": "^4.17.0",
