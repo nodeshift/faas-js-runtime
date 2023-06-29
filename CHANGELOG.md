@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.0.0...v2.1.0) (2023-06-29)
+
+
+### Features
+
+* upgrade @types/node from 18.14.6 to 20.1.4 ([#236](https://github.com/nodeshift/faas-js-runtime/issues/236)) ([11e616e](https://github.com/nodeshift/faas-js-runtime/commit/11e616e6a08afc5cb0d6e4d0542aa75598730258))
+* upgrade typescript from 4.9.5 to 5.0.4 ([#235](https://github.com/nodeshift/faas-js-runtime/issues/235)) ([26427d4](https://github.com/nodeshift/faas-js-runtime/commit/26427d4cddfa53d0e952fbc8ae6abfd6090ed241))
+
+
+### Bug Fixes
+
+* upgrade @types/node from 20.1.4 to 20.2.5 ([#251](https://github.com/nodeshift/faas-js-runtime/issues/251)) ([6aa97e8](https://github.com/nodeshift/faas-js-runtime/commit/6aa97e8a2b912ab0bb5b207983d7d850d6db6c29))
+* upgrade @typescript-eslint/eslint-plugin from 5.49.0 to 5.59.6 ([#240](https://github.com/nodeshift/faas-js-runtime/issues/240)) ([c7d6284](https://github.com/nodeshift/faas-js-runtime/commit/c7d6284c9dccc30eeb163387666eb7e6fa78a87d))
+* upgrade @typescript-eslint/eslint-plugin from 5.59.6 to 5.59.7 ([#245](https://github.com/nodeshift/faas-js-runtime/issues/245)) ([0e9d9d2](https://github.com/nodeshift/faas-js-runtime/commit/0e9d9d2167011b50e9d16e2017696f2eeb8a7ac1))
+* upgrade @typescript-eslint/parser from 5.58.0 to 5.59.5 ([#237](https://github.com/nodeshift/faas-js-runtime/issues/237)) ([9f85cd8](https://github.com/nodeshift/faas-js-runtime/commit/9f85cd84434c77b6653ce6d7128da8485960ba4e))
+* upgrade @typescript-eslint/parser from 5.59.5 to 5.59.9 ([#249](https://github.com/nodeshift/faas-js-runtime/issues/249)) ([8ca7e29](https://github.com/nodeshift/faas-js-runtime/commit/8ca7e290bc23b43ab9a3d8957ab1f8c7da626307))
+* upgrade cloudevents from 7.0.0 to 7.0.1 ([#246](https://github.com/nodeshift/faas-js-runtime/issues/246)) ([47cbedc](https://github.com/nodeshift/faas-js-runtime/commit/47cbedcc02948a8f4817696ddd73374b29e32e54))
+* upgrade eslint from 8.40.0 to 8.41.0 ([#244](https://github.com/nodeshift/faas-js-runtime/issues/244)) ([e331f46](https://github.com/nodeshift/faas-js-runtime/commit/e331f46eddd27d94862c1722a8fb08fd8bcb22c6))
+* upgrade eslint from 8.41.0 to 8.42.0 ([#252](https://github.com/nodeshift/faas-js-runtime/issues/252)) ([a07a8a2](https://github.com/nodeshift/faas-js-runtime/commit/a07a8a2ca31eb4971841704dd3a4afc5a62903b8))
+* upgrade fastify from 4.16.0 to 4.17.0 ([#238](https://github.com/nodeshift/faas-js-runtime/issues/238)) ([3d239ec](https://github.com/nodeshift/faas-js-runtime/commit/3d239ec4ab27686f2bb82a3fdb745ead5790dff4))
+* upgrade qs from 6.11.1 to 6.11.2 ([#243](https://github.com/nodeshift/faas-js-runtime/issues/243)) ([c8448a5](https://github.com/nodeshift/faas-js-runtime/commit/c8448a5120ff1eaf3b159fdf54a0ca416cd0b72c))
+* upgrade typescript from 5.0.4 to 5.1.3 ([#247](https://github.com/nodeshift/faas-js-runtime/issues/247)) ([6e01336](https://github.com/nodeshift/faas-js-runtime/commit/6e01336880735f32b3e647aa4e2013473d5a5e4f))
+
+
+### Miscellaneous
+
+* move publish to its own workflow and add sigstore provenance ([#248](https://github.com/nodeshift/faas-js-runtime/issues/248)) ([3f34b4f](https://github.com/nodeshift/faas-js-runtime/commit/3f34b4f84af1fe596c190ae4f618de781627e185))
+
 ## [2.0.0](https://github.com/nodeshift/faas-js-runtime/compare/v1.1.0...v2.0.0) (2023-06-01)
 
 
