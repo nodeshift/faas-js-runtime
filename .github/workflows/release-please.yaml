@@ -10,7 +10,7 @@ jobs:
       - uses: GoogleCloudPlatform/release-please-action@v3
         id: release
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.NODESHIFT_RELEASES_TOKEN }}
           release-type: node
           bump-minor-pre-major: "true"
           package-name: faas-js-runtime
