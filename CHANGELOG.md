@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.1.0...v2.1.1) (2023-06-29)
+
+
+### Miscellaneous
+
+* update the release type to published instead of created ([#253](https://github.com/nodeshift/faas-js-runtime/issues/253)) ([35893c8](https://github.com/nodeshift/faas-js-runtime/commit/35893c8f5e008d7e97560dfbf63c8cd951ce184d))
+
 ## [2.1.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.0.0...v2.1.0) (2023-06-29)
 
 
