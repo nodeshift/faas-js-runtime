@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.2](https://github.com/nodeshift/faas-js-runtime/compare/v2.1.1...v2.1.2) (2023-06-29)
+
+
+### Miscellaneous
+
+* update the token that release-please runs with. ([#255](https://github.com/nodeshift/faas-js-runtime/issues/255)) ([16a87c8](https://github.com/nodeshift/faas-js-runtime/commit/16a87c866a3d5150824b4c96c1e73166152967d4))
+
 ## [2.1.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.1.0...v2.1.1) (2023-06-29)
 
 
