@@ -3,14 +3,14 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:b5c34c1c-b7b2-4ded-804a-93de45ebc263",
+  "serialNumber": "urn:uuid:ed7e6bd5-f552-401a-ae15-05f899c57933",
   "metadata": {
-    "timestamp": "2023-07-08T06:11:25.095Z",
+    "timestamp": "2023-07-10T20:34:21.993Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
         "name": "cyclonedx-npm",
-        "version": "1.12.0",
+        "version": "1.12.1",
         "externalReferences": [
           {
             "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
@@ -684,18 +684,18 @@
     {
       "type": "library",
       "name": "commander",
-      "version": "10.0.0",
-      "bom-ref": "commander@10.0.0",
+      "version": "11.0.0",
+      "bom-ref": "commander@11.0.0",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "cd2e4f9d3236d8521133aca5356f06e00a742043b293ad9f84b483d3eb87453f4c71108b1a991536f6a8e1b8e29a92bf1928729f2424145c4787031c11399db8"
+          "content": "f473255edb7f04da18afca28ca38cd45d22294e4e45495c1f86871313b4e2b09344788f8952e0da63baa991c6ba017e77d34874081d007bc2bc878576ab36399"
         }
       ],
-      "purl": "pkg:npm/commander@10.0.0",
+      "purl": "pkg:npm/commander@11.0.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/commander/-/commander-10.0.0.tgz",
+          "url": "https://registry.npmjs.org/commander/-/commander-11.0.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -1055,18 +1055,18 @@
     {
       "type": "library",
       "name": "fastify",
-      "version": "4.17.0",
-      "bom-ref": "fastify@4.17.0",
+      "version": "4.18.0",
+      "bom-ref": "fastify@4.18.0",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "b73b98d6d816268d98eaa10ac262e116f002526afaf08a36a6a3ffb03294ef529133a03a4770eb083a8b1aa00d6de2d970a51f75f639f2eb77e421aa7a671382"
+          "content": "2f9a3fd8612405ab2d4371d5d1db4aa3b494678f7b675faae1f72a0283f2aba24243ff33764d49404a134309c1582a7e12603b0106ba9b136a480121ccfd11c1"
         }
       ],
-      "purl": "pkg:npm/fastify@4.17.0",
+      "purl": "pkg:npm/fastify@4.18.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/fastify/-/fastify-4.17.0.tgz",
+          "url": "https://registry.npmjs.org/fastify/-/fastify-4.18.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -1081,16 +1081,22 @@
         {
           "type": "library",
           "name": "semver",
-          "version": "7.3.8",
-          "bom-ref": "fastify@4.17.0|semver@7.3.8",
-          "licenses": [
+          "version": "7.5.3",
+          "bom-ref": "fastify@4.18.0|semver@7.5.3",
+          "hashes": [
             {
-              "license": {
-                "id": "ISC"
-              }
+              "alg": "SHA-512",
+              "content": "401954b72564ff911e1db8bb5f47f0ea588365cec106611a4989f4d5f314d4e5186dfe863ec6d3b5df169a7a9b236d127b27281d27a2c9b904fead50faa95385"
             }
           ],
-          "purl": "pkg:npm/semver@7.3.8",
+          "purl": "pkg:npm/semver@7.5.3",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/semver/-/semver-7.5.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
           "properties": [
             {
               "name": "cdx:npm:package:path",
@@ -1205,16 +1211,22 @@
       "type": "library",
       "name": "error",
       "group": "@fastify",
-      "version": "3.0.0",
-      "bom-ref": "@fastify/error@3.0.0",
-      "licenses": [
+      "version": "3.3.0",
+      "bom-ref": "@fastify/error@3.3.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "763eef8c89f502bf2c5578f6c805e230d0890e64bd310f5732521e717d9d233ce18d21c2c8aa380dd5e35ccb3bc0a5b6923eb2bd5452a6e423399dd82eb879eb"
         }
       ],
-      "purl": "pkg:npm/%40fastify/error@3.0.0",
+      "purl": "pkg:npm/%40fastify/error@3.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/error/-/error-3.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1352,16 +1364,22 @@
     {
       "type": "library",
       "name": "avvio",
-      "version": "8.2.0",
-      "bom-ref": "avvio@8.2.0",
-      "licenses": [
+      "version": "8.2.1",
+      "bom-ref": "avvio@8.2.1",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "4c094c62f3aec06c8b2b73df05be562815d9997cf67d50a0bf6dddeb36457657bfab780f8e6c4169eb82d296340f3b393d631281faaa11992bc9ed7d1a50d383"
         }
       ],
-      "purl": "pkg:npm/avvio@8.2.0",
+      "purl": "pkg:npm/avvio@8.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/avvio/-/avvio-8.2.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1681,16 +1699,22 @@
     {
       "type": "library",
       "name": "light-my-request",
-      "version": "5.6.1",
-      "bom-ref": "light-my-request@5.6.1",
-      "licenses": [
+      "version": "5.10.0",
+      "bom-ref": "light-my-request@5.10.0",
+      "hashes": [
         {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
+          "alg": "SHA-512",
+          "content": "654d83f4698070e51cba54d3747f7fcebc9e8fa9fc4f34fe7cd19d36d9ba483a7930c3291eb24992f01d13773a77c77672113d8be6bffdd4bd09666d8ac927a8"
         }
       ],
-      "purl": "pkg:npm/light-my-request@5.6.1",
+      "purl": "pkg:npm/light-my-request@5.10.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/light-my-request/-/light-my-request-5.10.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1703,14 +1727,20 @@
       "name": "cookie",
       "version": "0.5.0",
       "bom-ref": "cookie@0.5.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "619dc65329ffa3c81f289967957ee0ef1ab88323ba392ba118f29a686b2c181daa803512d203e0b53be8c992d3b7d01be9d0b885f73d755e5aae4bdcfce0a6af"
         }
       ],
       "purl": "pkg:npm/cookie@0.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1721,16 +1751,22 @@
     {
       "type": "library",
       "name": "process-warning",
-      "version": "2.0.0",
-      "bom-ref": "process-warning@2.0.0",
-      "licenses": [
+      "version": "2.2.0",
+      "bom-ref": "process-warning@2.2.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "ff5599f3e5508d1e9abd63a01de10f77b483426150d41e660b57915ec0a6e536ab94d9b1ff00ac6b91846b11a6d3904e451b721bf131ff7c6add3b91beae7baa"
         }
       ],
-      "purl": "pkg:npm/process-warning@2.0.0",
+      "purl": "pkg:npm/process-warning@2.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/process-warning/-/process-warning-2.2.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1741,16 +1777,22 @@
     {
       "type": "library",
       "name": "set-cookie-parser",
-      "version": "2.5.1",
-      "bom-ref": "set-cookie-parser@2.5.1",
-      "licenses": [
+      "version": "2.6.0",
+      "bom-ref": "set-cookie-parser@2.6.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "4559d54314d7b9eae4eb9dd77ee9623b104ff3549fd3ea9f404ef72c860a7323181c6f7802e1f4920ad0a510ee4d99d29a3a72b079b3c495ca35f6ba3e3161c9"
         }
       ],
-      "purl": "pkg:npm/set-cookie-parser@2.5.1",
+      "purl": "pkg:npm/set-cookie-parser@2.6.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.6.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1761,16 +1803,22 @@
     {
       "type": "library",
       "name": "pino",
-      "version": "8.7.0",
-      "bom-ref": "pino@8.7.0",
-      "licenses": [
+      "version": "8.14.1",
+      "bom-ref": "pino@8.14.1",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "f0b60dbfb04a59749f4be93aa0473aa1c732e4b6beab6b0fc14deada58d35f901993bbfee64343da8e56efde05c916aa85ae8325a8e690d46c5ad3e917231477"
         }
       ],
-      "purl": "pkg:npm/pino@8.7.0",
+      "purl": "pkg:npm/pino@8.14.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino/-/pino-8.14.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1783,14 +1831,20 @@
       "name": "atomic-sleep",
       "version": "1.0.0",
       "bom-ref": "atomic-sleep@1.0.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "90d3a30ea021ee9c745d6348fb841bce8891fe74e41c058db9ddaebe726ab83d7fc796bb11064c253d00733a8ad109faee863f4d34352db50a6a3669a7723db5"
         }
       ],
       "purl": "pkg:npm/atomic-sleep@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/atomic-sleep/-/atomic-sleep-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1801,16 +1855,22 @@
     {
       "type": "library",
       "name": "fast-redact",
-      "version": "3.1.2",
-      "bom-ref": "fast-redact@3.1.2",
-      "licenses": [
+      "version": "3.2.0",
+      "bom-ref": "fast-redact@3.2.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "cda4da74286bf8d7a4cb36a59403170135cb391f0c371df3aa96743141766867f811ab619c6d1fdf654b38336563c22e198dc7a113b62faffa7d2ccdb0b68723"
         }
       ],
-      "purl": "pkg:npm/fast-redact@3.1.2",
+      "purl": "pkg:npm/fast-redact@3.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-redact/-/fast-redact-3.2.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1823,14 +1883,20 @@
       "name": "on-exit-leak-free",
       "version": "2.1.0",
       "bom-ref": "on-exit-leak-free@2.1.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "56e09a65902345e677bd4c20381f0bc40a2c22eac38805b4b35deb23563099a3fefa3bdcc4fefb016a10bde9d979ba420369bc582d7f128b0f60f3239d1029ff"
         }
       ],
       "purl": "pkg:npm/on-exit-leak-free@2.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/on-exit-leak-free/-/on-exit-leak-free-2.1.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1843,14 +1909,20 @@
       "name": "pino-abstract-transport",
       "version": "1.0.0",
       "bom-ref": "pino-abstract-transport@1.0.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "73bbe8e4ea56e30212e3685455c4f9444b0bf19963b147c18ea57f7b6b05c661441598aad572d4a791182edb831fa3c41eaf56d5e816a916e72d43f916e66638"
         }
       ],
       "purl": "pkg:npm/pino-abstract-transport@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-abstract-transport/-/pino-abstract-transport-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1861,16 +1933,22 @@
         {
           "type": "library",
           "name": "readable-stream",
-          "version": "4.2.0",
-          "bom-ref": "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
-          "licenses": [
+          "version": "4.4.2",
+          "bom-ref": "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+          "hashes": [
             {
-              "license": {
-                "id": "MIT"
-              }
+              "alg": "SHA-512",
+              "content": "2e4fdf2024b2221a1dc72d480cad876b391e1a34a67b30165f67a076d267621b73284b013c9a30948e85e8b3dbe6da884082eb31bc76d92e68dc6b896af3eeb0"
             }
           ],
-          "purl": "pkg:npm/readable-stream@4.2.0",
+          "purl": "pkg:npm/readable-stream@4.4.2",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/readable-stream/-/readable-stream-4.4.2.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
           "properties": [
             {
               "name": "cdx:npm:package:path",
@@ -1885,14 +1963,20 @@
       "name": "abort-controller",
       "version": "3.0.0",
       "bom-ref": "abort-controller@3.0.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "87c950f2d69c6589d1def3504e089b8feb4e0c7239ffe974e80bb63dcae2bff1a67add1e6a3e13c161f8d6c3bdc271c3890b048f5f6ad1daf375675e007b707a"
         }
       ],
       "purl": "pkg:npm/abort-controller@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1905,14 +1989,20 @@
       "name": "event-target-shim",
       "version": "5.0.1",
       "bom-ref": "event-target-shim@5.0.1",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "8bfd976e74b3feec51094ebe35d54980a5834cce36efe32a61b910cc3df6d43b8240952a3ae24a200d08336f96db1b581dd28e999e1d47a7c4c6c7784972fe59"
         }
       ],
       "purl": "pkg:npm/event-target-shim@5.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1925,14 +2015,20 @@
       "name": "buffer",
       "version": "6.0.3",
       "bom-ref": "buffer@6.0.3",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "153882a4dc6dc226591c465b71b4c87198c44552029fdcaafe90c591397de7f031cc3d6768172d37b60eebcae233f80b48363bb1dacc6f2f21a1f00362ebaa38"
         }
       ],
       "purl": "pkg:npm/buffer@6.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1945,14 +2041,20 @@
       "name": "base64-js",
       "version": "1.5.1",
       "bom-ref": "base64-js@1.5.1",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "00aa5a6251e7f2de1255b3870b2f9be7e28a82f478bebb03f2f6efadb890269b3b7ca0d3923903af2ea38b4ad42630b49336cd78f2f0cf1abc8b2a68e35a9e58"
         }
       ],
       "purl": "pkg:npm/base64-js@1.5.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1965,14 +2067,20 @@
       "name": "ieee754",
       "version": "1.2.1",
       "bom-ref": "ieee754@1.2.1",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
+          "alg": "SHA-512",
+          "content": "75ccaa843bd7d42e3a95765c56a0a92be16d31141574830debf0dfe63b36ce8b94b2a1bb23ab05c62b480beeca60adbd29d5ce2c776ef732f8b059e85509ea68"
         }
       ],
       "purl": "pkg:npm/ieee754@1.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1985,14 +2093,20 @@
       "name": "events",
       "version": "3.3.0",
       "bom-ref": "events@3.3.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "990c3ed9f9106c02f343b574318d08a9d9d734e793b4fe2bd2537dcfb0006b009782a79aedb0e28b6d0062b201ac577f1f1d0cd8e733e92d75d4268591471bd1"
         }
       ],
       "purl": "pkg:npm/events@3.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/events/-/events-3.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2002,17 +2116,77 @@
     },
     {
       "type": "library",
-      "name": "split2",
-      "version": "4.1.0",
-      "bom-ref": "split2@4.1.0",
-      "licenses": [
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "bom-ref": "string_decoder@1.3.0",
+      "hashes": [
         {
-          "license": {
-            "id": "ISC"
-          }
+          "alg": "SHA-512",
+          "content": "864457f14d568c915df0bb03276c90ff0596c5aa2912c0015355df90cf00fa3d3ef392401a9a6dd7a72bd56860e8a21b6f8a2453a32a97a04e8febaea7fc0a78"
         }
       ],
-      "purl": "pkg:npm/split2@4.1.0",
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/string_decoder"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "safe-buffer",
+          "version": "5.2.1",
+          "bom-ref": "string_decoder@1.3.0|safe-buffer@5.2.1",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ae9dd2a34eca71d9a629b1af81a37141226bedb1954959394bd12ad45fa9a5b468ef4f9879a0f1930e4377c34f37e183e9b8e7626d95b8fb825e6a6e62f9825d"
+            }
+          ],
+          "purl": "pkg:npm/safe-buffer@5.2.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/string_decoder/node_modules/safe-buffer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "split2",
+      "version": "4.2.0",
+      "bom-ref": "split2@4.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "51c8dc24e5a49eb36417a3cb5fcdea70733a28781528d915eb663c6b9b980d5bfdc9d19057000730aa877498ded554d6a658c6d1662908386b09d00e607e135a"
+        }
+      ],
+      "purl": "pkg:npm/split2@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2023,16 +2197,22 @@
     {
       "type": "library",
       "name": "pino-std-serializers",
-      "version": "6.0.0",
-      "bom-ref": "pino-std-serializers@6.0.0",
-      "licenses": [
+      "version": "6.2.2",
+      "bom-ref": "pino-std-serializers@6.2.2",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "7078cf3ec13ebe18ffb67842cbfc22321dccdf3de1fe3d79cc7417f92f46913060a89b93b89cd8278814c8008b843689ee493d6daf6244399b1f6b49534dce88"
         }
       ],
-      "purl": "pkg:npm/pino-std-serializers@6.0.0",
+      "purl": "pkg:npm/pino-std-serializers@6.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2045,14 +2225,20 @@
       "name": "quick-format-unescaped",
       "version": "4.0.4",
       "bom-ref": "quick-format-unescaped@4.0.4",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
         }
       ],
       "purl": "pkg:npm/quick-format-unescaped@4.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2065,14 +2251,20 @@
       "name": "real-require",
       "version": "0.2.0",
       "bom-ref": "real-require@0.2.0",
-      "licenses": [
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "e7b7ebac633f3824cba8b3808749a1540f5504c1ddfbd53b65bd931cc19d054a1954eb466c9ce3c6c6060c9dc0f4061808fe219facb54d56da39fcd6b66e4616"
         }
       ],
       "purl": "pkg:npm/real-require@0.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/real-require/-/real-require-0.2.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2083,16 +2275,22 @@
     {
       "type": "library",
       "name": "safe-stable-stringify",
-      "version": "2.4.1",
-      "bom-ref": "safe-stable-stringify@2.4.1",
-      "licenses": [
+      "version": "2.4.3",
+      "bom-ref": "safe-stable-stringify@2.4.3",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "7b66c30365894f4c31b1e55de25b033f8fb738d5fa1e931741ad5984543b494f868ef3910a64a16c2325b6bb480df9188551eb39c3ed8fe2a198305d3dd643d6"
         }
       ],
-      "purl": "pkg:npm/safe-stable-stringify@2.4.1",
+      "purl": "pkg:npm/safe-stable-stringify@2.4.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-stable-stringify/-/safe-stable-stringify-2.4.3.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2103,16 +2301,22 @@
     {
       "type": "library",
       "name": "sonic-boom",
-      "version": "3.2.0",
-      "bom-ref": "sonic-boom@3.2.0",
-      "licenses": [
+      "version": "3.3.0",
+      "bom-ref": "sonic-boom@3.3.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "2d8c69df82a56756b625bf194201422b79e2207ce26ddc2dc0d5162a0d2a411cec0e827719f8247fc29d053154dd291e8c3108956c274a7a5574e648845325fe"
         }
       ],
-      "purl": "pkg:npm/sonic-boom@3.2.0",
+      "purl": "pkg:npm/sonic-boom@3.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/sonic-boom/-/sonic-boom-3.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2123,16 +2327,22 @@
     {
       "type": "library",
       "name": "thread-stream",
-      "version": "2.2.0",
-      "bom-ref": "thread-stream@2.2.0",
-      "licenses": [
+      "version": "2.3.0",
+      "bom-ref": "thread-stream@2.3.0",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "91a0ea9b50c44fda69dcd5f047cdfcd961db9e95e746437dc4637d750b77076f9d997896f17d523b09853b1004ac4438ece6e167de89eb2859357bb208e2fb28"
         }
       ],
-      "purl": "pkg:npm/thread-stream@2.2.0",
+      "purl": "pkg:npm/thread-stream@2.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/thread-stream/-/thread-stream-2.3.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -2557,10 +2767,10 @@
       "ref": "faas-js-runtime@2.1.2",
       "dependsOn": [
         "cloudevents@7.0.1",
-        "commander@10.0.0",
+        "commander@11.0.0",
         "death@1.1.0",
         "fastify-raw-body@4.2.0",
-        "fastify@4.17.0",
+        "fastify@4.18.0",
         "js-yaml@4.1.0",
         "node-os-utils@1.3.7",
         "overload-protection@1.2.3",
@@ -2729,7 +2939,7 @@
       ]
     },
     {
-      "ref": "commander@10.0.0"
+      "ref": "commander@11.0.0"
     },
     {
       "ref": "death@1.1.0"
@@ -2795,28 +3005,28 @@
       "ref": "secure-json-parse@2.5.0"
     },
     {
-      "ref": "fastify@4.17.0",
+      "ref": "fastify@4.18.0",
       "dependsOn": [
         "@fastify/ajv-compiler@3.5.0",
-        "@fastify/error@3.0.0",
+        "@fastify/error@3.3.0",
         "@fastify/fast-json-stringify-compiler@4.3.0",
         "abstract-logging@2.0.1",
-        "avvio@8.2.0",
+        "avvio@8.2.1",
         "fast-content-type-parse@1.0.0",
         "fast-json-stringify@5.7.0",
         "find-my-way@7.6.0",
-        "light-my-request@5.6.1",
-        "pino@8.7.0",
-        "process-warning@2.0.0",
+        "light-my-request@5.10.0",
+        "pino@8.14.1",
+        "process-warning@2.2.0",
         "proxy-addr@2.0.7",
         "rfdc@1.3.0",
         "secure-json-parse@2.5.0",
-        "fastify@4.17.0|semver@7.3.8",
+        "fastify@4.18.0|semver@7.5.3",
         "tiny-lru@11.0.1"
       ]
     },
     {
-      "ref": "fastify@4.17.0|semver@7.3.8",
+      "ref": "fastify@4.18.0|semver@7.5.3",
       "dependsOn": [
         "lru-cache@6.0.0"
       ]
@@ -2845,7 +3055,7 @@
       "ref": "fast-uri@2.1.0"
     },
     {
-      "ref": "@fastify/error@3.0.0"
+      "ref": "@fastify/error@3.3.0"
     },
     {
       "ref": "@fastify/fast-json-stringify-compiler@4.3.0",
@@ -2880,7 +3090,7 @@
       "ref": "abstract-logging@2.0.1"
     },
     {
-      "ref": "avvio@8.2.0",
+      "ref": "avvio@8.2.1",
       "dependsOn": [
         "archy@1.0.0",
         "debug@4.3.4",
@@ -2944,43 +3154,43 @@
       "ref": "ret@0.2.2"
     },
     {
-      "ref": "light-my-request@5.6.1",
+      "ref": "light-my-request@5.10.0",
       "dependsOn": [
         "cookie@0.5.0",
-        "process-warning@2.0.0",
-        "set-cookie-parser@2.5.1"
+        "process-warning@2.2.0",
+        "set-cookie-parser@2.6.0"
       ]
     },
     {
       "ref": "cookie@0.5.0"
     },
     {
-      "ref": "process-warning@2.0.0"
+      "ref": "process-warning@2.2.0"
     },
     {
-      "ref": "set-cookie-parser@2.5.1"
+      "ref": "set-cookie-parser@2.6.0"
     },
     {
-      "ref": "pino@8.7.0",
+      "ref": "pino@8.14.1",
       "dependsOn": [
         "atomic-sleep@1.0.0",
-        "fast-redact@3.1.2",
+        "fast-redact@3.2.0",
         "on-exit-leak-free@2.1.0",
         "pino-abstract-transport@1.0.0",
-        "pino-std-serializers@6.0.0",
-        "process-warning@2.0.0",
+        "pino-std-serializers@6.2.2",
+        "process-warning@2.2.0",
         "quick-format-unescaped@4.0.4",
         "real-require@0.2.0",
-        "safe-stable-stringify@2.4.1",
-        "sonic-boom@3.2.0",
-        "thread-stream@2.2.0"
+        "safe-stable-stringify@2.4.3",
+        "sonic-boom@3.3.0",
+        "thread-stream@2.3.0"
       ]
     },
     {
       "ref": "atomic-sleep@1.0.0"
     },
     {
-      "ref": "fast-redact@3.1.2"
+      "ref": "fast-redact@3.2.0"
     },
     {
       "ref": "on-exit-leak-free@2.1.0"
@@ -2988,17 +3198,18 @@
     {
       "ref": "pino-abstract-transport@1.0.0",
       "dependsOn": [
-        "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
-        "split2@4.1.0"
+        "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+        "split2@4.2.0"
       ]
     },
     {
-      "ref": "pino-abstract-transport@1.0.0|readable-stream@4.2.0",
+      "ref": "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
       "dependsOn": [
         "abort-controller@3.0.0",
         "buffer@6.0.3",
         "events@3.3.0",
-        "process@0.11.10"
+        "process@0.11.10",
+        "string_decoder@1.3.0"
       ]
     },
     {
@@ -3027,10 +3238,19 @@
       "ref": "events@3.3.0"
     },
     {
-      "ref": "split2@4.1.0"
+      "ref": "string_decoder@1.3.0",
+      "dependsOn": [
+        "string_decoder@1.3.0|safe-buffer@5.2.1"
+      ]
     },
     {
-      "ref": "pino-std-serializers@6.0.0"
+      "ref": "string_decoder@1.3.0|safe-buffer@5.2.1"
+    },
+    {
+      "ref": "split2@4.2.0"
+    },
+    {
+      "ref": "pino-std-serializers@6.2.2"
     },
     {
       "ref": "quick-format-unescaped@4.0.4"
@@ -3039,16 +3259,16 @@
       "ref": "real-require@0.2.0"
     },
     {
-      "ref": "safe-stable-stringify@2.4.1"
+      "ref": "safe-stable-stringify@2.4.3"
     },
     {
-      "ref": "sonic-boom@3.2.0",
+      "ref": "sonic-boom@3.3.0",
       "dependsOn": [
         "atomic-sleep@1.0.0"
       ]
     },
     {
-      "ref": "thread-stream@2.2.0",
+      "ref": "thread-stream@2.3.0",
       "dependsOn": [
         "real-require@0.2.0"
       ]
