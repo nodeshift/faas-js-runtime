@@ -40,6 +40,24 @@ test('Provides HTTP request body with the context parameter', t => {
   }, errHandler(t));
 });
 
+test('Provides HTTP request rawBody with the context parameter', t => {
+  t.plan(3);
+  start(context => {
+    t.deepEqual(context.body, { lunch: 'tacos' });
+    t.equal(context.rawBody, 'lunch=tacos');
+  }, {includeRaw: true})
+  .then(server => {
+    request(server)
+      .post('/')
+      .send('lunch=tacos')
+      .end((err, _) => {
+        t.error(err, 'No error');
+        t.end();
+        server.close();
+      });
+  }, errHandler(t));
+});
+
 test('Provides HTTP request query parameters with the context parameter', t => {
   const func = require(`${__dirname}/fixtures/query-params/`);
   start(func)
