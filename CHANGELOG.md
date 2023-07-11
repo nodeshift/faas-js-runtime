@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* Add option of adding rawBody to context ([#116](https://github.com/nodeshift/faas-js-runtime/issues/116))([c8cfa92](https://github.com/nodeshift/faas-js-runtime/commit/c8cfa92e9792af2fd5ede2f014f709870a1cb6b8))
+
 * upgrade commander from 10.0.0 to 11.0.0 ([#261](https://github.com/nodeshift/faas-js-runtime/issues/261)) ([fd53245](https://github.com/nodeshift/faas-js-runtime/commit/fd532451308f41d211a20479520375f3ab3a8151))
 
 
