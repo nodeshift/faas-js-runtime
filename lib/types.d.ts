@@ -43,7 +43,8 @@ export interface HealthCheck {
 export type InvokerOptions = {
   'logLevel'?: LogLevel,
   'port'?: Number,
-  'path'?: String
+  'path'?: String,
+  'includeRaw'?: Boolean,
 }
 
 /**
@@ -96,6 +97,7 @@ export interface Context {
     req: IncomingMessage;
     query?: Record<string, any>;
     body?: Record<string, any>|string;
+    rawBody?: string;
     method: string;
     headers: IncomingHttpHeaders;
     httpVersion: string;

@@ -16,6 +16,7 @@ const fn: Invokable = function(
 const options: InvokerOptions = {
   logLevel: LogLevel.info,
   port: 8080,
+  includeRaw: true,
   path: './'
 };
 

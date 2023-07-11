@@ -6,6 +6,7 @@ const requestHandler = require('./lib/request-handler');
 const eventHandler = require('./lib/event-handler');
 const Context = require('./lib/context');
 const shutdown = require('death')({ uncaughtException: true });
+const fastifyRawBody = require('fastify-raw-body');
 
 // HTTP framework
 const fastify = require('fastify');
@@ -15,6 +16,9 @@ const LOG_LEVEL = 'warn';
 
 // Default port
 const PORT = 8080;
+
+// Don't Include Raw body by default
+const INCLUDE_RAW = false;
 
 /**
  * Starts the provided Function. If the function is a module, it will be
@@ -87,7 +91,7 @@ async function __start(func, options) {
 /**
  * Creates and configures the HTTP server to handle incoming CloudEvents,
  * and initializes the Context object.
- * @param {object} config - The configuration object for port and logLevel
+ * @param {Config} config - The configuration object for port and logLevel
  * @returns {FastifyInstance} The Fastify server that was created
  */
 function initializeServer(config) {
@@ -103,6 +107,15 @@ function initializeServer(config) {
       }
     }
   });
+
+  if (config.includeRaw) {
+    server.register(fastifyRawBody, {
+      field: 'rawBody',
+      global: true,
+      encoding: 'utf8',
+      runFirst: false,
+    });
+  }
 
   // Give the Function an opportunity to clean up before the process exits
   shutdown(_ => {
@@ -162,12 +175,13 @@ function initializeServer(config) {
  * @param {String} options.config Path to a func.yaml file
  * @param {String} options.logLevel Log level - one of 'fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'
  * @param {number} options.port Port to listen on
- * @returns {Object} Configuration object
+ * @returns {Config} Configuration object
  */
 function loadConfig(options) {
   const opts = { ...options, ...readFuncYaml(options.config) };
   opts.logLevel = opts.logLevel || LOG_LEVEL;
   opts.port = opts.port || PORT;
+  opts.includeRaw = opts.includeRaw || INCLUDE_RAW;
   return opts;
 }
 
@@ -203,4 +217,4 @@ function readFuncYaml(fileOrDirPath) {
   }
 }
 
-module.exports = exports = { start, defaults: { LOG_LEVEL, PORT } };
+module.exports = exports = { start, defaults: { LOG_LEVEL, PORT, INCLUDE_RAW } };
