@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.0...v2.2.1) (2023-07-13)
+
+
+### Miscellaneous
+
+* change sbom generation to happen on `prepublishOnly` ([#268](https://github.com/nodeshift/faas-js-runtime/issues/268)) ([9fdef57](https://github.com/nodeshift/faas-js-runtime/commit/9fdef579a8111fa3094f556f33f0159f44ed2492))
+
 ## [2.2.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.1.2...v2.2.0) (2023-07-11)
 
 
