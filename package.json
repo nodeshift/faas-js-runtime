@@ -17,8 +17,7 @@
     "test:source": "nyc --reporter=lcovonly tape test/test*.js | colortape",
     "test:types": "tsd",
     "pretest": "npm run lint",
-    "sbom": "npx @cyclonedx/cyclonedx-npm --omit dev --package-lock-only --output-file sbom.json",
-    "prepublishOnly": "npm run sbom && git diff-files --quiet"
+    "sbom": "npx @cyclonedx/cyclonedx-npm --omit dev --package-lock-only --output-file sbom.json"
   },
   "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
   "files": [
