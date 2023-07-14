@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.2](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.1...v2.2.2) (2023-07-14)
+
+
+### Bug Fixes
+
+* temporarily removes the prePublish step allowing us to publish a new version and for users to use this module. ([#270](https://github.com/nodeshift/faas-js-runtime/issues/270)) ([cea807f](https://github.com/nodeshift/faas-js-runtime/commit/cea807f0a9e7d834226238b304ca2ed0dff52490))
+
 ## [2.2.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.0...v2.2.1) (2023-07-13)
 
 
