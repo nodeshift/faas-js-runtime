@@ -13,6 +13,7 @@
   "type": "commonjs",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
+    "fix-lint": "eslint --fix --ignore-path .gitignore .",
     "test": "npm run test:source && npm run test:types",
     "test:source": "nyc --reporter=lcovonly tape test/test*.js | colortape",
     "test:types": "tsd",

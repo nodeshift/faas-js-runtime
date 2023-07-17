@@ -10,11 +10,11 @@ import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 export interface Function {
   // The initialization function, called before the server is started
   // This function is optional and should be synchronous.
-  init?: () => any;
+  init?: () => any | Promise<any>;
 
   // The shutdown function, called after the server is stopped
   // This function is optional and should be synchronous.
-  shutdown?: () => any;
+  shutdown?: () => any | Promise<any>;
 
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.

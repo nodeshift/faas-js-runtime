@@ -1,9 +1,4 @@
 {
-    "include": [
-      "./index.d.ts",
-      "./lib/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
-  }
+  "include": ["./index.d.ts", "./lib/**/*.ts"],
+  "exclude": ["node_modules"],
+}
