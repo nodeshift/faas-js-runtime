@@ -16,12 +16,15 @@ test('Enforces the handle function to exist', async t => {
 test('Calls init before the server has started', async t => {
   t.plan(1);
   let initCalled = false;
-  const server = await start({
-    init: () => {
-      initCalled = true;
+  const server = await start(
+    {
+      init: () => {
+        initCalled = true;
+      },
+      handle: () => {},
     },
-    handle: () => {}
-  }, defaults);
+    defaults
+  );
   t.ok(initCalled, 'init was called');
   server.close();
 });
@@ -29,26 +32,31 @@ test('Calls init before the server has started', async t => {
 test('Calls async init before the server has started', async t => {
   t.plan(1);
   let initCalled = false;
-  const server = await start({
-    init: () => {
-      return new Promise(() => {
-        initCalled = true;
-      })
+  const server = await start(
+    {
+      init: () =>
+        new Promise(() => {
+          initCalled = true;
+        }),
+      handle: () => {},
     },
-    handle: () => {}
-  }, defaults);
+    defaults
+  );
   t.ok(initCalled, 'init was called');
   server.close();
 });
 
 test('Bubbles up any exceptions thrown by init()', t => {
   t.plan(1);
-  start({
-    init: () => {
-      throw new Error('init failed');
+  start(
+    {
+      init: () => {
+        throw new Error('init failed');
+      },
+      handle: () => {},
     },
-    handle: () => {}
-  }, defaults)
+    defaults
+  )
     .then(() => t.fail('should not have resolved'))
     .catch(err => t.ok(err.message.includes('init failed'), 'init failed'));
 });
@@ -56,12 +64,15 @@ test('Bubbles up any exceptions thrown by init()', t => {
 test('Calls shutdown after the server has stopped', async t => {
   t.plan(1);
   let shutdownCalled = false;
-  const server = await start({
-    handle: () => {},
-    shutdown: _ => {
-      shutdownCalled = true;
-    }
-  }, defaults);
+  const server = await start(
+    {
+      handle: () => {},
+      shutdown: _ => {
+        shutdownCalled = true;
+      },
+    },
+    defaults
+  );
   t.ok(!shutdownCalled, 'shutdown was not called before server.close()');
   return new Promise(resolve => {
     // TODO: It would be nice to check for the shutdown call here
@@ -74,14 +85,16 @@ test('Calls shutdown after the server has stopped', async t => {
 test('Calls async shutdown after the server has stopped', async t => {
   t.plan(1);
   let shutdownCalled = false;
-  const server = await start({
-    handle: () => {},
-    shutdown: _ => {
-      return new Promise(_ => {
-        shutdownCalled = true;
-      })
-    }
-  }, defaults);
+  const server = await start(
+    {
+      handle: () => {},
+      shutdown: _ =>
+        new Promise(_ => {
+          shutdownCalled = true;
+        }),
+    },
+    defaults
+  );
   t.ok(!shutdownCalled, 'shutdown was not called before server.close()');
   return new Promise(resolve => {
     // TODO: It would be nice to check for the shutdown call here
@@ -94,20 +107,20 @@ test('Calls async shutdown after the server has stopped', async t => {
 test('Liveness endpoint can be provided', t => {
   start({
     handle: _ => 'OK',
-    liveness: _ => 'I am alive'
+    liveness: _ => 'I am alive',
   }).then(server => {
-      t.plan(2);
-      request(server)
-        .get('/health/liveness')
-        .expect(200)
-        .expect('Content-type', /text/)
-        .end((err, res) => {
-          t.error(err, 'No error');
-          t.equal(res.text, 'I am alive');
-          t.end();
-          server.close();
-        });
+    t.plan(2);
+    request(server)
+      .get('/health/liveness')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'I am alive');
+        t.end();
+        server.close();
       });
+  });
 });
 
 test('Liveness route can be provided', t => {
@@ -117,39 +130,39 @@ test('Liveness route can be provided', t => {
   liveness.path = '/alive';
   start({
     handle: _ => 'OK',
-    liveness
+    liveness,
   }).then(server => {
-      t.plan(2);
-      request(server)
-        .get('/alive')
-        .expect(200)
-        .expect('Content-type', /text/)
-        .end((err, res) => {
-          t.error(err, 'No error');
-          t.equal(res.text, 'I am alive');
-          t.end();
-          server.close();
-        });
+    t.plan(2);
+    request(server)
+      .get('/alive')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'I am alive');
+        t.end();
+        server.close();
       });
+  });
 });
 
 test('Readiness endpoint can be provided', t => {
   start({
     handle: _ => 'OK',
-    readiness: _ => 'I am ready'
+    readiness: _ => 'I am ready',
   }).then(server => {
-      t.plan(2);
-      request(server)
-        .get('/health/readiness')
-        .expect(200)
-        .expect('Content-type', /text/)
-        .end((err, res) => {
-          t.error(err, 'No error');
-          t.equal(res.text, 'I am ready');
-          t.end();
-          server.close();
-        });
+    t.plan(2);
+    request(server)
+      .get('/health/readiness')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'I am ready');
+        t.end();
+        server.close();
       });
+  });
 });
 
 test('Readiness route can be provided', t => {
@@ -159,18 +172,18 @@ test('Readiness route can be provided', t => {
   readiness.path = '/ready';
   start({
     handle: _ => 'OK',
-    readiness
+    readiness,
   }).then(server => {
-      t.plan(2);
-      request(server)
-        .get('/ready')
-        .expect(200)
-        .expect('Content-type', /text/)
-        .end((err, res) => {
-          t.error(err, 'No error');
-          t.equal(res.text, 'I am ready');
-          t.end();
-          server.close();
-        });
+    t.plan(2);
+    request(server)
+      .get('/ready')
+      .expect(200)
+      .expect('Content-type', /text/)
+      .end((err, res) => {
+        t.error(err, 'No error');
+        t.equal(res.text, 'I am ready');
+        t.end();
+        server.close();
       });
+  });
 });
