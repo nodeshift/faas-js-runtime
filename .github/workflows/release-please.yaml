@@ -15,3 +15,15 @@ jobs:
           bump-minor-pre-major: "true"
           package-name: faas-js-runtime
           changelog-types: '[{"type":"enhancement","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false},{"type":"cleanup","section":"Miscellaneous","hidden":false},{"type":"api-change","section":"API Changes","hidden":false},{"type":"documentation","section":"Documentation","hidden":false},{"type":"techdebt","section":"Miscellaneous","hidden":false},{"type":"proposal","section":"Miscellaneous","hidden":false},{"type":"feat","section":"Features","hidden":false}]'
+      - uses: actions/checkout@v2
+        with:
+          ref: release-please--branches--main--components--faas-js-runtime
+      - name: Update package SBOM
+        if: ${{steps.release.outputs.release-created}} == 'false'
+        run: |
+          git config --global user.name "NodeShift Bot (As Luke Holmquist)"
+          git config --global user.email "lholmqui@redhat.com"
+          npm run sbom
+          git add .
+          git commit --signoff -m "chore: update SBOM"
+          git push origin release-please--branches--main--components--faas-js-runtime
