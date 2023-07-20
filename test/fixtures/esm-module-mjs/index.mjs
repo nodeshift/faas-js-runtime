@@ -6,16 +6,16 @@ const handle = async (context) => {
   if (context.method === 'POST') {
     return {
       body: context.body,
-    }
-  // If the request is an HTTP GET, the context will include a query string, if it exists
+    };
+    // If the request is an HTTP GET, the context will include a query string, if it exists
   } else if (context.method === 'GET') {
     return {
       query: context.query,
-    }
+    };
   } else {
     return { statusCode: 405, statusMessage: 'Method not allowed' };
   }
-}
+};
 
 // Export the function
 export { handle };

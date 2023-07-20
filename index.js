@@ -32,8 +32,8 @@ const INCLUDE_RAW = false;
  * @param {number} options.port The port to listen on
  * @returns {Promise<http.Server>} The server that was started
  */
-async function start(func, options) {
-  options = options || {};
+async function start(func, opts) {
+  const options = opts || {};
   if (typeof func === 'function') {
     return __start(func, options);
   }
@@ -79,10 +79,10 @@ async function __start(func, options) {
   try {
     await server.listen({
       port: config.port,
-      host: '::'
+      host: '::',
     });
     return server.server;
-  } catch(err) {
+  } catch (err) {
     console.error('Error starting server', err);
     process.exit(1);
   }
@@ -99,13 +99,13 @@ function initializeServer(config) {
     logger: {
       level: config.logLevel,
       formatters: {
-        bindings: bindings => ({
-            pid: bindings.pid,
-            hostname: bindings.hostname,
-            node_version: process.version
-        })
-      }
-    }
+        bindings: (bindings) => ({
+          pid: bindings.pid,
+          hostname: bindings.hostname,
+          node_version: process.version,
+        }),
+      },
+    },
   });
 
   if (config.includeRaw) {
@@ -118,7 +118,7 @@ function initializeServer(config) {
   }
 
   // Give the Function an opportunity to clean up before the process exits
-  shutdown(_ => {
+  shutdown((_) => {
     if (typeof config.shutdown === 'function') {
       config.shutdown();
     }
@@ -127,11 +127,14 @@ function initializeServer(config) {
   });
 
   // Add a parser for application/x-www-form-urlencoded
-  server.addContentTypeParser('application/x-www-form-urlencoded',
-    function(_, payload, done) {
-      var body = '';
-      payload.on('data', data => (body += data));
-      payload.on('end', _ => {
+  server.addContentTypeParser(
+    'application/x-www-form-urlencoded',
+    function (_, payload, done) {
+      let body = '';
+      payload.on('data', (data) => {
+        body += data;
+      });
+      payload.on('end', (_) => {
         try {
           const parsed = qs.parse(body);
           done(null, parsed);
@@ -140,18 +143,23 @@ function initializeServer(config) {
         }
       });
       payload.on('error', done);
-    });
+    },
+  );
 
   // Add a parser for everything else - parse it as a buffer and
   // let this framework's router handle it
-  server.addContentTypeParser('*', { parseAs: 'buffer' }, function(req, body, done) {
-    try {
-      done(null, body);
-    } catch (err) {
-      err.statusCode = 500;
-      done(err, undefined);
-    }
-  });
+  server.addContentTypeParser(
+    '*',
+    { parseAs: 'buffer' },
+    function (req, body, done) {
+      try {
+        done(null, body);
+      } catch (err) {
+        err.statusCode = 500;
+        done(err, undefined);
+      }
+    },
+  );
 
   // Initialize the invocation context
   // This is passed as a parameter to the function when it's invoked
@@ -187,20 +195,20 @@ function loadConfig(options) {
 
 /**
  * Reads a func.yaml file at path and returns it as a JS object
- * @param {string} fileOrDirPath - the path to the func.yaml file or the directory containing it
+ * @param {string} _path - the path to the func.yaml file or the directory containing it
  * @returns {object} the parsed func.yaml file
  */
 function readFuncYaml(fileOrDirPath) {
-  if (!fileOrDirPath) fileOrDirPath = './';
+  const _path = fileOrDirPath ? fileOrDirPath : './';
 
   let baseDir;
-  let maybeDir = fs.statSync(fileOrDirPath);
+  let maybeDir = fs.statSync(_path);
   if (maybeDir.isDirectory()) {
-    baseDir = fileOrDirPath;
+    baseDir = _path;
   } else {
-    maybeDir = fs.statSync(path.dirname(fileOrDirPath));
+    maybeDir = fs.statSync(path.dirname(_path));
     if (maybeDir.isDirectory()) {
-      baseDir = fileOrDirPath;
+      baseDir = _path;
     }
   }
 
@@ -210,11 +218,14 @@ function readFuncYaml(fileOrDirPath) {
     if (!!maybeYaml && maybeYaml.isFile()) {
       try {
         return yaml.load(fs.readFileSync(yamlFile, 'utf8'));
-      } catch(err) {
+      } catch (err) {
         console.warn(err);
       }
     }
   }
 }
 
-module.exports = exports = { start, defaults: { LOG_LEVEL, PORT, INCLUDE_RAW } };
+module.exports = exports = {
+  start,
+  defaults: { LOG_LEVEL, PORT, INCLUDE_RAW },
+};

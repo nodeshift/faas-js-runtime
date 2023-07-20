@@ -1,0 +1,11 @@
+{
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "formatter": {
+    "indentSize": 2,
+    "indentStyle": "space"
+  }
+}

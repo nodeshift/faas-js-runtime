@@ -1,2 +1,2 @@
-const handle = async _ => 'ok';
+const handle = async (_) => 'ok';
 export { handle };

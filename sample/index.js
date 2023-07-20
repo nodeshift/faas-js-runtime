@@ -2,8 +2,7 @@
 // Run this Function from the root directory with the following command:
 // `node bin/cli.js sample/index.js`
 
-const Function = {
-
+const Fn = {
   // Handle incoming requests. This just echos the request body back to the caller.
   handle: (context, receivedBody) => {
     process.stdout.write(`In handle. Received:\n${receivedBody}\n`);
@@ -37,15 +36,15 @@ const Function = {
   readiness: () => {
     process.stdout.write('In readiness\n');
     return 'OK from readiness';
-  }
+  },
 };
 
 // Optional path property. This can be used to change the path at which the
 // the liveness endpoint can be reached.
-Function.liveness.path = '/alive';
+Fn.liveness.path = '/alive';
 
 // Optional path property. This can be used to change the path at which the
 // the readiness endpoint can be reached.
-Function.readiness.path = '/ready';
+Fn.readiness.path = '/ready';
 
-module.exports = Function;
+module.exports = Fn;

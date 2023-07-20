@@ -4,7 +4,7 @@
 const isNumber = require('is-number');
 
 module.exports = function testFunc(context) {
-  let ret = { ...context };
+  const ret = { ...context };
   if (isNumber(ret)) throw new Error('Something is wrong with modules');
   if (context.cloudevent) return context.cloudevent.data.message;
 

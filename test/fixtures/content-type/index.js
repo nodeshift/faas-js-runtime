@@ -1,8 +1,8 @@
-module.exports = function() {
+module.exports = function () {
   return {
     headers: {
-      'Content-Type': 'text/plain'
+      'Content-Type': 'text/plain',
     },
-    body: 'Well hello there'
+    body: 'Well hello there',
   };
 };

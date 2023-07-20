@@ -10,9 +10,21 @@ const program = new Command();
 
 program
   .version(pkg.version)
-  .option('--log-level <log-level>', 'change the log level of the function', defaults.LOG_LEVEL)
-  .option('--port <port>', 'change the port the runtime listens on', defaults.PORT)
-  .option('--include-raw', 'include the raw body in the request context', defaults.INCLUDE_RAW)
+  .option(
+    '--log-level <log-level>',
+    'change the log level of the function',
+    defaults.LOG_LEVEL,
+  )
+  .option(
+    '--port <port>',
+    'change the port the runtime listens on',
+    defaults.PORT,
+  )
+  .option(
+    '--include-raw',
+    'include the raw body in the request context',
+    defaults.INCLUDE_RAW,
+  )
   .arguments('<file>')
   .action(runServer);
 
@@ -22,10 +34,15 @@ async function runServer(file) {
   const programOpts = program.opts();
 
   try {
-    let options = {
-      logLevel: process.env.FUNC_LOG_LEVEL || programOpts['logLevel'] || defaults.LOG_LEVEL,
+    const options = {
+      logLevel:
+        process.env.FUNC_LOG_LEVEL ||
+        programOpts['logLevel'] ||
+        defaults.LOG_LEVEL,
       port: process.env.FUNC_PORT || programOpts.port || defaults.PORT,
-      includeRaw: process.env.FUNC_INCLUDE_RAW ? true : programOpts.includeRaw || defaults.INCLUDE_RAW,
+      includeRaw: process.env.FUNC_INCLUDE_RAW
+        ? true
+        : programOpts.includeRaw || defaults.INCLUDE_RAW,
     };
 
     const filePath = extractFullPath(file);

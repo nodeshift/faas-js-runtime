@@ -14,14 +14,14 @@ export interface Config {
 // start starts the server for the given function.
 export declare const start: {
   // eslint-disable-next-line no-unused-vars
-  (func: Invokable | Function, options?: InvokerOptions): Promise<Server>
+  (func: Invokable | Function, options?: InvokerOptions): Promise<Server>;
 };
 
 export declare const defaults: {
-  LOG_LEVEL: LogLevel,
-  PORT: number,
-  INCLUDE_RAW: boolean,
-}
+  LOG_LEVEL: LogLevel;
+  PORT: number;
+  INCLUDE_RAW: boolean;
+};
 
 // re-export
 export * from './lib/types';

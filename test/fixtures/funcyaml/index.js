@@ -3,7 +3,7 @@
 
 module.exports = function handle(context) {
   // See: https://github.com/pinojs/pino/issues/123
-  if (context.log.level != 'info') {
+  if (context.log.level !== 'info') {
     console.error(`Expected info but got ${context.log.level}`);
     return { statusCode: 417 };
   }

@@ -10,11 +10,11 @@ import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 export interface Function {
   // The initialization function, called before the server is started
   // This function is optional and should be synchronous.
-  init?: () => any;
+  init?: () => unknown;
 
   // The shutdown function, called after the server is stopped
   // This function is optional and should be synchronous.
-  shutdown?: () => any;
+  shutdown?: () => unknown;
 
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.
@@ -35,34 +35,42 @@ export interface Function {
  * including the optional path to which it should be bound.
  */
 export interface HealthCheck {
-  (request: Http2ServerRequest, reply: Http2ServerResponse): any;
+  (request: Http2ServerRequest, reply: Http2ServerResponse): unknown;
   path?: string;
 }
 
 // InvokerOptions allow the user to configure the server.
 export type InvokerOptions = {
-  'logLevel'?: LogLevel,
-  'port'?: Number,
-  'path'?: String,
-  'includeRaw'?: Boolean,
-}
+  logLevel?: LogLevel;
+  port?: Number;
+  path?: String;
+  includeRaw?: Boolean;
+};
 
 /**
  * Log level options for the server.
  */
 export enum LogLevel {
-  'trace', 'debug', 'info', 'warn', 'error', 'fatal'
+  trace = 'trace',
+  debug = 'debug',
+  info = 'info',
+  warn = 'warn',
+  error = 'error',
+  fatal = 'fatal',
 }
 
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.
  */
-export interface CloudEventFunction<I=never, R=unknown> {
+export interface CloudEventFunction<I = never, R = unknown> {
   (context: Context, event?: CloudEvent<I>): CloudEventFunctionReturn<R>;
 }
 
 // CloudEventFunctionReturn is the return type for a CloudEventFunction.
-export type CloudEventFunctionReturn<T=unknown> = Promise<CloudEvent<T>> | CloudEvent<T> | HTTPFunctionReturn;
+export type CloudEventFunctionReturn<T = unknown> =
+  | Promise<CloudEvent<T>>
+  | CloudEvent<T>
+  | HTTPFunctionReturn;
 
 /**
  * HTTPFunction describes the function signature for a function that handles
@@ -76,7 +84,11 @@ export interface HTTPFunction {
 export type IncomingBody = string | object | Buffer;
 
 // HTTPFunctionReturn is the return type for an HTTP Function.
-export type HTTPFunctionReturn = Promise<StructuredReturn> | StructuredReturn | ResponseBody | void;
+export type HTTPFunctionReturn =
+  | Promise<StructuredReturn>
+  | StructuredReturn
+  | ResponseBody
+  | void;
 
 // Union of the possible return types
 export type FunctionReturn = CloudEventFunctionReturn | HTTPFunctionReturn;
@@ -93,33 +105,33 @@ export type ResponseBody = string | object | Buffer;
 
 // Context is the request context for HTTP and CloudEvent functions.
 export interface Context {
-    log: Logger;
-    req: IncomingMessage;
-    query?: Record<string, any>;
-    body?: Record<string, any>|string;
-    rawBody?: string;
-    method: string;
-    headers: IncomingHttpHeaders;
-    httpVersion: string;
-    httpVersionMajor: number;
-    httpVersionMinor: number;
-    cloudevent: CloudEvent<unknown>;
-    cloudEventResponse(data: string|object): CloudEventResponse;
+  log: Logger;
+  req: IncomingMessage;
+  query?: Record<string, string>;
+  body?: Record<string, string> | string;
+  rawBody?: string;
+  method: string;
+  headers: IncomingHttpHeaders;
+  httpVersion: string;
+  httpVersionMajor: number;
+  httpVersionMinor: number;
+  cloudevent: CloudEvent<unknown>;
+  cloudEventResponse(data: string | object): CloudEventResponse;
 }
 
 export interface Logger {
-  debug: (msg: any) => void,
-  info:  (msg: any) => void,
-  warn:  (msg: any) => void,
-  error: (msg: any) => void,
-  fatal: (msg: any) => void,
-  trace: (msg: any) => void,
+  debug: (msg: string) => void;
+  info: (msg: string) => void;
+  warn: (msg: string) => void;
+  error: (msg: string) => void;
+  fatal: (msg: string) => void;
+  trace: (msg: string) => void;
 }
 
 export interface CloudEventResponse {
-    id(id: string): CloudEventResponse;
-    source(source: string): CloudEventResponse;
-    type(type: string): CloudEventResponse;
-    version(version: string): CloudEventResponse;
-    response(): CloudEvent;
+  id(id: string): CloudEventResponse;
+  source(source: string): CloudEventResponse;
+  type(type: string): CloudEventResponse;
+  version(version: string): CloudEventResponse;
+  response(): CloudEvent;
 }

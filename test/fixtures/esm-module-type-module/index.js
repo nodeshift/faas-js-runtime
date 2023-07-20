@@ -1,4 +1,4 @@
-const handle = async context => {
+const handle = async (context) => {
   // YOUR CODE HERE
   context.log.info(JSON.stringify(context, null, 2));
 
@@ -7,7 +7,7 @@ const handle = async context => {
     return {
       body: context.body,
     };
-  // If the request is an HTTP GET, the context will include a query string, if it exists
+    // If the request is an HTTP GET, the context will include a query string, if it exists
   } else if (context.method === 'GET') {
     return {
       query: context.query,

@@ -5,7 +5,7 @@ const test = require('tape');
 const request = require('supertest');
 const { CloudEvent, HTTP } = require('cloudevents');
 
-const errHandler = t => err => {
+const errHandler = (t) => (err) => {
   t.error(err);
   t.end();
 };
@@ -17,19 +17,18 @@ const testCases = [
 ];
 
 for (const tc of testCases) {
-  test(`Handles CloudEvents with ${tc.content} data`, t => {
+  test(`Handles CloudEvents with ${tc.content} data`, (t) => {
     const data = fs.readFileSync(tc.file);
     const func = require(`${__dirname}/fixtures/cloud-event/binary.js`);
     const event = new CloudEvent({
       source: 'test',
       type: 'test',
       datacontenttype: tc.content,
-      data
+      data,
     });
-  
+
     const message = HTTP.binary(event);
-    start(func)
-      .then(server => {
+    start(func).then((server) => {
       request(server)
         .post('/')
         .send(message.body)
@@ -42,6 +41,6 @@ for (const tc of testCases) {
           t.end();
           server.close();
         });
-      }, errHandler(t));
-  });  
+    }, errHandler(t));
+  });
 }

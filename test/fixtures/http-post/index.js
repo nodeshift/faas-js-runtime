@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = context => context.body;
+module.exports = (context) => context.body;
