@@ -54,7 +54,7 @@
     "eslint-config-prettier": "^8.7.0",
     "nyc": "^15.1.0",
     "supertest": "^6.3.1",
-    "tape": "^5.6.3",
+    "tape": "^5.6.4",
     "tsd": "^0.28.1",
     "typescript": "^5.1.3"
   },
