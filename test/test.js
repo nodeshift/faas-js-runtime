@@ -589,3 +589,22 @@ test('Reads a func.yaml file for logLevel', t => {
         });
       }, errHandler(t));
 });
+
+test('Handles HTTP response provided as StructuredReturn', t => {
+  const func = require(`${__dirname}/fixtures/response-structured/`);
+  start(func)
+    .then(server => {
+      t.plan(3);
+      request(server)
+        .get('/')
+        .expect(201)
+        .expect('Content-Type', /jpeg/)
+        .end((err, res) => {
+          t.error(err, 'No error');
+          t.equal(typeof res.body, 'object');
+          t.ok(Buffer.isBuffer(res.body), 'body is a buffer');
+          t.end();
+          server.close();
+        });
+      }, errHandler(t));
+});
