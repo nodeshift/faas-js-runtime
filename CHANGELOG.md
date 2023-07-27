@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* fix Do not overwrite headers of StructuredReturn ([#288](https://github.com/nodeshift/faas-js-runtime/pull/288)) ([a2c37a1](https://github.com/nodeshift/faas-js-runtime/commit/a2c37a115b2ca2be0667549a512e336bba44922e))
 * upgrade @types/node from 20.2.5 to 20.3.2 ([#274](https://github.com/nodeshift/faas-js-runtime/issues/274)) ([cfd1b55](https://github.com/nodeshift/faas-js-runtime/commit/cfd1b552d2191726e5faca0668d1bf57423f3fb8))
 * upgrade @types/node from 20.3.2 to 20.3.3 ([#282](https://github.com/nodeshift/faas-js-runtime/issues/282)) ([fa9ad33](https://github.com/nodeshift/faas-js-runtime/commit/fa9ad33a7160cca9320e1a2f210aa8923c59e857))
 * upgrade @typescript-eslint/parser from 5.60.0 to 5.60.1 ([#275](https://github.com/nodeshift/faas-js-runtime/issues/275)) ([c9dd3ef](https://github.com/nodeshift/faas-js-runtime/commit/c9dd3ef8458fbf936bca2350473610806401fc79))
