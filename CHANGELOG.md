@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.3](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.2...v2.2.3) (2023-07-26)
+
+
+### Bug Fixes
+
+* fix Do not overwrite headers of StructuredReturn ([#288](https://github.com/nodeshift/faas-js-runtime/pull/288)) ([a2c37a1](https://github.com/nodeshift/faas-js-runtime/commit/a2c37a115b2ca2be0667549a512e336bba44922e))
+* upgrade @types/node from 20.2.5 to 20.3.2 ([#274](https://github.com/nodeshift/faas-js-runtime/issues/274)) ([cfd1b55](https://github.com/nodeshift/faas-js-runtime/commit/cfd1b552d2191726e5faca0668d1bf57423f3fb8))
+* upgrade @types/node from 20.3.2 to 20.3.3 ([#282](https://github.com/nodeshift/faas-js-runtime/issues/282)) ([fa9ad33](https://github.com/nodeshift/faas-js-runtime/commit/fa9ad33a7160cca9320e1a2f210aa8923c59e857))
+* upgrade @typescript-eslint/parser from 5.60.0 to 5.60.1 ([#275](https://github.com/nodeshift/faas-js-runtime/issues/275)) ([c9dd3ef](https://github.com/nodeshift/faas-js-runtime/commit/c9dd3ef8458fbf936bca2350473610806401fc79))
+* upgrade @typescript-eslint/parser from 5.60.1 to 5.61.0 ([#286](https://github.com/nodeshift/faas-js-runtime/issues/286)) ([97258a0](https://github.com/nodeshift/faas-js-runtime/commit/97258a0d431cd6ec9ae481d9482ff927e1a4d6f7))
+* upgrade eslint from 8.43.0 to 8.44.0 ([#283](https://github.com/nodeshift/faas-js-runtime/issues/283)) ([cbeb454](https://github.com/nodeshift/faas-js-runtime/commit/cbeb45455cc8c8cf688a4d8d0a744e38cf501a52))
+* upgrade fastify from 4.18.0 to 4.19.0 ([#281](https://github.com/nodeshift/faas-js-runtime/issues/281)) ([395287d](https://github.com/nodeshift/faas-js-runtime/commit/395287d2054820f50ad9bc72a2479c5df6fc60e4))
+* upgrade fastify from 4.19.0 to 4.19.2 ([#289](https://github.com/nodeshift/faas-js-runtime/issues/289)) ([6a3b33a](https://github.com/nodeshift/faas-js-runtime/commit/6a3b33a660f84af721c0adae27acab861f1024e5))
+* upgrade tape from 5.6.3 to 5.6.4 ([#284](https://github.com/nodeshift/faas-js-runtime/issues/284)) ([a11c9d7](https://github.com/nodeshift/faas-js-runtime/commit/a11c9d7f7e008c256d0cf617bd3bfa7d42ba6e5f))
+* upgrade typescript from 5.1.3 to 5.1.6 ([#280](https://github.com/nodeshift/faas-js-runtime/issues/280)) ([37f89a3](https://github.com/nodeshift/faas-js-runtime/commit/37f89a3d2427213627cd05576f7ad31edc145ef6))
+
+
+### Miscellaneous
+
+* add sbom generation to release-please action ([#278](https://github.com/nodeshift/faas-js-runtime/issues/278)) ([c8440f5](https://github.com/nodeshift/faas-js-runtime/commit/c8440f5d6b62624e0f8ed69ca392ec4cdd11c41b))
+
 ## [2.2.2](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.1...v2.2.2) (2023-07-14)
 
 

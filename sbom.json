@@ -3,14 +3,14 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:cce19171-5848-423d-bacb-7ba3554999e5",
+  "serialNumber": "urn:uuid:4c049b51-280b-4d56-9873-b75aa5ac406c",
   "metadata": {
-    "timestamp": "2023-07-14T13:29:06.080Z",
+    "timestamp": "2023-07-26T15:33:02.841Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
         "name": "cyclonedx-npm",
-        "version": "1.12.1",
+        "version": "1.13.0",
         "externalReferences": [
           {
             "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
@@ -32,7 +32,7 @@
       {
         "vendor": "@cyclonedx",
         "name": "cyclonedx-library",
-        "version": "2.0.0",
+        "version": "4.0.0",
         "externalReferences": [
           {
             "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
@@ -55,8 +55,8 @@
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "2.2.1",
-      "bom-ref": "faas-js-runtime@2.2.1",
+      "version": "2.2.3",
+      "bom-ref": "faas-js-runtime@2.2.3",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
@@ -66,7 +66,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@2.2.1?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@2.2.3?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -644,16 +644,22 @@
     {
       "type": "library",
       "name": "get-intrinsic",
-      "version": "1.2.0",
-      "bom-ref": "get-intrinsic@1.2.0",
-      "licenses": [
+      "version": "1.2.1",
+      "bom-ref": "get-intrinsic@1.2.1",
+      "hashes": [
         {
-          "license": {
-            "id": "MIT"
-          }
+          "alg": "SHA-512",
+          "content": "d8372cc9f00197e8151c47c239a4eb5a0cadfad6fa31210698aabe908e47c0b6c86208e098c715f0a438d6e68acf5c7151c9fdb49b6015b4141157046ddd0563"
         }
       ],
-      "purl": "pkg:npm/get-intrinsic@1.2.0",
+      "purl": "pkg:npm/get-intrinsic@1.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1055,18 +1061,18 @@
     {
       "type": "library",
       "name": "fastify",
-      "version": "4.18.0",
-      "bom-ref": "fastify@4.18.0",
+      "version": "4.19.2",
+      "bom-ref": "fastify@4.19.2",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "2f9a3fd8612405ab2d4371d5d1db4aa3b494678f7b675faae1f72a0283f2aba24243ff33764d49404a134309c1582a7e12603b0106ba9b136a480121ccfd11c1"
+          "content": "dae9e179e2115857fdfc98dccfb7633a92ae5c24f366397215f881c0aaa995d90730ddab7d32eefdff69613770961cc2f42763d12d87d76ce5ba0d0a779b99d7"
         }
       ],
-      "purl": "pkg:npm/fastify@4.18.0",
+      "purl": "pkg:npm/fastify@4.19.2",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/fastify/-/fastify-4.18.0.tgz",
+          "url": "https://registry.npmjs.org/fastify/-/fastify-4.19.2.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -1082,7 +1088,7 @@
           "type": "library",
           "name": "semver",
           "version": "7.5.3",
-          "bom-ref": "fastify@4.18.0|semver@7.5.3",
+          "bom-ref": "fastify@4.19.2|semver@7.5.3",
           "hashes": [
             {
               "alg": "SHA-512",
@@ -2723,6 +2729,26 @@
     },
     {
       "type": "library",
+      "name": "has-proto",
+      "version": "1.0.1",
+      "bom-ref": "has-proto@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/has-proto@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has-proto"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "has",
       "version": "1.0.3",
       "bom-ref": "has@1.0.3",
@@ -2764,13 +2790,13 @@
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@2.2.1",
+      "ref": "faas-js-runtime@2.2.3",
       "dependsOn": [
         "cloudevents@7.0.1",
         "commander@11.0.0",
         "death@1.1.0",
         "fastify-raw-body@4.2.0",
-        "fastify@4.18.0",
+        "fastify@4.19.2",
         "js-yaml@4.1.0",
         "node-os-utils@1.3.7",
         "overload-protection@1.2.3",
@@ -2873,7 +2899,7 @@
       "ref": "call-bind@1.0.2",
       "dependsOn": [
         "function-bind@1.1.1",
-        "get-intrinsic@1.2.0"
+        "get-intrinsic@1.2.1"
       ]
     },
     {
@@ -2916,13 +2942,14 @@
     {
       "ref": "gopd@1.0.1",
       "dependsOn": [
-        "get-intrinsic@1.2.0"
+        "get-intrinsic@1.2.1"
       ]
     },
     {
-      "ref": "get-intrinsic@1.2.0",
+      "ref": "get-intrinsic@1.2.1",
       "dependsOn": [
         "function-bind@1.1.1",
+        "has-proto@1.0.1",
         "has-symbols@1.0.3",
         "has@1.0.3"
       ]
@@ -3005,7 +3032,7 @@
       "ref": "secure-json-parse@2.5.0"
     },
     {
-      "ref": "fastify@4.18.0",
+      "ref": "fastify@4.19.2",
       "dependsOn": [
         "@fastify/ajv-compiler@3.5.0",
         "@fastify/error@3.3.0",
@@ -3021,12 +3048,12 @@
         "proxy-addr@2.0.7",
         "rfdc@1.3.0",
         "secure-json-parse@2.5.0",
-        "fastify@4.18.0|semver@7.5.3",
+        "fastify@4.19.2|semver@7.5.3",
         "tiny-lru@11.0.1"
       ]
     },
     {
-      "ref": "fastify@4.18.0|semver@7.5.3",
+      "ref": "fastify@4.19.2|semver@7.5.3",
       "dependsOn": [
         "lru-cache@6.0.0"
       ]
@@ -3350,12 +3377,15 @@
       "ref": "side-channel@1.0.4",
       "dependsOn": [
         "call-bind@1.0.2",
-        "get-intrinsic@1.2.0",
+        "get-intrinsic@1.2.1",
         "object-inspect@1.12.3"
       ]
     },
     {
       "ref": "function-bind@1.1.1"
+    },
+    {
+      "ref": "has-proto@1.0.1"
     },
     {
       "ref": "has@1.0.3",
