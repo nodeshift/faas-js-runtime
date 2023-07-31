@@ -45,7 +45,7 @@
     "qs": "^6.11.2"
   },
   "devDependencies": {
-    "@cyclonedx/cyclonedx-npm": "^1.12.1",
+    "@cyclonedx/cyclonedx-npm": "^1.13.0",
     "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.61.0",
