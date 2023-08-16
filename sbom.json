@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:b177dc82-ed80-48ac-b5b8-774a15853c6c",
+  "serialNumber": "urn:uuid:f675fd94-abd6-47ac-aa9e-716ac5e10b91",
   "metadata": {
-    "timestamp": "2023-08-16T01:12:58.761Z",
+    "timestamp": "2023-08-16T01:18:48.210Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -96,18 +96,18 @@
     {
       "type": "library",
       "name": "cloudevents",
-      "version": "7.0.1",
-      "bom-ref": "cloudevents@7.0.1",
+      "version": "8.0.0",
+      "bom-ref": "cloudevents@8.0.0",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "fe2ec746f2141b6440881f400fa4ea51dd3b1f666426dc02acda466b8bc97edc33e6e25d0ff6cefaede462cfebfa4402b59eae859b3423dbdf221ba1a2b2941f"
+          "content": "1b567fafc40c140b0ff85d4fb99487cf1d6870fcb8beb7503131c3de8ae30da33991c7263d4ea7326a55ac5d3b6f9dda6b172b2db39152645ea58fc382f76157"
         }
       ],
-      "purl": "pkg:npm/cloudevents@7.0.1",
+      "purl": "pkg:npm/cloudevents@8.0.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/cloudevents/-/cloudevents-7.0.1.tgz",
+          "url": "https://registry.npmjs.org/cloudevents/-/cloudevents-8.0.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -123,7 +123,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.11.0",
-          "bom-ref": "cloudevents@7.0.1|ajv@8.11.0",
+          "bom-ref": "cloudevents@8.0.0|ajv@8.11.0",
           "licenses": [
             {
               "license": {
@@ -143,7 +143,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "cloudevents@7.0.1|json-schema-traverse@1.0.0",
+          "bom-ref": "cloudevents@8.0.0|json-schema-traverse@1.0.0",
           "licenses": [
             {
               "license": {
@@ -163,7 +163,7 @@
           "type": "library",
           "name": "uuid",
           "version": "8.3.2",
-          "bom-ref": "cloudevents@7.0.1|uuid@8.3.2",
+          "bom-ref": "cloudevents@8.0.0|uuid@8.3.2",
           "licenses": [
             {
               "license": {
@@ -729,18 +729,18 @@
     {
       "type": "library",
       "name": "fastify-raw-body",
-      "version": "4.2.0",
-      "bom-ref": "fastify-raw-body@4.2.0",
+      "version": "4.2.1",
+      "bom-ref": "fastify-raw-body@4.2.1",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "dc251eb8d62ad60f2eaf93e8fd66bc91299b4d2a4386f9395fcb1ca1757073dcef85567134bd5c846a76d404d384ca3abe6ad998d3f138efbf2e191153b9cc49"
+          "content": "f5554697b0b6f94d578bd3f6a0e4c75ad272d593a4cdd0ce8dd4a25529f383401fffcc2076ca605712979d805ec8ff071a770ae52fdb6090eaea5d80d183a805"
         }
       ],
-      "purl": "pkg:npm/fastify-raw-body@4.2.0",
+      "purl": "pkg:npm/fastify-raw-body@4.2.1",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/fastify-raw-body/-/fastify-raw-body-4.2.0.tgz",
+          "url": "https://registry.npmjs.org/fastify-raw-body/-/fastify-raw-body-4.2.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -1061,18 +1061,18 @@
     {
       "type": "library",
       "name": "fastify",
-      "version": "4.19.2",
-      "bom-ref": "fastify@4.19.2",
+      "version": "4.20.0",
+      "bom-ref": "fastify@4.20.0",
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "dae9e179e2115857fdfc98dccfb7633a92ae5c24f366397215f881c0aaa995d90730ddab7d32eefdff69613770961cc2f42763d12d87d76ce5ba0d0a779b99d7"
+          "content": "cd65a2e4a1806f5619e9fcab9c59c0d420351191e418ce98b842e00774294b797894b472d785b571cd7a6f82863c7ff343df16092752f93e352641d8ddeab5a0"
         }
       ],
-      "purl": "pkg:npm/fastify@4.19.2",
+      "purl": "pkg:npm/fastify@4.20.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/fastify/-/fastify-4.19.2.tgz",
+          "url": "https://registry.npmjs.org/fastify/-/fastify-4.20.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -1088,7 +1088,7 @@
           "type": "library",
           "name": "semver",
           "version": "7.5.3",
-          "bom-ref": "fastify@4.19.2|semver@7.5.3",
+          "bom-ref": "fastify@4.20.0|semver@7.5.3",
           "hashes": [
             {
               "alg": "SHA-512",
@@ -2792,11 +2792,11 @@
     {
       "ref": "faas-js-runtime@2.2.3",
       "dependsOn": [
-        "cloudevents@7.0.1",
+        "cloudevents@8.0.0",
         "commander@11.0.0",
         "death@1.1.0",
-        "fastify-raw-body@4.2.0",
-        "fastify@4.19.2",
+        "fastify-raw-body@4.2.1",
+        "fastify@4.20.0",
         "js-yaml@4.1.0",
         "node-os-utils@1.3.7",
         "overload-protection@1.2.3",
@@ -2805,30 +2805,30 @@
       ]
     },
     {
-      "ref": "cloudevents@7.0.1",
+      "ref": "cloudevents@8.0.0",
       "dependsOn": [
         "ajv-formats@2.1.1",
-        "cloudevents@7.0.1|ajv@8.11.0",
+        "cloudevents@8.0.0|ajv@8.11.0",
         "json-bigint@1.0.0",
         "process@0.11.10",
         "util@0.12.5",
-        "cloudevents@7.0.1|uuid@8.3.2"
+        "cloudevents@8.0.0|uuid@8.3.2"
       ]
     },
     {
-      "ref": "cloudevents@7.0.1|ajv@8.11.0",
+      "ref": "cloudevents@8.0.0|ajv@8.11.0",
       "dependsOn": [
         "fast-deep-equal@3.1.3",
-        "cloudevents@7.0.1|json-schema-traverse@1.0.0",
+        "cloudevents@8.0.0|json-schema-traverse@1.0.0",
         "require-from-string@2.0.2",
         "uri-js@4.4.1"
       ]
     },
     {
-      "ref": "cloudevents@7.0.1|json-schema-traverse@1.0.0"
+      "ref": "cloudevents@8.0.0|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "cloudevents@7.0.1|uuid@8.3.2"
+      "ref": "cloudevents@8.0.0|uuid@8.3.2"
     },
     {
       "ref": "ajv-formats@2.1.1",
@@ -2972,7 +2972,7 @@
       "ref": "death@1.1.0"
     },
     {
-      "ref": "fastify-raw-body@4.2.0",
+      "ref": "fastify-raw-body@4.2.1",
       "dependsOn": [
         "fastify-plugin@4.5.0",
         "raw-body@2.5.2",
@@ -3032,7 +3032,7 @@
       "ref": "secure-json-parse@2.5.0"
     },
     {
-      "ref": "fastify@4.19.2",
+      "ref": "fastify@4.20.0",
       "dependsOn": [
         "@fastify/ajv-compiler@3.5.0",
         "@fastify/error@3.3.0",
@@ -3048,12 +3048,12 @@
         "proxy-addr@2.0.7",
         "rfdc@1.3.0",
         "secure-json-parse@2.5.0",
-        "fastify@4.19.2|semver@7.5.3",
+        "fastify@4.20.0|semver@7.5.3",
         "tiny-lru@11.0.1"
       ]
     },
     {
-      "ref": "fastify@4.19.2|semver@7.5.3",
+      "ref": "fastify@4.20.0|semver@7.5.3",
       "dependsOn": [
         "lru-cache@6.0.0"
       ]
