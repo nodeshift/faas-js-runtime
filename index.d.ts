@@ -1,5 +1,5 @@
 import { Server } from 'http';
-import { CloudEventFunction, HTTPFunction, InvokerOptions } from './lib/types';
+import { CloudEventFunction, HTTPFunction, InvokerOptions, Function } from './lib/types';
 import { LogLevel } from 'fastify';
 
 // Invokable describes the function signature for a function that can be invoked by the server.
@@ -21,7 +21,7 @@ export declare const defaults: {
   LOG_LEVEL: LogLevel,
   PORT: number,
   INCLUDE_RAW: boolean,
-}
+};
 
 // re-export
 export * from './lib/types';

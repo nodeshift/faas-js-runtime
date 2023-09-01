@@ -34,10 +34,9 @@ test('Calls async init before the server has started', async t => {
   let initCalled = false;
   const server = await start(
     {
-      init: () =>
-        new Promise(() => {
-          initCalled = true;
-        }),
+      init: async() => {
+        initCalled = true;
+      },
       handle: () => {},
     },
     defaults
@@ -88,10 +87,9 @@ test('Calls async shutdown after the server has stopped', async t => {
   const server = await start(
     {
       handle: () => {},
-      shutdown: _ =>
-        new Promise(_ => {
-          shutdownCalled = true;
-        }),
+      shutdown: async() => {
+        shutdownCalled = true;
+      },
     },
     defaults
   );
