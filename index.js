@@ -7,6 +7,7 @@ const eventHandler = require('./lib/event-handler');
 const Context = require('./lib/context');
 const shutdown = require('death')({ uncaughtException: true });
 const fastifyRawBody = require('fastify-raw-body');
+const { isPromise } = require('./lib/utils');
 
 // HTTP framework
 const fastify = require('fastify');
@@ -41,7 +42,10 @@ async function start(func, options) {
     throw new TypeError('Function must export a handle function');
   }
   if (typeof func.init === 'function') {
-    func.init();
+    const initRet = func.init();
+    if (isPromise(initRet)) {
+      await initRet;
+    }
   }
   if (typeof func.shutdown === 'function') {
     options.shutdown = func.shutdown;
@@ -79,10 +83,10 @@ async function __start(func, options) {
   try {
     await server.listen({
       port: config.port,
-      host: '::'
+      host: '::',
     });
     return server.server;
-  } catch(err) {
+  } catch (err) {
     console.error('Error starting server', err);
     process.exit(1);
   }
@@ -100,12 +104,12 @@ function initializeServer(config) {
       level: config.logLevel,
       formatters: {
         bindings: bindings => ({
-            pid: bindings.pid,
-            hostname: bindings.hostname,
-            node_version: process.version
-        })
-      }
-    }
+          pid: bindings.pid,
+          hostname: bindings.hostname,
+          node_version: process.version,
+        }),
+      },
+    },
   });
 
   if (config.includeRaw) {
@@ -118,16 +122,20 @@ function initializeServer(config) {
   }
 
   // Give the Function an opportunity to clean up before the process exits
-  shutdown(_ => {
+  shutdown(async _ => {
     if (typeof config.shutdown === 'function') {
-      config.shutdown();
+      const shutdownRet = config.shutdown();
+      if (isPromise(shutdownRet)) {
+        await shutdownRet;
+      }
     }
     server.close();
     process.exit(0);
   });
 
   // Add a parser for application/x-www-form-urlencoded
-  server.addContentTypeParser('application/x-www-form-urlencoded',
+  server.addContentTypeParser(
+    'application/x-www-form-urlencoded',
     function(_, payload, done) {
       var body = '';
       payload.on('data', data => (body += data));
@@ -140,18 +148,23 @@ function initializeServer(config) {
         }
       });
       payload.on('error', done);
-    });
+    }
+  );
 
   // Add a parser for everything else - parse it as a buffer and
   // let this framework's router handle it
-  server.addContentTypeParser('*', { parseAs: 'buffer' }, function(req, body, done) {
-    try {
-      done(null, body);
-    } catch (err) {
-      err.statusCode = 500;
-      done(err, undefined);
+  server.addContentTypeParser(
+    '*',
+    { parseAs: 'buffer' },
+    function(req, body, done) {
+      try {
+        done(null, body);
+      } catch (err) {
+        err.statusCode = 500;
+        done(err, undefined);
+      }
     }
-  });
+  );
 
   // Initialize the invocation context
   // This is passed as a parameter to the function when it's invoked
@@ -210,11 +223,14 @@ function readFuncYaml(fileOrDirPath) {
     if (!!maybeYaml && maybeYaml.isFile()) {
       try {
         return yaml.load(fs.readFileSync(yamlFile, 'utf8'));
-      } catch(err) {
+      } catch (err) {
         console.warn(err);
       }
     }
   }
 }
 
-module.exports = exports = { start, defaults: { LOG_LEVEL, PORT, INCLUDE_RAW } };
+module.exports = exports = {
+  start,
+  defaults: { LOG_LEVEL, PORT, INCLUDE_RAW },
+};
