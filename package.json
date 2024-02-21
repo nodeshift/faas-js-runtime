@@ -48,7 +48,7 @@
   "devDependencies": {
     "@cyclonedx/cyclonedx-npm": "^1.13.0",
     "@types/node": "^20.4.7",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.4.1",
     "colortape": "^0.1.2",
     "eslint": "^8.46.0",
