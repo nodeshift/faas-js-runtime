@@ -52,7 +52,7 @@
     "@typescript-eslint/parser": "^6.4.1",
     "colortape": "^0.1.2",
     "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-prettier": "^9.1.0",
     "nyc": "^15.1.0",
     "supertest": "^6.3.1",
     "tape": "^5.7.4",
