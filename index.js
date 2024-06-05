@@ -23,7 +23,7 @@ const INCLUDE_RAW = false;
 
 /**
  * Starts the provided Function. If the function is a module, it will be
- * inspected for init, shutdown, liveness, and readiness functions and those
+ * inspected for init, shutdown, cors, liveness, and readiness functions and those
  * will be used to configure the server. If it's a function, it will be used
  * directly.
  *
@@ -55,6 +55,9 @@ async function start(func, options) {
   }
   if (typeof func.readiness === 'function') {
     options.readiness = func.readiness;
+  }
+  if (typeof func.cors === 'function') {
+    options.cors = func.cors;
   }
   return __start(func.handle, options);
 }
@@ -136,7 +139,7 @@ function initializeServer(config) {
   // Add a parser for application/x-www-form-urlencoded
   server.addContentTypeParser(
     'application/x-www-form-urlencoded',
-    function(_, payload, done) {
+    function (_, payload, done) {
       var body = '';
       payload.on('data', data => (body += data));
       payload.on('end', _ => {
@@ -156,7 +159,7 @@ function initializeServer(config) {
   server.addContentTypeParser(
     '*',
     { parseAs: 'buffer' },
-    function(req, body, done) {
+    function (req, body, done) {
       try {
         done(null, body);
       } catch (err) {

@@ -16,6 +16,10 @@ export interface Function {
   // This function is optional.
   shutdown?: () => (any | Promise<any>);
 
+  // Function that returns an array of CORS origins
+  // This function is optional.
+  cors?: () => string[];
+
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.
   liveness?: HealthCheck;
@@ -57,7 +61,7 @@ export enum LogLevel {
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.
  */
-export interface CloudEventFunction<I=never, R=unknown> {
+export interface CloudEventFunction<I = never, R = unknown> {
   (context: Context, event?: CloudEvent<I>): CloudEventFunctionReturn<R>;
 }
 
@@ -93,18 +97,18 @@ export type ResponseBody = string | object | Buffer;
 
 // Context is the request context for HTTP and CloudEvent functions.
 export interface Context {
-    log: Logger;
-    req: IncomingMessage;
-    query?: Record<string, any>;
-    body?: Record<string, any>|string;
-    rawBody?: string;
-    method: string;
-    headers: IncomingHttpHeaders;
-    httpVersion: string;
-    httpVersionMajor: number;
-    httpVersionMinor: number;
-    cloudevent: CloudEvent<unknown>;
-    cloudEventResponse(data: string|object): CloudEventResponse;
+  log: Logger;
+  req: IncomingMessage;
+  query?: Record<string, any>;
+  body?: Record<string, any> | string;
+  rawBody?: string;
+  method: string;
+  headers: IncomingHttpHeaders;
+  httpVersion: string;
+  httpVersionMajor: number;
+  httpVersionMinor: number;
+  cloudevent: CloudEvent<unknown>;
+  cloudEventResponse(data: string | object): CloudEventResponse;
 }
 
 export interface Logger {
@@ -117,9 +121,9 @@ export interface Logger {
 }
 
 export interface CloudEventResponse {
-    id(id: string): CloudEventResponse;
-    source(source: string): CloudEventResponse;
-    type(type: string): CloudEventResponse;
-    version(version: string): CloudEventResponse;
-    response(): CloudEvent;
+  id(id: string): CloudEventResponse;
+  source(source: string): CloudEventResponse;
+  type(type: string): CloudEventResponse;
+  version(version: string): CloudEventResponse;
+  response(): CloudEvent;
 }
