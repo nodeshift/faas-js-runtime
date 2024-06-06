@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { CloudEvent } from 'cloudevents';
+import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 
 /**
@@ -112,12 +112,12 @@ export interface Context {
 }
 
 export interface Logger {
-    debug: (msg: any) => void,
-    info:  (msg: any) => void,
-    warn:  (msg: any) => void,
-    error: (msg: any) => void,
-    fatal: (msg: any) => void,
-    trace: (msg: any) => void,
+  debug: (msg: any) => void,
+  info:  (msg: any) => void,
+  warn:  (msg: any) => void,
+  error: (msg: any) => void,
+  fatal: (msg: any) => void,
+  trace: (msg: any) => void,
 }
 
 export interface CloudEventResponse {
