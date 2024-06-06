@@ -61,7 +61,7 @@ export enum LogLevel {
 /**
  * CloudEventFunction describes the function signature for a function that accepts CloudEvents.
  */
-export interface CloudEventFunction<I = never, R = unknown> {
+export interface CloudEventFunction<I=never, R=unknown> {
   (context: Context, event?: CloudEvent<I>): CloudEventFunctionReturn<R>;
 }
 
@@ -97,33 +97,33 @@ export type ResponseBody = string | object | Buffer;
 
 // Context is the request context for HTTP and CloudEvent functions.
 export interface Context {
-  log: Logger;
-  req: IncomingMessage;
-  query?: Record<string, any>;
-  body?: Record<string, any> | string;
-  rawBody?: string;
-  method: string;
-  headers: IncomingHttpHeaders;
-  httpVersion: string;
-  httpVersionMajor: number;
-  httpVersionMinor: number;
-  cloudevent: CloudEvent<unknown>;
-  cloudEventResponse(data: string | object): CloudEventResponse;
+    log: Logger;
+    req: IncomingMessage;
+    query?: Record<string, any>;
+    body?: Record<string, any>|string;
+    rawBody?: string;
+    method: string;
+    headers: IncomingHttpHeaders;
+    httpVersion: string;
+    httpVersionMajor: number;
+    httpVersionMinor: number;
+    cloudevent: CloudEvent<unknown>;
+    cloudEventResponse(data: string|object): CloudEventResponse;
 }
 
 export interface Logger {
-  debug: (msg: any) => void,
-  info:  (msg: any) => void,
-  warn:  (msg: any) => void,
-  error: (msg: any) => void,
-  fatal: (msg: any) => void,
-  trace: (msg: any) => void,
+    debug: (msg: any) => void,
+    info:  (msg: any) => void,
+    warn:  (msg: any) => void,
+    error: (msg: any) => void,
+    fatal: (msg: any) => void,
+    trace: (msg: any) => void,
 }
 
 export interface CloudEventResponse {
-  id(id: string): CloudEventResponse;
-  source(source: string): CloudEventResponse;
-  type(type: string): CloudEventResponse;
-  version(version: string): CloudEventResponse;
-  response(): CloudEvent;
+    id(id: string): CloudEventResponse;
+    source(source: string): CloudEventResponse;
+    type(type: string): CloudEventResponse;
+    version(version: string): CloudEventResponse;
+    response(): CloudEvent;
 }

@@ -139,7 +139,7 @@ function initializeServer(config) {
   // Add a parser for application/x-www-form-urlencoded
   server.addContentTypeParser(
     'application/x-www-form-urlencoded',
-    function (_, payload, done) {
+    function(_, payload, done) {
       var body = '';
       payload.on('data', data => (body += data));
       payload.on('end', _ => {
@@ -159,7 +159,7 @@ function initializeServer(config) {
   server.addContentTypeParser(
     '*',
     { parseAs: 'buffer' },
-    function (req, body, done) {
+    function(req, body, done) {
       try {
         done(null, body);
       } catch (err) {
