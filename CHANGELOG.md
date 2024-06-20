@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.3.0...v2.4.0) (2024-06-20)
+
+
+### Features
+
+* Enable OPTIONS preflight and a method to enable cros origins ([#359](https://github.com/nodeshift/faas-js-runtime/issues/359)) ([b3fa2b9](https://github.com/nodeshift/faas-js-runtime/commit/b3fa2b9bb1d53f7c62ef839c01b4c62ecf62aa1c))
+
+
+### Bug Fixes
+
+* upgrade fastify-raw-body from 4.2.1 to 4.3.0 ([#345](https://github.com/nodeshift/faas-js-runtime/issues/345)) ([4756c01](https://github.com/nodeshift/faas-js-runtime/commit/4756c01b95e38d7206d9c1eb96d3b2dae896bc15))
+
 ## [2.3.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.2.3...v2.3.0) (2024-02-28)
 
 
