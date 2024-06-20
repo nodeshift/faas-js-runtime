@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { CloudEvent } from 'cloudevents';
+import { IncomingHttpHeaders, IncomingMessage } from 'http';
 import { Http2ServerRequest, Http2ServerResponse } from 'http2';
 
 /**
@@ -15,6 +15,10 @@ export interface Function {
   // The shutdown function, called after the server is stopped
   // This function is optional.
   shutdown?: () => (any | Promise<any>);
+
+  // Function that returns an array of CORS origins
+  // This function is optional.
+  cors?: () => string[];
 
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.

@@ -378,6 +378,45 @@ test('Sends CORS headers in HTTP response', t => {
       }, errHandler(t));
 });
 
+test('Responds to OPTIONS with CORS headers in HTTP response', t => {
+  start(_ => '')
+    .then(server => {
+      t.plan(2);
+      request(server)
+        .options('/')
+        .expect(204)
+        .expect('Access-Control-Allow-Origin', '*')
+        .expect('Access-Control-Allow-Methods',
+          'OPTIONS, GET, DELETE, POST, PUT, HEAD, PATCH')
+        .end((err, res) => {
+          t.error(err, 'No error');
+          t.equal(res.text, '');
+          t.end();
+          server.close();
+        });
+      }, errHandler(t));
+});
+
+test('Responds to GET with CORS headers in HTTP response', t => {
+  start(_ => '', {  cors: () => ['http://example.com', 'http://example2.com'] } )
+    .then(server => {
+      t.plan(2);
+      request(server)
+        .get('/')
+        .expect(204)
+        .set('Origin', 'http://example.com')
+        .expect('Access-Control-Allow-Origin', 'http://example.com')
+        .expect('Access-Control-Allow-Methods',
+          'OPTIONS, GET, DELETE, POST, PUT, HEAD, PATCH')
+        .end((err, res) => {
+          t.error(err, 'No error');
+          t.equal(res.text, '');
+          t.end();
+          server.close();
+        });
+      }, errHandler(t));
+});
+
 test('Respects headers set by the function', t => {
   const func = require(`${__dirname}/fixtures/response-header/`);
   start(func)

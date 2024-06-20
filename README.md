@@ -41,6 +41,10 @@ export interface Function {
   // This function is optional and should be synchronous.
   shutdown?: () => any;
 
+  // Function that returns an array of CORS origins
+  // This function is optional.
+  cors?: () => string[];
+
   // The liveness function, called to check if the server is alive
   // This function is optional and should return 200/OK if the server is alive.
   liveness?: HealthCheck;
