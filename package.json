@@ -46,14 +46,14 @@
     "qs": "^6.11.2"
   },
   "devDependencies": {
-    "@cyclonedx/cyclonedx-npm": "^1.16.1",
+    "@cyclonedx/cyclonedx-npm": "^1.19.3",
     "@types/node": "^20.4.7",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.1",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
     "colortape": "^0.1.2",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.7.0",
-    "nyc": "^15.1.0",
+    "nyc": "^17.0.0",
     "supertest": "^6.3.1",
     "tape": "^5.7.4",
     "tsd": "^0.28.1",
