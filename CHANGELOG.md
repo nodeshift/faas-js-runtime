@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.4.0...v2.4.1) (2024-11-18)
+
+
+### Bug Fixes
+
+* Fix dereference of undefined ([#363](https://github.com/nodeshift/faas-js-runtime/issues/363)) ([473a23f](https://github.com/nodeshift/faas-js-runtime/commit/473a23f18209a8a4066f664c85e9b8176c898042))
+
+
+### Miscellaneous
+
+* add node 22 to the list of supported versions ([#376](https://github.com/nodeshift/faas-js-runtime/issues/376)) ([0a8b8de](https://github.com/nodeshift/faas-js-runtime/commit/0a8b8de95fe034c355509a9e255f397cb625a6f3))
+
 ## [2.4.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.3.0...v2.4.0) (2024-06-20)
 
 
