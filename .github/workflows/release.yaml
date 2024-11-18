@@ -16,6 +16,6 @@ jobs:
          registry-url: 'https://registry.npmjs.org'
      - run: npm install -g npm
      - run: npm ci
-     - run: npm publish --provenance --access public
+     - run: npm publish
        env:
          NODE_AUTH_TOKEN: ${{ secrets.FAAS_JS_RUNTIME_PUBLISH }}
