@@ -3,18 +3,18 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:c87fcd60-6fa1-4c1d-b2a6-6a8c7b3f3e46",
+  "serialNumber": "urn:uuid:ba30bfb5-71c5-43ff-ae95-c2c3562579fd",
   "metadata": {
-    "timestamp": "2024-06-20T15:06:38.638Z",
+    "timestamp": "2024-11-18T14:17:47.648Z",
     "tools": [
       {
         "name": "npm",
-        "version": "10.7.0"
+        "version": "10.8.2"
       },
       {
         "vendor": "@cyclonedx",
         "name": "cyclonedx-npm",
-        "version": "1.19.0",
+        "version": "1.19.3",
         "externalReferences": [
           {
             "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
@@ -36,7 +36,7 @@
       {
         "vendor": "@cyclonedx",
         "name": "cyclonedx-library",
-        "version": "6.10.0",
+        "version": "6.13.0",
         "externalReferences": [
           {
             "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
@@ -59,8 +59,8 @@
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "2.4.0",
-      "bom-ref": "faas-js-runtime@2.4.0",
+      "version": "2.4.1",
+      "bom-ref": "faas-js-runtime@2.4.1",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
@@ -70,7 +70,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@2.4.0?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@2.4.1?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -3031,7 +3031,7 @@
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@2.4.0",
+      "ref": "faas-js-runtime@2.4.1",
       "dependsOn": [
         "cloudevents@8.0.0",
         "commander@11.0.0",
