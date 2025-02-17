@@ -22,9 +22,18 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - uses: codecov/codecov-action@v3
+    - name: Coveralls Parallel
+      uses: coverallsapp/github-action@master
       with:
-        files: coverage/lcov.info
-        name: lts ${{ matrix.os }}
-        fail_ci_if_error: true
-        verbose: true
+        github-token: ${{ secrets.github_token }}
+        flag-name: run-${{ matrix.node-version }}
+        parallel: true
+  finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
