@@ -158,6 +158,14 @@ with the CLI.
 npx faas-js-runtime ./index.js
 ```
 
+### --bodyLimit
+Sets the maximum allowed payload size for incoming requests. Default is '1mb'.
+
+Example:
+```console
+faas-js-runtime function.js --bodyLimit 2mb
+```
+
 ## Debugging Locally
 
 During local development, it is often necessary to set breakpoints in your code for debugging.  Since functions are just javascript files, using any current debugging(VS Code, Chrome Dev Tools) method will work. The linked blog post shows how to setup and use VS Code for development debugging.

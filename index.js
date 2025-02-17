@@ -21,6 +21,9 @@ const PORT = 8080;
 // Don't Include Raw body by default
 const INCLUDE_RAW = false;
 
+// Default maximum request payload size (1MB in bytes)
+const BODY_LIMIT = 1048576;
+
 /**
  * Starts the provided Function. If the function is a module, it will be
  * inspected for init, shutdown, cors, liveness, and readiness functions and those
@@ -113,6 +116,7 @@ function initializeServer(config) {
         }),
       },
     },
+    bodyLimit: Number(config.bodyLimit),
   });
 
   if (config.includeRaw) {
@@ -191,6 +195,7 @@ function initializeServer(config) {
  * @param {String} options.config Path to a func.yaml file
  * @param {String} options.logLevel Log level - one of 'fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'
  * @param {number} options.port Port to listen on
+ * @param {number} [options.bodyLimit=1048576] - Maximum request payload size in bytes
  * @returns {Config} Configuration object
  */
 function loadConfig(options) {
@@ -198,6 +203,7 @@ function loadConfig(options) {
   opts.logLevel = opts.logLevel || LOG_LEVEL;
   opts.port = opts.port || PORT;
   opts.includeRaw = opts.includeRaw || INCLUDE_RAW;
+  opts.bodyLimit = opts.bodyLimit || BODY_LIMIT;
   return opts;
 }
 
@@ -235,5 +241,5 @@ function readFuncYaml(fileOrDirPath) {
 
 module.exports = exports = {
   start,
-  defaults: { LOG_LEVEL, PORT, INCLUDE_RAW },
+  defaults: { LOG_LEVEL, PORT, INCLUDE_RAW, BODY_LIMIT },
 };

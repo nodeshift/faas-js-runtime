@@ -21,6 +21,7 @@ export declare const defaults: {
   LOG_LEVEL: LogLevel,
   PORT: number,
   INCLUDE_RAW: boolean,
+  BODY_LIMIT: number,
 };
 
 // re-export
