@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.4.1...v2.5.0) (2025-02-17)
+
+
+### Features
+
+* Add configurable request body size limit option ([#380](https://github.com/nodeshift/faas-js-runtime/issues/380)) ([6c8055f](https://github.com/nodeshift/faas-js-runtime/commit/6c8055f7c23a7d94e6424850058b71ee327d5ce0))
+
+
+### Miscellaneous
+
+* update codecoverage to use coveralls instead of codecov ([#381](https://github.com/nodeshift/faas-js-runtime/issues/381)) ([9a7da28](https://github.com/nodeshift/faas-js-runtime/commit/9a7da28290f85b346f334cfe23a89b7c20ec1567))
+
 ## [2.4.1](https://github.com/nodeshift/faas-js-runtime/compare/v2.4.0...v2.4.1) (2024-11-18)
 
 
