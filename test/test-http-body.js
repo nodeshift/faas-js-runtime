@@ -149,6 +149,7 @@ test('Rejects HTTP POST exceeding bodyLimit', t => {
         .end((err, res) => {
           t.error(err, 'No error');
           t.equal(res.status, 413, 'Should reject payload larger than limit');
+          t.end();
           server.close();
         });
     }, errHandler(t));
@@ -166,9 +167,11 @@ test('Accepts HTTP POST within bodyLimit', t => {
         .post('/')
         .send(body)
         .set({ 'Content-Type': 'text/plain' })
+        .expect('Content-Type', /plain/)
         .expect(200)
         .end((err, _) => {
           t.error(err, 'No error');
+          t.end();
           server.close();
         });
     }, errHandler(t));
@@ -190,6 +193,7 @@ test('Rejects payload exceeding environment variable bodyLimit', t => {
           t.error(err, 'No error');
           t.equal(res.status, 413, 'Should reject payload larger than env var limit');
           delete process.env.FUNC_BODY_LIMIT;
+          t.end();
           server.close();
         });
     }, errHandler(t));
@@ -209,10 +213,12 @@ test('Accepts payload within environment variable bodyLimit', t => {
         .post('/')
         .send(body)
         .set({ 'Content-Type': 'text/plain' })
+        .expect('Content-Type', /plain/)
         .expect(200)
         .end((err, _) => {
           t.error(err, 'No error');
           delete process.env.FUNC_BODY_LIMIT;
+          t.end();
           server.close();
         });
     }, errHandler(t));
