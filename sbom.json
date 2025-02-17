@@ -1,76 +1,100 @@
 {
-  "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
-  "specVersion": "1.4",
+  "specVersion": "1.6",
   "version": 1,
-  "serialNumber": "urn:uuid:ba30bfb5-71c5-43ff-ae95-c2c3562579fd",
+  "serialNumber": "urn:uuid:607d1b32-90da-4ff6-af36-62a7567d4f51",
   "metadata": {
-    "timestamp": "2024-11-18T14:17:47.648Z",
-    "tools": [
-      {
-        "name": "npm",
-        "version": "10.8.2"
-      },
-      {
-        "vendor": "@cyclonedx",
-        "name": "cyclonedx-npm",
-        "version": "1.19.3",
-        "externalReferences": [
-          {
-            "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
-            "type": "vcs",
-            "comment": "as detected from PackageJson property \"repository.url\""
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
-            "type": "website",
-            "comment": "as detected from PackageJson property \"homepage\""
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
-            "type": "issue-tracker",
-            "comment": "as detected from PackageJson property \"bugs.url\""
-          }
-        ]
-      },
-      {
-        "vendor": "@cyclonedx",
-        "name": "cyclonedx-library",
-        "version": "6.13.0",
-        "externalReferences": [
-          {
-            "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
-            "type": "vcs",
-            "comment": "as detected from PackageJson property \"repository.url\""
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
-            "type": "website",
-            "comment": "as detected from PackageJson property \"homepage\""
-          },
-          {
-            "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
-            "type": "issue-tracker",
-            "comment": "as detected from PackageJson property \"bugs.url\""
-          }
-        ]
-      }
-    ],
+    "timestamp": "2025-02-17T20:45:50.434Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "npm",
+          "version": "10.8.2"
+        },
+        {
+          "type": "application",
+          "name": "cyclonedx-npm",
+          "group": "@cyclonedx",
+          "version": "2.0.0",
+          "author": "Jan Kowalleck",
+          "description": "Create CycloneDX Software Bill of Materials (SBOM) from NPM projects.",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-library",
+          "group": "@cyclonedx",
+          "version": "7.1.0",
+          "author": "Jan Kowalleck",
+          "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ]
+        }
+      ]
+    },
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "2.4.1",
-      "bom-ref": "faas-js-runtime@2.4.1",
+      "version": "2.5.0",
+      "bom-ref": "faas-js-runtime@2.5.0",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
         {
           "license": {
-            "id": "Apache-2.0"
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@2.4.1?vcs_url=git%2Bhttps%3A//github.com/nodeshift/faas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@2.5.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -131,7 +155,8 @@
           "licenses": [
             {
               "license": {
-                "id": "MIT"
+                "id": "MIT",
+                "acknowledgement": "declared"
               }
             }
           ],
@@ -151,7 +176,8 @@
           "licenses": [
             {
               "license": {
-                "id": "MIT"
+                "id": "MIT",
+                "acknowledgement": "declared"
               }
             }
           ],
@@ -171,7 +197,8 @@
           "licenses": [
             {
               "license": {
-                "id": "MIT"
+                "id": "MIT",
+                "acknowledgement": "declared"
               }
             }
           ],
@@ -193,7 +220,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -213,7 +241,8 @@
           "licenses": [
             {
               "license": {
-                "id": "MIT"
+                "id": "MIT",
+                "acknowledgement": "declared"
               }
             }
           ],
@@ -233,7 +262,8 @@
           "licenses": [
             {
               "license": {
-                "id": "MIT"
+                "id": "MIT",
+                "acknowledgement": "declared"
               }
             }
           ],
@@ -255,7 +285,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -275,7 +306,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -321,7 +353,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -393,7 +426,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -413,7 +447,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -433,7 +468,8 @@
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "id": "ISC",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -453,7 +489,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -525,7 +562,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -545,7 +583,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -669,7 +708,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -689,7 +729,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -709,7 +750,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1106,7 +1148,8 @@
       "licenses": [
         {
           "license": {
-            "id": "BSD-3-Clause"
+            "id": "BSD-3-Clause",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1261,7 +1304,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1415,7 +1459,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1461,7 +1506,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1481,7 +1527,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1501,7 +1548,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1521,7 +1569,8 @@
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "id": "ISC",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -1541,7 +1590,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2424,7 +2474,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2444,7 +2495,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2464,7 +2516,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2484,7 +2537,8 @@
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "id": "ISC",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2504,7 +2558,8 @@
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "id": "ISC",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2550,7 +2605,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2570,7 +2626,8 @@
       "licenses": [
         {
           "license": {
-            "id": "Python-2.0"
+            "id": "Python-2.0",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2590,7 +2647,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2610,7 +2668,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2630,7 +2689,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2650,7 +2710,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2723,7 +2784,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -2782,7 +2844,8 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "MIT",
+            "acknowledgement": "declared"
           }
         }
       ],
@@ -3031,7 +3094,7 @@
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@2.4.1",
+      "ref": "faas-js-runtime@2.5.0",
       "dependsOn": [
         "cloudevents@8.0.0",
         "commander@11.0.0",
