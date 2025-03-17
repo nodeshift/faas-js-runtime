@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
   "version": 1,
-  "serialNumber": "urn:uuid:607d1b32-90da-4ff6-af36-62a7567d4f51",
+  "serialNumber": "urn:uuid:94d04006-2a0b-48a3-b696-c0e783bd6950",
   "metadata": {
-    "timestamp": "2025-02-17T20:45:50.434Z",
+    "timestamp": "2025-03-17T14:20:03.568Z",
     "tools": {
       "components": [
         {
@@ -82,8 +82,8 @@
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "2.5.0",
-      "bom-ref": "faas-js-runtime@2.5.0",
+      "version": "2.6.0",
+      "bom-ref": "faas-js-runtime@2.6.0",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
@@ -94,7 +94,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@2.5.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@2.6.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -792,17 +792,25 @@
     {
       "type": "library",
       "name": "commander",
-      "version": "11.0.0",
-      "bom-ref": "commander@11.0.0",
-      "purl": "pkg:npm/commander@11.0.0",
+      "version": "13.1.0",
+      "bom-ref": "commander@13.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/commander@13.1.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/commander/-/commander-11.0.0.tgz",
+          "url": "https://registry.npmjs.org/commander/-/commander-13.1.0.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "f473255edb7f04da18afca28ca38cd45d22294e4e45495c1f86871313b4e2b09344788f8952e0da63baa991c6ba017e77d34874081d007bc2bc878576ab36399"
+              "content": "feb15e0a934941b852663195c0ef51155df13ea6e71114bc326210cc2b43ff397a82926e57f6cc2ee37dda81b717b77ca031071d1aee8d25cd52bf1fa639ed2b"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3094,10 +3102,10 @@
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@2.5.0",
+      "ref": "faas-js-runtime@2.6.0",
       "dependsOn": [
         "cloudevents@8.0.0",
-        "commander@11.0.0",
+        "commander@13.1.0",
         "death@1.1.0",
         "fastify-raw-body@4.3.0",
         "fastify@4.21.0",
@@ -3275,7 +3283,7 @@
       ]
     },
     {
-      "ref": "commander@11.0.0"
+      "ref": "commander@13.1.0"
     },
     {
       "ref": "death@1.1.0"
