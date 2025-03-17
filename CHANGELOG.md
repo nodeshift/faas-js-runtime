@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.5.0...v2.6.0) (2025-03-17)
+
+
+### Features
+
+* upgrade @cyclonedx/cyclonedx-npm from 1.16.1 to 2.0.0 ([#389](https://github.com/nodeshift/faas-js-runtime/issues/389)) ([50e0f51](https://github.com/nodeshift/faas-js-runtime/commit/50e0f51111a0d941c818d5e9e19d43f5809ebe43))
+* upgrade commander from 11.0.0 to 13.1.0 ([#390](https://github.com/nodeshift/faas-js-runtime/issues/390)) ([8ee0258](https://github.com/nodeshift/faas-js-runtime/commit/8ee02585c60fcad5328c9e9858c130764a8fd849))
+
+
+### Bug Fixes
+
+* upgrade typescript from 5.2.2 to 5.7.3 ([#385](https://github.com/nodeshift/faas-js-runtime/issues/385)) ([6978e92](https://github.com/nodeshift/faas-js-runtime/commit/6978e92d0b1e2a8aeccf4a10cef9904487709a5d))
+
 ## [2.5.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.4.1...v2.5.0) (2025-02-17)
 
 
