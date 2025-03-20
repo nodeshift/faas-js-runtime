@@ -53,7 +53,7 @@
     "colortape": "^0.1.2",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.7.0",
-    "nyc": "^15.1.0",
+    "nyc": "^17.1.0",
     "supertest": "^6.3.1",
     "tape": "^5.7.4",
     "tsd": "^0.28.1",
