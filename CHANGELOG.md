@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.5.0...v3.0.0) (2025-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove Node 16 and 18 support ([#410](https://github.com/nodeshift/faas-js-runtime/issues/410))
+
+### Features
+
+* add node 24 support ([#407](https://github.com/nodeshift/faas-js-runtime/issues/407)) ([c4783a7](https://github.com/nodeshift/faas-js-runtime/commit/c4783a752f1e6fe9fa54fcf1d29ae2d30230be18))
+* remove Node 16 and 18 support ([#410](https://github.com/nodeshift/faas-js-runtime/issues/410)) ([63346be](https://github.com/nodeshift/faas-js-runtime/commit/63346be054bbe937db911f8ecf2af956259e120a))
+* upgrade @cyclonedx/cyclonedx-npm from 1.16.1 to 2.0.0 ([#389](https://github.com/nodeshift/faas-js-runtime/issues/389)) ([50e0f51](https://github.com/nodeshift/faas-js-runtime/commit/50e0f51111a0d941c818d5e9e19d43f5809ebe43))
+* upgrade commander from 11.0.0 to 13.1.0 ([#390](https://github.com/nodeshift/faas-js-runtime/issues/390)) ([8ee0258](https://github.com/nodeshift/faas-js-runtime/commit/8ee02585c60fcad5328c9e9858c130764a8fd849))
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#409](https://github.com/nodeshift/faas-js-runtime/issues/409)) ([25c37e4](https://github.com/nodeshift/faas-js-runtime/commit/25c37e4eea61ce753912dfafff02eeb787b81b64))
+* upgrade typescript from 5.2.2 to 5.7.3 ([#385](https://github.com/nodeshift/faas-js-runtime/issues/385)) ([6978e92](https://github.com/nodeshift/faas-js-runtime/commit/6978e92d0b1e2a8aeccf4a10cef9904487709a5d))
+
 ## [2.5.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.4.1...v2.5.0) (2025-02-17)
 
 
