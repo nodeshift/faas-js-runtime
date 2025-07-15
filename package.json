@@ -1,6 +1,6 @@
 {
   "name": "faas-js-runtime",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nodeshift/faas-js-runtime.git"
