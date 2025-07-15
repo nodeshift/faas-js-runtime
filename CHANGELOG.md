@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.1](https://github.com/nodeshift/faas-js-runtime/compare/v3.0.0...v3.0.1) (2025-07-15)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#406](https://github.com/nodeshift/faas-js-runtime/issues/406)) ([d0d9318](https://github.com/nodeshift/faas-js-runtime/commit/d0d9318685e37f76f076788f630d4de496f3388d))
+* upgrade cloudevents from 8.0.0 to 8.0.2 ([#402](https://github.com/nodeshift/faas-js-runtime/issues/402)) ([ad25d48](https://github.com/nodeshift/faas-js-runtime/commit/ad25d48e0157a8cbacb097cfc384dfbca10d1175))
+* upgrade prom-client from 15.0.0 to 15.1.3 ([#401](https://github.com/nodeshift/faas-js-runtime/issues/401)) ([a36cc23](https://github.com/nodeshift/faas-js-runtime/commit/a36cc23e5d930b4f926921d290ba5da07706b177))
+
 ## [3.0.0](https://github.com/nodeshift/faas-js-runtime/compare/v2.5.0...v3.0.0) (2025-06-05)
 
 
