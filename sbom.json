@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
   "version": 1,
-  "serialNumber": "urn:uuid:cb190241-c49f-4bb5-b23e-654accb7e489",
+  "serialNumber": "urn:uuid:9f6174fc-bc6a-49fa-a04c-f30e19406b18",
   "metadata": {
-    "timestamp": "2025-07-15T09:32:21.759Z",
+    "timestamp": "2025-07-15T10:34:57.570Z",
     "tools": {
       "components": [
         {
@@ -82,8 +82,8 @@
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "3.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1",
+      "version": "3.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
@@ -94,7 +94,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@3.0.1?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@3.0.2?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -125,7 +125,7 @@
       "type": "library",
       "name": "cloudevents",
       "version": "8.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2",
       "licenses": [
         {
           "license": {
@@ -159,7 +159,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.11.0",
-          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
+          "bom-ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|ajv@8.11.0",
           "licenses": [
             {
               "license": {
@@ -180,7 +180,7 @@
           "type": "library",
           "name": "uuid",
           "version": "8.3.2",
-          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2",
+          "bom-ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|uuid@8.3.2",
           "licenses": [
             {
               "license": {
@@ -201,7 +201,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|json-schema-traverse@1.0.0",
           "licenses": [
             {
               "license": {
@@ -224,7 +224,7 @@
       "type": "library",
       "name": "commander",
       "version": "13.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|commander@13.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|commander@13.1.0",
       "licenses": [
         {
           "license": {
@@ -258,7 +258,7 @@
       "type": "library",
       "name": "death",
       "version": "1.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|death@1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|death@1.1.0",
       "purl": "pkg:npm/death@1.1.0",
       "properties": [
         {
@@ -271,7 +271,7 @@
       "type": "library",
       "name": "fastify-raw-body",
       "version": "4.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fastify-raw-body@4.3.0",
       "purl": "pkg:npm/fastify-raw-body@4.3.0",
       "externalReferences": [
         {
@@ -297,7 +297,7 @@
       "type": "library",
       "name": "fastify",
       "version": "4.21.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fastify@4.21.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fastify@4.21.0",
       "purl": "pkg:npm/fastify@4.21.0",
       "externalReferences": [
         {
@@ -323,7 +323,7 @@
           "type": "library",
           "name": "semver",
           "version": "7.5.3",
-          "bom-ref": "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
+          "bom-ref": "faas-js-runtime@3.0.2|fastify@4.21.0|semver@7.5.3",
           "purl": "pkg:npm/semver@7.5.3",
           "externalReferences": [
             {
@@ -351,7 +351,7 @@
       "type": "library",
       "name": "js-yaml",
       "version": "4.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|js-yaml@4.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|js-yaml@4.1.0",
       "licenses": [
         {
           "license": {
@@ -372,7 +372,7 @@
       "type": "library",
       "name": "node-os-utils",
       "version": "1.3.7",
-      "bom-ref": "faas-js-runtime@3.0.1|node-os-utils@1.3.7",
+      "bom-ref": "faas-js-runtime@3.0.2|node-os-utils@1.3.7",
       "licenses": [
         {
           "license": {
@@ -393,7 +393,7 @@
       "type": "library",
       "name": "overload-protection",
       "version": "1.2.3",
-      "bom-ref": "faas-js-runtime@3.0.1|overload-protection@1.2.3",
+      "bom-ref": "faas-js-runtime@3.0.2|overload-protection@1.2.3",
       "licenses": [
         {
           "license": {
@@ -414,7 +414,7 @@
       "type": "library",
       "name": "prom-client",
       "version": "15.1.3",
-      "bom-ref": "faas-js-runtime@3.0.1|prom-client@15.1.3",
+      "bom-ref": "faas-js-runtime@3.0.2|prom-client@15.1.3",
       "licenses": [
         {
           "license": {
@@ -448,7 +448,7 @@
       "type": "library",
       "name": "qs",
       "version": "6.11.2",
-      "bom-ref": "faas-js-runtime@3.0.1|qs@6.11.2",
+      "bom-ref": "faas-js-runtime@3.0.2|qs@6.11.2",
       "purl": "pkg:npm/qs@6.11.2",
       "externalReferences": [
         {
@@ -474,7 +474,7 @@
       "type": "library",
       "name": "ajv-formats",
       "version": "2.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1",
       "licenses": [
         {
           "license": {
@@ -495,7 +495,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.11.0",
-          "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0",
+          "bom-ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1|ajv@8.11.0",
           "licenses": [
             {
               "license": {
@@ -516,7 +516,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
           "licenses": [
             {
               "license": {
@@ -539,7 +539,7 @@
       "type": "library",
       "name": "json-bigint",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|json-bigint@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|json-bigint@1.0.0",
       "purl": "pkg:npm/json-bigint@1.0.0",
       "externalReferences": [
         {
@@ -565,7 +565,7 @@
       "type": "library",
       "name": "process",
       "version": "0.11.10",
-      "bom-ref": "faas-js-runtime@3.0.1|process@0.11.10",
+      "bom-ref": "faas-js-runtime@3.0.2|process@0.11.10",
       "licenses": [
         {
           "license": {
@@ -586,7 +586,7 @@
       "type": "library",
       "name": "util",
       "version": "0.12.5",
-      "bom-ref": "faas-js-runtime@3.0.1|util@0.12.5",
+      "bom-ref": "faas-js-runtime@3.0.2|util@0.12.5",
       "licenses": [
         {
           "license": {
@@ -607,7 +607,7 @@
       "type": "library",
       "name": "fastify-plugin",
       "version": "4.5.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fastify-plugin@4.5.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fastify-plugin@4.5.0",
       "purl": "pkg:npm/fastify-plugin@4.5.0",
       "externalReferences": [
         {
@@ -633,7 +633,7 @@
       "type": "library",
       "name": "raw-body",
       "version": "2.5.2",
-      "bom-ref": "faas-js-runtime@3.0.1|raw-body@2.5.2",
+      "bom-ref": "faas-js-runtime@3.0.2|raw-body@2.5.2",
       "purl": "pkg:npm/raw-body@2.5.2",
       "externalReferences": [
         {
@@ -659,7 +659,7 @@
       "type": "library",
       "name": "secure-json-parse",
       "version": "2.5.0",
-      "bom-ref": "faas-js-runtime@3.0.1|secure-json-parse@2.5.0",
+      "bom-ref": "faas-js-runtime@3.0.2|secure-json-parse@2.5.0",
       "licenses": [
         {
           "license": {
@@ -681,7 +681,7 @@
       "name": "ajv-compiler",
       "group": "@fastify",
       "version": "3.5.0",
-      "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
+      "bom-ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0",
       "purl": "pkg:npm/%40fastify/ajv-compiler@3.5.0",
       "externalReferences": [
         {
@@ -707,7 +707,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.12.0",
-          "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+          "bom-ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
           "purl": "pkg:npm/ajv@8.12.0",
           "externalReferences": [
             {
@@ -733,7 +733,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
           "purl": "pkg:npm/json-schema-traverse@1.0.0",
           "externalReferences": [
             {
@@ -762,7 +762,7 @@
       "name": "error",
       "group": "@fastify",
       "version": "3.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|@fastify/error@3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|@fastify/error@3.3.0",
       "purl": "pkg:npm/%40fastify/error@3.3.0",
       "externalReferences": [
         {
@@ -789,7 +789,7 @@
       "name": "fast-json-stringify-compiler",
       "group": "@fastify",
       "version": "4.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|@fastify/fast-json-stringify-compiler@4.3.0",
       "purl": "pkg:npm/%40fastify/fast-json-stringify-compiler@4.3.0",
       "externalReferences": [
         {
@@ -815,7 +815,7 @@
       "type": "library",
       "name": "abstract-logging",
       "version": "2.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|abstract-logging@2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|abstract-logging@2.0.1",
       "licenses": [
         {
           "license": {
@@ -836,7 +836,7 @@
       "type": "library",
       "name": "avvio",
       "version": "8.2.1",
-      "bom-ref": "faas-js-runtime@3.0.1|avvio@8.2.1",
+      "bom-ref": "faas-js-runtime@3.0.2|avvio@8.2.1",
       "purl": "pkg:npm/avvio@8.2.1",
       "externalReferences": [
         {
@@ -862,7 +862,7 @@
       "type": "library",
       "name": "fast-content-type-parse",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-content-type-parse@1.0.0",
       "purl": "pkg:npm/fast-content-type-parse@1.0.0",
       "externalReferences": [
         {
@@ -888,7 +888,7 @@
       "type": "library",
       "name": "fast-json-stringify",
       "version": "5.7.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0",
       "purl": "pkg:npm/fast-json-stringify@5.7.0",
       "externalReferences": [
         {
@@ -914,7 +914,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.12.0",
-          "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
+          "bom-ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|ajv@8.12.0",
           "purl": "pkg:npm/ajv@8.12.0",
           "externalReferences": [
             {
@@ -940,7 +940,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
           "purl": "pkg:npm/json-schema-traverse@1.0.0",
           "externalReferences": [
             {
@@ -968,7 +968,7 @@
       "type": "library",
       "name": "find-my-way",
       "version": "7.6.0",
-      "bom-ref": "faas-js-runtime@3.0.1|find-my-way@7.6.0",
+      "bom-ref": "faas-js-runtime@3.0.2|find-my-way@7.6.0",
       "purl": "pkg:npm/find-my-way@7.6.0",
       "externalReferences": [
         {
@@ -994,7 +994,7 @@
       "type": "library",
       "name": "light-my-request",
       "version": "5.10.0",
-      "bom-ref": "faas-js-runtime@3.0.1|light-my-request@5.10.0",
+      "bom-ref": "faas-js-runtime@3.0.2|light-my-request@5.10.0",
       "purl": "pkg:npm/light-my-request@5.10.0",
       "externalReferences": [
         {
@@ -1020,7 +1020,7 @@
       "type": "library",
       "name": "pino",
       "version": "8.14.1",
-      "bom-ref": "faas-js-runtime@3.0.1|pino@8.14.1",
+      "bom-ref": "faas-js-runtime@3.0.2|pino@8.14.1",
       "purl": "pkg:npm/pino@8.14.1",
       "externalReferences": [
         {
@@ -1046,7 +1046,7 @@
       "type": "library",
       "name": "process-warning",
       "version": "2.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|process-warning@2.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|process-warning@2.2.0",
       "purl": "pkg:npm/process-warning@2.2.0",
       "externalReferences": [
         {
@@ -1072,7 +1072,7 @@
       "type": "library",
       "name": "proxy-addr",
       "version": "2.0.7",
-      "bom-ref": "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
+      "bom-ref": "faas-js-runtime@3.0.2|proxy-addr@2.0.7",
       "licenses": [
         {
           "license": {
@@ -1093,7 +1093,7 @@
       "type": "library",
       "name": "rfdc",
       "version": "1.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|rfdc@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|rfdc@1.3.0",
       "purl": "pkg:npm/rfdc@1.3.0",
       "externalReferences": [
         {
@@ -1119,7 +1119,7 @@
       "type": "library",
       "name": "tiny-lru",
       "version": "11.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|tiny-lru@11.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|tiny-lru@11.0.1",
       "purl": "pkg:npm/tiny-lru@11.0.1",
       "externalReferences": [
         {
@@ -1145,7 +1145,7 @@
       "type": "library",
       "name": "argparse",
       "version": "2.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|argparse@2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|argparse@2.0.1",
       "licenses": [
         {
           "license": {
@@ -1166,7 +1166,7 @@
       "type": "library",
       "name": "loopbench",
       "version": "1.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|loopbench@1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|loopbench@1.2.0",
       "licenses": [
         {
           "license": {
@@ -1188,7 +1188,7 @@
       "name": "api",
       "group": "@opentelemetry",
       "version": "1.6.0",
-      "bom-ref": "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0",
+      "bom-ref": "faas-js-runtime@3.0.2|@opentelemetry/api@1.6.0",
       "purl": "pkg:npm/%40opentelemetry/api@1.6.0",
       "externalReferences": [
         {
@@ -1214,7 +1214,7 @@
       "type": "library",
       "name": "tdigest",
       "version": "0.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|tdigest@0.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|tdigest@0.1.1",
       "licenses": [
         {
           "license": {
@@ -1235,7 +1235,7 @@
       "type": "library",
       "name": "side-channel",
       "version": "1.0.4",
-      "bom-ref": "faas-js-runtime@3.0.1|side-channel@1.0.4",
+      "bom-ref": "faas-js-runtime@3.0.2|side-channel@1.0.4",
       "licenses": [
         {
           "license": {
@@ -1256,7 +1256,7 @@
       "type": "library",
       "name": "fast-deep-equal",
       "version": "3.1.3",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
       "licenses": [
         {
           "license": {
@@ -1277,7 +1277,7 @@
       "type": "library",
       "name": "require-from-string",
       "version": "2.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|require-from-string@2.0.2",
       "licenses": [
         {
           "license": {
@@ -1298,7 +1298,7 @@
       "type": "library",
       "name": "uri-js",
       "version": "4.4.1",
-      "bom-ref": "faas-js-runtime@3.0.1|uri-js@4.4.1",
+      "bom-ref": "faas-js-runtime@3.0.2|uri-js@4.4.1",
       "purl": "pkg:npm/uri-js@4.4.1",
       "externalReferences": [
         {
@@ -1324,7 +1324,7 @@
       "type": "library",
       "name": "bignumber.js",
       "version": "9.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|bignumber.js@9.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|bignumber.js@9.1.1",
       "purl": "pkg:npm/bignumber.js@9.1.1",
       "externalReferences": [
         {
@@ -1350,7 +1350,7 @@
       "type": "library",
       "name": "inherits",
       "version": "2.0.4",
-      "bom-ref": "faas-js-runtime@3.0.1|inherits@2.0.4",
+      "bom-ref": "faas-js-runtime@3.0.2|inherits@2.0.4",
       "licenses": [
         {
           "license": {
@@ -1371,7 +1371,7 @@
       "type": "library",
       "name": "is-arguments",
       "version": "1.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|is-arguments@1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|is-arguments@1.1.1",
       "licenses": [
         {
           "license": {
@@ -1392,7 +1392,7 @@
       "type": "library",
       "name": "is-generator-function",
       "version": "1.0.10",
-      "bom-ref": "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
+      "bom-ref": "faas-js-runtime@3.0.2|is-generator-function@1.0.10",
       "licenses": [
         {
           "license": {
@@ -1413,7 +1413,7 @@
       "type": "library",
       "name": "is-typed-array",
       "version": "1.1.13",
-      "bom-ref": "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
+      "bom-ref": "faas-js-runtime@3.0.2|is-typed-array@1.1.13",
       "purl": "pkg:npm/is-typed-array@1.1.13",
       "externalReferences": [
         {
@@ -1439,7 +1439,7 @@
       "type": "library",
       "name": "which-typed-array",
       "version": "1.1.14",
-      "bom-ref": "faas-js-runtime@3.0.1|which-typed-array@1.1.14",
+      "bom-ref": "faas-js-runtime@3.0.2|which-typed-array@1.1.14",
       "purl": "pkg:npm/which-typed-array@1.1.14",
       "externalReferences": [
         {
@@ -1465,7 +1465,7 @@
       "type": "library",
       "name": "bytes",
       "version": "3.1.2",
-      "bom-ref": "faas-js-runtime@3.0.1|bytes@3.1.2",
+      "bom-ref": "faas-js-runtime@3.0.2|bytes@3.1.2",
       "purl": "pkg:npm/bytes@3.1.2",
       "externalReferences": [
         {
@@ -1491,7 +1491,7 @@
       "type": "library",
       "name": "http-errors",
       "version": "2.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|http-errors@2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|http-errors@2.0.0",
       "purl": "pkg:npm/http-errors@2.0.0",
       "externalReferences": [
         {
@@ -1517,7 +1517,7 @@
       "type": "library",
       "name": "iconv-lite",
       "version": "0.4.24",
-      "bom-ref": "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
+      "bom-ref": "faas-js-runtime@3.0.2|iconv-lite@0.4.24",
       "purl": "pkg:npm/iconv-lite@0.4.24",
       "externalReferences": [
         {
@@ -1543,7 +1543,7 @@
       "type": "library",
       "name": "unpipe",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|unpipe@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|unpipe@1.0.0",
       "purl": "pkg:npm/unpipe@1.0.0",
       "externalReferences": [
         {
@@ -1569,7 +1569,7 @@
       "type": "library",
       "name": "fast-uri",
       "version": "2.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-uri@2.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-uri@2.1.0",
       "licenses": [
         {
           "license": {
@@ -1590,7 +1590,7 @@
       "type": "library",
       "name": "archy",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|archy@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|archy@1.0.0",
       "licenses": [
         {
           "license": {
@@ -1611,7 +1611,7 @@
       "type": "library",
       "name": "debug",
       "version": "4.3.4",
-      "bom-ref": "faas-js-runtime@3.0.1|debug@4.3.4",
+      "bom-ref": "faas-js-runtime@3.0.2|debug@4.3.4",
       "licenses": [
         {
           "license": {
@@ -1632,7 +1632,7 @@
       "type": "library",
       "name": "fastq",
       "version": "1.8.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fastq@1.8.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fastq@1.8.0",
       "licenses": [
         {
           "license": {
@@ -1654,7 +1654,7 @@
       "name": "deepmerge",
       "group": "@fastify",
       "version": "1.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|@fastify/deepmerge@1.3.0",
       "purl": "pkg:npm/%40fastify/deepmerge@1.3.0",
       "externalReferences": [
         {
@@ -1680,7 +1680,7 @@
       "type": "library",
       "name": "fast-querystring",
       "version": "1.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-querystring@1.1.1",
       "purl": "pkg:npm/fast-querystring@1.1.1",
       "externalReferences": [
         {
@@ -1706,7 +1706,7 @@
       "type": "library",
       "name": "safe-regex2",
       "version": "2.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|safe-regex2@2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|safe-regex2@2.0.0",
       "purl": "pkg:npm/safe-regex2@2.0.0",
       "externalReferences": [
         {
@@ -1732,7 +1732,7 @@
       "type": "library",
       "name": "cookie",
       "version": "0.5.0",
-      "bom-ref": "faas-js-runtime@3.0.1|cookie@0.5.0",
+      "bom-ref": "faas-js-runtime@3.0.2|cookie@0.5.0",
       "purl": "pkg:npm/cookie@0.5.0",
       "externalReferences": [
         {
@@ -1758,7 +1758,7 @@
       "type": "library",
       "name": "set-cookie-parser",
       "version": "2.6.0",
-      "bom-ref": "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0",
+      "bom-ref": "faas-js-runtime@3.0.2|set-cookie-parser@2.6.0",
       "purl": "pkg:npm/set-cookie-parser@2.6.0",
       "externalReferences": [
         {
@@ -1784,7 +1784,7 @@
       "type": "library",
       "name": "atomic-sleep",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|atomic-sleep@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|atomic-sleep@1.0.0",
       "purl": "pkg:npm/atomic-sleep@1.0.0",
       "externalReferences": [
         {
@@ -1810,7 +1810,7 @@
       "type": "library",
       "name": "fast-redact",
       "version": "3.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-redact@3.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-redact@3.2.0",
       "purl": "pkg:npm/fast-redact@3.2.0",
       "externalReferences": [
         {
@@ -1836,7 +1836,7 @@
       "type": "library",
       "name": "on-exit-leak-free",
       "version": "2.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|on-exit-leak-free@2.1.0",
       "purl": "pkg:npm/on-exit-leak-free@2.1.0",
       "externalReferences": [
         {
@@ -1862,7 +1862,7 @@
       "type": "library",
       "name": "pino-abstract-transport",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0",
       "purl": "pkg:npm/pino-abstract-transport@1.0.0",
       "externalReferences": [
         {
@@ -1888,7 +1888,7 @@
           "type": "library",
           "name": "readable-stream",
           "version": "4.4.2",
-          "bom-ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+          "bom-ref": "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
           "purl": "pkg:npm/readable-stream@4.4.2",
           "externalReferences": [
             {
@@ -1916,7 +1916,7 @@
       "type": "library",
       "name": "pino-std-serializers",
       "version": "6.2.2",
-      "bom-ref": "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2",
+      "bom-ref": "faas-js-runtime@3.0.2|pino-std-serializers@6.2.2",
       "purl": "pkg:npm/pino-std-serializers@6.2.2",
       "externalReferences": [
         {
@@ -1942,7 +1942,7 @@
       "type": "library",
       "name": "quick-format-unescaped",
       "version": "4.0.4",
-      "bom-ref": "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4",
+      "bom-ref": "faas-js-runtime@3.0.2|quick-format-unescaped@4.0.4",
       "purl": "pkg:npm/quick-format-unescaped@4.0.4",
       "externalReferences": [
         {
@@ -1968,7 +1968,7 @@
       "type": "library",
       "name": "real-require",
       "version": "0.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|real-require@0.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|real-require@0.2.0",
       "purl": "pkg:npm/real-require@0.2.0",
       "externalReferences": [
         {
@@ -1994,7 +1994,7 @@
       "type": "library",
       "name": "safe-stable-stringify",
       "version": "2.4.3",
-      "bom-ref": "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3",
+      "bom-ref": "faas-js-runtime@3.0.2|safe-stable-stringify@2.4.3",
       "purl": "pkg:npm/safe-stable-stringify@2.4.3",
       "externalReferences": [
         {
@@ -2020,7 +2020,7 @@
       "type": "library",
       "name": "sonic-boom",
       "version": "3.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|sonic-boom@3.3.0",
       "purl": "pkg:npm/sonic-boom@3.3.0",
       "externalReferences": [
         {
@@ -2046,7 +2046,7 @@
       "type": "library",
       "name": "thread-stream",
       "version": "2.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|thread-stream@2.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|thread-stream@2.3.0",
       "purl": "pkg:npm/thread-stream@2.3.0",
       "externalReferences": [
         {
@@ -2072,7 +2072,7 @@
       "type": "library",
       "name": "forwarded",
       "version": "0.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|forwarded@0.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|forwarded@0.2.0",
       "licenses": [
         {
           "license": {
@@ -2093,7 +2093,7 @@
       "type": "library",
       "name": "ipaddr.js",
       "version": "1.9.1",
-      "bom-ref": "faas-js-runtime@3.0.1|ipaddr.js@1.9.1",
+      "bom-ref": "faas-js-runtime@3.0.2|ipaddr.js@1.9.1",
       "licenses": [
         {
           "license": {
@@ -2114,7 +2114,7 @@
       "type": "library",
       "name": "lru-cache",
       "version": "6.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|lru-cache@6.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|lru-cache@6.0.0",
       "licenses": [
         {
           "license": {
@@ -2135,7 +2135,7 @@
       "type": "library",
       "name": "xtend",
       "version": "4.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|xtend@4.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|xtend@4.0.2",
       "licenses": [
         {
           "license": {
@@ -2156,7 +2156,7 @@
       "type": "library",
       "name": "bintrees",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|bintrees@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|bintrees@1.0.1",
       "purl": "pkg:npm/bintrees@1.0.1",
       "properties": [
         {
@@ -2169,7 +2169,7 @@
       "type": "library",
       "name": "call-bind",
       "version": "1.0.7",
-      "bom-ref": "faas-js-runtime@3.0.1|call-bind@1.0.7",
+      "bom-ref": "faas-js-runtime@3.0.2|call-bind@1.0.7",
       "purl": "pkg:npm/call-bind@1.0.7",
       "externalReferences": [
         {
@@ -2195,7 +2195,7 @@
       "type": "library",
       "name": "get-intrinsic",
       "version": "1.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|get-intrinsic@1.3.0",
       "licenses": [
         {
           "license": {
@@ -2229,7 +2229,7 @@
       "type": "library",
       "name": "object-inspect",
       "version": "1.13.1",
-      "bom-ref": "faas-js-runtime@3.0.1|object-inspect@1.13.1",
+      "bom-ref": "faas-js-runtime@3.0.2|object-inspect@1.13.1",
       "purl": "pkg:npm/object-inspect@1.13.1",
       "externalReferences": [
         {
@@ -2255,7 +2255,7 @@
       "type": "library",
       "name": "punycode",
       "version": "2.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|punycode@2.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|punycode@2.1.1",
       "licenses": [
         {
           "license": {
@@ -2276,7 +2276,7 @@
       "type": "library",
       "name": "has-tostringtag",
       "version": "1.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|has-tostringtag@1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|has-tostringtag@1.0.2",
       "purl": "pkg:npm/has-tostringtag@1.0.2",
       "externalReferences": [
         {
@@ -2302,7 +2302,7 @@
       "type": "library",
       "name": "available-typed-arrays",
       "version": "1.0.7",
-      "bom-ref": "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
+      "bom-ref": "faas-js-runtime@3.0.2|available-typed-arrays@1.0.7",
       "purl": "pkg:npm/available-typed-arrays@1.0.7",
       "externalReferences": [
         {
@@ -2328,7 +2328,7 @@
       "type": "library",
       "name": "for-each",
       "version": "0.3.3",
-      "bom-ref": "faas-js-runtime@3.0.1|for-each@0.3.3",
+      "bom-ref": "faas-js-runtime@3.0.2|for-each@0.3.3",
       "licenses": [
         {
           "license": {
@@ -2349,7 +2349,7 @@
       "type": "library",
       "name": "gopd",
       "version": "1.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|gopd@1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|gopd@1.2.0",
       "licenses": [
         {
           "license": {
@@ -2383,7 +2383,7 @@
       "type": "library",
       "name": "depd",
       "version": "2.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|depd@2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|depd@2.0.0",
       "purl": "pkg:npm/depd@2.0.0",
       "externalReferences": [
         {
@@ -2409,7 +2409,7 @@
       "type": "library",
       "name": "setprototypeof",
       "version": "1.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|setprototypeof@1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|setprototypeof@1.2.0",
       "purl": "pkg:npm/setprototypeof@1.2.0",
       "externalReferences": [
         {
@@ -2435,7 +2435,7 @@
       "type": "library",
       "name": "statuses",
       "version": "2.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|statuses@2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|statuses@2.0.1",
       "purl": "pkg:npm/statuses@2.0.1",
       "externalReferences": [
         {
@@ -2461,7 +2461,7 @@
       "type": "library",
       "name": "toidentifier",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|toidentifier@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|toidentifier@1.0.1",
       "purl": "pkg:npm/toidentifier@1.0.1",
       "externalReferences": [
         {
@@ -2487,7 +2487,7 @@
       "type": "library",
       "name": "safer-buffer",
       "version": "2.1.2",
-      "bom-ref": "faas-js-runtime@3.0.1|safer-buffer@2.1.2",
+      "bom-ref": "faas-js-runtime@3.0.2|safer-buffer@2.1.2",
       "purl": "pkg:npm/safer-buffer@2.1.2",
       "externalReferences": [
         {
@@ -2513,7 +2513,7 @@
       "type": "library",
       "name": "ms",
       "version": "2.1.2",
-      "bom-ref": "faas-js-runtime@3.0.1|ms@2.1.2",
+      "bom-ref": "faas-js-runtime@3.0.2|ms@2.1.2",
       "licenses": [
         {
           "license": {
@@ -2534,7 +2534,7 @@
       "type": "library",
       "name": "reusify",
       "version": "1.0.4",
-      "bom-ref": "faas-js-runtime@3.0.1|reusify@1.0.4",
+      "bom-ref": "faas-js-runtime@3.0.2|reusify@1.0.4",
       "licenses": [
         {
           "license": {
@@ -2555,7 +2555,7 @@
       "type": "library",
       "name": "fast-decode-uri-component",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|fast-decode-uri-component@1.0.1",
       "purl": "pkg:npm/fast-decode-uri-component@1.0.1",
       "externalReferences": [
         {
@@ -2581,7 +2581,7 @@
       "type": "library",
       "name": "ret",
       "version": "0.2.2",
-      "bom-ref": "faas-js-runtime@3.0.1|ret@0.2.2",
+      "bom-ref": "faas-js-runtime@3.0.2|ret@0.2.2",
       "purl": "pkg:npm/ret@0.2.2",
       "externalReferences": [
         {
@@ -2607,7 +2607,7 @@
       "type": "library",
       "name": "split2",
       "version": "4.2.0",
-      "bom-ref": "faas-js-runtime@3.0.1|split2@4.2.0",
+      "bom-ref": "faas-js-runtime@3.0.2|split2@4.2.0",
       "purl": "pkg:npm/split2@4.2.0",
       "externalReferences": [
         {
@@ -2633,7 +2633,7 @@
       "type": "library",
       "name": "yallist",
       "version": "4.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|yallist@4.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|yallist@4.0.0",
       "licenses": [
         {
           "license": {
@@ -2654,7 +2654,7 @@
       "type": "library",
       "name": "es-define-property",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|es-define-property@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|es-define-property@1.0.1",
       "licenses": [
         {
           "license": {
@@ -2688,7 +2688,7 @@
       "type": "library",
       "name": "es-errors",
       "version": "1.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|es-errors@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|es-errors@1.3.0",
       "purl": "pkg:npm/es-errors@1.3.0",
       "externalReferences": [
         {
@@ -2714,7 +2714,7 @@
       "type": "library",
       "name": "function-bind",
       "version": "1.1.2",
-      "bom-ref": "faas-js-runtime@3.0.1|function-bind@1.1.2",
+      "bom-ref": "faas-js-runtime@3.0.2|function-bind@1.1.2",
       "purl": "pkg:npm/function-bind@1.1.2",
       "externalReferences": [
         {
@@ -2740,7 +2740,7 @@
       "type": "library",
       "name": "set-function-length",
       "version": "1.2.1",
-      "bom-ref": "faas-js-runtime@3.0.1|set-function-length@1.2.1",
+      "bom-ref": "faas-js-runtime@3.0.2|set-function-length@1.2.1",
       "purl": "pkg:npm/set-function-length@1.2.1",
       "externalReferences": [
         {
@@ -2766,7 +2766,7 @@
       "type": "library",
       "name": "call-bind-apply-helpers",
       "version": "1.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|call-bind-apply-helpers@1.0.2",
       "licenses": [
         {
           "license": {
@@ -2800,7 +2800,7 @@
       "type": "library",
       "name": "es-object-atoms",
       "version": "1.1.1",
-      "bom-ref": "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.2|es-object-atoms@1.1.1",
       "licenses": [
         {
           "license": {
@@ -2834,7 +2834,7 @@
       "type": "library",
       "name": "get-proto",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|get-proto@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|get-proto@1.0.1",
       "licenses": [
         {
           "license": {
@@ -2868,7 +2868,7 @@
       "type": "library",
       "name": "has-symbols",
       "version": "1.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|has-symbols@1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|has-symbols@1.1.0",
       "licenses": [
         {
           "license": {
@@ -2902,7 +2902,7 @@
       "type": "library",
       "name": "hasown",
       "version": "2.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|hasown@2.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|hasown@2.0.2",
       "licenses": [
         {
           "license": {
@@ -2936,7 +2936,7 @@
       "type": "library",
       "name": "math-intrinsics",
       "version": "1.1.0",
-      "bom-ref": "faas-js-runtime@3.0.1|math-intrinsics@1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.2|math-intrinsics@1.1.0",
       "licenses": [
         {
           "license": {
@@ -2970,7 +2970,7 @@
       "type": "library",
       "name": "possible-typed-array-names",
       "version": "1.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|possible-typed-array-names@1.0.0",
       "purl": "pkg:npm/possible-typed-array-names@1.0.0",
       "externalReferences": [
         {
@@ -2996,7 +2996,7 @@
       "type": "library",
       "name": "is-callable",
       "version": "1.2.7",
-      "bom-ref": "faas-js-runtime@3.0.1|is-callable@1.2.7",
+      "bom-ref": "faas-js-runtime@3.0.2|is-callable@1.2.7",
       "licenses": [
         {
           "license": {
@@ -3017,7 +3017,7 @@
       "type": "library",
       "name": "abort-controller",
       "version": "3.0.0",
-      "bom-ref": "faas-js-runtime@3.0.1|abort-controller@3.0.0",
+      "bom-ref": "faas-js-runtime@3.0.2|abort-controller@3.0.0",
       "purl": "pkg:npm/abort-controller@3.0.0",
       "externalReferences": [
         {
@@ -3043,7 +3043,7 @@
       "type": "library",
       "name": "buffer",
       "version": "6.0.3",
-      "bom-ref": "faas-js-runtime@3.0.1|buffer@6.0.3",
+      "bom-ref": "faas-js-runtime@3.0.2|buffer@6.0.3",
       "purl": "pkg:npm/buffer@6.0.3",
       "externalReferences": [
         {
@@ -3069,7 +3069,7 @@
       "type": "library",
       "name": "events",
       "version": "3.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|events@3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|events@3.3.0",
       "purl": "pkg:npm/events@3.3.0",
       "externalReferences": [
         {
@@ -3095,7 +3095,7 @@
       "type": "library",
       "name": "string_decoder",
       "version": "1.3.0",
-      "bom-ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.2|string_decoder@1.3.0",
       "purl": "pkg:npm/string_decoder@1.3.0",
       "externalReferences": [
         {
@@ -3121,7 +3121,7 @@
           "type": "library",
           "name": "safe-buffer",
           "version": "5.2.1",
-          "bom-ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1",
+          "bom-ref": "faas-js-runtime@3.0.2|string_decoder@1.3.0|safe-buffer@5.2.1",
           "purl": "pkg:npm/safe-buffer@5.2.1",
           "externalReferences": [
             {
@@ -3149,7 +3149,7 @@
       "type": "library",
       "name": "define-data-property",
       "version": "1.1.4",
-      "bom-ref": "faas-js-runtime@3.0.1|define-data-property@1.1.4",
+      "bom-ref": "faas-js-runtime@3.0.2|define-data-property@1.1.4",
       "purl": "pkg:npm/define-data-property@1.1.4",
       "externalReferences": [
         {
@@ -3175,7 +3175,7 @@
       "type": "library",
       "name": "has-property-descriptors",
       "version": "1.0.2",
-      "bom-ref": "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.2|has-property-descriptors@1.0.2",
       "purl": "pkg:npm/has-property-descriptors@1.0.2",
       "externalReferences": [
         {
@@ -3201,7 +3201,7 @@
       "type": "library",
       "name": "dunder-proto",
       "version": "1.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|dunder-proto@1.0.1",
       "licenses": [
         {
           "license": {
@@ -3235,7 +3235,7 @@
       "type": "library",
       "name": "event-target-shim",
       "version": "5.0.1",
-      "bom-ref": "faas-js-runtime@3.0.1|event-target-shim@5.0.1",
+      "bom-ref": "faas-js-runtime@3.0.2|event-target-shim@5.0.1",
       "purl": "pkg:npm/event-target-shim@5.0.1",
       "externalReferences": [
         {
@@ -3261,7 +3261,7 @@
       "type": "library",
       "name": "base64-js",
       "version": "1.5.1",
-      "bom-ref": "faas-js-runtime@3.0.1|base64-js@1.5.1",
+      "bom-ref": "faas-js-runtime@3.0.2|base64-js@1.5.1",
       "purl": "pkg:npm/base64-js@1.5.1",
       "externalReferences": [
         {
@@ -3287,7 +3287,7 @@
       "type": "library",
       "name": "ieee754",
       "version": "1.2.1",
-      "bom-ref": "faas-js-runtime@3.0.1|ieee754@1.2.1",
+      "bom-ref": "faas-js-runtime@3.0.2|ieee754@1.2.1",
       "purl": "pkg:npm/ieee754@1.2.1",
       "externalReferences": [
         {
@@ -3312,681 +3312,681 @@
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@3.0.1",
+      "ref": "faas-js-runtime@3.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|cloudevents@8.0.2",
-        "faas-js-runtime@3.0.1|commander@13.1.0",
-        "faas-js-runtime@3.0.1|death@1.1.0",
-        "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
-        "faas-js-runtime@3.0.1|fastify@4.21.0",
-        "faas-js-runtime@3.0.1|js-yaml@4.1.0",
-        "faas-js-runtime@3.0.1|node-os-utils@1.3.7",
-        "faas-js-runtime@3.0.1|overload-protection@1.2.3",
-        "faas-js-runtime@3.0.1|prom-client@15.1.3",
-        "faas-js-runtime@3.0.1|qs@6.11.2"
+        "faas-js-runtime@3.0.2|cloudevents@8.0.2",
+        "faas-js-runtime@3.0.2|commander@13.1.0",
+        "faas-js-runtime@3.0.2|death@1.1.0",
+        "faas-js-runtime@3.0.2|fastify-raw-body@4.3.0",
+        "faas-js-runtime@3.0.2|fastify@4.21.0",
+        "faas-js-runtime@3.0.2|js-yaml@4.1.0",
+        "faas-js-runtime@3.0.2|node-os-utils@1.3.7",
+        "faas-js-runtime@3.0.2|overload-protection@1.2.3",
+        "faas-js-runtime@3.0.2|prom-client@15.1.3",
+        "faas-js-runtime@3.0.2|qs@6.11.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2",
+      "ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
-        "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
-        "faas-js-runtime@3.0.1|json-bigint@1.0.0",
-        "faas-js-runtime@3.0.1|process@0.11.10",
-        "faas-js-runtime@3.0.1|util@0.12.5",
-        "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2"
+        "faas-js-runtime@3.0.2|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.2|cloudevents@8.0.2|ajv@8.11.0",
+        "faas-js-runtime@3.0.2|json-bigint@1.0.0",
+        "faas-js-runtime@3.0.2|process@0.11.10",
+        "faas-js-runtime@3.0.2|util@0.12.5",
+        "faas-js-runtime@3.0.2|cloudevents@8.0.2|uuid@8.3.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
+      "ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|ajv@8.11.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0",
-        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
-        "faas-js-runtime@3.0.1|uri-js@4.4.1"
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|cloudevents@8.0.2|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.2|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.2|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2"
+      "ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|uuid@8.3.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|cloudevents@8.0.2|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|commander@13.1.0"
+      "ref": "faas-js-runtime@3.0.2|commander@13.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|death@1.1.0"
+      "ref": "faas-js-runtime@3.0.2|death@1.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
+      "ref": "faas-js-runtime@3.0.2|fastify-raw-body@4.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fastify-plugin@4.5.0",
-        "faas-js-runtime@3.0.1|raw-body@2.5.2",
-        "faas-js-runtime@3.0.1|secure-json-parse@2.5.0"
+        "faas-js-runtime@3.0.2|fastify-plugin@4.5.0",
+        "faas-js-runtime@3.0.2|raw-body@2.5.2",
+        "faas-js-runtime@3.0.2|secure-json-parse@2.5.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fastify@4.21.0",
+      "ref": "faas-js-runtime@3.0.2|fastify@4.21.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
-        "faas-js-runtime@3.0.1|@fastify/error@3.3.0",
-        "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
-        "faas-js-runtime@3.0.1|abstract-logging@2.0.1",
-        "faas-js-runtime@3.0.1|avvio@8.2.1",
-        "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0",
-        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
-        "faas-js-runtime@3.0.1|find-my-way@7.6.0",
-        "faas-js-runtime@3.0.1|light-my-request@5.10.0",
-        "faas-js-runtime@3.0.1|pino@8.14.1",
-        "faas-js-runtime@3.0.1|process-warning@2.2.0",
-        "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
-        "faas-js-runtime@3.0.1|rfdc@1.3.0",
-        "faas-js-runtime@3.0.1|secure-json-parse@2.5.0",
-        "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
-        "faas-js-runtime@3.0.1|tiny-lru@11.0.1"
+        "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0",
+        "faas-js-runtime@3.0.2|@fastify/error@3.3.0",
+        "faas-js-runtime@3.0.2|@fastify/fast-json-stringify-compiler@4.3.0",
+        "faas-js-runtime@3.0.2|abstract-logging@2.0.1",
+        "faas-js-runtime@3.0.2|avvio@8.2.1",
+        "faas-js-runtime@3.0.2|fast-content-type-parse@1.0.0",
+        "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0",
+        "faas-js-runtime@3.0.2|find-my-way@7.6.0",
+        "faas-js-runtime@3.0.2|light-my-request@5.10.0",
+        "faas-js-runtime@3.0.2|pino@8.14.1",
+        "faas-js-runtime@3.0.2|process-warning@2.2.0",
+        "faas-js-runtime@3.0.2|proxy-addr@2.0.7",
+        "faas-js-runtime@3.0.2|rfdc@1.3.0",
+        "faas-js-runtime@3.0.2|secure-json-parse@2.5.0",
+        "faas-js-runtime@3.0.2|fastify@4.21.0|semver@7.5.3",
+        "faas-js-runtime@3.0.2|tiny-lru@11.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
+      "ref": "faas-js-runtime@3.0.2|fastify@4.21.0|semver@7.5.3",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|lru-cache@6.0.0"
+        "faas-js-runtime@3.0.2|lru-cache@6.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|js-yaml@4.1.0",
+      "ref": "faas-js-runtime@3.0.2|js-yaml@4.1.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|argparse@2.0.1"
+        "faas-js-runtime@3.0.2|argparse@2.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|node-os-utils@1.3.7"
+      "ref": "faas-js-runtime@3.0.2|node-os-utils@1.3.7"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|overload-protection@1.2.3",
+      "ref": "faas-js-runtime@3.0.2|overload-protection@1.2.3",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|loopbench@1.2.0"
+        "faas-js-runtime@3.0.2|loopbench@1.2.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|prom-client@15.1.3",
+      "ref": "faas-js-runtime@3.0.2|prom-client@15.1.3",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0",
-        "faas-js-runtime@3.0.1|tdigest@0.1.1"
+        "faas-js-runtime@3.0.2|@opentelemetry/api@1.6.0",
+        "faas-js-runtime@3.0.2|tdigest@0.1.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|qs@6.11.2",
+      "ref": "faas-js-runtime@3.0.2|qs@6.11.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|side-channel@1.0.4"
+        "faas-js-runtime@3.0.2|side-channel@1.0.4"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+      "ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0"
+        "faas-js-runtime@3.0.2|ajv-formats@2.1.1|ajv@8.11.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0",
+      "ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1|ajv@8.11.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
-        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
-        "faas-js-runtime@3.0.1|uri-js@4.4.1"
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.2|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.2|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|ajv-formats@2.1.1|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|json-bigint@1.0.0",
+      "ref": "faas-js-runtime@3.0.2|json-bigint@1.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|bignumber.js@9.1.1"
+        "faas-js-runtime@3.0.2|bignumber.js@9.1.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|process@0.11.10"
+      "ref": "faas-js-runtime@3.0.2|process@0.11.10"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|util@0.12.5",
+      "ref": "faas-js-runtime@3.0.2|util@0.12.5",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|inherits@2.0.4",
-        "faas-js-runtime@3.0.1|is-arguments@1.1.1",
-        "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
-        "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
-        "faas-js-runtime@3.0.1|which-typed-array@1.1.14"
+        "faas-js-runtime@3.0.2|inherits@2.0.4",
+        "faas-js-runtime@3.0.2|is-arguments@1.1.1",
+        "faas-js-runtime@3.0.2|is-generator-function@1.0.10",
+        "faas-js-runtime@3.0.2|is-typed-array@1.1.13",
+        "faas-js-runtime@3.0.2|which-typed-array@1.1.14"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fastify-plugin@4.5.0"
+      "ref": "faas-js-runtime@3.0.2|fastify-plugin@4.5.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|raw-body@2.5.2",
+      "ref": "faas-js-runtime@3.0.2|raw-body@2.5.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|bytes@3.1.2",
-        "faas-js-runtime@3.0.1|http-errors@2.0.0",
-        "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
-        "faas-js-runtime@3.0.1|unpipe@1.0.0"
+        "faas-js-runtime@3.0.2|bytes@3.1.2",
+        "faas-js-runtime@3.0.2|http-errors@2.0.0",
+        "faas-js-runtime@3.0.2|iconv-lite@0.4.24",
+        "faas-js-runtime@3.0.2|unpipe@1.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|secure-json-parse@2.5.0"
+      "ref": "faas-js-runtime@3.0.2|secure-json-parse@2.5.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
+      "ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
-        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
-        "faas-js-runtime@3.0.1|fast-uri@2.1.0"
+        "faas-js-runtime@3.0.2|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+        "faas-js-runtime@3.0.2|fast-uri@2.1.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+      "ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
-        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
-        "faas-js-runtime@3.0.1|uri-js@4.4.1"
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.2|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.2|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/error@3.3.0"
+      "ref": "faas-js-runtime@3.0.2|@fastify/error@3.3.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
+      "ref": "faas-js-runtime@3.0.2|@fastify/fast-json-stringify-compiler@4.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0"
+        "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|abstract-logging@2.0.1"
+      "ref": "faas-js-runtime@3.0.2|abstract-logging@2.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|avvio@8.2.1",
+      "ref": "faas-js-runtime@3.0.2|avvio@8.2.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|archy@1.0.0",
-        "faas-js-runtime@3.0.1|debug@4.3.4",
-        "faas-js-runtime@3.0.1|fastq@1.8.0"
+        "faas-js-runtime@3.0.2|archy@1.0.0",
+        "faas-js-runtime@3.0.2|debug@4.3.4",
+        "faas-js-runtime@3.0.2|fastq@1.8.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|fast-content-type-parse@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
+      "ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0",
-        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
-        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|fast-uri@2.1.0",
-        "faas-js-runtime@3.0.1|rfdc@1.3.0"
+        "faas-js-runtime@3.0.2|@fastify/deepmerge@1.3.0",
+        "faas-js-runtime@3.0.2|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|ajv@8.12.0",
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|fast-uri@2.1.0",
+        "faas-js-runtime@3.0.2|rfdc@1.3.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
+      "ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|ajv@8.12.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
-        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
-        "faas-js-runtime@3.0.1|uri-js@4.4.1"
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.2|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.2|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|find-my-way@7.6.0",
+      "ref": "faas-js-runtime@3.0.2|find-my-way@7.6.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
-        "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
-        "faas-js-runtime@3.0.1|safe-regex2@2.0.0"
+        "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.2|fast-querystring@1.1.1",
+        "faas-js-runtime@3.0.2|safe-regex2@2.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|light-my-request@5.10.0",
+      "ref": "faas-js-runtime@3.0.2|light-my-request@5.10.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|cookie@0.5.0",
-        "faas-js-runtime@3.0.1|process-warning@2.2.0",
-        "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0"
+        "faas-js-runtime@3.0.2|cookie@0.5.0",
+        "faas-js-runtime@3.0.2|process-warning@2.2.0",
+        "faas-js-runtime@3.0.2|set-cookie-parser@2.6.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|pino@8.14.1",
+      "ref": "faas-js-runtime@3.0.2|pino@8.14.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|atomic-sleep@1.0.0",
-        "faas-js-runtime@3.0.1|fast-redact@3.2.0",
-        "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0",
-        "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
-        "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2",
-        "faas-js-runtime@3.0.1|process-warning@2.2.0",
-        "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4",
-        "faas-js-runtime@3.0.1|real-require@0.2.0",
-        "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3",
-        "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
-        "faas-js-runtime@3.0.1|thread-stream@2.3.0"
+        "faas-js-runtime@3.0.2|atomic-sleep@1.0.0",
+        "faas-js-runtime@3.0.2|fast-redact@3.2.0",
+        "faas-js-runtime@3.0.2|on-exit-leak-free@2.1.0",
+        "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0",
+        "faas-js-runtime@3.0.2|pino-std-serializers@6.2.2",
+        "faas-js-runtime@3.0.2|process-warning@2.2.0",
+        "faas-js-runtime@3.0.2|quick-format-unescaped@4.0.4",
+        "faas-js-runtime@3.0.2|real-require@0.2.0",
+        "faas-js-runtime@3.0.2|safe-stable-stringify@2.4.3",
+        "faas-js-runtime@3.0.2|sonic-boom@3.3.0",
+        "faas-js-runtime@3.0.2|thread-stream@2.3.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|process-warning@2.2.0"
+      "ref": "faas-js-runtime@3.0.2|process-warning@2.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
+      "ref": "faas-js-runtime@3.0.2|proxy-addr@2.0.7",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|forwarded@0.2.0",
-        "faas-js-runtime@3.0.1|ipaddr.js@1.9.1"
+        "faas-js-runtime@3.0.2|forwarded@0.2.0",
+        "faas-js-runtime@3.0.2|ipaddr.js@1.9.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|rfdc@1.3.0"
+      "ref": "faas-js-runtime@3.0.2|rfdc@1.3.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|tiny-lru@11.0.1"
+      "ref": "faas-js-runtime@3.0.2|tiny-lru@11.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|argparse@2.0.1"
+      "ref": "faas-js-runtime@3.0.2|argparse@2.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|loopbench@1.2.0",
+      "ref": "faas-js-runtime@3.0.2|loopbench@1.2.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|xtend@4.0.2"
+        "faas-js-runtime@3.0.2|xtend@4.0.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0"
+      "ref": "faas-js-runtime@3.0.2|@opentelemetry/api@1.6.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|tdigest@0.1.1",
+      "ref": "faas-js-runtime@3.0.2|tdigest@0.1.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|bintrees@1.0.1"
+        "faas-js-runtime@3.0.2|bintrees@1.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|side-channel@1.0.4",
+      "ref": "faas-js-runtime@3.0.2|side-channel@1.0.4",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|call-bind@1.0.7",
-        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
-        "faas-js-runtime@3.0.1|object-inspect@1.13.1"
+        "faas-js-runtime@3.0.2|call-bind@1.0.7",
+        "faas-js-runtime@3.0.2|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.2|object-inspect@1.13.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3"
+      "ref": "faas-js-runtime@3.0.2|fast-deep-equal@3.1.3"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|require-from-string@2.0.2"
+      "ref": "faas-js-runtime@3.0.2|require-from-string@2.0.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|uri-js@4.4.1",
+      "ref": "faas-js-runtime@3.0.2|uri-js@4.4.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|punycode@2.1.1"
+        "faas-js-runtime@3.0.2|punycode@2.1.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|bignumber.js@9.1.1"
+      "ref": "faas-js-runtime@3.0.2|bignumber.js@9.1.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|inherits@2.0.4"
+      "ref": "faas-js-runtime@3.0.2|inherits@2.0.4"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|is-arguments@1.1.1",
+      "ref": "faas-js-runtime@3.0.2|is-arguments@1.1.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|call-bind@1.0.7",
-        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.2|call-bind@1.0.7",
+        "faas-js-runtime@3.0.2|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
+      "ref": "faas-js-runtime@3.0.2|is-generator-function@1.0.10",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.2|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
+      "ref": "faas-js-runtime@3.0.2|is-typed-array@1.1.13",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|which-typed-array@1.1.14"
+        "faas-js-runtime@3.0.2|which-typed-array@1.1.14"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|which-typed-array@1.1.14",
+      "ref": "faas-js-runtime@3.0.2|which-typed-array@1.1.14",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
-        "faas-js-runtime@3.0.1|call-bind@1.0.7",
-        "faas-js-runtime@3.0.1|for-each@0.3.3",
-        "faas-js-runtime@3.0.1|gopd@1.2.0",
-        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.2|available-typed-arrays@1.0.7",
+        "faas-js-runtime@3.0.2|call-bind@1.0.7",
+        "faas-js-runtime@3.0.2|for-each@0.3.3",
+        "faas-js-runtime@3.0.2|gopd@1.2.0",
+        "faas-js-runtime@3.0.2|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|bytes@3.1.2"
+      "ref": "faas-js-runtime@3.0.2|bytes@3.1.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|http-errors@2.0.0",
+      "ref": "faas-js-runtime@3.0.2|http-errors@2.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|depd@2.0.0",
-        "faas-js-runtime@3.0.1|inherits@2.0.4",
-        "faas-js-runtime@3.0.1|setprototypeof@1.2.0",
-        "faas-js-runtime@3.0.1|statuses@2.0.1",
-        "faas-js-runtime@3.0.1|toidentifier@1.0.1"
+        "faas-js-runtime@3.0.2|depd@2.0.0",
+        "faas-js-runtime@3.0.2|inherits@2.0.4",
+        "faas-js-runtime@3.0.2|setprototypeof@1.2.0",
+        "faas-js-runtime@3.0.2|statuses@2.0.1",
+        "faas-js-runtime@3.0.2|toidentifier@1.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
+      "ref": "faas-js-runtime@3.0.2|iconv-lite@0.4.24",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|safer-buffer@2.1.2"
+        "faas-js-runtime@3.0.2|safer-buffer@2.1.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|unpipe@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|unpipe@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-uri@2.1.0"
+      "ref": "faas-js-runtime@3.0.2|fast-uri@2.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|archy@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|archy@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|debug@4.3.4",
+      "ref": "faas-js-runtime@3.0.2|debug@4.3.4",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|ms@2.1.2"
+        "faas-js-runtime@3.0.2|ms@2.1.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fastq@1.8.0",
+      "ref": "faas-js-runtime@3.0.2|fastq@1.8.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|reusify@1.0.4"
+        "faas-js-runtime@3.0.2|reusify@1.0.4"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0"
+      "ref": "faas-js-runtime@3.0.2|@fastify/deepmerge@1.3.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
+      "ref": "faas-js-runtime@3.0.2|fast-querystring@1.1.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1"
+        "faas-js-runtime@3.0.2|fast-decode-uri-component@1.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|safe-regex2@2.0.0",
+      "ref": "faas-js-runtime@3.0.2|safe-regex2@2.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|ret@0.2.2"
+        "faas-js-runtime@3.0.2|ret@0.2.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|cookie@0.5.0"
+      "ref": "faas-js-runtime@3.0.2|cookie@0.5.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0"
+      "ref": "faas-js-runtime@3.0.2|set-cookie-parser@2.6.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|atomic-sleep@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|atomic-sleep@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-redact@3.2.0"
+      "ref": "faas-js-runtime@3.0.2|fast-redact@3.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0"
+      "ref": "faas-js-runtime@3.0.2|on-exit-leak-free@2.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
+      "ref": "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
-        "faas-js-runtime@3.0.1|split2@4.2.0"
+        "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+        "faas-js-runtime@3.0.2|split2@4.2.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+      "ref": "faas-js-runtime@3.0.2|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|abort-controller@3.0.0",
-        "faas-js-runtime@3.0.1|buffer@6.0.3",
-        "faas-js-runtime@3.0.1|events@3.3.0",
-        "faas-js-runtime@3.0.1|process@0.11.10",
-        "faas-js-runtime@3.0.1|string_decoder@1.3.0"
+        "faas-js-runtime@3.0.2|abort-controller@3.0.0",
+        "faas-js-runtime@3.0.2|buffer@6.0.3",
+        "faas-js-runtime@3.0.2|events@3.3.0",
+        "faas-js-runtime@3.0.2|process@0.11.10",
+        "faas-js-runtime@3.0.2|string_decoder@1.3.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2"
+      "ref": "faas-js-runtime@3.0.2|pino-std-serializers@6.2.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4"
+      "ref": "faas-js-runtime@3.0.2|quick-format-unescaped@4.0.4"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|real-require@0.2.0"
+      "ref": "faas-js-runtime@3.0.2|real-require@0.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3"
+      "ref": "faas-js-runtime@3.0.2|safe-stable-stringify@2.4.3"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
+      "ref": "faas-js-runtime@3.0.2|sonic-boom@3.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|atomic-sleep@1.0.0"
+        "faas-js-runtime@3.0.2|atomic-sleep@1.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|thread-stream@2.3.0",
+      "ref": "faas-js-runtime@3.0.2|thread-stream@2.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|real-require@0.2.0"
+        "faas-js-runtime@3.0.2|real-require@0.2.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|forwarded@0.2.0"
+      "ref": "faas-js-runtime@3.0.2|forwarded@0.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ipaddr.js@1.9.1"
+      "ref": "faas-js-runtime@3.0.2|ipaddr.js@1.9.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|lru-cache@6.0.0",
+      "ref": "faas-js-runtime@3.0.2|lru-cache@6.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|yallist@4.0.0"
+        "faas-js-runtime@3.0.2|yallist@4.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|xtend@4.0.2"
+      "ref": "faas-js-runtime@3.0.2|xtend@4.0.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|bintrees@1.0.1"
+      "ref": "faas-js-runtime@3.0.2|bintrees@1.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|call-bind@1.0.7",
+      "ref": "faas-js-runtime@3.0.2|call-bind@1.0.7",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|function-bind@1.1.2",
-        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
-        "faas-js-runtime@3.0.1|set-function-length@1.2.1"
+        "faas-js-runtime@3.0.2|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|function-bind@1.1.2",
+        "faas-js-runtime@3.0.2|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.2|set-function-length@1.2.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+      "ref": "faas-js-runtime@3.0.2|get-intrinsic@1.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
-        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
-        "faas-js-runtime@3.0.1|function-bind@1.1.2",
-        "faas-js-runtime@3.0.1|get-proto@1.0.1",
-        "faas-js-runtime@3.0.1|gopd@1.2.0",
-        "faas-js-runtime@3.0.1|has-symbols@1.1.0",
-        "faas-js-runtime@3.0.1|hasown@2.0.2",
-        "faas-js-runtime@3.0.1|math-intrinsics@1.1.0"
+        "faas-js-runtime@3.0.2|call-bind-apply-helpers@1.0.2",
+        "faas-js-runtime@3.0.2|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|es-object-atoms@1.1.1",
+        "faas-js-runtime@3.0.2|function-bind@1.1.2",
+        "faas-js-runtime@3.0.2|get-proto@1.0.1",
+        "faas-js-runtime@3.0.2|gopd@1.2.0",
+        "faas-js-runtime@3.0.2|has-symbols@1.1.0",
+        "faas-js-runtime@3.0.2|hasown@2.0.2",
+        "faas-js-runtime@3.0.2|math-intrinsics@1.1.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|object-inspect@1.13.1"
+      "ref": "faas-js-runtime@3.0.2|object-inspect@1.13.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|punycode@2.1.1"
+      "ref": "faas-js-runtime@3.0.2|punycode@2.1.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|has-tostringtag@1.0.2",
+      "ref": "faas-js-runtime@3.0.2|has-tostringtag@1.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|has-symbols@1.1.0"
+        "faas-js-runtime@3.0.2|has-symbols@1.1.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
+      "ref": "faas-js-runtime@3.0.2|available-typed-arrays@1.0.7",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0"
+        "faas-js-runtime@3.0.2|possible-typed-array-names@1.0.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|for-each@0.3.3",
+      "ref": "faas-js-runtime@3.0.2|for-each@0.3.3",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|is-callable@1.2.7"
+        "faas-js-runtime@3.0.2|is-callable@1.2.7"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|gopd@1.2.0"
+      "ref": "faas-js-runtime@3.0.2|gopd@1.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|depd@2.0.0"
+      "ref": "faas-js-runtime@3.0.2|depd@2.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|setprototypeof@1.2.0"
+      "ref": "faas-js-runtime@3.0.2|setprototypeof@1.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|statuses@2.0.1"
+      "ref": "faas-js-runtime@3.0.2|statuses@2.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|toidentifier@1.0.1"
+      "ref": "faas-js-runtime@3.0.2|toidentifier@1.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|safer-buffer@2.1.2"
+      "ref": "faas-js-runtime@3.0.2|safer-buffer@2.1.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ms@2.1.2"
+      "ref": "faas-js-runtime@3.0.2|ms@2.1.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|reusify@1.0.4"
+      "ref": "faas-js-runtime@3.0.2|reusify@1.0.4"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1"
+      "ref": "faas-js-runtime@3.0.2|fast-decode-uri-component@1.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ret@0.2.2"
+      "ref": "faas-js-runtime@3.0.2|ret@0.2.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|split2@4.2.0"
+      "ref": "faas-js-runtime@3.0.2|split2@4.2.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|yallist@4.0.0"
+      "ref": "faas-js-runtime@3.0.2|yallist@4.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|es-define-property@1.0.1"
+      "ref": "faas-js-runtime@3.0.2|es-define-property@1.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|es-errors@1.3.0"
+      "ref": "faas-js-runtime@3.0.2|es-errors@1.3.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|function-bind@1.1.2"
+      "ref": "faas-js-runtime@3.0.2|function-bind@1.1.2"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|set-function-length@1.2.1",
+      "ref": "faas-js-runtime@3.0.2|set-function-length@1.2.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|define-data-property@1.1.4",
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|function-bind@1.1.2",
-        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
-        "faas-js-runtime@3.0.1|gopd@1.2.0",
-        "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2"
+        "faas-js-runtime@3.0.2|define-data-property@1.1.4",
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|function-bind@1.1.2",
+        "faas-js-runtime@3.0.2|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.2|gopd@1.2.0",
+        "faas-js-runtime@3.0.2|has-property-descriptors@1.0.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
+      "ref": "faas-js-runtime@3.0.2|call-bind-apply-helpers@1.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|function-bind@1.1.2"
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|function-bind@1.1.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
+      "ref": "faas-js-runtime@3.0.2|es-object-atoms@1.1.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|es-errors@1.3.0"
+        "faas-js-runtime@3.0.2|es-errors@1.3.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|get-proto@1.0.1",
+      "ref": "faas-js-runtime@3.0.2|get-proto@1.0.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
-        "faas-js-runtime@3.0.1|es-object-atoms@1.1.1"
+        "faas-js-runtime@3.0.2|dunder-proto@1.0.1",
+        "faas-js-runtime@3.0.2|es-object-atoms@1.1.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|has-symbols@1.1.0"
+      "ref": "faas-js-runtime@3.0.2|has-symbols@1.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|hasown@2.0.2",
+      "ref": "faas-js-runtime@3.0.2|hasown@2.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|function-bind@1.1.2"
+        "faas-js-runtime@3.0.2|function-bind@1.1.2"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|math-intrinsics@1.1.0"
+      "ref": "faas-js-runtime@3.0.2|math-intrinsics@1.1.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0"
+      "ref": "faas-js-runtime@3.0.2|possible-typed-array-names@1.0.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|is-callable@1.2.7"
+      "ref": "faas-js-runtime@3.0.2|is-callable@1.2.7"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|abort-controller@3.0.0",
+      "ref": "faas-js-runtime@3.0.2|abort-controller@3.0.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|event-target-shim@5.0.1"
+        "faas-js-runtime@3.0.2|event-target-shim@5.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|buffer@6.0.3",
+      "ref": "faas-js-runtime@3.0.2|buffer@6.0.3",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|base64-js@1.5.1",
-        "faas-js-runtime@3.0.1|ieee754@1.2.1"
+        "faas-js-runtime@3.0.2|base64-js@1.5.1",
+        "faas-js-runtime@3.0.2|ieee754@1.2.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|events@3.3.0"
+      "ref": "faas-js-runtime@3.0.2|events@3.3.0"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0",
+      "ref": "faas-js-runtime@3.0.2|string_decoder@1.3.0",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1"
+        "faas-js-runtime@3.0.2|string_decoder@1.3.0|safe-buffer@5.2.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1"
+      "ref": "faas-js-runtime@3.0.2|string_decoder@1.3.0|safe-buffer@5.2.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|define-data-property@1.1.4",
+      "ref": "faas-js-runtime@3.0.2|define-data-property@1.1.4",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|gopd@1.2.0"
+        "faas-js-runtime@3.0.2|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|gopd@1.2.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2",
+      "ref": "faas-js-runtime@3.0.2|has-property-descriptors@1.0.2",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|es-define-property@1.0.1"
+        "faas-js-runtime@3.0.2|es-define-property@1.0.1"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
+      "ref": "faas-js-runtime@3.0.2|dunder-proto@1.0.1",
       "dependsOn": [
-        "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
-        "faas-js-runtime@3.0.1|es-errors@1.3.0",
-        "faas-js-runtime@3.0.1|gopd@1.2.0"
+        "faas-js-runtime@3.0.2|call-bind-apply-helpers@1.0.2",
+        "faas-js-runtime@3.0.2|es-errors@1.3.0",
+        "faas-js-runtime@3.0.2|gopd@1.2.0"
       ]
     },
     {
-      "ref": "faas-js-runtime@3.0.1|event-target-shim@5.0.1"
+      "ref": "faas-js-runtime@3.0.2|event-target-shim@5.0.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|base64-js@1.5.1"
+      "ref": "faas-js-runtime@3.0.2|base64-js@1.5.1"
     },
     {
-      "ref": "faas-js-runtime@3.0.1|ieee754@1.2.1"
+      "ref": "faas-js-runtime@3.0.2|ieee754@1.2.1"
     }
   ]
 }
