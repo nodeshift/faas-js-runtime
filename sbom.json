@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
   "version": 1,
-  "serialNumber": "urn:uuid:9d4f2021-b84e-4a99-aa11-07612c626070",
+  "serialNumber": "urn:uuid:cb190241-c49f-4bb5-b23e-654accb7e489",
   "metadata": {
-    "timestamp": "2025-06-05T16:57:51.239Z",
+    "timestamp": "2025-07-15T09:32:21.759Z",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
           "type": "application",
           "name": "cyclonedx-npm",
           "group": "@cyclonedx",
-          "version": "3.0.0",
+          "version": "4.0.0",
           "author": "Jan Kowalleck",
           "description": "Create CycloneDX Software Bill of Materials (SBOM) from NPM projects.",
           "licenses": [
@@ -49,7 +49,7 @@
           "type": "library",
           "name": "cyclonedx-library",
           "group": "@cyclonedx",
-          "version": "8.3.0",
+          "version": "8.5.0",
           "author": "Jan Kowalleck",
           "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
           "licenses": [
@@ -82,8 +82,8 @@
     "component": {
       "type": "application",
       "name": "faas-js-runtime",
-      "version": "3.0.0",
-      "bom-ref": "faas-js-runtime@3.0.0",
+      "version": "3.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1",
       "author": "Red Hat, Inc.",
       "description": "A Node.js framework for executing arbitrary functions in response to HTTP or cloud events",
       "licenses": [
@@ -94,7 +94,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/faas-js-runtime@3.0.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
+      "purl": "pkg:npm/faas-js-runtime@3.0.1?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Fnodeshift%2Ffaas-js-runtime.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/nodeshift/faas-js-runtime.git",
@@ -124,17 +124,25 @@
     {
       "type": "library",
       "name": "cloudevents",
-      "version": "8.0.0",
-      "bom-ref": "cloudevents@8.0.0",
-      "purl": "pkg:npm/cloudevents@8.0.0",
+      "version": "8.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cloudevents@8.0.2",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/cloudevents/-/cloudevents-8.0.0.tgz",
+          "url": "https://registry.npmjs.org/cloudevents/-/cloudevents-8.0.2.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "1b567fafc40c140b0ff85d4fb99487cf1d6870fcb8beb7503131c3de8ae30da33991c7263d4ea7326a55ac5d3b6f9dda6b172b2db39152645ea58fc382f76157"
+              "content": "f7728a451eb50f634d13eda58361e62db975edb7954caa5fd5461dffc05c5e9ba20f16d4d9f6fc8007eb8929951a68f5c57fce876b79161ff118e58576ee85e0"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -151,7 +159,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.11.0",
-          "bom-ref": "cloudevents@8.0.0|ajv@8.11.0",
+          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
           "licenses": [
             {
               "license": {
@@ -170,30 +178,9 @@
         },
         {
           "type": "library",
-          "name": "json-schema-traverse",
-          "version": "1.0.0",
-          "bom-ref": "cloudevents@8.0.0|json-schema-traverse@1.0.0",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT",
-                "acknowledgement": "declared"
-              }
-            }
-          ],
-          "purl": "pkg:npm/json-schema-traverse@1.0.0",
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/cloudevents/node_modules/json-schema-traverse"
-            }
-          ]
-        },
-        {
-          "type": "library",
           "name": "uuid",
           "version": "8.3.2",
-          "bom-ref": "cloudevents@8.0.0|uuid@8.3.2",
+          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2",
           "licenses": [
             {
               "license": {
@@ -209,56 +196,12 @@
               "value": "node_modules/cloudevents/node_modules/uuid"
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ajv-formats",
-      "version": "2.1.1",
-      "bom-ref": "ajv-formats@2.1.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/ajv-formats@2.1.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/ajv-formats"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "ajv",
-          "version": "8.11.0",
-          "bom-ref": "ajv-formats@2.1.1|ajv@8.11.0",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT",
-                "acknowledgement": "declared"
-              }
-            }
-          ],
-          "purl": "pkg:npm/ajv@8.11.0",
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/ajv-formats/node_modules/ajv"
-            }
-          ]
         },
         {
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0",
           "licenses": [
             {
               "license": {
@@ -271,7 +214,7 @@
           "properties": [
             {
               "name": "cdx:npm:package:path",
-              "value": "node_modules/ajv-formats/node_modules/json-schema-traverse"
+              "value": "node_modules/cloudevents/node_modules/json-schema-traverse"
             }
           ]
         }
@@ -279,521 +222,9 @@
     },
     {
       "type": "library",
-      "name": "fast-deep-equal",
-      "version": "3.1.3",
-      "bom-ref": "fast-deep-equal@3.1.3",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/fast-deep-equal@3.1.3",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-deep-equal"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "require-from-string",
-      "version": "2.0.2",
-      "bom-ref": "require-from-string@2.0.2",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/require-from-string@2.0.2",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/require-from-string"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "uri-js",
-      "version": "4.4.1",
-      "bom-ref": "uri-js@4.4.1",
-      "purl": "pkg:npm/uri-js@4.4.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/uri-js"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "punycode",
-      "version": "2.1.1",
-      "bom-ref": "punycode@2.1.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/punycode@2.1.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/punycode"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "json-bigint",
-      "version": "1.0.0",
-      "bom-ref": "json-bigint@1.0.0",
-      "purl": "pkg:npm/json-bigint@1.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/json-bigint/-/json-bigint-1.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "4a23efffc56966e59bbcb48cb530d4f2111fad95a0fe61ff9d5fdbe28d0261b4b1bb550840f2ddc0a3822322d05fe5483cee6facb5f78bcaada85ca174f49449"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/json-bigint"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "bignumber.js",
-      "version": "9.1.1",
-      "bom-ref": "bignumber.js@9.1.1",
-      "purl": "pkg:npm/bignumber.js@9.1.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.1.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "a479b82ec309ea5ce034655f6478cca0ef2c7684613b3387e0c2e663ae4983bd1ba7108abb988e1cd2727c5e8ecaf630eedf05a5fdf946ecd4caa9d0b23f158a"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/bignumber.js"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "process",
-      "version": "0.11.10",
-      "bom-ref": "process@0.11.10",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/process@0.11.10",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/process"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "util",
-      "version": "0.12.5",
-      "bom-ref": "util@0.12.5",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/util@0.12.5",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/util"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "inherits",
-      "version": "2.0.4",
-      "bom-ref": "inherits@2.0.4",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/inherits@2.0.4",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/inherits"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "is-arguments",
-      "version": "1.1.1",
-      "bom-ref": "is-arguments@1.1.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/is-arguments@1.1.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/is-arguments"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "call-bind",
-      "version": "1.0.7",
-      "bom-ref": "call-bind@1.0.7",
-      "purl": "pkg:npm/call-bind@1.0.7",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/call-bind/-/call-bind-1.0.7.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "1874d2352608090eec707eec67e336ac5a294682e1f2dd9b2d25ba05b82bb4bb1a84e201e62c805497fd1a358addc6130da323e17741a4cd5c03aa484b42afdb"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/call-bind"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "has-tostringtag",
-      "version": "1.0.2",
-      "bom-ref": "has-tostringtag@1.0.2",
-      "purl": "pkg:npm/has-tostringtag@1.0.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "36a00307c5633c52ccd95d15bc751ec30c2cc3465605a21d828fa2787b4ade16ac2f3e2a78246361ca9f07a010ac182044aa69285f0be76fd5a9d56c3b8ec397"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/has-tostringtag"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "has-symbols",
-      "version": "1.0.3",
-      "bom-ref": "has-symbols@1.0.3",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/has-symbols@1.0.3",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/has-symbols"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "is-generator-function",
-      "version": "1.0.10",
-      "bom-ref": "is-generator-function@1.0.10",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/is-generator-function@1.0.10",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/is-generator-function"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "is-typed-array",
-      "version": "1.1.13",
-      "bom-ref": "is-typed-array@1.1.13",
-      "purl": "pkg:npm/is-typed-array@1.1.13",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.13.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "b99db9fdb5009546397d1e0e293e2b650101af3416615f59258186b1498427ab61a1d549d475fae1e3d0e99d2a3d63fe9be52ae9ef54ba0ac4dfc8de62c0d233"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/is-typed-array"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "which-typed-array",
-      "version": "1.1.14",
-      "bom-ref": "which-typed-array@1.1.14",
-      "purl": "pkg:npm/which-typed-array@1.1.14",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.14.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "5675c58885bcc8d9fd9081cdf3cc6f678c8e59c85fb4a0ec449f1f10f69c5ffc25d653af06b86c27f39e2425eaec1d006a28d1baa83348a6a52683e4f83f0c3e"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/which-typed-array"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "available-typed-arrays",
-      "version": "1.0.7",
-      "bom-ref": "available-typed-arrays@1.0.7",
-      "purl": "pkg:npm/available-typed-arrays@1.0.7",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.7.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "c2f52306d48637bfbb4a3369abff4cd93837e745190f7abad881592db4404756d23250a8d5969e5be049f83d3dd1ee2120864b05c4c359ee0c8788ef5036a3cd"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/available-typed-arrays"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "possible-typed-array-names",
-      "version": "1.0.0",
-      "bom-ref": "possible-typed-array-names@1.0.0",
-      "purl": "pkg:npm/possible-typed-array-names@1.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/possible-typed-array-names/-/possible-typed-array-names-1.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "77b530f9e6689687b41070c86287be6d0e565e718c3a99a26454ee3160b0a63cf390bda74e370a880938861f138e71b27b64f058e937517b9c67edeb6e605af1"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/possible-typed-array-names"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "for-each",
-      "version": "0.3.3",
-      "bom-ref": "for-each@0.3.3",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/for-each@0.3.3",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/for-each"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "is-callable",
-      "version": "1.2.7",
-      "bom-ref": "is-callable@1.2.7",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/is-callable@1.2.7",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/is-callable"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "gopd",
-      "version": "1.0.1",
-      "bom-ref": "gopd@1.0.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/gopd@1.0.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/gopd"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "get-intrinsic",
-      "version": "1.2.4",
-      "bom-ref": "get-intrinsic@1.2.4",
-      "purl": "pkg:npm/get-intrinsic@1.2.4",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.4.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "e6e621b091fc549053bfba2c960e01ce7258843a1123ac1a602c4c9827674eb702ac703f7c214aa13173d8928a1341dd0c5505effa10ba1cee99724aee968145"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/get-intrinsic"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "commander",
       "version": "13.1.0",
-      "bom-ref": "commander@13.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|commander@13.1.0",
       "licenses": [
         {
           "license": {
@@ -827,7 +258,7 @@
       "type": "library",
       "name": "death",
       "version": "1.1.0",
-      "bom-ref": "death@1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|death@1.1.0",
       "purl": "pkg:npm/death@1.1.0",
       "properties": [
         {
@@ -840,7 +271,7 @@
       "type": "library",
       "name": "fastify-raw-body",
       "version": "4.3.0",
-      "bom-ref": "fastify-raw-body@4.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
       "purl": "pkg:npm/fastify-raw-body@4.3.0",
       "externalReferences": [
         {
@@ -864,316 +295,9 @@
     },
     {
       "type": "library",
-      "name": "fastify-plugin",
-      "version": "4.5.0",
-      "bom-ref": "fastify-plugin@4.5.0",
-      "purl": "pkg:npm/fastify-plugin@4.5.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/fastify-plugin/-/fastify-plugin-4.5.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "efd6a4d09c5d74ed2eb405c043971c2a1beceaf5f6306c871cc32c99990100daeade15dcd421f3bcd3c739cbd3b153043e5e48f8d4fe44ee1828c19e84e7d222"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fastify-plugin"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "raw-body",
-      "version": "2.5.2",
-      "bom-ref": "raw-body@2.5.2",
-      "purl": "pkg:npm/raw-body@2.5.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/raw-body/-/raw-body-2.5.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "f331aaca97c4363088a868605d3a02f1a076afb62b057f804007c83ecfcc964f81b4f4f3b4ebd34b4d4d456ff7121eb427e6b8f25b7caac0b38ab43a9680957c"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/raw-body"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "bytes",
-      "version": "3.1.2",
-      "bom-ref": "bytes@3.1.2",
-      "purl": "pkg:npm/bytes@3.1.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "fcd7fb4f2cd3c7a4b7c9124e6ce015efde7aafc72bdbe3a3f000b976df3048fdc1400a1e5f9f0da07c8253c3fccc690d5d2b634d28ba7f33ba174a4175c61b12"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/bytes"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "http-errors",
-      "version": "2.0.0",
-      "bom-ref": "http-errors@2.0.0",
-      "purl": "pkg:npm/http-errors@2.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "16dc2b1bf7ae0736848d8791a8e825cbb1b4aaf8a25e82569ef107d99d6994175781bca3bf7e291d349bf73a1e1ccc83cb7dfe0d6cb95adf56a3e4d446d39849"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/http-errors"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "depd",
-      "version": "2.0.0",
-      "bom-ref": "depd@2.0.0",
-      "purl": "pkg:npm/depd@2.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "83b9c7e8fe9dc838a8268800006a6b1a90ad5489898693e4feba02cdd6f77c887ad7fb3f9cfb1f47aa27c8cc2408047f3a50b7c810b49444af52840402cb08af"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/depd"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "setprototypeof",
-      "version": "1.2.0",
-      "bom-ref": "setprototypeof@1.2.0",
-      "purl": "pkg:npm/setprototypeof@1.2.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "1392c35fb5aba7ce4a8a5e5b859bf8ea3f2339e6e82aae4932660cde05467461fcc45a4f59750cb0dae53830ab928c4c11e362fd7648c2e46f6385cdc18309a7"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/setprototypeof"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "statuses",
-      "version": "2.0.1",
-      "bom-ref": "statuses@2.0.1",
-      "purl": "pkg:npm/statuses@2.0.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "470340f59ffb3eb2b4eab60b23314c95a17e97bde2c29ceca9120581b30b6d370b0fa70e6a8f364da59e7cf5d0bc1d9f382e008ee612127752ecdfe64c26e475"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/statuses"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "toidentifier",
-      "version": "1.0.1",
-      "bom-ref": "toidentifier@1.0.1",
-      "purl": "pkg:npm/toidentifier@1.0.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "a39b123ca12483f0c840d987e37574fee7ab2eba7355e764521f2d18dbda797a5fa6ec2329e9e54a8c7fd8efc14e5654b447be246eece58844cfad3c3e500744"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/toidentifier"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "iconv-lite",
-      "version": "0.4.24",
-      "bom-ref": "iconv-lite@0.4.24",
-      "purl": "pkg:npm/iconv-lite@0.4.24",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "bf73179d901cbe7cb091350466898801cb657bb4575de79d391df5c3097b565ca85cee108bd6abbd27a73505a77b54dc4708422f51f02c8db56c4a9da63f3fac"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/iconv-lite"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "safer-buffer",
-      "version": "2.1.2",
-      "bom-ref": "safer-buffer@2.1.2",
-      "purl": "pkg:npm/safer-buffer@2.1.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "619a372bcd920fb462ca2d04d4440fa232f3ee4a5ea6749023d2323db1c78355d75debdbe5d248eeda72376003c467106c71bbbdcc911e4d1c6f0a9c42b894b6"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/safer-buffer"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "unpipe",
-      "version": "1.0.0",
-      "bom-ref": "unpipe@1.0.0",
-      "purl": "pkg:npm/unpipe@1.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "a63cb66d8852b2e7f05a52b03dcfa5ddc37bfb0b8994aeaecf461d2443a54036e5ea3a3f6253e2e266fc6a0524542f0117b57c36ecdec8f36a464b00de1ced29"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/unpipe"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "secure-json-parse",
-      "version": "2.5.0",
-      "bom-ref": "secure-json-parse@2.5.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/secure-json-parse@2.5.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/secure-json-parse"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "fastify",
       "version": "4.21.0",
-      "bom-ref": "fastify@4.21.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fastify@4.21.0",
       "purl": "pkg:npm/fastify@4.21.0",
       "externalReferences": [
         {
@@ -1199,7 +323,7 @@
           "type": "library",
           "name": "semver",
           "version": "7.5.3",
-          "bom-ref": "fastify@4.21.0|semver@7.5.3",
+          "bom-ref": "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
           "purl": "pkg:npm/semver@7.5.3",
           "externalReferences": [
             {
@@ -1225,10 +349,339 @@
     },
     {
       "type": "library",
+      "name": "js-yaml",
+      "version": "4.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|js-yaml@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/js-yaml@4.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/js-yaml"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-os-utils",
+      "version": "1.3.7",
+      "bom-ref": "faas-js-runtime@3.0.1|node-os-utils@1.3.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/node-os-utils@1.3.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/node-os-utils"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "overload-protection",
+      "version": "1.2.3",
+      "bom-ref": "faas-js-runtime@3.0.1|overload-protection@1.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/overload-protection@1.2.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/overload-protection"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prom-client",
+      "version": "15.1.3",
+      "bom-ref": "faas-js-runtime@3.0.1|prom-client@15.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prom-client@15.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prom-client/-/prom-client-15.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e9988e05f0b2c2c0f893504df485f4b99845fad26457cabc9653fae06e476a3b3824e7952cf0b0a4f55ca57cb7070622506832273b0925078e22fefe8434aaf2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prom-client"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "qs",
+      "version": "6.11.2",
+      "bom-ref": "faas-js-runtime@3.0.1|qs@6.11.2",
+      "purl": "pkg:npm/qs@6.11.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/qs/-/qs-6.11.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b43348cf6d9a073083c4bb551fef959d37f3c657de2b909baa88694aaa49823d5683f7106d2b4d033dcdbaa0ace6f57ea6306c2b8c78a4df4795587badc61188"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/qs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-formats",
+      "version": "2.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ajv-formats@2.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ajv-formats"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ajv",
+          "version": "8.11.0",
+          "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ajv@8.11.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/ajv-formats/node_modules/ajv"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "json-schema-traverse",
+          "version": "1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/json-schema-traverse@1.0.0",
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/ajv-formats/node_modules/json-schema-traverse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json-bigint",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|json-bigint@1.0.0",
+      "purl": "pkg:npm/json-bigint@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/json-bigint/-/json-bigint-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4a23efffc56966e59bbcb48cb530d4f2111fad95a0fe61ff9d5fdbe28d0261b4b1bb550840f2ddc0a3822322d05fe5483cee6facb5f78bcaada85ca174f49449"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/json-bigint"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "process",
+      "version": "0.11.10",
+      "bom-ref": "faas-js-runtime@3.0.1|process@0.11.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/process@0.11.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/process"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "util",
+      "version": "0.12.5",
+      "bom-ref": "faas-js-runtime@3.0.1|util@0.12.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/util@0.12.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/util"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastify-plugin",
+      "version": "4.5.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fastify-plugin@4.5.0",
+      "purl": "pkg:npm/fastify-plugin@4.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fastify-plugin/-/fastify-plugin-4.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "efd6a4d09c5d74ed2eb405c043971c2a1beceaf5f6306c871cc32c99990100daeade15dcd421f3bcd3c739cbd3b153043e5e48f8d4fe44ee1828c19e84e7d222"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastify-plugin"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "raw-body",
+      "version": "2.5.2",
+      "bom-ref": "faas-js-runtime@3.0.1|raw-body@2.5.2",
+      "purl": "pkg:npm/raw-body@2.5.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/raw-body/-/raw-body-2.5.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f331aaca97c4363088a868605d3a02f1a076afb62b057f804007c83ecfcc964f81b4f4f3b4ebd34b4d4d456ff7121eb427e6b8f25b7caac0b38ab43a9680957c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/raw-body"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "secure-json-parse",
+      "version": "2.5.0",
+      "bom-ref": "faas-js-runtime@3.0.1|secure-json-parse@2.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/secure-json-parse@2.5.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/secure-json-parse"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "ajv-compiler",
       "group": "@fastify",
       "version": "3.5.0",
-      "bom-ref": "@fastify/ajv-compiler@3.5.0",
+      "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
       "purl": "pkg:npm/%40fastify/ajv-compiler@3.5.0",
       "externalReferences": [
         {
@@ -1254,7 +707,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.12.0",
-          "bom-ref": "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+          "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
           "purl": "pkg:npm/ajv@8.12.0",
           "externalReferences": [
             {
@@ -1280,7 +733,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
           "purl": "pkg:npm/json-schema-traverse@1.0.0",
           "externalReferences": [
             {
@@ -1306,31 +759,10 @@
     },
     {
       "type": "library",
-      "name": "fast-uri",
-      "version": "2.1.0",
-      "bom-ref": "fast-uri@2.1.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/fast-uri@2.1.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-uri"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "error",
       "group": "@fastify",
       "version": "3.3.0",
-      "bom-ref": "@fastify/error@3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|@fastify/error@3.3.0",
       "purl": "pkg:npm/%40fastify/error@3.3.0",
       "externalReferences": [
         {
@@ -1357,7 +789,7 @@
       "name": "fast-json-stringify-compiler",
       "group": "@fastify",
       "version": "4.3.0",
-      "bom-ref": "@fastify/fast-json-stringify-compiler@4.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
       "purl": "pkg:npm/%40fastify/fast-json-stringify-compiler@4.3.0",
       "externalReferences": [
         {
@@ -1381,9 +813,82 @@
     },
     {
       "type": "library",
+      "name": "abstract-logging",
+      "version": "2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|abstract-logging@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/abstract-logging@2.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/abstract-logging"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "avvio",
+      "version": "8.2.1",
+      "bom-ref": "faas-js-runtime@3.0.1|avvio@8.2.1",
+      "purl": "pkg:npm/avvio@8.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/avvio/-/avvio-8.2.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4c094c62f3aec06c8b2b73df05be562815d9997cf67d50a0bf6dddeb36457657bfab780f8e6c4169eb82d296340f3b393d631281faaa11992bc9ed7d1a50d383"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/avvio"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-content-type-parse",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0",
+      "purl": "pkg:npm/fast-content-type-parse@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-content-type-parse/-/fast-content-type-parse-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5db7385dccac51772c3f9687514ecdab73b0bc7abdec2f969db91e21e7e97982d7fabcb3149954e8e4ad14986ce8e9742e4506a5c2bec0bd09c1f33e14253920"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-content-type-parse"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "fast-json-stringify",
       "version": "5.7.0",
-      "bom-ref": "fast-json-stringify@5.7.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
       "purl": "pkg:npm/fast-json-stringify@5.7.0",
       "externalReferences": [
         {
@@ -1409,7 +914,7 @@
           "type": "library",
           "name": "ajv",
           "version": "8.12.0",
-          "bom-ref": "fast-json-stringify@5.7.0|ajv@8.12.0",
+          "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
           "purl": "pkg:npm/ajv@8.12.0",
           "externalReferences": [
             {
@@ -1435,7 +940,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "1.0.0",
-          "bom-ref": "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+          "bom-ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
           "purl": "pkg:npm/json-schema-traverse@1.0.0",
           "externalReferences": [
             {
@@ -1461,240 +966,9 @@
     },
     {
       "type": "library",
-      "name": "abstract-logging",
-      "version": "2.0.1",
-      "bom-ref": "abstract-logging@2.0.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/abstract-logging@2.0.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/abstract-logging"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "avvio",
-      "version": "8.2.1",
-      "bom-ref": "avvio@8.2.1",
-      "purl": "pkg:npm/avvio@8.2.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/avvio/-/avvio-8.2.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "4c094c62f3aec06c8b2b73df05be562815d9997cf67d50a0bf6dddeb36457657bfab780f8e6c4169eb82d296340f3b393d631281faaa11992bc9ed7d1a50d383"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/avvio"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "archy",
-      "version": "1.0.0",
-      "bom-ref": "archy@1.0.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/archy@1.0.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/archy"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "debug",
-      "version": "4.3.4",
-      "bom-ref": "debug@4.3.4",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/debug@4.3.4",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/debug"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ms",
-      "version": "2.1.2",
-      "bom-ref": "ms@2.1.2",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/ms@2.1.2",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/ms"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "fastq",
-      "version": "1.8.0",
-      "bom-ref": "fastq@1.8.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/fastq@1.8.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fastq"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "reusify",
-      "version": "1.0.4",
-      "bom-ref": "reusify@1.0.4",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/reusify@1.0.4",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/reusify"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "fast-content-type-parse",
-      "version": "1.0.0",
-      "bom-ref": "fast-content-type-parse@1.0.0",
-      "purl": "pkg:npm/fast-content-type-parse@1.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/fast-content-type-parse/-/fast-content-type-parse-1.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "5db7385dccac51772c3f9687514ecdab73b0bc7abdec2f969db91e21e7e97982d7fabcb3149954e8e4ad14986ce8e9742e4506a5c2bec0bd09c1f33e14253920"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-content-type-parse"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "deepmerge",
-      "group": "@fastify",
-      "version": "1.3.0",
-      "bom-ref": "@fastify/deepmerge@1.3.0",
-      "purl": "pkg:npm/%40fastify/deepmerge@1.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-1.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "27c4ce481ab74a865b0e133df91feeefb84ff77833feb6a3480f8ada41b28a33e93913d65171d4a536a57a88fef7602cd12f6e3d13fb3a2f08a8c7f4bbeae8e8"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@fastify/deepmerge"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "rfdc",
-      "version": "1.3.0",
-      "bom-ref": "rfdc@1.3.0",
-      "purl": "pkg:npm/rfdc@1.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/rfdc/-/rfdc-1.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "576868bddcc56ce8bbeff59a8da48c5e4d8e2e6fb134879074c32e07b89c8fb6e4eb38b617c1860318a07270c5a491db37235c83224388ffbc9cead8e5c646ac"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/rfdc"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "find-my-way",
       "version": "7.6.0",
-      "bom-ref": "find-my-way@7.6.0",
+      "bom-ref": "faas-js-runtime@3.0.1|find-my-way@7.6.0",
       "purl": "pkg:npm/find-my-way@7.6.0",
       "externalReferences": [
         {
@@ -1718,113 +992,9 @@
     },
     {
       "type": "library",
-      "name": "fast-querystring",
-      "version": "1.1.1",
-      "bom-ref": "fast-querystring@1.1.1",
-      "purl": "pkg:npm/fast-querystring@1.1.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/fast-querystring/-/fast-querystring-1.1.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "a91dabf9edc7be11059a974732ffff53c1671659d88da0ba40a0ee69700b0e4c3692f1cef160e3c47f9ffeb1c647831ee299e4f29f4902444d4e360700a467d9"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-querystring"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "fast-decode-uri-component",
-      "version": "1.0.1",
-      "bom-ref": "fast-decode-uri-component@1.0.1",
-      "purl": "pkg:npm/fast-decode-uri-component@1.0.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/fast-decode-uri-component/-/fast-decode-uri-component-1.0.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "58a80a5a0e5e531bd1646c16f05bdf6da1fb0174a1d9c2fede3e5f306cd4302c56049ddd5776bb5b3f32d9ffee4347b707a5a6a1d0f7a12e788d343d1d54c822"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-decode-uri-component"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "safe-regex2",
-      "version": "2.0.0",
-      "bom-ref": "safe-regex2@2.0.0",
-      "purl": "pkg:npm/safe-regex2@2.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/safe-regex2/-/safe-regex2-2.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "3da51216c51a34db8ac240628e800f1c02bafde33a562aefc8f5a567b040432e03fa10af87807a9481be9cf7616c57c86cffa04c605caddb0e694b3417e64139"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/safe-regex2"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ret",
-      "version": "0.2.2",
-      "bom-ref": "ret@0.2.2",
-      "purl": "pkg:npm/ret@0.2.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/ret/-/ret-0.2.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "3346f761642ced1dd9f75ed6450cb51c703b05aec3f21bd983a504e662f2909c50544da3bb42176c695a1cf3e5918f9637bc053fec14317981140d1a57abd819"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/ret"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "light-my-request",
       "version": "5.10.0",
-      "bom-ref": "light-my-request@5.10.0",
+      "bom-ref": "faas-js-runtime@3.0.1|light-my-request@5.10.0",
       "purl": "pkg:npm/light-my-request@5.10.0",
       "externalReferences": [
         {
@@ -1848,87 +1018,9 @@
     },
     {
       "type": "library",
-      "name": "cookie",
-      "version": "0.5.0",
-      "bom-ref": "cookie@0.5.0",
-      "purl": "pkg:npm/cookie@0.5.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "619dc65329ffa3c81f289967957ee0ef1ab88323ba392ba118f29a686b2c181daa803512d203e0b53be8c992d3b7d01be9d0b885f73d755e5aae4bdcfce0a6af"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/cookie"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "process-warning",
-      "version": "2.2.0",
-      "bom-ref": "process-warning@2.2.0",
-      "purl": "pkg:npm/process-warning@2.2.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/process-warning/-/process-warning-2.2.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "ff5599f3e5508d1e9abd63a01de10f77b483426150d41e660b57915ec0a6e536ab94d9b1ff00ac6b91846b11a6d3904e451b721bf131ff7c6add3b91beae7baa"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/process-warning"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "set-cookie-parser",
-      "version": "2.6.0",
-      "bom-ref": "set-cookie-parser@2.6.0",
-      "purl": "pkg:npm/set-cookie-parser@2.6.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.6.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "4559d54314d7b9eae4eb9dd77ee9623b104ff3549fd3ea9f404ef72c860a7323181c6f7802e1f4920ad0a510ee4d99d29a3a72b079b3c495ca35f6ba3e3161c9"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/set-cookie-parser"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "pino",
       "version": "8.14.1",
-      "bom-ref": "pino@8.14.1",
+      "bom-ref": "faas-js-runtime@3.0.1|pino@8.14.1",
       "purl": "pkg:npm/pino@8.14.1",
       "externalReferences": [
         {
@@ -1952,18 +1044,18 @@
     },
     {
       "type": "library",
-      "name": "atomic-sleep",
-      "version": "1.0.0",
-      "bom-ref": "atomic-sleep@1.0.0",
-      "purl": "pkg:npm/atomic-sleep@1.0.0",
+      "name": "process-warning",
+      "version": "2.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|process-warning@2.2.0",
+      "purl": "pkg:npm/process-warning@2.2.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/atomic-sleep/-/atomic-sleep-1.0.0.tgz",
+          "url": "https://registry.npmjs.org/process-warning/-/process-warning-2.2.0.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "90d3a30ea021ee9c745d6348fb841bce8891fe74e41c058db9ddaebe726ab83d7fc796bb11064c253d00733a8ad109faee863f4d34352db50a6a3669a7723db5"
+              "content": "ff5599f3e5508d1e9abd63a01de10f77b483426150d41e660b57915ec0a6e536ab94d9b1ff00ac6b91846b11a6d3904e451b721bf131ff7c6add3b91beae7baa"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -1972,505 +1064,7 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/atomic-sleep"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "fast-redact",
-      "version": "3.2.0",
-      "bom-ref": "fast-redact@3.2.0",
-      "purl": "pkg:npm/fast-redact@3.2.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/fast-redact/-/fast-redact-3.2.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "cda4da74286bf8d7a4cb36a59403170135cb391f0c371df3aa96743141766867f811ab619c6d1fdf654b38336563c22e198dc7a113b62faffa7d2ccdb0b68723"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/fast-redact"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "on-exit-leak-free",
-      "version": "2.1.0",
-      "bom-ref": "on-exit-leak-free@2.1.0",
-      "purl": "pkg:npm/on-exit-leak-free@2.1.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/on-exit-leak-free/-/on-exit-leak-free-2.1.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "56e09a65902345e677bd4c20381f0bc40a2c22eac38805b4b35deb23563099a3fefa3bdcc4fefb016a10bde9d979ba420369bc582d7f128b0f60f3239d1029ff"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/on-exit-leak-free"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "pino-abstract-transport",
-      "version": "1.0.0",
-      "bom-ref": "pino-abstract-transport@1.0.0",
-      "purl": "pkg:npm/pino-abstract-transport@1.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/pino-abstract-transport/-/pino-abstract-transport-1.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "73bbe8e4ea56e30212e3685455c4f9444b0bf19963b147c18ea57f7b6b05c661441598aad572d4a791182edb831fa3c41eaf56d5e816a916e72d43f916e66638"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/pino-abstract-transport"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "readable-stream",
-          "version": "4.4.2",
-          "bom-ref": "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
-          "purl": "pkg:npm/readable-stream@4.4.2",
-          "externalReferences": [
-            {
-              "url": "https://registry.npmjs.org/readable-stream/-/readable-stream-4.4.2.tgz",
-              "type": "distribution",
-              "hashes": [
-                {
-                  "alg": "SHA-512",
-                  "content": "2e4fdf2024b2221a1dc72d480cad876b391e1a34a67b30165f67a076d267621b73284b013c9a30948e85e8b3dbe6da884082eb31bc76d92e68dc6b896af3eeb0"
-                }
-              ],
-              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/pino-abstract-transport/node_modules/readable-stream"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "abort-controller",
-      "version": "3.0.0",
-      "bom-ref": "abort-controller@3.0.0",
-      "purl": "pkg:npm/abort-controller@3.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "87c950f2d69c6589d1def3504e089b8feb4e0c7239ffe974e80bb63dcae2bff1a67add1e6a3e13c161f8d6c3bdc271c3890b048f5f6ad1daf375675e007b707a"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/abort-controller"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "event-target-shim",
-      "version": "5.0.1",
-      "bom-ref": "event-target-shim@5.0.1",
-      "purl": "pkg:npm/event-target-shim@5.0.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "8bfd976e74b3feec51094ebe35d54980a5834cce36efe32a61b910cc3df6d43b8240952a3ae24a200d08336f96db1b581dd28e999e1d47a7c4c6c7784972fe59"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/event-target-shim"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "buffer",
-      "version": "6.0.3",
-      "bom-ref": "buffer@6.0.3",
-      "purl": "pkg:npm/buffer@6.0.3",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "153882a4dc6dc226591c465b71b4c87198c44552029fdcaafe90c591397de7f031cc3d6768172d37b60eebcae233f80b48363bb1dacc6f2f21a1f00362ebaa38"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/buffer"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "base64-js",
-      "version": "1.5.1",
-      "bom-ref": "base64-js@1.5.1",
-      "purl": "pkg:npm/base64-js@1.5.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "00aa5a6251e7f2de1255b3870b2f9be7e28a82f478bebb03f2f6efadb890269b3b7ca0d3923903af2ea38b4ad42630b49336cd78f2f0cf1abc8b2a68e35a9e58"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/base64-js"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ieee754",
-      "version": "1.2.1",
-      "bom-ref": "ieee754@1.2.1",
-      "purl": "pkg:npm/ieee754@1.2.1",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "75ccaa843bd7d42e3a95765c56a0a92be16d31141574830debf0dfe63b36ce8b94b2a1bb23ab05c62b480beeca60adbd29d5ce2c776ef732f8b059e85509ea68"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/ieee754"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "events",
-      "version": "3.3.0",
-      "bom-ref": "events@3.3.0",
-      "purl": "pkg:npm/events@3.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/events/-/events-3.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "990c3ed9f9106c02f343b574318d08a9d9d734e793b4fe2bd2537dcfb0006b009782a79aedb0e28b6d0062b201ac577f1f1d0cd8e733e92d75d4268591471bd1"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/events"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "string_decoder",
-      "version": "1.3.0",
-      "bom-ref": "string_decoder@1.3.0",
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "864457f14d568c915df0bb03276c90ff0596c5aa2912c0015355df90cf00fa3d3ef392401a9a6dd7a72bd56860e8a21b6f8a2453a32a97a04e8febaea7fc0a78"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/string_decoder"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "safe-buffer",
-          "version": "5.2.1",
-          "bom-ref": "string_decoder@1.3.0|safe-buffer@5.2.1",
-          "purl": "pkg:npm/safe-buffer@5.2.1",
-          "externalReferences": [
-            {
-              "url": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
-              "type": "distribution",
-              "hashes": [
-                {
-                  "alg": "SHA-512",
-                  "content": "ae9dd2a34eca71d9a629b1af81a37141226bedb1954959394bd12ad45fa9a5b468ef4f9879a0f1930e4377c34f37e183e9b8e7626d95b8fb825e6a6e62f9825d"
-                }
-              ],
-              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/string_decoder/node_modules/safe-buffer"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "split2",
-      "version": "4.2.0",
-      "bom-ref": "split2@4.2.0",
-      "purl": "pkg:npm/split2@4.2.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "51c8dc24e5a49eb36417a3cb5fcdea70733a28781528d915eb663c6b9b980d5bfdc9d19057000730aa877498ded554d6a658c6d1662908386b09d00e607e135a"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/split2"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "pino-std-serializers",
-      "version": "6.2.2",
-      "bom-ref": "pino-std-serializers@6.2.2",
-      "purl": "pkg:npm/pino-std-serializers@6.2.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "7078cf3ec13ebe18ffb67842cbfc22321dccdf3de1fe3d79cc7417f92f46913060a89b93b89cd8278814c8008b843689ee493d6daf6244399b1f6b49534dce88"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/pino-std-serializers"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "quick-format-unescaped",
-      "version": "4.0.4",
-      "bom-ref": "quick-format-unescaped@4.0.4",
-      "purl": "pkg:npm/quick-format-unescaped@4.0.4",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/quick-format-unescaped"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "real-require",
-      "version": "0.2.0",
-      "bom-ref": "real-require@0.2.0",
-      "purl": "pkg:npm/real-require@0.2.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/real-require/-/real-require-0.2.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "e7b7ebac633f3824cba8b3808749a1540f5504c1ddfbd53b65bd931cc19d054a1954eb466c9ce3c6c6060c9dc0f4061808fe219facb54d56da39fcd6b66e4616"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/real-require"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "safe-stable-stringify",
-      "version": "2.4.3",
-      "bom-ref": "safe-stable-stringify@2.4.3",
-      "purl": "pkg:npm/safe-stable-stringify@2.4.3",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/safe-stable-stringify/-/safe-stable-stringify-2.4.3.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "7b66c30365894f4c31b1e55de25b033f8fb738d5fa1e931741ad5984543b494f868ef3910a64a16c2325b6bb480df9188551eb39c3ed8fe2a198305d3dd643d6"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/safe-stable-stringify"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "sonic-boom",
-      "version": "3.3.0",
-      "bom-ref": "sonic-boom@3.3.0",
-      "purl": "pkg:npm/sonic-boom@3.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/sonic-boom/-/sonic-boom-3.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "2d8c69df82a56756b625bf194201422b79e2207ce26ddc2dc0d5162a0d2a411cec0e827719f8247fc29d053154dd291e8c3108956c274a7a5574e648845325fe"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/sonic-boom"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "thread-stream",
-      "version": "2.3.0",
-      "bom-ref": "thread-stream@2.3.0",
-      "purl": "pkg:npm/thread-stream@2.3.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/thread-stream/-/thread-stream-2.3.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "91a0ea9b50c44fda69dcd5f047cdfcd961db9e95e746437dc4637d750b77076f9d997896f17d523b09853b1004ac4438ece6e167de89eb2859357bb208e2fb28"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/thread-stream"
+          "value": "node_modules/process-warning"
         }
       ]
     },
@@ -2478,7 +1072,7 @@
       "type": "library",
       "name": "proxy-addr",
       "version": "2.0.7",
-      "bom-ref": "proxy-addr@2.0.7",
+      "bom-ref": "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
       "licenses": [
         {
           "license": {
@@ -2497,85 +1091,27 @@
     },
     {
       "type": "library",
-      "name": "forwarded",
-      "version": "0.2.0",
-      "bom-ref": "forwarded@0.2.0",
-      "licenses": [
+      "name": "rfdc",
+      "version": "1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|rfdc@1.3.0",
+      "purl": "pkg:npm/rfdc@1.3.0",
+      "externalReferences": [
         {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
+          "url": "https://registry.npmjs.org/rfdc/-/rfdc-1.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "576868bddcc56ce8bbeff59a8da48c5e4d8e2e6fb134879074c32e07b89c8fb6e4eb38b617c1860318a07270c5a491db37235c83224388ffbc9cead8e5c646ac"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
         }
       ],
-      "purl": "pkg:npm/forwarded@0.2.0",
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/forwarded"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ipaddr.js",
-      "version": "1.9.1",
-      "bom-ref": "ipaddr.js@1.9.1",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/ipaddr.js@1.9.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/ipaddr.js"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "lru-cache",
-      "version": "6.0.0",
-      "bom-ref": "lru-cache@6.0.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/lru-cache@6.0.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/lru-cache"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "yallist",
-      "version": "4.0.0",
-      "bom-ref": "yallist@4.0.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/yallist@4.0.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/yallist"
+          "value": "node_modules/rfdc"
         }
       ]
     },
@@ -2583,7 +1119,7 @@
       "type": "library",
       "name": "tiny-lru",
       "version": "11.0.1",
-      "bom-ref": "tiny-lru@11.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|tiny-lru@11.0.1",
       "purl": "pkg:npm/tiny-lru@11.0.1",
       "externalReferences": [
         {
@@ -2607,30 +1143,9 @@
     },
     {
       "type": "library",
-      "name": "js-yaml",
-      "version": "4.1.0",
-      "bom-ref": "js-yaml@4.1.0",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/js-yaml@4.1.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/js-yaml"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "argparse",
       "version": "2.0.1",
-      "bom-ref": "argparse@2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|argparse@2.0.1",
       "licenses": [
         {
           "license": {
@@ -2649,51 +1164,9 @@
     },
     {
       "type": "library",
-      "name": "node-os-utils",
-      "version": "1.3.7",
-      "bom-ref": "node-os-utils@1.3.7",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/node-os-utils@1.3.7",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/node-os-utils"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "overload-protection",
-      "version": "1.2.3",
-      "bom-ref": "overload-protection@1.2.3",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/overload-protection@1.2.3",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/overload-protection"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "loopbench",
       "version": "1.2.0",
-      "bom-ref": "loopbench@1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|loopbench@1.2.0",
       "licenses": [
         {
           "license": {
@@ -2712,57 +1185,10 @@
     },
     {
       "type": "library",
-      "name": "xtend",
-      "version": "4.0.2",
-      "bom-ref": "xtend@4.0.2",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT",
-            "acknowledgement": "declared"
-          }
-        }
-      ],
-      "purl": "pkg:npm/xtend@4.0.2",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/xtend"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "prom-client",
-      "version": "15.0.0",
-      "bom-ref": "prom-client@15.0.0",
-      "purl": "pkg:npm/prom-client@15.0.0",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/prom-client/-/prom-client-15.0.0.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "528729808acac80d9328b5590d27e6f2b1a42f5dc2d7d62b4010221b7c68dda0c559c1de771471237cfe70872e728c6948ed21e657dfe62bff497a31c9ea2978"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/prom-client"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "api",
       "group": "@opentelemetry",
       "version": "1.6.0",
-      "bom-ref": "@opentelemetry/api@1.6.0",
+      "bom-ref": "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0",
       "purl": "pkg:npm/%40opentelemetry/api@1.6.0",
       "externalReferences": [
         {
@@ -2788,7 +1214,7 @@
       "type": "library",
       "name": "tdigest",
       "version": "0.1.1",
-      "bom-ref": "tdigest@0.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|tdigest@0.1.1",
       "licenses": [
         {
           "license": {
@@ -2807,48 +1233,9 @@
     },
     {
       "type": "library",
-      "name": "bintrees",
-      "version": "1.0.1",
-      "bom-ref": "bintrees@1.0.1",
-      "purl": "pkg:npm/bintrees@1.0.1",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/bintrees"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "qs",
-      "version": "6.11.2",
-      "bom-ref": "qs@6.11.2",
-      "purl": "pkg:npm/qs@6.11.2",
-      "externalReferences": [
-        {
-          "url": "https://registry.npmjs.org/qs/-/qs-6.11.2.tgz",
-          "type": "distribution",
-          "hashes": [
-            {
-              "alg": "SHA-512",
-              "content": "b43348cf6d9a073083c4bb551fef959d37f3c657de2b909baa88694aaa49823d5683f7106d2b4d033dcdbaa0ace6f57ea6306c2b8c78a4df4795587badc61188"
-            }
-          ],
-          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/qs"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "side-channel",
       "version": "1.0.4",
-      "bom-ref": "side-channel@1.0.4",
+      "bom-ref": "faas-js-runtime@3.0.1|side-channel@1.0.4",
       "licenses": [
         {
           "license": {
@@ -2867,18 +1254,1424 @@
     },
     {
       "type": "library",
-      "name": "es-define-property",
-      "version": "1.0.0",
-      "bom-ref": "es-define-property@1.0.0",
-      "purl": "pkg:npm/es-define-property@1.0.0",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-deep-equal"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/require-from-string@2.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/require-from-string"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uri-js",
+      "version": "4.4.1",
+      "bom-ref": "faas-js-runtime@3.0.1|uri-js@4.4.1",
+      "purl": "pkg:npm/uri-js@4.4.1",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.0.tgz",
+          "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "8f16b22ca4a1ac4aaacc9d1eba641b5614d840cdbb09f4f54f7e7e8028031682fcd892ec5ea4c9efacefe80d182ce8049cb50cbcbcec0ec188ae5f0d1694f681"
+              "content": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/uri-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bignumber.js",
+      "version": "9.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|bignumber.js@9.1.1",
+      "purl": "pkg:npm/bignumber.js@9.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a479b82ec309ea5ce034655f6478cca0ef2c7684613b3387e0c2e663ae4983bd1ba7108abb988e1cd2727c5e8ecaf630eedf05a5fdf946ecd4caa9d0b23f158a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/bignumber.js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "bom-ref": "faas-js-runtime@3.0.1|inherits@2.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/inherits"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-arguments",
+      "version": "1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|is-arguments@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-arguments@1.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-arguments"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-generator-function",
+      "version": "1.0.10",
+      "bom-ref": "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-generator-function@1.0.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-generator-function"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-typed-array",
+      "version": "1.1.13",
+      "bom-ref": "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
+      "purl": "pkg:npm/is-typed-array@1.1.13",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.13.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b99db9fdb5009546397d1e0e293e2b650101af3416615f59258186b1498427ab61a1d549d475fae1e3d0e99d2a3d63fe9be52ae9ef54ba0ac4dfc8de62c0d233"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-typed-array"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "which-typed-array",
+      "version": "1.1.14",
+      "bom-ref": "faas-js-runtime@3.0.1|which-typed-array@1.1.14",
+      "purl": "pkg:npm/which-typed-array@1.1.14",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.14.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5675c58885bcc8d9fd9081cdf3cc6f678c8e59c85fb4a0ec449f1f10f69c5ffc25d653af06b86c27f39e2425eaec1d006a28d1baa83348a6a52683e4f83f0c3e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/which-typed-array"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bytes",
+      "version": "3.1.2",
+      "bom-ref": "faas-js-runtime@3.0.1|bytes@3.1.2",
+      "purl": "pkg:npm/bytes@3.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "fcd7fb4f2cd3c7a4b7c9124e6ce015efde7aafc72bdbe3a3f000b976df3048fdc1400a1e5f9f0da07c8253c3fccc690d5d2b634d28ba7f33ba174a4175c61b12"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/bytes"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "http-errors",
+      "version": "2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|http-errors@2.0.0",
+      "purl": "pkg:npm/http-errors@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "16dc2b1bf7ae0736848d8791a8e825cbb1b4aaf8a25e82569ef107d99d6994175781bca3bf7e291d349bf73a1e1ccc83cb7dfe0d6cb95adf56a3e4d446d39849"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/http-errors"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "iconv-lite",
+      "version": "0.4.24",
+      "bom-ref": "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
+      "purl": "pkg:npm/iconv-lite@0.4.24",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "bf73179d901cbe7cb091350466898801cb657bb4575de79d391df5c3097b565ca85cee108bd6abbd27a73505a77b54dc4708422f51f02c8db56c4a9da63f3fac"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/iconv-lite"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "unpipe",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|unpipe@1.0.0",
+      "purl": "pkg:npm/unpipe@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a63cb66d8852b2e7f05a52b03dcfa5ddc37bfb0b8994aeaecf461d2443a54036e5ea3a3f6253e2e266fc6a0524542f0117b57c36ecdec8f36a464b00de1ced29"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/unpipe"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-uri",
+      "version": "2.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-uri@2.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-uri@2.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-uri"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "archy",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|archy@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/archy@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/archy"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.3.4",
+      "bom-ref": "faas-js-runtime@3.0.1|debug@4.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/debug@4.3.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/debug"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastq",
+      "version": "1.8.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fastq@1.8.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fastq@1.8.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastq"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "deepmerge",
+      "group": "@fastify",
+      "version": "1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0",
+      "purl": "pkg:npm/%40fastify/deepmerge@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-1.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "27c4ce481ab74a865b0e133df91feeefb84ff77833feb6a3480f8ada41b28a33e93913d65171d4a536a57a88fef7602cd12f6e3d13fb3a2f08a8c7f4bbeae8e8"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/deepmerge"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-querystring",
+      "version": "1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
+      "purl": "pkg:npm/fast-querystring@1.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-querystring/-/fast-querystring-1.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a91dabf9edc7be11059a974732ffff53c1671659d88da0ba40a0ee69700b0e4c3692f1cef160e3c47f9ffeb1c647831ee299e4f29f4902444d4e360700a467d9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-querystring"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-regex2",
+      "version": "2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|safe-regex2@2.0.0",
+      "purl": "pkg:npm/safe-regex2@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-regex2/-/safe-regex2-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3da51216c51a34db8ac240628e800f1c02bafde33a562aefc8f5a567b040432e03fa10af87807a9481be9cf7616c57c86cffa04c605caddb0e694b3417e64139"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-regex2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cookie",
+      "version": "0.5.0",
+      "bom-ref": "faas-js-runtime@3.0.1|cookie@0.5.0",
+      "purl": "pkg:npm/cookie@0.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "619dc65329ffa3c81f289967957ee0ef1ab88323ba392ba118f29a686b2c181daa803512d203e0b53be8c992d3b7d01be9d0b885f73d755e5aae4bdcfce0a6af"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cookie"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-cookie-parser",
+      "version": "2.6.0",
+      "bom-ref": "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0",
+      "purl": "pkg:npm/set-cookie-parser@2.6.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.6.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4559d54314d7b9eae4eb9dd77ee9623b104ff3549fd3ea9f404ef72c860a7323181c6f7802e1f4920ad0a510ee4d99d29a3a72b079b3c495ca35f6ba3e3161c9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/set-cookie-parser"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "atomic-sleep",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|atomic-sleep@1.0.0",
+      "purl": "pkg:npm/atomic-sleep@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/atomic-sleep/-/atomic-sleep-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "90d3a30ea021ee9c745d6348fb841bce8891fe74e41c058db9ddaebe726ab83d7fc796bb11064c253d00733a8ad109faee863f4d34352db50a6a3669a7723db5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/atomic-sleep"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-redact",
+      "version": "3.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-redact@3.2.0",
+      "purl": "pkg:npm/fast-redact@3.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-redact/-/fast-redact-3.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cda4da74286bf8d7a4cb36a59403170135cb391f0c371df3aa96743141766867f811ab619c6d1fdf654b38336563c22e198dc7a113b62faffa7d2ccdb0b68723"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-redact"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "on-exit-leak-free",
+      "version": "2.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0",
+      "purl": "pkg:npm/on-exit-leak-free@2.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/on-exit-leak-free/-/on-exit-leak-free-2.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "56e09a65902345e677bd4c20381f0bc40a2c22eac38805b4b35deb23563099a3fefa3bdcc4fefb016a10bde9d979ba420369bc582d7f128b0f60f3239d1029ff"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/on-exit-leak-free"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-abstract-transport",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
+      "purl": "pkg:npm/pino-abstract-transport@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-abstract-transport/-/pino-abstract-transport-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "73bbe8e4ea56e30212e3685455c4f9444b0bf19963b147c18ea57f7b6b05c661441598aad572d4a791182edb831fa3c41eaf56d5e816a916e72d43f916e66638"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-abstract-transport"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "readable-stream",
+          "version": "4.4.2",
+          "bom-ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+          "purl": "pkg:npm/readable-stream@4.4.2",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/readable-stream/-/readable-stream-4.4.2.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "2e4fdf2024b2221a1dc72d480cad876b391e1a34a67b30165f67a076d267621b73284b013c9a30948e85e8b3dbe6da884082eb31bc76d92e68dc6b896af3eeb0"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/pino-abstract-transport/node_modules/readable-stream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-std-serializers",
+      "version": "6.2.2",
+      "bom-ref": "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2",
+      "purl": "pkg:npm/pino-std-serializers@6.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7078cf3ec13ebe18ffb67842cbfc22321dccdf3de1fe3d79cc7417f92f46913060a89b93b89cd8278814c8008b843689ee493d6daf6244399b1f6b49534dce88"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-std-serializers"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "quick-format-unescaped",
+      "version": "4.0.4",
+      "bom-ref": "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4",
+      "purl": "pkg:npm/quick-format-unescaped@4.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/quick-format-unescaped"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "real-require",
+      "version": "0.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|real-require@0.2.0",
+      "purl": "pkg:npm/real-require@0.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/real-require/-/real-require-0.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e7b7ebac633f3824cba8b3808749a1540f5504c1ddfbd53b65bd931cc19d054a1954eb466c9ce3c6c6060c9dc0f4061808fe219facb54d56da39fcd6b66e4616"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/real-require"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-stable-stringify",
+      "version": "2.4.3",
+      "bom-ref": "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3",
+      "purl": "pkg:npm/safe-stable-stringify@2.4.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-stable-stringify/-/safe-stable-stringify-2.4.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7b66c30365894f4c31b1e55de25b033f8fb738d5fa1e931741ad5984543b494f868ef3910a64a16c2325b6bb480df9188551eb39c3ed8fe2a198305d3dd643d6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-stable-stringify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sonic-boom",
+      "version": "3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
+      "purl": "pkg:npm/sonic-boom@3.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/sonic-boom/-/sonic-boom-3.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2d8c69df82a56756b625bf194201422b79e2207ce26ddc2dc0d5162a0d2a411cec0e827719f8247fc29d053154dd291e8c3108956c274a7a5574e648845325fe"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/sonic-boom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "thread-stream",
+      "version": "2.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|thread-stream@2.3.0",
+      "purl": "pkg:npm/thread-stream@2.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/thread-stream/-/thread-stream-2.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "91a0ea9b50c44fda69dcd5f047cdfcd961db9e95e746437dc4637d750b77076f9d997896f17d523b09853b1004ac4438ece6e167de89eb2859357bb208e2fb28"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/thread-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "forwarded",
+      "version": "0.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|forwarded@0.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/forwarded@0.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/forwarded"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ipaddr.js",
+      "version": "1.9.1",
+      "bom-ref": "faas-js-runtime@3.0.1|ipaddr.js@1.9.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ipaddr.js@1.9.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ipaddr.js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "6.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|lru-cache@6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lru-cache@6.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lru-cache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "xtend",
+      "version": "4.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|xtend@4.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/xtend@4.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/xtend"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bintrees",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|bintrees@1.0.1",
+      "purl": "pkg:npm/bintrees@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/bintrees"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "call-bind",
+      "version": "1.0.7",
+      "bom-ref": "faas-js-runtime@3.0.1|call-bind@1.0.7",
+      "purl": "pkg:npm/call-bind@1.0.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/call-bind/-/call-bind-1.0.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1874d2352608090eec707eec67e336ac5a294682e1f2dd9b2d25ba05b82bb4bb1a84e201e62c805497fd1a358addc6130da323e17741a4cd5c03aa484b42afdb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/call-bind"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/get-intrinsic@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f5f4a349aa2cfdf448548a7ec5226513a95fc21112ecb36d29a08121a987b23af69dad418800493e8d263a38f3f062435116ab9823c6a9a89583999f8dbf7c09"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/get-intrinsic"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-inspect",
+      "version": "1.13.1",
+      "bom-ref": "faas-js-runtime@3.0.1|object-inspect@1.13.1",
+      "purl": "pkg:npm/object-inspect@1.13.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e6aa23d5152228e32c08234b57508188f604d74b33893b2798dc64008feb661883eb7085ec8a9d1460bf5f38d68e94a02dfd0bc575f76c3148874135f1fe9485"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/object-inspect"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "punycode",
+      "version": "2.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|punycode@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/punycode@2.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/punycode"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-tostringtag",
+      "version": "1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|has-tostringtag@1.0.2",
+      "purl": "pkg:npm/has-tostringtag@1.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "36a00307c5633c52ccd95d15bc751ec30c2cc3465605a21d828fa2787b4ade16ac2f3e2a78246361ca9f07a010ac182044aa69285f0be76fd5a9d56c3b8ec397"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has-tostringtag"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "available-typed-arrays",
+      "version": "1.0.7",
+      "bom-ref": "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
+      "purl": "pkg:npm/available-typed-arrays@1.0.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c2f52306d48637bfbb4a3369abff4cd93837e745190f7abad881592db4404756d23250a8d5969e5be049f83d3dd1ee2120864b05c4c359ee0c8788ef5036a3cd"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/available-typed-arrays"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "for-each",
+      "version": "0.3.3",
+      "bom-ref": "faas-js-runtime@3.0.1|for-each@0.3.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/for-each@0.3.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/for-each"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "gopd",
+      "version": "1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|gopd@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/gopd@1.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "65429187afe4505a0089302d4d83d9277870f70371c7e04804e8a39e51bd3e7ac9b027128ecd70cb20fabc9a5a62d827cc3aca6114aa7f738ee917daf77c6c46"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/gopd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "depd",
+      "version": "2.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|depd@2.0.0",
+      "purl": "pkg:npm/depd@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "83b9c7e8fe9dc838a8268800006a6b1a90ad5489898693e4feba02cdd6f77c887ad7fb3f9cfb1f47aa27c8cc2408047f3a50b7c810b49444af52840402cb08af"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/depd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|setprototypeof@1.2.0",
+      "purl": "pkg:npm/setprototypeof@1.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1392c35fb5aba7ce4a8a5e5b859bf8ea3f2339e6e82aae4932660cde05467461fcc45a4f59750cb0dae53830ab928c4c11e362fd7648c2e46f6385cdc18309a7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/setprototypeof"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "statuses",
+      "version": "2.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|statuses@2.0.1",
+      "purl": "pkg:npm/statuses@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "470340f59ffb3eb2b4eab60b23314c95a17e97bde2c29ceca9120581b30b6d370b0fa70e6a8f364da59e7cf5d0bc1d9f382e008ee612127752ecdfe64c26e475"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/statuses"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "toidentifier",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|toidentifier@1.0.1",
+      "purl": "pkg:npm/toidentifier@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a39b123ca12483f0c840d987e37574fee7ab2eba7355e764521f2d18dbda797a5fa6ec2329e9e54a8c7fd8efc14e5654b447be246eece58844cfad3c3e500744"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/toidentifier"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "bom-ref": "faas-js-runtime@3.0.1|safer-buffer@2.1.2",
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "619a372bcd920fb462ca2d04d4440fa232f3ee4a5ea6749023d2323db1c78355d75debdbe5d248eeda72376003c467106c71bbbdcc911e4d1c6f0a9c42b894b6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safer-buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.2",
+      "bom-ref": "faas-js-runtime@3.0.1|ms@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.1.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "reusify",
+      "version": "1.0.4",
+      "bom-ref": "faas-js-runtime@3.0.1|reusify@1.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/reusify@1.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/reusify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-decode-uri-component",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1",
+      "purl": "pkg:npm/fast-decode-uri-component@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-decode-uri-component/-/fast-decode-uri-component-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "58a80a5a0e5e531bd1646c16f05bdf6da1fb0174a1d9c2fede3e5f306cd4302c56049ddd5776bb5b3f32d9ffee4347b707a5a6a1d0f7a12e788d343d1d54c822"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-decode-uri-component"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ret",
+      "version": "0.2.2",
+      "bom-ref": "faas-js-runtime@3.0.1|ret@0.2.2",
+      "purl": "pkg:npm/ret@0.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ret/-/ret-0.2.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3346f761642ced1dd9f75ed6450cb51c703b05aec3f21bd983a504e662f2909c50544da3bb42176c695a1cf3e5918f9637bc053fec14317981140d1a57abd819"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ret"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "split2",
+      "version": "4.2.0",
+      "bom-ref": "faas-js-runtime@3.0.1|split2@4.2.0",
+      "purl": "pkg:npm/split2@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "51c8dc24e5a49eb36417a3cb5fcdea70733a28781528d915eb663c6b9b980d5bfdc9d19057000730aa877498ded554d6a658c6d1662908386b09d00e607e135a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/split2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yallist",
+      "version": "4.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|yallist@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yallist@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yallist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|es-define-property@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/es-define-property@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7b79d17e07d4678acd18bdb7da05205f4e90372c9ecf4e0a76316b17e2d34683979ab3a014a0e0e0109db235bc1274faf5ea9d606991a49c223d560dac2696de"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -2895,7 +2688,7 @@
       "type": "library",
       "name": "es-errors",
       "version": "1.3.0",
-      "bom-ref": "es-errors@1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|es-errors@1.3.0",
       "purl": "pkg:npm/es-errors@1.3.0",
       "externalReferences": [
         {
@@ -2921,7 +2714,7 @@
       "type": "library",
       "name": "function-bind",
       "version": "1.1.2",
-      "bom-ref": "function-bind@1.1.2",
+      "bom-ref": "faas-js-runtime@3.0.1|function-bind@1.1.2",
       "purl": "pkg:npm/function-bind@1.1.2",
       "externalReferences": [
         {
@@ -2947,7 +2740,7 @@
       "type": "library",
       "name": "set-function-length",
       "version": "1.2.1",
-      "bom-ref": "set-function-length@1.2.1",
+      "bom-ref": "faas-js-runtime@3.0.1|set-function-length@1.2.1",
       "purl": "pkg:npm/set-function-length@1.2.1",
       "externalReferences": [
         {
@@ -2971,9 +2764,392 @@
     },
     {
       "type": "library",
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4a9d5a6e52748af0e44b38dc68977112e9cde7f5ef92c149dac30115fabac74af285057fd9bfcac057b6d5c329987b4f3928a3f0af7dff049fa04b9339b9ae31"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/call-bind-apply-helpers"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es-object-atoms",
+      "version": "1.1.1",
+      "bom-ref": "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/es-object-atoms@1.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "146807da1f3328d8a6f658e3edd6a79053dc20220af42a796e6f9cda041261e3e1a5a1b9f9eb2b2ce0e2848a2b9fe3dee85189cd6857428b4fbfbde34da95d5c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/es-object-atoms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-proto",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|get-proto@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/get-proto@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b1349f063a17069f3d26f20a21e7eac3b53608279bb1cef892263a6b0886a202ada1219b823604fc6ffe97db05dcc5853cd73d21ca0e0b83837ca1dfc459a9d2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/get-proto"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|has-symbols@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/has-symbols@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d5c0cd77027625aa2199bdec8383a629a301c2e0b8f2c6278b91d4c360efb02f0b8c64cb2bd87e79bd57e91cae3877b8853d142c25baf22a26863528294aa53d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/has-symbols"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "hasown",
+      "version": "2.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|hasown@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/hasown@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d21254f5208fbe633320175916a34f5d66ba76a87b59d1f470823dcbe0b24bcac6de72f8f01725adaf4798a8555541f23d6347e58ef10f0001edb7e04a391431"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/hasown"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "bom-ref": "faas-js-runtime@3.0.1|math-intrinsics@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/math-intrinsics@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "fc85ed6f0124e474cfc84c32297ea11a4617c4cf676e3eb807e8a55499c2fd1e81d291f91b85776f4a556cbec3063e2d921040a696d05257fa17a5e5f4b1eed6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/math-intrinsics"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "possible-typed-array-names",
+      "version": "1.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0",
+      "purl": "pkg:npm/possible-typed-array-names@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/possible-typed-array-names/-/possible-typed-array-names-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "77b530f9e6689687b41070c86287be6d0e565e718c3a99a26454ee3160b0a63cf390bda74e370a880938861f138e71b27b64f058e937517b9c67edeb6e605af1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/possible-typed-array-names"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-callable",
+      "version": "1.2.7",
+      "bom-ref": "faas-js-runtime@3.0.1|is-callable@1.2.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-callable@1.2.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-callable"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "abort-controller",
+      "version": "3.0.0",
+      "bom-ref": "faas-js-runtime@3.0.1|abort-controller@3.0.0",
+      "purl": "pkg:npm/abort-controller@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "87c950f2d69c6589d1def3504e089b8feb4e0c7239ffe974e80bb63dcae2bff1a67add1e6a3e13c161f8d6c3bdc271c3890b048f5f6ad1daf375675e007b707a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/abort-controller"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "buffer",
+      "version": "6.0.3",
+      "bom-ref": "faas-js-runtime@3.0.1|buffer@6.0.3",
+      "purl": "pkg:npm/buffer@6.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "153882a4dc6dc226591c465b71b4c87198c44552029fdcaafe90c591397de7f031cc3d6768172d37b60eebcae233f80b48363bb1dacc6f2f21a1f00362ebaa38"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "events",
+      "version": "3.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|events@3.3.0",
+      "purl": "pkg:npm/events@3.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/events/-/events-3.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "990c3ed9f9106c02f343b574318d08a9d9d734e793b4fe2bd2537dcfb0006b009782a79aedb0e28b6d0062b201ac577f1f1d0cd8e733e92d75d4268591471bd1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/events"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "bom-ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0",
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "864457f14d568c915df0bb03276c90ff0596c5aa2912c0015355df90cf00fa3d3ef392401a9a6dd7a72bd56860e8a21b6f8a2453a32a97a04e8febaea7fc0a78"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/string_decoder"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "safe-buffer",
+          "version": "5.2.1",
+          "bom-ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1",
+          "purl": "pkg:npm/safe-buffer@5.2.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "ae9dd2a34eca71d9a629b1af81a37141226bedb1954959394bd12ad45fa9a5b468ef4f9879a0f1930e4377c34f37e183e9b8e7626d95b8fb825e6a6e62f9825d"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/string_decoder/node_modules/safe-buffer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "define-data-property",
       "version": "1.1.4",
-      "bom-ref": "define-data-property@1.1.4",
+      "bom-ref": "faas-js-runtime@3.0.1|define-data-property@1.1.4",
       "purl": "pkg:npm/define-data-property@1.1.4",
       "externalReferences": [
         {
@@ -2999,7 +3175,7 @@
       "type": "library",
       "name": "has-property-descriptors",
       "version": "1.0.2",
-      "bom-ref": "has-property-descriptors@1.0.2",
+      "bom-ref": "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2",
       "purl": "pkg:npm/has-property-descriptors@1.0.2",
       "externalReferences": [
         {
@@ -3023,18 +3199,26 @@
     },
     {
       "type": "library",
-      "name": "has-proto",
-      "version": "1.0.3",
-      "bom-ref": "has-proto@1.0.3",
-      "purl": "pkg:npm/has-proto@1.0.3",
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/dunder-proto@1.0.1",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/has-proto/-/has-proto-1.0.3.tgz",
+          "url": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "489d5a999009522652f8f86c54b7f9b46c9d95a541f04745a5a48ee209a250a50ec64f2ace7e40232e19789526876db39c8764fee300513da9977171cd5507f9"
+              "content": "28837f9c3241411717c3430b561644f62407986ebca80548060f42aa65188e64088608a3f54e4c16faea9142f915bb72cb366e39e3add3375e45ee1463b72df8"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3043,24 +3227,24 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/has-proto"
+          "value": "node_modules/dunder-proto"
         }
       ]
     },
     {
       "type": "library",
-      "name": "hasown",
-      "version": "2.0.1",
-      "bom-ref": "hasown@2.0.1",
-      "purl": "pkg:npm/hasown@2.0.1",
+      "name": "event-target-shim",
+      "version": "5.0.1",
+      "bom-ref": "faas-js-runtime@3.0.1|event-target-shim@5.0.1",
+      "purl": "pkg:npm/event-target-shim@5.0.1",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/hasown/-/hasown-2.0.1.tgz",
+          "url": "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "d7fb61e0c1e39f09dcc17b085ba40cce5bd82fd906e5efc2a55bcb4597b85cf6bc4ce50d6c210baa6be10e69e436c023c1a1b8f88f202492f4241bd34cb3bda8"
+              "content": "8bfd976e74b3feec51094ebe35d54980a5834cce36efe32a61b910cc3df6d43b8240952a3ae24a200d08336f96db1b581dd28e999e1d47a7c4c6c7784972fe59"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3069,24 +3253,24 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/hasown"
+          "value": "node_modules/event-target-shim"
         }
       ]
     },
     {
       "type": "library",
-      "name": "object-inspect",
-      "version": "1.13.1",
-      "bom-ref": "object-inspect@1.13.1",
-      "purl": "pkg:npm/object-inspect@1.13.1",
+      "name": "base64-js",
+      "version": "1.5.1",
+      "bom-ref": "faas-js-runtime@3.0.1|base64-js@1.5.1",
+      "purl": "pkg:npm/base64-js@1.5.1",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.1.tgz",
+          "url": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "e6aa23d5152228e32c08234b57508188f604d74b33893b2798dc64008feb661883eb7085ec8a9d1460bf5f38d68e94a02dfd0bc575f76c3148874135f1fe9485"
+              "content": "00aa5a6251e7f2de1255b3870b2f9be7e28a82f478bebb03f2f6efadb890269b3b7ca0d3923903af2ea38b4ad42630b49336cd78f2f0cf1abc8b2a68e35a9e58"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3095,661 +3279,714 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/object-inspect"
+          "value": "node_modules/base64-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ieee754",
+      "version": "1.2.1",
+      "bom-ref": "faas-js-runtime@3.0.1|ieee754@1.2.1",
+      "purl": "pkg:npm/ieee754@1.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "75ccaa843bd7d42e3a95765c56a0a92be16d31141574830debf0dfe63b36ce8b94b2a1bb23ab05c62b480beeca60adbd29d5ce2c776ef732f8b059e85509ea68"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ieee754"
         }
       ]
     }
   ],
   "dependencies": [
     {
-      "ref": "faas-js-runtime@3.0.0",
+      "ref": "faas-js-runtime@3.0.1",
       "dependsOn": [
-        "cloudevents@8.0.0",
-        "commander@13.1.0",
-        "death@1.1.0",
-        "fastify-raw-body@4.3.0",
-        "fastify@4.21.0",
-        "js-yaml@4.1.0",
-        "node-os-utils@1.3.7",
-        "overload-protection@1.2.3",
-        "prom-client@15.0.0",
-        "qs@6.11.2"
+        "faas-js-runtime@3.0.1|cloudevents@8.0.2",
+        "faas-js-runtime@3.0.1|commander@13.1.0",
+        "faas-js-runtime@3.0.1|death@1.1.0",
+        "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
+        "faas-js-runtime@3.0.1|fastify@4.21.0",
+        "faas-js-runtime@3.0.1|js-yaml@4.1.0",
+        "faas-js-runtime@3.0.1|node-os-utils@1.3.7",
+        "faas-js-runtime@3.0.1|overload-protection@1.2.3",
+        "faas-js-runtime@3.0.1|prom-client@15.1.3",
+        "faas-js-runtime@3.0.1|qs@6.11.2"
       ]
     },
     {
-      "ref": "cloudevents@8.0.0",
+      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2",
       "dependsOn": [
-        "ajv-formats@2.1.1",
-        "cloudevents@8.0.0|ajv@8.11.0",
-        "json-bigint@1.0.0",
-        "process@0.11.10",
-        "util@0.12.5",
-        "cloudevents@8.0.0|uuid@8.3.2"
+        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
+        "faas-js-runtime@3.0.1|json-bigint@1.0.0",
+        "faas-js-runtime@3.0.1|process@0.11.10",
+        "faas-js-runtime@3.0.1|util@0.12.5",
+        "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2"
       ]
     },
     {
-      "ref": "cloudevents@8.0.0|ajv@8.11.0",
+      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|ajv@8.11.0",
       "dependsOn": [
-        "fast-deep-equal@3.1.3",
-        "cloudevents@8.0.0|json-schema-traverse@1.0.0",
-        "require-from-string@2.0.2",
-        "uri-js@4.4.1"
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.1|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "cloudevents@8.0.0|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|uuid@8.3.2"
     },
     {
-      "ref": "cloudevents@8.0.0|uuid@8.3.2"
+      "ref": "faas-js-runtime@3.0.1|cloudevents@8.0.2|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "ajv-formats@2.1.1",
+      "ref": "faas-js-runtime@3.0.1|commander@13.1.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|death@1.1.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|fastify-raw-body@4.3.0",
       "dependsOn": [
-        "ajv-formats@2.1.1|ajv@8.11.0"
+        "faas-js-runtime@3.0.1|fastify-plugin@4.5.0",
+        "faas-js-runtime@3.0.1|raw-body@2.5.2",
+        "faas-js-runtime@3.0.1|secure-json-parse@2.5.0"
       ]
     },
     {
-      "ref": "ajv-formats@2.1.1|ajv@8.11.0",
+      "ref": "faas-js-runtime@3.0.1|fastify@4.21.0",
       "dependsOn": [
-        "fast-deep-equal@3.1.3",
-        "ajv-formats@2.1.1|json-schema-traverse@1.0.0",
-        "require-from-string@2.0.2",
-        "uri-js@4.4.1"
+        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
+        "faas-js-runtime@3.0.1|@fastify/error@3.3.0",
+        "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
+        "faas-js-runtime@3.0.1|abstract-logging@2.0.1",
+        "faas-js-runtime@3.0.1|avvio@8.2.1",
+        "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0",
+        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
+        "faas-js-runtime@3.0.1|find-my-way@7.6.0",
+        "faas-js-runtime@3.0.1|light-my-request@5.10.0",
+        "faas-js-runtime@3.0.1|pino@8.14.1",
+        "faas-js-runtime@3.0.1|process-warning@2.2.0",
+        "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
+        "faas-js-runtime@3.0.1|rfdc@1.3.0",
+        "faas-js-runtime@3.0.1|secure-json-parse@2.5.0",
+        "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
+        "faas-js-runtime@3.0.1|tiny-lru@11.0.1"
       ]
     },
     {
-      "ref": "ajv-formats@2.1.1|json-schema-traverse@1.0.0"
-    },
-    {
-      "ref": "fast-deep-equal@3.1.3"
-    },
-    {
-      "ref": "require-from-string@2.0.2"
-    },
-    {
-      "ref": "uri-js@4.4.1",
+      "ref": "faas-js-runtime@3.0.1|fastify@4.21.0|semver@7.5.3",
       "dependsOn": [
-        "punycode@2.1.1"
+        "faas-js-runtime@3.0.1|lru-cache@6.0.0"
       ]
     },
     {
-      "ref": "punycode@2.1.1"
-    },
-    {
-      "ref": "json-bigint@1.0.0",
+      "ref": "faas-js-runtime@3.0.1|js-yaml@4.1.0",
       "dependsOn": [
-        "bignumber.js@9.1.1"
+        "faas-js-runtime@3.0.1|argparse@2.0.1"
       ]
     },
     {
-      "ref": "bignumber.js@9.1.1"
+      "ref": "faas-js-runtime@3.0.1|node-os-utils@1.3.7"
     },
     {
-      "ref": "process@0.11.10"
-    },
-    {
-      "ref": "util@0.12.5",
+      "ref": "faas-js-runtime@3.0.1|overload-protection@1.2.3",
       "dependsOn": [
-        "inherits@2.0.4",
-        "is-arguments@1.1.1",
-        "is-generator-function@1.0.10",
-        "is-typed-array@1.1.13",
-        "which-typed-array@1.1.14"
+        "faas-js-runtime@3.0.1|loopbench@1.2.0"
       ]
     },
     {
-      "ref": "inherits@2.0.4"
-    },
-    {
-      "ref": "is-arguments@1.1.1",
+      "ref": "faas-js-runtime@3.0.1|prom-client@15.1.3",
       "dependsOn": [
-        "call-bind@1.0.7",
-        "has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0",
+        "faas-js-runtime@3.0.1|tdigest@0.1.1"
       ]
     },
     {
-      "ref": "call-bind@1.0.7",
+      "ref": "faas-js-runtime@3.0.1|qs@6.11.2",
       "dependsOn": [
-        "es-define-property@1.0.0",
-        "es-errors@1.3.0",
-        "function-bind@1.1.2",
-        "get-intrinsic@1.2.4",
-        "set-function-length@1.2.1"
+        "faas-js-runtime@3.0.1|side-channel@1.0.4"
       ]
     },
     {
-      "ref": "has-tostringtag@1.0.2",
+      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
       "dependsOn": [
-        "has-symbols@1.0.3"
+        "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0"
       ]
     },
     {
-      "ref": "has-symbols@1.0.3"
-    },
-    {
-      "ref": "is-generator-function@1.0.10",
+      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|ajv@8.11.0",
       "dependsOn": [
-        "has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.1|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "is-typed-array@1.1.13",
+      "ref": "faas-js-runtime@3.0.1|ajv-formats@2.1.1|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|json-bigint@1.0.0",
       "dependsOn": [
-        "which-typed-array@1.1.14"
+        "faas-js-runtime@3.0.1|bignumber.js@9.1.1"
       ]
     },
     {
-      "ref": "which-typed-array@1.1.14",
+      "ref": "faas-js-runtime@3.0.1|process@0.11.10"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|util@0.12.5",
       "dependsOn": [
-        "available-typed-arrays@1.0.7",
-        "call-bind@1.0.7",
-        "for-each@0.3.3",
-        "gopd@1.0.1",
-        "has-tostringtag@1.0.2"
+        "faas-js-runtime@3.0.1|inherits@2.0.4",
+        "faas-js-runtime@3.0.1|is-arguments@1.1.1",
+        "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
+        "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
+        "faas-js-runtime@3.0.1|which-typed-array@1.1.14"
       ]
     },
     {
-      "ref": "available-typed-arrays@1.0.7",
+      "ref": "faas-js-runtime@3.0.1|fastify-plugin@4.5.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|raw-body@2.5.2",
       "dependsOn": [
-        "possible-typed-array-names@1.0.0"
+        "faas-js-runtime@3.0.1|bytes@3.1.2",
+        "faas-js-runtime@3.0.1|http-errors@2.0.0",
+        "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
+        "faas-js-runtime@3.0.1|unpipe@1.0.0"
       ]
     },
     {
-      "ref": "possible-typed-array-names@1.0.0"
+      "ref": "faas-js-runtime@3.0.1|secure-json-parse@2.5.0"
     },
     {
-      "ref": "for-each@0.3.3",
+      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0",
       "dependsOn": [
-        "is-callable@1.2.7"
+        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+        "faas-js-runtime@3.0.1|fast-uri@2.1.0"
       ]
     },
     {
-      "ref": "is-callable@1.2.7"
-    },
-    {
-      "ref": "gopd@1.0.1",
+      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
       "dependsOn": [
-        "get-intrinsic@1.2.4"
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.1|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "get-intrinsic@1.2.4",
+      "ref": "faas-js-runtime@3.0.1|@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|@fastify/error@3.3.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|@fastify/fast-json-stringify-compiler@4.3.0",
       "dependsOn": [
-        "es-errors@1.3.0",
-        "function-bind@1.1.2",
-        "has-proto@1.0.3",
-        "has-symbols@1.0.3",
-        "hasown@2.0.1"
+        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0"
       ]
     },
     {
-      "ref": "commander@13.1.0"
+      "ref": "faas-js-runtime@3.0.1|abstract-logging@2.0.1"
     },
     {
-      "ref": "death@1.1.0"
-    },
-    {
-      "ref": "fastify-raw-body@4.3.0",
+      "ref": "faas-js-runtime@3.0.1|avvio@8.2.1",
       "dependsOn": [
-        "fastify-plugin@4.5.0",
-        "raw-body@2.5.2",
-        "secure-json-parse@2.5.0"
+        "faas-js-runtime@3.0.1|archy@1.0.0",
+        "faas-js-runtime@3.0.1|debug@4.3.4",
+        "faas-js-runtime@3.0.1|fastq@1.8.0"
       ]
     },
     {
-      "ref": "fastify-plugin@4.5.0"
+      "ref": "faas-js-runtime@3.0.1|fast-content-type-parse@1.0.0"
     },
     {
-      "ref": "raw-body@2.5.2",
+      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0",
       "dependsOn": [
-        "bytes@3.1.2",
-        "http-errors@2.0.0",
-        "iconv-lite@0.4.24",
-        "unpipe@1.0.0"
+        "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0",
+        "faas-js-runtime@3.0.1|ajv-formats@2.1.1",
+        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|fast-uri@2.1.0",
+        "faas-js-runtime@3.0.1|rfdc@1.3.0"
       ]
     },
     {
-      "ref": "bytes@3.1.2"
-    },
-    {
-      "ref": "http-errors@2.0.0",
+      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|ajv@8.12.0",
       "dependsOn": [
-        "depd@2.0.0",
-        "inherits@2.0.4",
-        "setprototypeof@1.2.0",
-        "statuses@2.0.1",
-        "toidentifier@1.0.1"
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
+        "faas-js-runtime@3.0.1|require-from-string@2.0.2",
+        "faas-js-runtime@3.0.1|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "depd@2.0.0"
+      "ref": "faas-js-runtime@3.0.1|fast-json-stringify@5.7.0|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "setprototypeof@1.2.0"
-    },
-    {
-      "ref": "statuses@2.0.1"
-    },
-    {
-      "ref": "toidentifier@1.0.1"
-    },
-    {
-      "ref": "iconv-lite@0.4.24",
+      "ref": "faas-js-runtime@3.0.1|find-my-way@7.6.0",
       "dependsOn": [
-        "safer-buffer@2.1.2"
+        "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3",
+        "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
+        "faas-js-runtime@3.0.1|safe-regex2@2.0.0"
       ]
     },
     {
-      "ref": "safer-buffer@2.1.2"
-    },
-    {
-      "ref": "unpipe@1.0.0"
-    },
-    {
-      "ref": "secure-json-parse@2.5.0"
-    },
-    {
-      "ref": "fastify@4.21.0",
+      "ref": "faas-js-runtime@3.0.1|light-my-request@5.10.0",
       "dependsOn": [
-        "@fastify/ajv-compiler@3.5.0",
-        "@fastify/error@3.3.0",
-        "@fastify/fast-json-stringify-compiler@4.3.0",
-        "abstract-logging@2.0.1",
-        "avvio@8.2.1",
-        "fast-content-type-parse@1.0.0",
-        "fast-json-stringify@5.7.0",
-        "find-my-way@7.6.0",
-        "light-my-request@5.10.0",
-        "pino@8.14.1",
-        "process-warning@2.2.0",
-        "proxy-addr@2.0.7",
-        "rfdc@1.3.0",
-        "secure-json-parse@2.5.0",
-        "fastify@4.21.0|semver@7.5.3",
-        "tiny-lru@11.0.1"
+        "faas-js-runtime@3.0.1|cookie@0.5.0",
+        "faas-js-runtime@3.0.1|process-warning@2.2.0",
+        "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0"
       ]
     },
     {
-      "ref": "fastify@4.21.0|semver@7.5.3",
+      "ref": "faas-js-runtime@3.0.1|pino@8.14.1",
       "dependsOn": [
-        "lru-cache@6.0.0"
+        "faas-js-runtime@3.0.1|atomic-sleep@1.0.0",
+        "faas-js-runtime@3.0.1|fast-redact@3.2.0",
+        "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0",
+        "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
+        "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2",
+        "faas-js-runtime@3.0.1|process-warning@2.2.0",
+        "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4",
+        "faas-js-runtime@3.0.1|real-require@0.2.0",
+        "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3",
+        "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
+        "faas-js-runtime@3.0.1|thread-stream@2.3.0"
       ]
     },
     {
-      "ref": "@fastify/ajv-compiler@3.5.0",
+      "ref": "faas-js-runtime@3.0.1|process-warning@2.2.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|proxy-addr@2.0.7",
       "dependsOn": [
-        "ajv-formats@2.1.1",
-        "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
-        "fast-uri@2.1.0"
+        "faas-js-runtime@3.0.1|forwarded@0.2.0",
+        "faas-js-runtime@3.0.1|ipaddr.js@1.9.1"
       ]
     },
     {
-      "ref": "@fastify/ajv-compiler@3.5.0|ajv@8.12.0",
+      "ref": "faas-js-runtime@3.0.1|rfdc@1.3.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|tiny-lru@11.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|argparse@2.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|loopbench@1.2.0",
       "dependsOn": [
-        "fast-deep-equal@3.1.3",
-        "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0",
-        "require-from-string@2.0.2",
-        "uri-js@4.4.1"
+        "faas-js-runtime@3.0.1|xtend@4.0.2"
       ]
     },
     {
-      "ref": "@fastify/ajv-compiler@3.5.0|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.1|@opentelemetry/api@1.6.0"
     },
     {
-      "ref": "fast-uri@2.1.0"
-    },
-    {
-      "ref": "@fastify/error@3.3.0"
-    },
-    {
-      "ref": "@fastify/fast-json-stringify-compiler@4.3.0",
+      "ref": "faas-js-runtime@3.0.1|tdigest@0.1.1",
       "dependsOn": [
-        "fast-json-stringify@5.7.0"
+        "faas-js-runtime@3.0.1|bintrees@1.0.1"
       ]
     },
     {
-      "ref": "fast-json-stringify@5.7.0",
+      "ref": "faas-js-runtime@3.0.1|side-channel@1.0.4",
       "dependsOn": [
-        "@fastify/deepmerge@1.3.0",
-        "ajv-formats@2.1.1",
-        "fast-json-stringify@5.7.0|ajv@8.12.0",
-        "fast-deep-equal@3.1.3",
-        "fast-uri@2.1.0",
-        "rfdc@1.3.0"
+        "faas-js-runtime@3.0.1|call-bind@1.0.7",
+        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.1|object-inspect@1.13.1"
       ]
     },
     {
-      "ref": "fast-json-stringify@5.7.0|ajv@8.12.0",
+      "ref": "faas-js-runtime@3.0.1|fast-deep-equal@3.1.3"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|require-from-string@2.0.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|uri-js@4.4.1",
       "dependsOn": [
-        "fast-deep-equal@3.1.3",
-        "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0",
-        "require-from-string@2.0.2",
-        "uri-js@4.4.1"
+        "faas-js-runtime@3.0.1|punycode@2.1.1"
       ]
     },
     {
-      "ref": "fast-json-stringify@5.7.0|json-schema-traverse@1.0.0"
+      "ref": "faas-js-runtime@3.0.1|bignumber.js@9.1.1"
     },
     {
-      "ref": "abstract-logging@2.0.1"
+      "ref": "faas-js-runtime@3.0.1|inherits@2.0.4"
     },
     {
-      "ref": "avvio@8.2.1",
+      "ref": "faas-js-runtime@3.0.1|is-arguments@1.1.1",
       "dependsOn": [
-        "archy@1.0.0",
-        "debug@4.3.4",
-        "fastq@1.8.0"
+        "faas-js-runtime@3.0.1|call-bind@1.0.7",
+        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "archy@1.0.0"
-    },
-    {
-      "ref": "debug@4.3.4",
+      "ref": "faas-js-runtime@3.0.1|is-generator-function@1.0.10",
       "dependsOn": [
-        "ms@2.1.2"
+        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "ms@2.1.2"
-    },
-    {
-      "ref": "fastq@1.8.0",
+      "ref": "faas-js-runtime@3.0.1|is-typed-array@1.1.13",
       "dependsOn": [
-        "reusify@1.0.4"
+        "faas-js-runtime@3.0.1|which-typed-array@1.1.14"
       ]
     },
     {
-      "ref": "reusify@1.0.4"
-    },
-    {
-      "ref": "fast-content-type-parse@1.0.0"
-    },
-    {
-      "ref": "@fastify/deepmerge@1.3.0"
-    },
-    {
-      "ref": "rfdc@1.3.0"
-    },
-    {
-      "ref": "find-my-way@7.6.0",
+      "ref": "faas-js-runtime@3.0.1|which-typed-array@1.1.14",
       "dependsOn": [
-        "fast-deep-equal@3.1.3",
-        "fast-querystring@1.1.1",
-        "safe-regex2@2.0.0"
+        "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
+        "faas-js-runtime@3.0.1|call-bind@1.0.7",
+        "faas-js-runtime@3.0.1|for-each@0.3.3",
+        "faas-js-runtime@3.0.1|gopd@1.2.0",
+        "faas-js-runtime@3.0.1|has-tostringtag@1.0.2"
       ]
     },
     {
-      "ref": "fast-querystring@1.1.1",
+      "ref": "faas-js-runtime@3.0.1|bytes@3.1.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|http-errors@2.0.0",
       "dependsOn": [
-        "fast-decode-uri-component@1.0.1"
+        "faas-js-runtime@3.0.1|depd@2.0.0",
+        "faas-js-runtime@3.0.1|inherits@2.0.4",
+        "faas-js-runtime@3.0.1|setprototypeof@1.2.0",
+        "faas-js-runtime@3.0.1|statuses@2.0.1",
+        "faas-js-runtime@3.0.1|toidentifier@1.0.1"
       ]
     },
     {
-      "ref": "fast-decode-uri-component@1.0.1"
-    },
-    {
-      "ref": "safe-regex2@2.0.0",
+      "ref": "faas-js-runtime@3.0.1|iconv-lite@0.4.24",
       "dependsOn": [
-        "ret@0.2.2"
+        "faas-js-runtime@3.0.1|safer-buffer@2.1.2"
       ]
     },
     {
-      "ref": "ret@0.2.2"
+      "ref": "faas-js-runtime@3.0.1|unpipe@1.0.0"
     },
     {
-      "ref": "light-my-request@5.10.0",
+      "ref": "faas-js-runtime@3.0.1|fast-uri@2.1.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|archy@1.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|debug@4.3.4",
       "dependsOn": [
-        "cookie@0.5.0",
-        "process-warning@2.2.0",
-        "set-cookie-parser@2.6.0"
+        "faas-js-runtime@3.0.1|ms@2.1.2"
       ]
     },
     {
-      "ref": "cookie@0.5.0"
-    },
-    {
-      "ref": "process-warning@2.2.0"
-    },
-    {
-      "ref": "set-cookie-parser@2.6.0"
-    },
-    {
-      "ref": "pino@8.14.1",
+      "ref": "faas-js-runtime@3.0.1|fastq@1.8.0",
       "dependsOn": [
-        "atomic-sleep@1.0.0",
-        "fast-redact@3.2.0",
-        "on-exit-leak-free@2.1.0",
-        "pino-abstract-transport@1.0.0",
-        "pino-std-serializers@6.2.2",
-        "process-warning@2.2.0",
-        "quick-format-unescaped@4.0.4",
-        "real-require@0.2.0",
-        "safe-stable-stringify@2.4.3",
-        "sonic-boom@3.3.0",
-        "thread-stream@2.3.0"
+        "faas-js-runtime@3.0.1|reusify@1.0.4"
       ]
     },
     {
-      "ref": "atomic-sleep@1.0.0"
+      "ref": "faas-js-runtime@3.0.1|@fastify/deepmerge@1.3.0"
     },
     {
-      "ref": "fast-redact@3.2.0"
-    },
-    {
-      "ref": "on-exit-leak-free@2.1.0"
-    },
-    {
-      "ref": "pino-abstract-transport@1.0.0",
+      "ref": "faas-js-runtime@3.0.1|fast-querystring@1.1.1",
       "dependsOn": [
-        "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
-        "split2@4.2.0"
+        "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1"
       ]
     },
     {
-      "ref": "pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+      "ref": "faas-js-runtime@3.0.1|safe-regex2@2.0.0",
       "dependsOn": [
-        "abort-controller@3.0.0",
-        "buffer@6.0.3",
-        "events@3.3.0",
-        "process@0.11.10",
-        "string_decoder@1.3.0"
+        "faas-js-runtime@3.0.1|ret@0.2.2"
       ]
     },
     {
-      "ref": "abort-controller@3.0.0",
+      "ref": "faas-js-runtime@3.0.1|cookie@0.5.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|set-cookie-parser@2.6.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|atomic-sleep@1.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|fast-redact@3.2.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|on-exit-leak-free@2.1.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0",
       "dependsOn": [
-        "event-target-shim@5.0.1"
+        "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
+        "faas-js-runtime@3.0.1|split2@4.2.0"
       ]
     },
     {
-      "ref": "event-target-shim@5.0.1"
-    },
-    {
-      "ref": "buffer@6.0.3",
+      "ref": "faas-js-runtime@3.0.1|pino-abstract-transport@1.0.0|readable-stream@4.4.2",
       "dependsOn": [
-        "base64-js@1.5.1",
-        "ieee754@1.2.1"
+        "faas-js-runtime@3.0.1|abort-controller@3.0.0",
+        "faas-js-runtime@3.0.1|buffer@6.0.3",
+        "faas-js-runtime@3.0.1|events@3.3.0",
+        "faas-js-runtime@3.0.1|process@0.11.10",
+        "faas-js-runtime@3.0.1|string_decoder@1.3.0"
       ]
     },
     {
-      "ref": "base64-js@1.5.1"
+      "ref": "faas-js-runtime@3.0.1|pino-std-serializers@6.2.2"
     },
     {
-      "ref": "ieee754@1.2.1"
+      "ref": "faas-js-runtime@3.0.1|quick-format-unescaped@4.0.4"
     },
     {
-      "ref": "events@3.3.0"
+      "ref": "faas-js-runtime@3.0.1|real-require@0.2.0"
     },
     {
-      "ref": "string_decoder@1.3.0",
+      "ref": "faas-js-runtime@3.0.1|safe-stable-stringify@2.4.3"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|sonic-boom@3.3.0",
       "dependsOn": [
-        "string_decoder@1.3.0|safe-buffer@5.2.1"
+        "faas-js-runtime@3.0.1|atomic-sleep@1.0.0"
       ]
     },
     {
-      "ref": "string_decoder@1.3.0|safe-buffer@5.2.1"
-    },
-    {
-      "ref": "split2@4.2.0"
-    },
-    {
-      "ref": "pino-std-serializers@6.2.2"
-    },
-    {
-      "ref": "quick-format-unescaped@4.0.4"
-    },
-    {
-      "ref": "real-require@0.2.0"
-    },
-    {
-      "ref": "safe-stable-stringify@2.4.3"
-    },
-    {
-      "ref": "sonic-boom@3.3.0",
+      "ref": "faas-js-runtime@3.0.1|thread-stream@2.3.0",
       "dependsOn": [
-        "atomic-sleep@1.0.0"
+        "faas-js-runtime@3.0.1|real-require@0.2.0"
       ]
     },
     {
-      "ref": "thread-stream@2.3.0",
+      "ref": "faas-js-runtime@3.0.1|forwarded@0.2.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|ipaddr.js@1.9.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|lru-cache@6.0.0",
       "dependsOn": [
-        "real-require@0.2.0"
+        "faas-js-runtime@3.0.1|yallist@4.0.0"
       ]
     },
     {
-      "ref": "proxy-addr@2.0.7",
+      "ref": "faas-js-runtime@3.0.1|xtend@4.0.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|bintrees@1.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|call-bind@1.0.7",
       "dependsOn": [
-        "forwarded@0.2.0",
-        "ipaddr.js@1.9.1"
+        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|function-bind@1.1.2",
+        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.1|set-function-length@1.2.1"
       ]
     },
     {
-      "ref": "forwarded@0.2.0"
-    },
-    {
-      "ref": "ipaddr.js@1.9.1"
-    },
-    {
-      "ref": "lru-cache@6.0.0",
+      "ref": "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
       "dependsOn": [
-        "yallist@4.0.0"
+        "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
+        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
+        "faas-js-runtime@3.0.1|function-bind@1.1.2",
+        "faas-js-runtime@3.0.1|get-proto@1.0.1",
+        "faas-js-runtime@3.0.1|gopd@1.2.0",
+        "faas-js-runtime@3.0.1|has-symbols@1.1.0",
+        "faas-js-runtime@3.0.1|hasown@2.0.2",
+        "faas-js-runtime@3.0.1|math-intrinsics@1.1.0"
       ]
     },
     {
-      "ref": "yallist@4.0.0"
+      "ref": "faas-js-runtime@3.0.1|object-inspect@1.13.1"
     },
     {
-      "ref": "tiny-lru@11.0.1"
+      "ref": "faas-js-runtime@3.0.1|punycode@2.1.1"
     },
     {
-      "ref": "js-yaml@4.1.0",
+      "ref": "faas-js-runtime@3.0.1|has-tostringtag@1.0.2",
       "dependsOn": [
-        "argparse@2.0.1"
+        "faas-js-runtime@3.0.1|has-symbols@1.1.0"
       ]
     },
     {
-      "ref": "argparse@2.0.1"
-    },
-    {
-      "ref": "node-os-utils@1.3.7"
-    },
-    {
-      "ref": "overload-protection@1.2.3",
+      "ref": "faas-js-runtime@3.0.1|available-typed-arrays@1.0.7",
       "dependsOn": [
-        "loopbench@1.2.0"
+        "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0"
       ]
     },
     {
-      "ref": "loopbench@1.2.0",
+      "ref": "faas-js-runtime@3.0.1|for-each@0.3.3",
       "dependsOn": [
-        "xtend@4.0.2"
+        "faas-js-runtime@3.0.1|is-callable@1.2.7"
       ]
     },
     {
-      "ref": "xtend@4.0.2"
+      "ref": "faas-js-runtime@3.0.1|gopd@1.2.0"
     },
     {
-      "ref": "prom-client@15.0.0",
+      "ref": "faas-js-runtime@3.0.1|depd@2.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|setprototypeof@1.2.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|statuses@2.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|toidentifier@1.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|safer-buffer@2.1.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|ms@2.1.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|reusify@1.0.4"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|fast-decode-uri-component@1.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|ret@0.2.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|split2@4.2.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|yallist@4.0.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|es-define-property@1.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|es-errors@1.3.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|function-bind@1.1.2"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|set-function-length@1.2.1",
       "dependsOn": [
-        "@opentelemetry/api@1.6.0",
-        "tdigest@0.1.1"
+        "faas-js-runtime@3.0.1|define-data-property@1.1.4",
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|function-bind@1.1.2",
+        "faas-js-runtime@3.0.1|get-intrinsic@1.3.0",
+        "faas-js-runtime@3.0.1|gopd@1.2.0",
+        "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2"
       ]
     },
     {
-      "ref": "@opentelemetry/api@1.6.0"
-    },
-    {
-      "ref": "tdigest@0.1.1",
+      "ref": "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
       "dependsOn": [
-        "bintrees@1.0.1"
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|function-bind@1.1.2"
       ]
     },
     {
-      "ref": "bintrees@1.0.1"
-    },
-    {
-      "ref": "qs@6.11.2",
+      "ref": "faas-js-runtime@3.0.1|es-object-atoms@1.1.1",
       "dependsOn": [
-        "side-channel@1.0.4"
+        "faas-js-runtime@3.0.1|es-errors@1.3.0"
       ]
     },
     {
-      "ref": "side-channel@1.0.4",
+      "ref": "faas-js-runtime@3.0.1|get-proto@1.0.1",
       "dependsOn": [
-        "call-bind@1.0.7",
-        "get-intrinsic@1.2.4",
-        "object-inspect@1.13.1"
+        "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
+        "faas-js-runtime@3.0.1|es-object-atoms@1.1.1"
       ]
     },
     {
-      "ref": "es-define-property@1.0.0",
+      "ref": "faas-js-runtime@3.0.1|has-symbols@1.1.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|hasown@2.0.2",
       "dependsOn": [
-        "get-intrinsic@1.2.4"
+        "faas-js-runtime@3.0.1|function-bind@1.1.2"
       ]
     },
     {
-      "ref": "es-errors@1.3.0"
+      "ref": "faas-js-runtime@3.0.1|math-intrinsics@1.1.0"
     },
     {
-      "ref": "function-bind@1.1.2"
+      "ref": "faas-js-runtime@3.0.1|possible-typed-array-names@1.0.0"
     },
     {
-      "ref": "set-function-length@1.2.1",
+      "ref": "faas-js-runtime@3.0.1|is-callable@1.2.7"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|abort-controller@3.0.0",
       "dependsOn": [
-        "define-data-property@1.1.4",
-        "es-errors@1.3.0",
-        "function-bind@1.1.2",
-        "get-intrinsic@1.2.4",
-        "gopd@1.0.1",
-        "has-property-descriptors@1.0.2"
+        "faas-js-runtime@3.0.1|event-target-shim@5.0.1"
       ]
     },
     {
-      "ref": "define-data-property@1.1.4",
+      "ref": "faas-js-runtime@3.0.1|buffer@6.0.3",
       "dependsOn": [
-        "es-define-property@1.0.0",
-        "es-errors@1.3.0",
-        "gopd@1.0.1"
+        "faas-js-runtime@3.0.1|base64-js@1.5.1",
+        "faas-js-runtime@3.0.1|ieee754@1.2.1"
       ]
     },
     {
-      "ref": "has-property-descriptors@1.0.2",
+      "ref": "faas-js-runtime@3.0.1|events@3.3.0"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0",
       "dependsOn": [
-        "es-define-property@1.0.0"
+        "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1"
       ]
     },
     {
-      "ref": "has-proto@1.0.3"
+      "ref": "faas-js-runtime@3.0.1|string_decoder@1.3.0|safe-buffer@5.2.1"
     },
     {
-      "ref": "hasown@2.0.1",
+      "ref": "faas-js-runtime@3.0.1|define-data-property@1.1.4",
       "dependsOn": [
-        "function-bind@1.1.2"
+        "faas-js-runtime@3.0.1|es-define-property@1.0.1",
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|gopd@1.2.0"
       ]
     },
     {
-      "ref": "object-inspect@1.13.1"
+      "ref": "faas-js-runtime@3.0.1|has-property-descriptors@1.0.2",
+      "dependsOn": [
+        "faas-js-runtime@3.0.1|es-define-property@1.0.1"
+      ]
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|dunder-proto@1.0.1",
+      "dependsOn": [
+        "faas-js-runtime@3.0.1|call-bind-apply-helpers@1.0.2",
+        "faas-js-runtime@3.0.1|es-errors@1.3.0",
+        "faas-js-runtime@3.0.1|gopd@1.2.0"
+      ]
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|event-target-shim@5.0.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|base64-js@1.5.1"
+    },
+    {
+      "ref": "faas-js-runtime@3.0.1|ieee754@1.2.1"
     }
   ]
 }
