@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/nodeshift/faas-js-runtime/compare/v3.0.2...v3.1.0) (2026-05-14)
+
+
+### Features
+
+* Adding dependabot for updating github actions ([#440](https://github.com/nodeshift/faas-js-runtime/issues/440)) ([714b93e](https://github.com/nodeshift/faas-js-runtime/commit/714b93e1b3b0fe5305879b28b2765a440e43c913))
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#439](https://github.com/nodeshift/faas-js-runtime/issues/439)) ([18de2b2](https://github.com/nodeshift/faas-js-runtime/commit/18de2b2974615581e934c04ac9003e72c251e133))
+* upgrade tsd from 0.28.1 to 0.32.0 ([#423](https://github.com/nodeshift/faas-js-runtime/issues/423)) ([3bb3df0](https://github.com/nodeshift/faas-js-runtime/commit/3bb3df089447cc8bf61d5a35e2f0e538959803c9))
+
 ## [3.0.2](https://github.com/nodeshift/faas-js-runtime/compare/v3.0.1...v3.0.2) (2025-07-15)
 
 
