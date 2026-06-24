@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bump-minor-pre-major": true,
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "include-component-in-tag": false,
+      "changelog-sections": [
+        {
+          "type": "enhancement",
+          "section": "Features",
+          "hidden": false
+        },
+        {
+          "type": "fix",
+          "section": "Bug Fixes",
+          "hidden": false
+        },
+        {
+          "type": "chore",
+          "section": "Miscellaneous",
+          "hidden": false
+        },
+        {
+          "type": "cleanup",
+          "section": "Miscellaneous",
+          "hidden": false
+        },
+        {
+          "type": "api-change",
+          "section": "API Changes",
+          "hidden": false
+        },
+        {
+          "type": "documentation",
+          "section": "Documentation",
+          "hidden": false
+        },
+        {
+          "type": "techdebt",
+          "section": "Miscellaneous",
+          "hidden": false
+        },
+        {
+          "type": "proposal",
+          "section": "Miscellaneous",
+          "hidden": false
+        },
+        {
+          "type": "feat",
+          "section": "Features",
+          "hidden": false
+        }
+      ]
+    }
+  }
+}
