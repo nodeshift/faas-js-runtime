@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.1](https://github.com/nodeshift/faas-js-runtime/compare/v4.0.0...v4.0.1) (2026-06-24)
+
+
+### Bug Fixes
+
+* renameing the release-please.yaml to releae-please.yml ([#446](https://github.com/nodeshift/faas-js-runtime/issues/446)) ([417b5a5](https://github.com/nodeshift/faas-js-runtime/commit/417b5a53bd4ba8d0dc409f11af33d2315e3cf85f))
+
 ## [4.0.0](https://github.com/nodeshift/faas-js-runtime/compare/v3.0.2...v4.0.0) (2026-06-24)
 
 
